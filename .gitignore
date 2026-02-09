@@ -1,0 +1,13 @@
+# Private/proprietary materials
+private/
+
+# Obsidian vault files
+.obsidian/
+
+# macOS
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~

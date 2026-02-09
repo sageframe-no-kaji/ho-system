@@ -55,6 +55,33 @@ The ideal Ho learner is an **architect** in the broad sense: someone who thinks 
 
 The Ho System addresses all three failures simultaneously.
 
+### 1.4 The Access-Judgment Gap
+
+The tools for AI-assisted development are universally accessible. Anyone with an internet connection can use Claude, GitHub Copilot, ChatGPT, or similar systems. Access is not the bottleneck.
+
+**The bottleneck is judgment.**
+
+- Knowing **when** to accept AI's suggestions vs. when to push back
+- Understanding **what** you need to understand vs. what can remain black-boxed
+- Maintaining **architectural authority** even when AI handles implementation
+- Developing **critical evaluation** of outputs you didn't write yourself
+
+Tool access without critical thinking produces brittle systems and shallow understanding. This is the "vibe coding" trap — outputs without comprehension.
+
+**The Ho System is a methodology for bridging this gap.** It structures the collaboration to keep human judgment central while leveraging AI's implementation capacity. It is designed to be learned and practiced — first individually, then facilitated for teams.
+
+This document provides the methodology openly. The value of mentorship and facilitation lies not in hoarding the knowledge, but in helping practitioners apply it effectively in context.
+
+### 1.5 Open Knowledge, Facilitated Practice
+
+The Ho System embodies a specific philosophy about knowledge and skill:
+
+**Knowledge should be freely accessible.** This document, the structural frameworks, the templates, and the evidence from practice are published openly. Anyone can read, understand, and attempt to apply the methodology.
+
+**Mastery requires mentorship.** Reading about the Ho System is not the same as practicing it effectively. Organizations implementing this methodology benefit from facilitation — not because the knowledge is secret, but because guided practice accelerates internalization, provides calibration, and develops judgment that can't be transmitted through documentation alone.
+
+This maps to the broader challenge of AI-assisted development: **tools are universally accessible, but effective use requires critical thinking.** The Ho System provides both the methodology (open) and pathways to facilitated practice (consulting, training, coaching) that help individuals and teams develop the judgment to use AI tools well.
+
 ---
 
 ## Part II: Theoretical Foundations
