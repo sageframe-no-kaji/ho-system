@@ -78,6 +78,7 @@ These documents define how the Ho System works. Read them to understand the meth
 
 | Document | What it covers |
 |---|---|
+| [[ho-foundations-evidence|Foundations and Evidence]] (framework/ho-foundations-evidence.md) | The intellectual case. Why this exists. Theoretical grounding. The vibe coding problem. Pilot evidence. |
 | [[ho-structure|Ho Structure]] (framework/structure/ho-structure.md) | What makes a ho a ho. The five invariants. The numbering system. |
 | [[shu-ha-ri|Shu-Ha-Ri Progression]] (framework/structure/shu-ha-ri.md) | The three stages. How structure adapts. Transition signals. |
 | [[project-arc|The Project Arc]] (framework/structure/project-arc.md) | How hos sequence into complete projects. The five phases. What happens when plans meet reality. |
@@ -130,3 +131,5 @@ This repository contains the **methodology** — the structural framework, templ
 What's **not** here is the **facilitation layer** — how to design effective ho sequences for specific learners, how to calibrate difficulty, how to read devlogs diagnostically, how to adapt the methodology to domains outside software. That's the consulting work.
 
 The methodology tells you the structure. The facilitation teaches you the judgment.
+
+For the intellectual foundations — the problem space, the theoretical grounding in constructionism and reflective practice, the critique of vibe coding, the evidence from the Kanyō pilot, and the argument for why this approach exists — see [Foundations and Evidence](ho-foundations-evidence.md).

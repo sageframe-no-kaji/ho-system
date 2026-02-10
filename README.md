@@ -8,7 +8,8 @@
 
 AI tools are everywhere. Anyone can ask ChatGPT to write code. But there's a gap between "AI generated this" and "I built this."
 
-Traditional paths say: spend years learning to code, _then_ build. AI shortcuts say: just prompt better, understanding is optional.
+Traditional paths say: spend years learning to code, _then_ build.
+AI shortcuts say: just prompt better, understanding is optional.
 
 **Both are inadequate.**
 
@@ -41,9 +42,11 @@ If you think in systems, make structural decisions, and want AI to amplify (not 
 
 ## Philosophy
 
-**Knowledge should be freely accessible.** This repository contains the complete methodology — design principles, structural frameworks, templates, and evidence from practice. No gatekeeping. No paywalls.
+**Knowledge should be freely accessible.**
+This repository contains the complete methodology — design principles, structural frameworks, templates, and evidence from practice. No gatekeeping. No paywalls.
 
-**Mastery requires mentorship.** Reading about the Ho System isn't the same as practicing it effectively. Facilitation, coaching, and guided implementation accelerate internalization and develop judgment that can't be transmitted through documentation alone.
+**Mastery requires mentorship.**
+Reading about the Ho System isn't the same as practicing it effectively. Facilitation, coaching, and guided implementation accelerate internalization and develop judgment that can't be transmitted through documentation alone.
 
 The methodology is open source. The training and consulting that help teams practice it well — that's where the value exchange happens.
 
@@ -54,6 +57,7 @@ The methodology is open source. The training and consulting that help teams prac
 ```
 framework/
 ├── the-ho-system.md               ← Start here
+├── ho-foundations-evidence.md      ← The intellectual case (position paper)
 ├── structure/                     ← How the system works
 │   ├── ho-structure.md                What a ho is. The numbering system.
 │   ├── shu-ha-ri.md                   Three stages of practitioner development
@@ -77,17 +81,17 @@ archive/                           ← Historical documents
 
 ## Quick Start
 
-1. Read [`framework/the-ho-system.md`](https://claude.ai/chat/framework/the-ho-system.md) — the complete orientation
-2. Explore [`examples/kanyo-pilot/`](https://claude.ai/chat/examples/kanyo-pilot/) to see it in practice
-3. Start your own project with [`framework/structure/kamae-project-framing.md`](https://claude.ai/chat/framework/structure/kamae-project-framing.md)
+1. Read [`framework/the-ho-system.md`](framework/the-ho-system.md) — the complete orientation
+2. Explore [`examples/kanyo-pilot/`](examples/kanyo-pilot/) to see it in practice
+3. Start your own project with [`framework/structure/kamae-project-framing.md`](framework/structure/kamae-project-framing.md)
 
 ---
 
 ## Origin
 
-The Ho System emerged from building [Kanyō](https://kanyo.sageframe.net/) — a production computer vision system for real-time falcon monitoring at Harvard. Built by a non-developer in six weeks using this methodology. Not a tutorial project. Not a prototype. **Functioning infrastructure in active use.**
+The Ho System emerged from building [Kanyō](https://kanyo.sageframe.net) — a production computer vision system for real-time falcon monitoring at Harvard. Built by a non-developer in six weeks using this methodology. Not a tutorial project. Not a prototype. **Functioning infrastructure in active use.**
 
-That project became the pilot for formalizing the approach you're reading now.
+That project became the pilot for formalizing the approach you're reading now. For the intellectual foundations — the Access-Judgment Gap, the pedagogy of shu-ha-ri, the critique of vibe coding, and the full evidence narrative — see [Foundations and Evidence](framework/ho-foundations-evidence.md).
 
 ---
 
@@ -95,12 +99,13 @@ That project became the pilot for formalizing the approach you're reading now.
 
 © 2026 Andrew Todd Marcus
 
-Licensed under [Creative Commons BY-NC-ND 4.0](https://claude.ai/chat/LICENSE) You may share this work with attribution, but not create derivatives or use commercially.
+Licensed under [Creative Commons BY-NC-ND 4.0](LICENSE)
+You may share this work with attribution, but not create derivatives or use commercially.
 
-For consulting, training, or commercial inquiries: [tyro@sageframe.net
+For consulting, training, or commercial inquiries: [contact info]
 
 ---
 
 ## Contributing
 
-This is a living methodology. If you use the Ho System, we want to hear about it. See [CONTRIBUTING.md](https://claude.ai/chat/CONTRIBUTING.md) for how to share feedback and evidence from your own practice.
+This is a living methodology. If you use the Ho System, we want to hear about it. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to share feedback and evidence from your own practice.
