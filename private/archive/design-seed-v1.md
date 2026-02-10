@@ -1,3 +1,7 @@
+_**Archived:** February 10, 2026. The original design document. Preserved as provenance. The framework documents supersede this._
+
+---
+
 # The Ho System: A Pedagogy for Human-AI Collaborative Development
 
 **Design Seed Document v0.1**
