@@ -18,7 +18,7 @@ Project Framing produces four documents, in order. Each builds on the previous o
 Concept → System Design → README → Ho Overview
 ```
 
-When the Ho Overview is complete, you have enough to write individual hos from the [shu-stage template](../templates/shu-ho-template.md) or whichever template is appropriate for the learner's level.
+When the Ho Overview is complete, you have enough to write individual hos from the [[shu-ho-template|shu-stage template]](framework/templates/shu-ho-template.md) or whichever template is appropriate for the learner's level.
 
 ---
 
@@ -28,7 +28,7 @@ When the Ho Overview is complete, you have enough to write individual hos from t
 
 **What it is:** The raw idea. Brainstorming output. What's exciting, what problem it solves, who it's for, why you care. Written for yourself.
 
-**What it's NOT:** A spec. A commitment. A polished pitch. The concept document is _thinking out loud on paper_. Messy is fine. Enthusiasm is fine. "This could be huge" energy is fine. That energy is fuel — it gets refined later, not suppressed now.
+**What it's NOT:** A spec. A commitment. A polished pitch. The concept document is *thinking out loud on paper*. Messy is fine. Enthusiasm is fine. "This could be huge" energy is fine. That energy is fuel — it gets refined later, not suppressed now.
 
 **What "done" looks like:**
 
@@ -56,7 +56,7 @@ Someone reading this document should understand:
 
 ### 2.2 System Design
 
-**What it is:** The structured technical vision. How the system works, what the major components are, how they connect, what technology choices anchor the architecture. Written for someone who needs to understand _what you're building_ at a systems level.
+**What it is:** The structured technical vision. How the system works, what the major components are, how they connect, what technology choices anchor the architecture. Written for someone who needs to understand *what you're building* at a systems level.
 
 **What it's NOT:** Implementation details. The System Design says "the controller sends a Wake-on-LAN packet, waits for SSH, runs syncoid, and shuts down the remote machine." It does NOT say "use paramiko with a 120-second timeout and poll every 5 seconds." Those decisions happen in individual hos.
 
@@ -197,7 +197,7 @@ This is not wasted time. It's the cheapest place to discover that your scope is 
 
 ### For a Project That Already Has Momentum
 
-If you've already started building (as happened with Kanyō), you can write the framing documents retroactively. This is less about planning and more about _documenting decisions that were already made_ — which still has value, because it surfaces implicit assumptions and makes the arc visible.
+If you've already started building (as happened with Kanyō), you can write the framing documents retroactively. This is less about planning and more about *documenting decisions that were already made* — which still has value, because it surfaces implicit assumptions and makes the arc visible.
 
 ### For a Follow-Up Project Using Existing Patterns
 
@@ -207,17 +207,17 @@ If you've completed one project with the Ho System and are starting a second (as
 
 ## 5. Relationship to the Project Arc
 
-Project Framing produces the _plan_. The Project Arc is the _execution_. The Ho Overview is the bridge between them — it's the last framing document and the first arc document.
+Project Framing produces the *plan*. The Project Arc is the *execution*. The Ho Overview is the bridge between them — it's the last framing document and the first arc document.
 
-The project arc phases (from the [Design Seed](https://claude.ai/design-seed.md) §3.2):
+The project arc phases (from the [[design-seed|Design Seed]](framework/design-seed.md) §3.2):
 
-| Phase               | Hos   | Focus                                                           |
-| ------------------- | ----- | --------------------------------------------------------------- |
-| **Orientation**     | 0–0.5 | Tooling, environment, mental model formation                    |
-| **Foundation**      | 1–2   | Project structure, core infrastructure, first working component |
-| **Construction**    | 3–6   | Primary system capabilities, iterative build-out                |
-| **Integration**     | 7–9   | Assembly, deployment, system-level concerns                     |
-| **Polish & Launch** | 10+   | Refinement, documentation, public deployment                    |
+| Phase | Hos | Focus |
+|---|---|---|
+| **Orientation** | 0–0.5 | Tooling, environment, mental model formation |
+| **Foundation** | 1–2 | Project structure, core infrastructure, first working component |
+| **Construction** | 3–6 | Primary system capabilities, iterative build-out |
+| **Integration** | 7–9 | Assembly, deployment, system-level concerns |
+| **Polish & Launch** | 10+ | Refinement, documentation, public deployment |
 
 The Ho Overview assigns each planned ho to a phase. Individual hos may shift between phases as the project develops — that's expected. The arc is a guide, not a contract.
 
@@ -225,11 +225,11 @@ The Ho Overview assigns each planned ho to a phase. Individual hos may shift bet
 
 ## 6. What This Document Does NOT Cover
 
-**How to engage AI at each stage.** The framing documents are natural places for AI collaboration (brainstorming with a concept, evaluating architecture decisions, generating a ho sequence from a system design). But the _how_ — what prompts to use, which AI mode (thinking vs. agent) is appropriate, how to evaluate AI suggestions at each stage — is a facilitation concern, not a structural one. That guidance lives in the facilitation layer, not here.
+**How to engage AI at each stage.** The framing documents are natural places for AI collaboration (brainstorming with a concept, evaluating architecture decisions, generating a ho sequence from a system design). But the *how* — what prompts to use, which AI mode (thinking vs. agent) is appropriate, how to evaluate AI suggestions at each stage — is a facilitation concern, not a structural one. That guidance lives in the facilitation layer, not here.
 
-**How to write good hos from the Ho Overview.** That's what the [ho templates](https://claude.ai/templates/) are for. The Ho Overview tells you _what_ to write. The template tells you _how_ to structure it.
+**How to write good hos from the Ho Overview.** That's what the ho templates (`framework/templates/`) are for. The Ho Overview tells you *what* to write. The template tells you *how* to structure it.
 
-**How to adapt the framing process for different project types.** The four-document chain was developed from software projects. Whether it applies unchanged to other domains (data analysis, research, hardware, writing) is an open question. See [Design Seed §6](https://claude.ai/design-seed.md) for open questions about domain adaptation.
+**How to adapt the framing process for different project types.** The four-document chain was developed from software projects. Whether it applies unchanged to other domains (data analysis, research, hardware, writing) is an open question. See [[design-seed|Design Seed §6]](framework/design-seed.md) for open questions about domain adaptation.
 
 ---
 
@@ -238,14 +238,12 @@ The Ho Overview assigns each planned ho to a phase. Individual hos may shift bet
 The Kanyō pilot combined all four framing concerns into a single Ho-00 document (351 lines). This worked well enough for a single-learner pilot, but it had consequences:
 
 **What combining them cost:**
-
 - The concept (origin story, vision) and the technical architecture were interleaved, making it hard to update one without touching the other.
 - The ho sequence was embedded at the end rather than being a first-class document that could be revised independently as the project evolved.
 - Tool guidance (Claude vs. Claude Code vs. Copilot) was mixed into the overview rather than being part of individual ho templates. This meant it was read once and then forgotten, rather than being reinforced at each session.
 - The README wasn't written as a standalone document until well into the project, which meant the "what does done look like?" question was answered implicitly rather than explicitly.
 
 **What combining them got right:**
-
 - Everything was in one place. The learner could read one document and understand the whole project.
 - The document was written with genuine enthusiasm, which matters for motivation.
 - It was fast to produce — no ceremony, just write it.
@@ -256,11 +254,11 @@ The framework separates these concerns not because the combined approach failed,
 
 ## 8. Related Framework Documents
 
-- [Design Seed](../design-seed.md) — The governing document for the Ho System
-- [Shu-Ha-Ri Progression](./shu-ha-ri.md) — How ho structure adapts to learner development
-- [Shu Ho Template](../templates/shu-ho-template.md) — Template for writing prescriptive ho sessions
-- [Project Arc](./project-arc.md) — How hos sequence into complete project arcs
+- [[design-seed|Design Seed]](framework/design-seed.md) — The governing document for the Ho System
+- [[shu-ha-ri|Shu-Ha-Ri Progression]](framework/structure/shu-ha-ri.md) — How ho structure adapts to learner development
+- [[shu-ho-template|Shu Ho Template]](framework/templates/shu-ho-template.md) — Template for writing prescriptive ho sessions
+- [[project-arc|Project Arc]](framework/structure/project-arc.md) — How hos sequence into complete project arcs
 
 ---
 
-_This document is part of the Ho System framework. It describes the structural specification for the Project Framing phase. For guidance on facilitating Project Framing with learners — including AI engagement strategies, prompting patterns, and coaching protocols — see the facilitation layer (proprietary)._
+*This document is part of the Ho System framework. It describes the structural specification for the Project Framing phase. For guidance on facilitating Project Framing with learners — including AI engagement strategies, prompting patterns, and coaching protocols — see the facilitation layer (proprietary).*
