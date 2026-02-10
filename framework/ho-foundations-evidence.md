@@ -2,23 +2,23 @@
 
 **A Position Paper on Human-AI Collaborative Development**
 
-**Author:** Andrew Todd Marcus
-**Date:** February 2026
+**Author:** Andrew Todd Marcus 
+**Date:** February 2026 
 **Status:** Active — Evolving with practice
 
 ---
 
-> *This document lays out the intellectual foundations of the Ho System — the problem it addresses, the traditions it draws from, the evidence from its first pilot, and the questions that remain open. For the structural framework, templates, and practical orientation, see [The Ho System](the-ho-system.md).*
+> _This document lays out the intellectual foundations of the Ho System — the problem it addresses, the traditions it draws from, the evidence from its first pilot, and the questions that remain open. For the structural framework, templates, and practical orientation, see [The Ho System](https://claude.ai/chat/the-ho-system.md)._
 
 ---
 
 ## Abstract
 
-The Ho System (歩 — *ho*, "step") is a structured methodology for technical development in which a human practitioner maintains architectural authority while using AI as an implementation partner. It is designed to produce both *working systems* and *genuine understanding* — rejecting the false choice between "learn everything from scratch" and "let AI do it for you."
+The Ho System (歩 — _ho_, "step") is a structured methodology for technical development in which a human practitioner maintains architectural authority while using AI as an implementation partner. It is designed to produce both _working systems_ and _genuine understanding_ — rejecting the false choice between "learn everything from scratch" and "let AI do it for you."
 
 The methodology emerged from applied practice: a non-developer used this approach to build Kanyō, a production computer vision system deployed at Harvard's Memorial Hall for real-time falcon monitoring. The system was developed in approximately six weeks of structured sessions — not as a tutorial exercise but as functioning infrastructure now in active use.
 
-This document establishes the philosophical foundations, theoretical grounding, and design principles of the Ho System. It is the *why* behind the framework — the argument for why this approach exists, what it responds to, and what it makes possible.
+This document establishes the philosophical foundations, theoretical grounding, and design principles of the Ho System. It is the _why_ behind the framework — the argument for why this approach exists, what it responds to, and what it makes possible.
 
 ---
 
@@ -32,7 +32,7 @@ Technical development in the age of generative AI has bifurcated into two inadeq
 
 **Mode B: AI-Delegated Production.** The user describes what they want; the AI produces it. This path is fast and produces outputs, but the human develops little transferable understanding. The resulting systems are fragile — the builder cannot debug, extend, or reason about what they've made.
 
-What is missing is a middle path — one in which the human *genuinely learns* while *actually building*, using AI not as a teacher delivering instruction and not as a contractor delivering product, but as a *collaborator* whose implementation capacity extends the human's architectural reach.
+What is missing is a middle path — one in which the human _genuinely learns_ while _actually building_, using AI not as a teacher delivering instruction and not as a contractor delivering product, but as a _collaborator_ whose implementation capacity extends the human's architectural reach.
 
 The Ho System is that middle path.
 
@@ -44,35 +44,35 @@ The evidence against unstructured AI-delegated production is now substantial and
 
 **The code is measurably worse.** A December 2025 analysis by CodeRabbit of 470 open-source GitHub pull requests found that AI-generated code contains approximately 1.7 times more defects than human-authored code across every major quality category — logic, maintainability, security, and performance. Critical and major defects were up to 1.7 times more frequent. Performance inefficiencies appeared nearly eight times more often. Security vulnerabilities — improper password handling, insecure object references — were 1.5 to 2 times more prevalent (CodeRabbit, "State of AI vs Human Code Generation," December 2025).
 
-**It doesn't even make experienced developers faster.** A randomized controlled trial by METR (Model Evaluation & Threat Research) tracked 16 experienced open-source developers completing 246 real tasks on repositories they had contributed to for years. The developers predicted AI tools would reduce their completion time by 24%. In reality, they were 19% *slower* with AI than without. Most striking: even after experiencing the slowdown, participants still believed AI had sped them up by 20% (Becker et al., "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity," arXiv:2507.09089, July 2025). The illusion of productivity may be more dangerous than the productivity loss itself.
+**It doesn't even make experienced developers faster.** A randomized controlled trial by METR (Model Evaluation & Threat Research) tracked 16 experienced open-source developers completing 246 real tasks on repositories they had contributed to for years. The developers predicted AI tools would reduce their completion time by 24%. In reality, they were 19% _slower_ with AI than without. Most striking: even after experiencing the slowdown, participants still believed AI had sped them up by 20% (Becker et al., "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity," arXiv:2507.09089, July 2025). The illusion of productivity may be more dangerous than the productivity loss itself.
 
-**Security is a systemic concern.** A January 2026 assessment by Tenzai tested five leading AI coding platforms by having each build the same three applications. Across 15 applications, the tools produced 69 vulnerabilities, including several rated critical. The platforms performed well on generic, well-documented vulnerability patterns but struggled where distinguishing safe from dangerous code required contextual judgment — precisely the kind of judgment that vibe coding, by definition, does not develop (Tenzai, December 2025; reported in InfoWorld, January 2026).
+**Security is a systemic concern.** A December 2025 assessment by Tenzai tested five leading AI coding platforms by having each build the same three applications. Across 15 applications, the tools produced 69 vulnerabilities, including several rated critical. The platforms performed well on generic, well-documented vulnerability patterns — no exploitable SQL injection or cross-site scripting — but failed on broken authorization logic, server-side request forgery, and missing security controls, precisely the issues where distinguishing safe from dangerous code required contextual judgment that vibe coding, by definition, does not develop (Tenzai, December 2025; reported in InfoWorld, January 2026).
 
-**The ecosystem effects are structural.** A January 2026 paper by researchers at Central European University and the Kiel Institute for the World Economy, titled "Vibe Coding Kills Open Source," argues that AI-mediated development disintermediates the user-maintainer relationship that sustains open-source projects. When AI agents select libraries and assemble applications without users reading documentation, filing issues, or engaging with communities, the feedback loops that incentivize open-source maintenance break down. The authors model a scenario in which increased coding velocity coexists with declining software quality — more code, less accountability, fewer people who understand what any of it does.
+**The ecosystem effects are structural.** A January 2026 paper by researchers at Central European University, Bielefeld University, and the Kiel Institute for the World Economy, titled "Vibe Coding Kills Open Source," argues that AI-mediated development disintermediates the user-maintainer relationship that sustains open-source projects. When AI agents select libraries and assemble applications without users reading documentation, filing issues, or engaging with communities, the feedback loops that incentivize open-source maintenance break down. The authors model a scenario in which increased coding velocity coexists with declining software quality — more code, less accountability, fewer people who understand what any of it does.
 
-This is not an argument against AI in development. It is an argument against AI in development *without structure, without judgment, and without the human capacity to evaluate what gets produced*. Vibe coding's failure is not that it uses AI. Its failure is that it produces operators who cannot distinguish good output from bad — and, per the METR findings, cannot even accurately assess their own performance while using it.
+This is not an argument against AI in development. It is an argument against AI in development _without structure, without judgment, and without the human capacity to evaluate what gets produced_. Vibe coding's failure is not that it uses AI. Its failure is that it produces operators who cannot distinguish good output from bad — and, per the METR findings, cannot even accurately assess their own performance while using it.
 
 ### 1.3 The Access-Judgment Gap
 
-The standard narrative about AI tools focuses on *access* — who can generate code, who can build applications, who gets to participate in software development. This framing treats the problem as a distribution problem: give people better tools, and they'll build better things.
+The standard narrative about AI tools focuses on _access_ — who can generate code, who can build applications, who gets to participate in software development. This framing treats the problem as a distribution problem: give people better tools, and they'll build better things.
 
-The Ho System is built on a different diagnosis. The bottleneck isn't access to AI tools. Anyone can prompt ChatGPT. The bottleneck is *judgment* — the ability to evaluate whether what was generated is correct, secure, maintainable, and aligned with design intent. Judgment is what separates "AI generated this" from "I built this using AI."
+The Ho System is built on a different diagnosis. The bottleneck isn't access to AI tools. Anyone can prompt ChatGPT. The bottleneck is _judgment_ — the ability to evaluate whether what was generated is correct, secure, maintainable, and aligned with design intent. Judgment is what separates "AI generated this" from "I built this using AI."
 
 This gap cannot be closed by better prompting. It cannot be closed by more powerful models. It can only be closed by structured practice that develops the human's capacity to direct, evaluate, and when necessary override AI-generated work. The Ho System exists to close that gap.
 
 ### 1.4 Who This Is For
 
-The Ho System is designed for people who possess significant expertise in domains *adjacent to* software development — systems thinking, design, architecture, organizational leadership, research — but are not trained developers. People who need to build real, functional systems. People who want genuine understanding of what they build, at a level sufficient to direct, evaluate, debug, and extend it. People who recognize that AI fundamentally changes what a single person can create, and want to engage that change deliberately.
+The Ho System is designed for people who possess significant expertise in domains _adjacent to_ software development — systems thinking, design, architecture, organizational leadership, research — but are not trained developers. People who need to build real, functional systems. People who want genuine understanding of what they build, at a level sufficient to direct, evaluate, debug, and extend it. People who recognize that AI fundamentally changes what a single person can create, and want to engage that change deliberately.
 
 The ideal Ho practitioner is an **architect** in the broad sense: someone who thinks in systems, makes structural decisions, and directs the assembly of complex artifacts. The Ho System gives that person a methodology for building technical systems that matches how they already think.
 
 ### 1.5 Why Existing Approaches Fail
 
-**Bootcamps and tutorials** teach through contrived exercises. The learner builds a to-do app to learn React, not because they need a to-do app. Motivation is abstract. Transfer is weak. The implicit message is: *you must become a developer before you can build things.*
+**Bootcamps and tutorials** teach through contrived exercises. The learner builds a to-do app to learn React, not because they need a to-do app. Motivation is abstract. Transfer is weak. The implicit message is: _you must become a developer before you can build things._
 
-**AI code generation (unstructured)** produces results without comprehension. The human cannot distinguish good output from bad. Errors compound silently. The implicit message is: *understanding is unnecessary; just prompt better.*
+**AI code generation (unstructured)** produces results without comprehension. The human cannot distinguish good output from bad. Errors compound silently. The implicit message is: _understanding is unnecessary; just prompt better._
 
-**Pair programming with AI** (as currently practiced) is closer, but lacks pedagogical structure. There is no progression model, no bounded scope, no mechanism for distinguishing what the learner *needs* to understand from what they can safely treat as opaque. Without that structure, the learner either drowns in detail or coasts on surface familiarity.
+**Pair programming with AI** (as currently practiced) is closer, but lacks pedagogical structure. There is no progression model, no bounded scope, no mechanism for distinguishing what the learner _needs_ to understand from what they can safely treat as opaque. Without that structure, the learner either drowns in detail or coasts on surface familiarity.
 
 The Ho System addresses all three failures simultaneously.
 
@@ -82,7 +82,7 @@ The Ho System addresses all three failures simultaneously.
 
 ### 2.1 Constructionism and Building to Learn
 
-The Ho System's deepest intellectual debt is to Seymour Papert's constructionism: the principle that people learn most powerfully when they are building artifacts that matter to them, in contexts where the building itself makes thinking visible. Papert distinguished this from Piaget's constructivism (learning through internal mental construction) by emphasizing the *external artifact* as both the product and the medium of learning.
+The Ho System's deepest intellectual debt is to Seymour Papert's constructionism: the principle that people learn most powerfully when they are building artifacts that matter to them, in contexts where the building itself makes thinking visible. Papert distinguished this from Piaget's constructivism (learning through internal mental construction) by emphasizing the _external artifact_ as both the product and the medium of learning.
 
 In the Ho System, the artifact is not a classroom exercise. It is a production system — software that runs, serves users, processes data. The learner's relationship to this artifact is not "student completing assignment" but "architect directing construction." This distinction is not cosmetic. It changes what the learner attends to, what questions they ask, and what kind of understanding they develop.
 
@@ -90,13 +90,13 @@ In the Ho System, the artifact is not a classroom exercise. It is a production s
 
 Vygotsky's zone of proximal development (ZPD) describes the space between what a learner can do independently and what they can do with assistance. Traditional scaffolding involves a more-expert human gradually withdrawing support as competence grows.
 
-AI as implementation partner represents a *qualitative expansion* of the ZPD. The gap between what a systems-thinking non-developer can *design* and what they can *build alone* is enormous. AI closes that gap — not by simplifying the design, but by handling implementation details the human has deliberately chosen not to master (yet). This allows the learner to operate at their actual level of systemic sophistication rather than being artificially constrained by implementation mechanics.
+AI as implementation partner represents a _qualitative expansion_ of the ZPD. The gap between what a systems-thinking non-developer can _design_ and what they can _build alone_ is enormous. AI closes that gap — not by simplifying the design, but by handling implementation details the human has deliberately chosen not to master (yet). This allows the learner to operate at their actual level of systemic sophistication rather than being artificially constrained by implementation mechanics.
 
-Crucially, the Ho System does not leave the ZPD unstructured. Each ho defines *which* aspects of the work the learner should understand deeply, which they should understand functionally, and which they can treat as opaque. This is the Tiered Understanding Model — the mechanism that prevents AI-assisted development from collapsing into AI-dependent development.
+Crucially, the Ho System does not leave the ZPD unstructured. Each ho defines _which_ aspects of the work the learner should understand deeply, which they should understand functionally, and which they can treat as opaque. This is the Tiered Understanding Model — the mechanism that prevents AI-assisted development from collapsing into AI-dependent development.
 
 ### 2.3 Reflective Practice and the Practitioner's Knowledge
 
-Donald Schön's work on reflective practice describes how professionals develop expertise not primarily through formal instruction but through *reflection-in-action* (thinking while doing) and *reflection-on-action* (thinking about what was done). Schön's "reflective practitioner" learns by engaging with messy, real-world problems and developing a repertoire of responses through accumulated experience.
+Donald Schön's work on reflective practice describes how professionals develop expertise not primarily through formal instruction but through _reflection-in-action_ (thinking while doing) and _reflection-on-action_ (thinking about what was done). Schön's "reflective practitioner" learns by engaging with messy, real-world problems and developing a repertoire of responses through accumulated experience.
 
 The Ho System embeds reflective practice structurally. Each ho requires a devlog — not a summary of steps taken, but an articulation of what was understood, what remains opaque, and what surprised the learner. Confidence self-assessment forces honest evaluation rather than performative competence. The cumulative documentation trail becomes a knowledge artifact in its own right — externalized cognition that the learner (and others) can revisit and build upon.
 
@@ -104,9 +104,9 @@ This structural embedding matters because the research on AI-induced cognitive o
 
 ### 2.4 Cognitive Apprenticeship, Inverted
 
-Collins, Brown, and Newman's cognitive apprenticeship model identifies key features of effective learning: modeling, coaching, scaffolding, articulation, reflection, and exploration. The Ho System maps onto this framework, with a critical substitution: AI serves as the *implementing agent* whose work the learner must *evaluate and direct*, rather than a master whose work the learner must *imitate*.
+Collins, Brown, and Newman's cognitive apprenticeship model identifies key features of effective learning: modeling, coaching, scaffolding, articulation, reflection, and exploration. The Ho System maps onto this framework, with a critical substitution: AI serves as the _implementing agent_ whose work the learner must _evaluate and direct_, rather than a master whose work the learner must _imitate_.
 
-This inversion is important. In traditional apprenticeship, the novice watches the expert and tries to reproduce expert behavior. In the Ho System, the learner *commissions* implementation and then must understand it well enough to accept, modify, or reject it. This requires a different kind of cognition — not imitation but *architectural judgment*. The learner must develop the capacity to evaluate outputs against intentions, to identify when implementation has diverged from design, and to articulate why something is wrong even when they could not have built it themselves.
+This inversion is important. In traditional apprenticeship, the novice watches the expert and tries to reproduce expert behavior. In the Ho System, the learner _commissions_ implementation and then must understand it well enough to accept, modify, or reject it. This requires a different kind of cognition — not imitation but _architectural judgment_. The learner must develop the capacity to evaluate outputs against intentions, to identify when implementation has diverged from design, and to articulate why something is wrong even when they could not have built it themselves.
 
 This is, notably, exactly the skill that vibe coding fails to develop and that the evidence increasingly shows is essential. The Tenzai assessment found AI tools performed adequately on generic vulnerability patterns but failed where context determined what counted as safe or dangerous. Context is not something that can be prompted into existence. It is a property of the human who directs the work.
 
@@ -134,19 +134,19 @@ For most of the history of technical education, the hierarchy was clear: first l
 
 AI inverts this hierarchy. When implementation can be generated on demand, the scarce resource is no longer the ability to write code — it is the ability to evaluate, direct, and decide. The skills that were traditionally taught last (systems thinking, architectural judgment, tradeoff analysis, reflective self-assessment) are now the skills that matter first. The skills that were traditionally taught first (syntax, language mechanics, algorithmic implementation) are increasingly delegatable.
 
-This is not a speculative claim. The World Economic Forum's Future of Jobs Report 2025 identifies analytical thinking, creative thinking, and resilience as the most important workforce skills, with AI and big data literacy listed alongside them — not as a replacement but as a complement. The WEF's AI Literacy Framework, developed jointly with the European Commission and OECD, explicitly calls for education systems to go beyond digital literacy and prioritize critical thinking, ethical reasoning, and the ability to evaluate AI outputs. The emphasis is on *human skills that AI cannot replicate* — empathy, judgment, collaboration, and the capacity to interrogate rather than passively consume technological outputs.
+This is not a speculative claim. The World Economic Forum's Future of Jobs Report 2025 identifies analytical thinking, creative thinking, and resilience as the most important workforce skills, with AI and big data literacy listed alongside them — not as a replacement but as a complement. The WEF's AI Literacy Framework, developed jointly with the European Commission and OECD, explicitly calls for education systems to go beyond digital literacy and prioritize critical thinking, ethical reasoning, and the ability to evaluate AI outputs. The emphasis is on _human skills that AI cannot replicate_ — empathy, judgment, collaboration, and the capacity to interrogate rather than passively consume technological outputs.
 
 ### 3.2 The Deskilling Evidence
 
 The urgency is not theoretical. A growing body of research documents measurable cognitive decline when AI tools are used without structured engagement:
 
-Gerlich's 2025 study of 666 UK participants found that frequent AI users exhibited significantly diminished critical thinking abilities, with cognitive offloading as the primary mechanism. Younger users (17–25) were most affected — precisely the population currently moving through educational systems (Gerlich, "AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking," *Societies*, January 2025).
+Gerlich's 2025 study of 666 UK participants found that frequent AI users exhibited significantly diminished critical thinking abilities, with cognitive offloading as the primary mechanism. Younger users (17–25) were most affected — precisely the population currently moving through educational systems (Gerlich, "AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking," _Societies_, January 2025).
 
-A 2025 study published in *The Lancet Gastroenterology & Hepatology* found that endoscopists who routinely used AI assistance in colonoscopies performed measurably worse when the technology was suddenly unavailable — their detection rate for precancerous lesions dropped from 28.4% to 22.4%. The skill didn't wait patiently in the background. It atrophied.
+A 2025 study published in _The Lancet Gastroenterology & Hepatology_ found that endoscopists who routinely used AI assistance in colonoscopies performed measurably worse when the technology was suddenly unavailable — their detection rate for precancerous lesions dropped from 28.4% to 22.4%. The skill didn't wait patiently in the background. It atrophied.
 
 The Communications of the ACM, in a November 2025 feature titled "The AI Deskilling Paradox," synthesized findings across medicine, law, education, and software development. Law professors at Illinois Law School found that students using AI chatbots were more prone to critical errors. The article's framing captures the structural nature of the problem: deskilling is not an individual failure of discipline. It is a predictable consequence of environments that remove the need to practice.
 
-A College Board report from 2025 found that 70% of teachers worry that AI weakens students' critical thinking and research skills. Meanwhile, 69% of high school students use AI tools regularly to find information and 54% use them to answer questions. The perception gap — students seeing AI as helpful while teachers observe declining engagement with the underlying thinking — mirrors the METR finding about developers: people consistently overestimate the quality of their AI-assisted work.
+A College Board report from 2025 found that more than 80% of AP teachers agree that AI makes students overly dependent on technology for basic tasks and less likely to develop critical thinking. Meanwhile, 69% of high school students reported using ChatGPT to help with school assignments and homework. The perception gap — students seeing AI as helpful while teachers observe declining engagement with the underlying thinking — mirrors the METR finding about developers: people consistently overestimate the quality of their AI-assisted work.
 
 ### 3.3 What Education Should Become
 
@@ -162,9 +162,9 @@ If AI handles implementation with increasing competence, what should education d
 
 **Collaboration with non-human systems.** Not prompt engineering — that's a surface skill with a short half-life. The deeper skill is knowing how to maintain authority over a system that can produce plausible but incorrect work at scale. Knowing when to trust, when to verify, and when to override.
 
-These are not new educational aspirations. Critical thinking, process discipline, and reflective self-assessment appear in every educational philosophy from Dewey forward. What is new is the urgency. When AI can generate a passing essay, a working application, or a plausible diagnosis, the ability to produce those artifacts is no longer evidence of understanding. *Only the ability to evaluate them is.*
+These are not new educational aspirations. Critical thinking, process discipline, and reflective self-assessment appear in every educational philosophy from Dewey forward. What is new is the urgency. When AI can generate a passing essay, a working application, or a plausible diagnosis, the ability to produce those artifacts is no longer evidence of understanding. _Only the ability to evaluate them is._
 
-The Ho System is one answer to this challenge. It doesn't teach technical skills as a prerequisite to building. It develops judgment, process, and self-assessment *through* building — with the technical skills acquired as a necessary byproduct of doing real work, not as an end in themselves.
+The Ho System is one answer to this challenge. It doesn't teach technical skills as a prerequisite to building. It develops judgment, process, and self-assessment _through_ building — with the technical skills acquired as a necessary byproduct of doing real work, not as an end in themselves.
 
 ### 3.4 Open Knowledge, Facilitated Practice
 
@@ -186,7 +186,7 @@ Ho projects build real systems, not tutorial applications. The learner's motivat
 
 ### 4.2 Architecture Before Implementation
 
-Every ho begins by establishing the *systemic purpose* of the work before any code is written. The learner understands where this piece fits in the whole before they begin constructing it. This mirrors how architects work: the plan precedes the build.
+Every ho begins by establishing the _systemic purpose_ of the work before any code is written. The learner understands where this piece fits in the whole before they begin constructing it. This mirrors how architects work: the plan precedes the build.
 
 ### 4.3 Bounded Ambiguity
 
@@ -200,11 +200,11 @@ This principle directly addresses the perception gap documented in both the METR
 
 ### 4.5 Cumulative Competence, Not Isolated Skills
 
-Skills developed in earlier hos are exercised in later ones. Understanding compounds. This is not a collection of independent modules but a *progressive system* where each ho depends on and extends the last. The project arc — the complete sequence from orientation to production — is the unit of learning, not the individual session.
+Skills developed in earlier hos are exercised in later ones. Understanding compounds. This is not a collection of independent modules but a _progressive system_ where each ho depends on and extends the last. The project arc — the complete sequence from orientation to production — is the unit of learning, not the individual session.
 
 ### 4.6 Process Visibility as Transferable Output
 
-The Ho System treats the *methodology itself* as an artifact worth documenting, sharing, and refining. Devlogs, commit histories, and understanding reflections are not private notes — they are public-facing evidence of a way of working. This makes the Ho System self-documenting: every project arc that uses it produces evidence of how it works.
+The Ho System treats the _methodology itself_ as an artifact worth documenting, sharing, and refining. Devlogs, commit histories, and understanding reflections are not private notes — they are public-facing evidence of a way of working. This makes the Ho System self-documenting: every project arc that uses it produces evidence of how it works.
 
 ---
 
@@ -224,11 +224,11 @@ This is not a prototype. It is functioning infrastructure in active use.
 
 ### 5.3 What the Pilot Demonstrated
 
-**The tiered understanding model works.** The developer achieved Tier 2 (functional) understanding of Python project structure, configuration management, testing frameworks, ffmpeg usage, event detection logic, and API design — while maintaining Tier 1 (deliberate black-box) treatment of YOLOv8 internals, CSS frameworks, and React build tooling. This was appropriate. The developer can modify, debug, and extend the system precisely because the methodology directed attention to the *right* things.
+**The tiered understanding model works.** The developer achieved Tier 2 (functional) understanding of Python project structure, configuration management, testing frameworks, ffmpeg usage, event detection logic, and API design — while maintaining Tier 1 (deliberate black-box) treatment of YOLOv8 internals, CSS frameworks, and React build tooling. This was appropriate. The developer can modify, debug, and extend the system precisely because the methodology directed attention to the _right_ things.
 
 **Production output from non-developers is achievable.** The quality of the codebase meets professional standards — not because the developer became a professional software engineer, but because the Ho methodology embedded those practices from session one.
 
-**AI acceleration without AI dependency.** If AI tools were removed, the developer could maintain, debug, and extend the existing system. New feature development would be slower, but not impossible. This is the critical test: the Ho System produces people who *used* AI, not people who *depend on* AI.
+**AI acceleration without AI dependency.** If AI tools were removed, the developer could maintain, debug, and extend the existing system. New feature development would be slower, but not impossible. This is the critical test: the Ho System produces people who _used_ AI, not people who _depend on_ AI.
 
 **The devlogs are genuinely valuable.** Months after completion, the devlogs serve as functional reference material — not "what I did" summaries but operational documentation of how the system works, what matters, and where the gotchas live.
 
@@ -274,34 +274,38 @@ Where does the Ho System sit relative to universities, bootcamps, and profession
 
 Becker, J. et al. (2025). "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity." arXiv:2507.09089. July 2025.
 
+Budzyń, K. et al. (2025). "Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy: a multicentre, observational study." _The Lancet Gastroenterology & Hepatology_, 10(10), 896–903. August 2025.
+
 CodeRabbit. (2025). "State of AI vs Human Code Generation Report." December 2025.
 
-Collins, A., Brown, J.S., & Newman, S.E. (1989). "Cognitive Apprenticeship: Teaching the Crafts of Reading, Writing, and Mathematics." In L.B. Resnick (Ed.), *Knowing, Learning, and Instruction*.
+Collins, A., Brown, J.S., & Newman, S.E. (1989). "Cognitive Apprenticeship: Teaching the Crafts of Reading, Writing, and Mathematics." In L.B. Resnick (Ed.), _Knowing, Learning, and Instruction_.
 
 The College Board. (2025). AI in Education Report. October 2025.
 
-Gerlich, M. (2025). "AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking." *Societies*, 15(1). January 2025.
+Gerlich, M. (2025). "AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking." _Societies_, 15(1). January 2025.
 
-Greengard, S. (2025). "The AI Deskilling Paradox." *Communications of the ACM*. November 2025.
+Greengard, S. (2025). "The AI Deskilling Paradox." _Communications of the ACM_. November 2025.
 
 Karpathy, A. (2025). Introduction of the term "vibe coding." February 2025.
 
+Koren, M., Békés, G., Hinz, J., & Lohmann, A. (2026). "Vibe Coding Kills Open Source." CEPR Discussion Paper No. 21145. arXiv:2601.15494. January 2026.
+
 Lee, H. et al. (2025). "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers." CHI '25, April 2025. Yokohama, Japan.
 
-Papert, S. (1991). *Situating Constructionism*. In I. Harel & S. Papert (Eds.), *Constructionism*.
+Papert, S. (1991). _Situating Constructionism_. In I. Harel & S. Papert (Eds.), _Constructionism_.
 
-Schön, D. (1983). *The Reflective Practitioner: How Professionals Think in Action*. Basic Books.
+Schön, D. (1983). _The Reflective Practitioner: How Professionals Think in Action_. Basic Books.
 
 Tenzai. (2025). Security assessment of AI coding platforms. December 2025.
 
-Vygotsky, L.S. (1978). *Mind in Society: The Development of Higher Psychological Processes*. Harvard University Press.
+Vygotsky, L.S. (1978). _Mind in Society: The Development of Higher Psychological Processes_. Harvard University Press.
 
-World Economic Forum. (2025). *Future of Jobs Report 2025*.
+World Economic Forum. (2025). _Future of Jobs Report 2025_.
 
 World Economic Forum & European Commission/OECD. (2025). AI Literacy Framework (AILit). Draft released for consultation, 2025.
 
 ---
 
-*This is a living document. It will evolve as the Ho System is applied to new projects, tested with new learners, and refined through practice. The framework documents contain the structural specification; this paper contains the argument for why it exists.*
+_This is a living document. It will evolve as the Ho System is applied to new projects, tested with new learners, and refined through practice. The framework documents contain the structural specification; this paper contains the argument for why it exists._
 
-*— ATM, February 2026*
+_— ATM, February 2026_
