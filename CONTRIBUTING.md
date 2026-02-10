@@ -30,7 +30,7 @@ If you publish work that references or builds on the Ho System, please cite:
 
 ```
 Marcus, A.T. (2026). The Ho System (歩): A Collaborative Development
-Methodology for Building With AI. https://github.com/[repo-url]
+Methodology for Building With AI. [https://github.com/sageframe-no-kaji/ho-system]
 ```
 
 ## License
