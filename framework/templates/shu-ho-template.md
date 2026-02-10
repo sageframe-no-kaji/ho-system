@@ -633,4 +633,4 @@ Before publishing a shu-stage ho, verify:
 *This template is part of the Ho System framework.*
 *For ha-stage work, see [[ha-ho-template|Ha Ho Template]](ha-ho-template.md).*
 *For ri-stage work, see [[ri-ho-template|Ri Ho Template]](ri-ho-template.md).*
-*For template selection guidance, see the [[README|Template Selection Guide]](README.md).*
+*For template selection guidance, see the [[template-selection-guide|Template Selection Guide]] (template-selection-guide.md).*

@@ -769,4 +769,4 @@ What they lacked: explicit AI mode guidance (thinking vs. agent), agent task tra
 *This template is part of the Ho System framework.*
 *For shu-stage work, see [[shu-ho-template|Shu Ho Template]](shu-ho-template.md).*
 *For ri-stage work, see [[ri-ho-template|Ri Ho Template]](ri-ho-template.md).*
-*For template selection guidance, see the [[README|Template Selection Guide]](README.md).*
+*For template selection guidance, see the [[template-selection-guide|Template Selection Guide]] (template-selection-guide.md).*
