@@ -10,12 +10,12 @@ This guide helps practitioners and ho authors select the appropriate template fo
 
 Ask one question: **Who is doing the thinking?**
 
-|If...|Use...|
-|---|---|
-|The **author** did the thinking. The learner follows.|Shu Ho Template (framework/templates/shu-ho-template.md)|
-|The **learner** does the thinking. The template provides the framework.|Ha Ho Template (framework/templates/ha-ho-template.md)|
-|The **practitioner** already thought. Now they're recording what they did.|Ri Ho Template (framework/templates/ri-ho-template.md)|
-|The **practitioner** is handing specific work to an AI agent.|Agent Task Specification (framework/templates/agent-task-spec.md)|
+| If...                                                                      | Use...                                                            |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| The **author** did the thinking. The learner follows.                      | Shu Ho Template (framework/templates/shu-ho-template.md)          |
+| The **learner** does the thinking. The template provides the framework.    | Ha Ho Template (framework/templates/ha-ho-template.md)            |
+| The **practitioner** already thought. Now they're recording what they did. | Ri Ho Template (framework/templates/ri-ho-template.md)            |
+| The **practitioner** is handing specific work to an AI agent.              | Agent Task Specification (framework/templates/agent-task-spec.md) |
 
 If you're unsure between two, pick the one with MORE structure. You can always skip sections. You can't add scaffolding that isn't there.
 
@@ -144,17 +144,18 @@ But this isn't linear. **Shu resets when the domain changes.** A practitioner in
 
 ## Quick Reference
 
-||Shu|Ha|Ri|Agent Task|
-|---|---|---|---|---|
-|**One-liner**|Follow the path|Make the decision|Record the work|Specify the delegation|
-|**Duration**|~2 hours (strict)|2–4 hours (guideline)|As long as needed|Minutes to hours|
-|**Sections**|Parts, verification, tiers, devlog|Phases (think/execute/reflect)|Problem, solution, changes, results|Goal, spec, constraints, checks|
-|**Who thinks**|The author|The learner|Already done|The practitioner (before writing)|
-|**Who builds**|The learner (guided)|The learner (self-directed)|The practitioner|The AI agent|
-|**AI role**|Verify and explain|Think together, then execute|Implementation accelerator|Executor|
-|**Key artifact**|Working code + understanding|Decision record + working code|Change record|Reviewed implementation|
-|**Devlog**|Learning journal|Decision record|The ho IS the record|Not applicable|
-|**When wrong**|Feels patronizing|Phase 1 stalls or feels like busywork|Skips important thinking|Agent guesses wrong|
+|                  | Shu                                | Ha                                                | Ri                                                                   | Agent Task                        |
+| ---------------- | ---------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------- |
+| **One-liner**    | Follow the path                    | Make the decision                                 | Record the work                                                      | Specify the delegation            |
+| **Duration**     | ~2 hours (strict)                  | 2–4 hours (guideline)                             | As long as needed                                                    | Minutes to hours                  |
+| **Sections**     | Parts, verification, tiers, devlog | Phases (think/execute/reflect)                    | Problem, solution, changes, results                                  | Goal, spec, constraints, checks   |
+| **Who thinks**   | The author                         | The learner                                       | Already done                                                         | The practitioner (before writing) |
+| **Who builds**   | The learner (guided)               | The learner (self-directed)                       | The practitioner                                                     | The AI agent                      |
+| **AI role**      | Verify and explain                 | Think together, then execute                      | Implementation accelerator                                           | Executor                          |
+| **Key artifact** | Working code + understanding       | Decision record + working code                    | Change record                                                        | Reviewed implementation           |
+| **Devlog**       | Learning journal                   | Decision record                                   | The ho IS the record                                                 | Not applicable                    |
+| **When wrong**   | Feels patronizing                  | Phase 1 stalls or feels like busywork             | Skips important thinking                                             | Agent guesses wrong               |
+| **Verification** | Lint + tests + template checks     | Lint + tests + self-review + emerging cross-agent | Full stack (lint + tests → self-review → cross-agent → human review) | Lint + tests + self-review        |
 
 ---
 
@@ -163,16 +164,16 @@ But this isn't linear. **Shu resets when the domain changes.** A practitioner in
 When designing a ho sequence for a new project (during [[kamae-project-framing|Kamae: Project Framing]] (framework/structure/kamae-project-framing.md)), assign each planned ho a stage in the Ho Overview:
 
 ```markdown
-| Ho | Title | Stage | Rationale |
-|---|---|---|---|
-| 0.5 | Tool Mastery | Shu | New tools, new environment |
-| 1 | Project Setup | Shu | Foundation, known-good path |
-| 2 | Core Detection | Shu | New domain (ML), needs guidance |
-| 3 | Live Pipeline | Shu→Ha | Starts prescriptive, ends with design choices |
-| 4 | Docker Deploy | Shu | New domain (containers) |
-| 5 | System Integration | Ha | Architectural decisions, multiple approaches |
-| 6 | GUI Architecture | Ha | Technology evaluation, design work |
-| 7+ | Operations | Ri | System is running, maintenance mode |
+| Ho  | Title              | Stage  | Rationale                                     |
+| --- | ------------------ | ------ | --------------------------------------------- |
+| 0.5 | Tool Mastery       | Shu    | New tools, new environment                    |
+| 1   | Project Setup      | Shu    | Foundation, known-good path                   |
+| 2   | Core Detection     | Shu    | New domain (ML), needs guidance               |
+| 3   | Live Pipeline      | Shu→Ha | Starts prescriptive, ends with design choices |
+| 4   | Docker Deploy      | Shu    | New domain (containers)                       |
+| 5   | System Integration | Ha     | Architectural decisions, multiple approaches  |
+| 6   | GUI Architecture   | Ha     | Technology evaluation, design work            |
+| 7+  | Operations         | Ri     | System is running, maintenance mode           |
 ```
 
 These assignments are provisional. A ho planned as ha may turn out to be shu once you realize the learner needs more foundation. A ho planned as shu may be ri if the learner already has the skills. Adjust as you go — the stage map is a guide, not a contract.

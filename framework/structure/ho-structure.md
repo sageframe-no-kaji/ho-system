@@ -26,6 +26,8 @@ The deliverable changes character across stages. In shu, it's typically working 
 
 A ho that produces only learning ("I now understand Docker") but no artifact is incomplete. The understanding should be _demonstrated_ through the artifact.
 
+A deliverable is not complete until it is verified. "Working code" means tests pass and linting is clean — not merely that the code was produced. See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) for the full verification stack that applies at each stage.
+
 ### 1.3 Traceable
 
 Every ho connects to the actual changes it produced. At minimum: a commit hash or range. Ideally: a file manifest showing what was added, modified, and removed.
@@ -76,11 +78,11 @@ A ho number has up to three levels:
 [Major].[Minor].[Sub]
 ```
 
-|Level|Name|What it means|Example|
-|---|---|---|---|
-|**Major**|The planned sequence|The original ho sequence from the project arc|`05`|
-|**Minor**|The branch|Work that emerged from a major ho|`05.6`|
-|**Sub**|The leaf|Work that emerged from a branch|`05.72`|
+| Level     | Name                 | What it means                                 | Example |
+| --------- | -------------------- | --------------------------------------------- | ------- |
+| **Major** | The planned sequence | The original ho sequence from the project arc | `05`    |
+| **Minor** | The branch           | Work that emerged from a major ho             | `05.6`  |
+| **Sub**   | The leaf             | Work that emerged from a branch               | `05.72` |
 
 **Major numbers** are assigned during project planning (in the [[kamae-project-framing|Kamae]] (framework/structure/kamae-project-framing.md) phase). They represent the intended arc: Ho 01, Ho 02, Ho 03... These are the steps the author or practitioner _planned to take_.
 
@@ -122,14 +124,14 @@ ho-[number]-[slug].md
 
 The number uses hyphens for dots and underscores for internal separation:
 
-|Ho Number|Filename|
-|---|---|
-|00|`ho-00-overview.md`|
-|0.5|`ho-0_5-tool-mastery.md`|
-|01|`ho-01-git-good.md`|
-|05.7|`ho-05_7-state-redesign.md`|
-|05.72|`ho-05_72-startup-confirmation.md`|
-|06.13|`ho-06_13-arrival-confirmation-system.md`|
+| Ho Number | Filename                                  |
+| --------- | ----------------------------------------- |
+| 00        | `ho-00-overview.md`                       |
+| 0.5       | `ho-0_5-tool-mastery.md`                  |
+| 01        | `ho-01-git-good.md`                       |
+| 05.7      | `ho-05_7-state-redesign.md`               |
+| 05.72     | `ho-05_72-startup-confirmation.md`        |
+| 06.13     | `ho-06_13-arrival-confirmation-system.md` |
 
 The slug is kebab-case, brief, and descriptive. It should be recognizable at a glance in a directory listing or commit message.
 
@@ -197,18 +199,18 @@ The five invariant properties (bounded, deliverable, traceable, reflective, sequ
 
 ### 4.1 The Structural Comparison
 
-|Property|Shu|Ha|Ri|
-|---|---|---|---|
-|**Organizing unit**|Parts (4–9, author-defined)|Phases (3, fixed: Think → Execute → Reflect)|Sections (Problem → Solution → Changes → Results)|
-|**Duration**|~2 hours (strict)|2–4 hours (guideline)|No limit|
-|**Who scopes**|The ho author|The learner|The practitioner|
-|**Primary artifact**|Working code|Decision documentation + working code|Change record|
-|**AI relationship**|"Review and verify"|"Think together, then execute"|Implementation accelerator|
-|**Reflection format**|Full devlog (learning journal)|Decision-focused devlog|Notes section (optional)|
-|**Commit rhythm**|After every part|At natural breakpoints|Practitioner's discretion|
-|**Tier declarations**|Author assigns|Learner declares|Internalized|
-|**Confidence scale**|Measures understanding|Measures judgment|Not used|
-|**Template**|Shu Ho Template|Ha Ho Template|Ri Ho Template|
+| Property              | Shu                            | Ha                                           | Ri                                                |
+| --------------------- | ------------------------------ | -------------------------------------------- | ------------------------------------------------- |
+| **Organizing unit**   | Parts (4–9, author-defined)    | Phases (3, fixed: Think → Execute → Reflect) | Sections (Problem → Solution → Changes → Results) |
+| **Duration**          | ~2 hours (strict)              | 2–4 hours (guideline)                        | No limit                                          |
+| **Who scopes**        | The ho author                  | The learner                                  | The practitioner                                  |
+| **Primary artifact**  | Working code                   | Decision documentation + working code        | Change record                                     |
+| **AI relationship**   | "Review and verify"            | "Think together, then execute"               | Implementation accelerator                        |
+| **Reflection format** | Full devlog (learning journal) | Decision-focused devlog                      | Notes section (optional)                          |
+| **Commit rhythm**     | After every part               | At natural breakpoints                       | Practitioner's discretion                         |
+| **Tier declarations** | Author assigns                 | Learner declares                             | Internalized                                      |
+| **Confidence scale**  | Measures understanding         | Measures judgment                            | Not used                                          |
+| **Template**          | Shu Ho Template                | Ha Ho Template                               | Ri Ho Template                                    |
 
 See the [[template-selection-guide|Template Selection Guide]] (framework/templates/template-selection-guide.md) for help choosing between these.
 
@@ -254,13 +256,13 @@ The title is brief and descriptive. It names the _work_, not the lesson. "Git Go
 
 Additional header fields vary by stage:
 
-|Field|Shu|Ha|Ri|
-|---|---|---|---|
-|Date|✓|✓|✓|
-|Duration|✓ (actual vs. target)|✓ (actual)|—|
-|Status|✓|✓|✓|
-|Decision Required|—|✓|—|
-|Commit|—|—|✓|
+| Field             | Shu                   | Ha         | Ri  |
+| ----------------- | --------------------- | ---------- | --- |
+| Date              | ✓                     | ✓          | ✓   |
+| Duration          | ✓ (actual vs. target) | ✓ (actual) | —   |
+| Status            | ✓                     | ✓          | ✓   |
+| Decision Required | —                     | ✓          | —   |
+| Commit            | —                     | —          | ✓   |
 
 ### 5.2 The Body
 

@@ -24,7 +24,7 @@ Three properties define a devlog:
 
 The devlog serves four audiences:
 
-**The learner, right now.** The act of writing forces externalization. You can *feel* like you understood something during the ho and discover, while writing the devlog, that you can't articulate it. That gap between felt understanding and articulated understanding is precisely what the devlog reveals.
+**The learner, right now.** The act of writing forces externalization. You can _feel_ like you understood something during the ho and discover, while writing the devlog, that you can't articulate it. That gap between felt understanding and articulated understanding is precisely what the devlog reveals.
 
 **The learner, later.** Six months from now, when something breaks, the devlog tells you what you understood at the time, what you were uncertain about, and what you left as a black box. "I was at Tier 1 for ffmpeg encoding" tells your future self exactly where to look when the encoding breaks.
 
@@ -45,6 +45,7 @@ In shu, the devlog asks: **What do I understand now?**
 The learner is building foundational skills. The interesting question isn't "what did I decide" (the ho author made most decisions) but "what did I learn, and how well do I understand it?" The shu devlog is organized around understanding — tiers achieved, confidence level, gaps identified.
 
 Key sections:
+
 - What Was Built (concrete artifacts)
 - Understanding Tiers Achieved (Tier 1/2/3 for each component, with ✓/✗)
 - Challenges Encountered (what was hard)
@@ -54,15 +55,15 @@ Key sections:
 - Confidence Level (1–5, calibrated for understanding)
 - What I'd Do Differently (hindsight)
 
-The confidence scale measures *understanding*:
+The confidence scale measures _understanding_:
 
-| Level | Meaning |
-|---|---|
-| 1 | I followed instructions but don't really understand what happened |
-| 2 | I understand the broad strokes but couldn't reproduce without guidance |
-| 3 | I could explain this to someone and troubleshoot basic issues |
-| 4 | I understand this well and could extend it independently |
-| 5 | I could teach this and make non-obvious design decisions |
+| Level | Meaning                                                                |
+| ----- | ---------------------------------------------------------------------- |
+| 1     | I followed instructions but don't really understand what happened      |
+| 2     | I understand the broad strokes but couldn't reproduce without guidance |
+| 3     | I could explain this to someone and troubleshoot basic issues          |
+| 4     | I understand this well and could extend it independently               |
+| 5     | I could teach this and make non-obvious design decisions               |
 
 Most shu-stage learners will honestly be at 2–3 for their first few hos. A learner who reports 5 on their second ho is either exceptional or not being honest. Both are worth paying attention to.
 
@@ -73,6 +74,7 @@ In ha, the devlog asks: **Was my decision good?**
 The learner is making real architectural decisions. The interesting question isn't "what did I learn" (they're past foundational learning) but "what did I decide, why, and did the implementation confirm or challenge that decision?" The ha devlog is organized around the decision.
 
 Key sections:
+
 - The Decision (problem as defined, approach chosen, whether it held up)
 - What Was Built (concrete artifacts)
 - What Was Removed (equally important — removal is a ha-stage signature)
@@ -82,15 +84,15 @@ Key sections:
 - Confidence Level (1–5, recalibrated for judgment)
 - What I'd Do Differently (especially important when real choices were made)
 
-The confidence scale shifts to measure *judgment*:
+The confidence scale shifts to measure _judgment_:
 
-| Level | Meaning |
-|---|---|
-| 1 | I made a decision but I'm not sure it was right |
-| 2 | I think the decision was reasonable but I can't fully defend it |
-| 3 | I can explain my decision, its tradeoffs, and when to revisit it |
-| 4 | I'm confident in the decision and could apply the same reasoning to a new problem |
-| 5 | I developed a principle or heuristic I'll use again |
+| Level | Meaning                                                                           |
+| ----- | --------------------------------------------------------------------------------- |
+| 1     | I made a decision but I'm not sure it was right                                   |
+| 2     | I think the decision was reasonable but I can't fully defend it                   |
+| 3     | I can explain my decision, its tradeoffs, and when to revisit it                  |
+| 4     | I'm confident in the decision and could apply the same reasoning to a new problem |
+| 5     | I developed a principle or heuristic I'll use again                               |
 
 The "What Was Removed" section deserves emphasis. In shu, the learner adds code. In ha, the learner starts removing code — simplifying, consolidating, deleting dead paths. Kanyō Ho 05.6 removed 800 lines. Ho 05.7 removed 938. This is celebrated in the devlog, not hidden. The ability to remove is evidence of understanding — you can only simplify what you comprehend.
 
@@ -106,7 +108,7 @@ Over multiple ha-stage devlogs, this section should show increasing sophisticati
 
 In ri, the devlog doesn't exist as a separate document. The ri ho document itself — Problem, Solution, What Changed, Results, Notes — IS the record. Writing a separate devlog would duplicate it.
 
-This isn't the practitioner skipping reflection. It's reflection absorbed into the work itself. A ri practitioner who writes "Problem: departure clips extract from end-of-file instead of last detection time. Solution: anchor clip start to first suspected arrival frame" *is* reflecting — they're articulating what was wrong and why their fix is correct. The habit is internalized; it doesn't need a separate template.
+This isn't the practitioner skipping reflection. It's reflection absorbed into the work itself. A ri practitioner who writes "Problem: departure clips extract from end-of-file instead of last detection time. Solution: anchor clip start to first suspected arrival frame" _is_ reflecting — they're articulating what was wrong and why their fix is correct. The habit is internalized; it doesn't need a separate template.
 
 ---
 
@@ -154,7 +156,7 @@ trial and error — the relationship between confidence threshold and
 false positive rate isn't intuitive to me yet.
 ```
 
-This is good because it captures a *specific* insight (frame interval tradeoff), names the *specific* gap (threshold tuning), and the confidence assessment is calibrated — 3, not 5, with an explanation of what's missing.
+This is good because it captures a _specific_ insight (frame interval tradeoff), names the _specific_ gap (threshold tuning), and the confidence assessment is calibrated — 3, not 5, with an explanation of what's missing.
 
 ### Bad: Vague and Performative
 
@@ -185,6 +187,7 @@ between host path and container path isn't natural yet.
 ## Understanding Tiers
 
 **Tier 2 (Functional):**
+
 - Docker compose: ✓ — I understand services, volumes, networking basics
 - Volume mounts: ✗ — I got it working but I'm not confident I could
   troubleshoot a different mount issue without help
@@ -216,7 +219,36 @@ understanding of the domain. The AI was pattern-matching on "detection
 not working" → "lower threshold." I knew the actual problem was different.
 ```
 
-This captures a *learning moment about AI collaboration* — the meta-skill of knowing when the AI is wrong and having the confidence to override it.
+This captures a _learning moment about AI collaboration_ — the meta-skill of knowing when the AI is wrong and having the confidence to override it.
+
+### Recording Verification
+
+A thorough devlog captures which verification layers were applied, what they caught, and — critically — what was not verified and why. This creates accountability for quality decisions without requiring perfection.
+
+**Good verification record:**
+
+```markdown
+## Verification Applied
+
+Layer 1: All 14 tests pass. Added 2 tests for the new state transition.
+Layer 1b: black, flake8, mypy all clean. One type annotation added.
+Layer 2: Prompted agent to self-review before I read — it caught a missed
+edge case in the clip offset math.
+Layer 3: Not applied — small config change with a clear acceptance test.
+Skipping was a deliberate choice.
+```
+
+The "not applied" entries matter as much as the "applied" entries. They document conscious choices, not oversights. A layer skipped by default is a gap; a layer skipped deliberately is a decision.
+
+**Weak verification record:**
+
+```markdown
+Tests pass. Looks good.
+```
+
+This tells you nothing about test coverage, whether higher layers were applied, or whether anything was caught and fixed. It's the verification equivalent of "no challenges" in the challenges section.
+
+See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §5 for guidance on what each layer costs and when to apply it selectively.
 
 ---
 
@@ -257,4 +289,4 @@ The ho templates ([[shu-ho-template|Shu Ho Template]] (framework/templates/shu-h
 
 ---
 
-*This document is part of the Ho System framework. It describes the structural specification for the devlog as a reflection practice. For guidance on reading devlogs diagnostically — including calibration coaching, honesty development, and facilitation interventions when devlog quality declines — see the facilitation layer (proprietary).*
+_This document is part of the Ho System framework. It describes the structural specification for the devlog as a reflection practice. For guidance on reading devlogs diagnostically — including calibration coaching, honesty development, and facilitation interventions when devlog quality declines — see the facilitation layer (proprietary)._

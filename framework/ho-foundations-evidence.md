@@ -2,8 +2,8 @@
 
 **A Position Paper on Human-AI Collaborative Development**
 
-**Author:** Andrew Todd Marcus 
-**Date:** February 2026 
+**Author:** Andrew Todd Marcus
+**Date:** February 2026
 **Status:** Active — Evolving with practice
 
 ---
@@ -59,6 +59,8 @@ The standard narrative about AI tools focuses on _access_ — who can generate c
 The Ho System is built on a different diagnosis. The bottleneck isn't access to AI tools. Anyone can prompt ChatGPT. The bottleneck is _judgment_ — the ability to evaluate whether what was generated is correct, secure, maintainable, and aligned with design intent. Judgment is what separates "AI generated this" from "I built this using AI."
 
 This gap cannot be closed by better prompting. It cannot be closed by more powerful models. It can only be closed by structured practice that develops the human's capacity to direct, evaluate, and when necessary override AI-generated work. The Ho System exists to close that gap.
+
+The Ho System's structural answer to the overconfidence problem documented in the METR and CodeRabbit research is the four-layer verification stack: automated tests, linting, directed self-review, and cross-agent verification. Verification is not theoretical hygiene — it is the mechanism that makes "architectural authority" real rather than aspirational. An architect who cannot verify the build is not an architect; they are an optimist with a deploy button. See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) for the complete framework.
 
 ### 1.4 Who This Is For
 

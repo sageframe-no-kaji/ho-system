@@ -12,13 +12,13 @@ An agent task is a specification written by a human for an AI agent to execute. 
 
 Agent tasks are distinct from ho documents:
 
-||Ho Document|Agent Task|
-|---|---|---|
-|**Written by**|Author (shu), learner (ha/ri)|The practitioner|
-|**Written for**|The human doing the work|The AI executing the work|
-|**Purpose**|Structure a session|Specify a delegation|
-|**When written**|Before the session begins|During a session, when work is ready to hand off|
-|**Reviewed by**|The learner (self-check)|The practitioner (code review)|
+|                  | Ho Document                   | Agent Task                                       |
+| ---------------- | ----------------------------- | ------------------------------------------------ |
+| **Written by**   | Author (shu), learner (ha/ri) | The practitioner                                 |
+| **Written for**  | The human doing the work      | The AI executing the work                        |
+| **Purpose**      | Structure a session           | Specify a delegation                             |
+| **When written** | Before the session begins     | During a session, when work is ready to hand off |
+| **Reviewed by**  | The learner (self-check)      | The practitioner (code review)                   |
 
 Agent tasks exist at all stages of the shu-ha-ri progression, but they become the primary work artifact in ri stage. In shu, the ho tells you exactly what to build. In ha, you decide what to build and may delegate pieces. In ri, agent tasks ARE the work — the practitioner's job is writing good specs and reviewing the output.
 
@@ -96,17 +96,24 @@ The agent can deviate if it has a better idea, but this is the starting point.]
 ## Commit
 
 [Commit message template or guidance.]
+
+## Verification
+
+[After delivery: run tests, check lint, confirm stated features work as intended.
+Broad spec verification focuses on “does the feature work” rather than
+line-by-line correctness — but the full lint and test pipeline runs regardless.
+One prompt worth sending: “Review what you built against the goal. Anything missing?”]
 ```
 
 > 📐 **AUTHOR — Broad Spec Notes**
-> 
+>
 > The broad spec trusts the agent's judgment on implementation details. This is appropriate when:
-> 
+>
 > - The feature is additive (not modifying critical existing behavior)
 > - The output is easy to review and rework
 > - The codebase has established patterns the agent can follow
 > - Getting it 80% right is fine — you'll iterate
-> 
+>
 > Task 002 (Files Browser) from the Kanyō pilot is a good example. It includes suggested code, but the agent could have implemented it differently and the result would still be acceptable. The review surface is a new page — isolated, testable, low-risk.
 
 ---
@@ -138,6 +145,7 @@ as what they should change.]
 exact logic. Pseudocode or actual code.]
 
 Constraints:
+
 - [Constraint on this change]
 - [What NOT to do here]
 
@@ -176,21 +184,30 @@ the module.]
 ## QUALITY
 
 [Testing and linting requirements.]
+
+## VERIFICATION PROTOCOL
+
+After completion, apply:
+
+- Layer 1: Run the test suite. All acceptance checks must pass.
+- Layer 1b: Run the full lint pipeline on changed files.
+- Layer 2: Prompt self-review: “Check what you produced against this spec. Flag gaps.”
+- Layer 3: Cross-agent review recommended — this spec is surgical for a reason.
 ```
 
 > 📐 **AUTHOR — Surgical Spec Notes**
-> 
+>
 > The surgical spec constrains the agent precisely because the cost of getting it wrong is high. This is appropriate when:
-> 
+>
 > - The change touches critical path logic (state machines, timing, data integrity)
 > - A wrong implementation could produce silent failures (data loss, incorrect clips, false notifications)
 > - The agent needs to modify existing behavior, not add new behavior
 > - You know EXACTLY what the fix should look like
-> 
+>
 > Task 013 (Arrival Clip Anchoring) from the Kanyō pilot is the canonical example. Every change is specified to the attribute name. Invariants are listed twice — what to preserve AND what must hold after. The line count expectation (~15 lines) prevents scope creep. The acceptance checks describe specific frame-math scenarios.
-> 
+>
 > Writing a surgical spec takes more time than writing the code yourself would — for a 15-line change. The value is in VERIFIABILITY. You can review the agent's output against a precise spec. You can't review it against a vague one.
-> 
+>
 > **The ALL CAPS convention** is deliberate. It signals to the agent (and to the human reviewing later) that this is a directive, not a conversation. The agent should execute, not discuss alternatives.
 
 ---
@@ -204,15 +221,14 @@ Writing agent tasks is specification writing. It's the same skill as writing a g
 What makes a good agent task:
 
 1. **Goal is a state change, not an activity.** "Implement file browser" is an activity. "The Files link works — users can navigate directories and view/play media" is a state change. The agent knows what "done" looks like.
-    
+
 2. **Scope is bounded.** The agent should be able to complete the task without making architectural decisions. If the task requires choosing between approaches, the human should make that choice in the spec — or use a ha-stage ho instead of delegating.
-    
+
 3. **Constraints are explicit.** What NOT to change is as important as what to change. Especially for surgical specs, the "do not change" list prevents the agent from "improving" things that shouldn't be touched.
-    
+
 4. **Review surface is clear.** After the agent completes the task, the reviewer should know exactly what to check. For a broad spec: does the feature work? For a surgical spec: does each invariant hold?
-    
+
 5. **Precision matches risk.** A new UI page gets a broad spec. A state machine fix gets a surgical spec. Don't over-specify low-risk work (wastes time) or under-specify high-risk work (invites bugs).
-    
 
 ### Common Failure Modes
 
@@ -223,6 +239,19 @@ What makes a good agent task:
 **Missing constraints:** "Add a PENDING_STARTUP state." Without specifying what it should and shouldn't affect, the agent may wire it into systems you didn't intend.
 
 **No acceptance criteria:** "Make arrival clips correct." Correct according to what definition? The practitioner knows — but the agent doesn't unless you tell it.
+
+---
+
+### Post-Completion Verification Protocol
+
+Writing a good agent task is half the work. What the practitioner does after the agent delivers matters equally:
+
+1. **Always run the test suite.** Even for small changes — especially for small changes that touch critical paths. A passing test suite is the baseline, not the ceiling.
+2. **Direct self-review for anything non-trivial.** Before reviewing the output yourself, prompt the agent: “Review what you just produced against the spec. Flag any gaps, assumptions, or things you’re uncertain about.” This is low-cost and catches a meaningful fraction of problems at the source.
+3. **Cross-agent verification for critical path changes.** For anything touching state machines, timing logic, data integrity, or security — have a separate model review the diff against the spec before human review. See Layer 3 in [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md).
+4. **Human architectural review for all accepted work.** The practitioner reads the code. Not skims — reads. Automated tools catch what they’re designed to catch; human review catches the architectural misalignments that tools miss.
+
+The full four-layer verification stack is documented in [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md).
 
 ---
 
@@ -245,12 +274,12 @@ The filesystem IS the tracker. Sequential numbering gives order. Filenames give 
 For projects that outgrow filesystem tracking, a simple table in the Ho Overview or a project-level `TASKS.md` works:
 
 ```markdown
-| # | Task | Status | Ho | Commit |
-|---|---|---|---|---|
-| 001 | Initial Project Setup | ✅ Done | — | a1b2c3d |
-| 002 | Implement Files Browser | ✅ Done | 06.1 | d4e5f6g |
-| 013 | Fix Arrival Clip Anchoring | ✅ Done | 06.13 | h7i8j9k |
-| 014 | Add Departure Clip Symmetry | 🔲 Open | — | — |
+| #   | Task                        | Status  | Ho    | Commit  |
+| --- | --------------------------- | ------- | ----- | ------- |
+| 001 | Initial Project Setup       | ✅ Done | —     | a1b2c3d |
+| 002 | Implement Files Browser     | ✅ Done | 06.1  | d4e5f6g |
+| 013 | Fix Arrival Clip Anchoring  | ✅ Done | 06.13 | h7i8j9k |
+| 014 | Add Departure Clip Symmetry | 🔲 Open | —     | —       |
 ```
 
 The "Ho" column links tasks to the ho session they were part of (if any). Many ri-stage tasks exist outside of any ho — they're standalone work items.
@@ -283,6 +312,6 @@ The ratio is revealing: 130 lines of spec for 15 lines of code. That's not waste
 
 ---
 
-_This document is part of the Ho System framework._ 
+_This document is part of the Ho System framework._
 _For session wrappers, see: [[shu-ho-template|Shu Ho Template]] (shu-ho-template.md) · [[ha-ho-template|Ha Ho Template]] (ha-ho-template.md) · [[ri-ho-template|Ri Ho Template]] (ri-ho-template.md)_
-*For template selection guidance, see the [[template-selection-guide|Template Selection Guide]] (template-selection-guide.md).*
+_For template selection guidance, see the [[template-selection-guide|Template Selection Guide]] (template-selection-guide.md)._

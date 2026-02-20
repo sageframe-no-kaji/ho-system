@@ -18,13 +18,13 @@ If this template feels too light, you might be in ha territory. If it feels like
 
 Both are ri-stage tools. The difference:
 
-||Ri Ho|Agent Task|
-|---|---|---|
-|**Scope**|A session of work (may include multiple changes)|A single well-defined task|
-|**Author**|The practitioner, after the work|The practitioner, before handing to AI|
-|**Audience**|Future maintainers (including yourself)|The AI agent executing the task|
-|**Duration**|30 minutes to a full day|Minutes to an hour|
-|**Contains**|Problem, solution, what changed, results|Spec, constraints, acceptance criteria|
+|              | Ri Ho                                            | Agent Task                             |
+| ------------ | ------------------------------------------------ | -------------------------------------- |
+| **Scope**    | A session of work (may include multiple changes) | A single well-defined task             |
+| **Author**   | The practitioner, after the work                 | The practitioner, before handing to AI |
+| **Audience** | Future maintainers (including yourself)          | The AI agent executing the task        |
+| **Duration** | 30 minutes to a full day                         | Minutes to an hour                     |
+| **Contains** | Problem, solution, what changed, results         | Spec, constraints, acceptance criteria |
 
 A ri ho might _contain_ several agent tasks. The ho documents the session; the agent tasks document individual delegated pieces within it.
 
@@ -45,9 +45,9 @@ A ri ho might _contain_ several agent tasks. The ho documents the session; the a
 ```
 
 > 📐 **AUTHOR — Header**
-> 
+>
 > Minimal. Date, status, commit hash. No duration field — ri work takes as long as it takes. No "Decision Required" field — if there's a major decision to make, use the ha template.
-> 
+>
 > The commit hash links the document to the actual code change. For work spanning multiple commits, use a range: `a1b2c3d..e5f6g7h`.
 
 ---
@@ -61,11 +61,11 @@ end-of-file instead of last detection time, producing 30s of empty nest."]
 ```
 
 > 📐 **AUTHOR — Problem**
-> 
+>
 > One paragraph, maybe two. The practitioner knows their system — they don't need context-setting. The problem statement serves the reader who comes later and needs to understand _why_ this change was made.
-> 
+>
 > If the problem takes more than a few sentences to explain, either:
-> 
+>
 > - It's actually multiple problems (split into separate hos or tasks), or
 > - It needs architectural thinking (use the ha template)
 
@@ -80,9 +80,9 @@ to the complexity of the work.]
 ```
 
 > 📐 **AUTHOR — Solution**
-> 
+>
 > This is the core of the document. Not a tutorial — a technical record. Proportionality matters: a one-line config change gets a one-line explanation. A state machine redesign gets a diagram and a rationale.
-> 
+>
 > "Why this approach" is brief at ri stage — the practitioner isn't evaluating five options. But a sentence on _why_ still has value: "Used a ring buffer instead of segment files because RAM is cheap and segment boundary math was the source of the timing bugs."
 
 ---
@@ -90,9 +90,9 @@ to the complexity of the work.]
 ```markdown
 ## What Changed
 
-| File | Change |
-|---|---|
-| `path/to/file.py` | [What was added/modified/removed] |
+| File               | Change                            |
+| ------------------ | --------------------------------- |
+| `path/to/file.py`  | [What was added/modified/removed] |
 | `path/to/other.py` | [What was added/modified/removed] |
 
 **Added:** [count] files, ~[count] lines
@@ -101,10 +101,34 @@ to the complexity of the work.]
 ```
 
 > 📐 **AUTHOR — What Changed**
-> 
+>
 > A manifest. What files were touched and what happened to them. This is the section that makes ri-stage documentation operationally useful — when something breaks in six months, the change manifest tells you where to look.
-> 
+>
 > The line count summary (added/removed) is optional but revealing. Net negative line counts are a sign of healthy ri-stage work — the practitioner is simplifying, not just adding.
+
+---
+
+```markdown
+## Verification
+
+[One line for routine work. A few lines for anything significant.
+What was run, what it caught.
+
+Examples:
+
+- "Tests pass (14/14). Lint clean. Self-reviewed agent output — no issues."
+- "Tests pass. Layer 2: caught a missing null check in the clip offset. Layer 3
+  applied — cross-agent review confirmed the state transition logic is correct."
+- "All quality tools clean. Small config change; tests cover the behavior."]
+```
+
+> 📐 **AUTHOR — Verification**
+>
+> Brief by design. The practitioner records what verification was applied — which layers, and what was caught. The value is in the record, not the prose. A one-liner is the norm for routine work; a few lines for anything non-trivial.
+>
+> If nothing was caught, say so: "All clean." If a layer was skipped deliberately, note it: "No cross-agent review — isolated utility function with full test coverage." Deliberate choices are documented decisions; unrecorded omissions are gaps.
+>
+> See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) for the full four-layer stack.
 
 ---
 
@@ -116,7 +140,7 @@ Observed behavior. Performance notes if applicable.]
 ```
 
 > 📐 **AUTHOR — Results**
-> 
+>
 > Evidence that the solution works. Can be as brief as "all tests pass, deployed, monitoring" or as detailed as test output, performance measurements, or before/after comparisons. Proportional to the stakes.
 
 ---
@@ -125,6 +149,7 @@ Observed behavior. Performance notes if applicable.]
 ## Notes
 
 [Optional. Anything worth recording that doesn't fit above:
+
 - Edge cases discovered
 - Related issues found but not addressed
 - Future work this enables or requires
@@ -132,9 +157,9 @@ Observed behavior. Performance notes if applicable.]
 ```
 
 > 📐 **AUTHOR — Notes**
-> 
+>
 > Optional section. This is where the practitioner leaves breadcrumbs for their future self. "The freeze-frame approach works for <5s outages but will produce visible artifacts for longer gaps — consider black frames or a 'stream interrupted' overlay if this becomes a problem."
-> 
+>
 > Not every ho needs this. Don't pad it.
 
 ---
@@ -206,7 +231,7 @@ The pattern was already there. The template just names it.
 
 ---
 
-_This template is part of the Ho System framework._ 
-_For shu-stage work, see [[shu-ho-template|Shu Ho Template]] (shu-ho-template.md)._ 
-_For ha-stage work, see [[ha-ho-template|Ha Ho Template]] (ha-ho-template.md)._ _For agent task specification, see [[agent-task-spec|Agent Task Specification]] (agent-task-spec.md)._ 
-*For template selection guidance, see the [[template-selection-guide|Template Selection Guide]] (template-selection-guide.md).*
+_This template is part of the Ho System framework._
+_For shu-stage work, see [[shu-ho-template|Shu Ho Template]] (shu-ho-template.md)._
+_For ha-stage work, see [[ha-ho-template|Ha Ho Template]] (ha-ho-template.md)._ _For agent task specification, see [[agent-task-spec|Agent Task Specification]] (agent-task-spec.md)._
+_For template selection guidance, see the [[template-selection-guide|Template Selection Guide]] (template-selection-guide.md)._

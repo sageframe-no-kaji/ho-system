@@ -10,15 +10,15 @@
 
 Shu-Ha-Ri (守破離) is a Japanese concept describing the three stages of mastery in any disciplined practice. It originates in martial arts and tea ceremony, but its logic applies wherever structured learning gives way to fluent action:
 
-- **Shu (守)** — *Protect/Follow.* Learn by adhering to the form. The form is not optional; it encodes principles the learner cannot yet see.
-- **Ha (破)** — *Break/Detach.* Depart from the form deliberately. The learner understands the principles well enough to adapt, challenge, and reshape the structure to fit the situation.
-- **Ri (離)** — *Transcend/Leave.* The form has been internalized. Practice flows without conscious reference to structure. The principles live in the practitioner, not the template.
+- **Shu (守)** — _Protect/Follow._ Learn by adhering to the form. The form is not optional; it encodes principles the learner cannot yet see.
+- **Ha (破)** — _Break/Detach._ Depart from the form deliberately. The learner understands the principles well enough to adapt, challenge, and reshape the structure to fit the situation.
+- **Ri (離)** — _Transcend/Leave._ The form has been internalized. Practice flows without conscious reference to structure. The principles live in the practitioner, not the template.
 
 ### Why This Matters for the Ho System
 
 The Ho System uses bounded, structured work sessions (hos) as the fundamental unit of human-AI collaborative development. But a ho designed for someone's first day looks nothing like a ho designed for someone maintaining a production system. The structure must breathe.
 
-This is not a weakness to be managed — it is a core feature of the methodology. The ho structure is *scaffolding*, and good scaffolding is designed to be removed. A framework that stays rigid as the learner develops is no longer serving the learner; it is serving itself.
+This is not a weakness to be managed — it is a core feature of the methodology. The ho structure is _scaffolding_, and good scaffolding is designed to be removed. A framework that stays rigid as the learner develops is no longer serving the learner; it is serving itself.
 
 The Kanyō pilot demonstrated this progression empirically. Early hos (01–03) were tightly prescriptive and worked well as learning instruments. Later work (Ho 05.6, the architecture redesign) broke from the template because the learner's needs had changed. Eventually, operational tasks (debugging, tuning, infrastructure setup) took a minimal problem/solution format with no instructional scaffolding at all. The 2-hour boundary breaking wasn't failure — it was evidence of growth.
 
@@ -30,7 +30,7 @@ This document formalizes that progression so it can be recognized, planned for, 
 
 ### 2.1 Shu Stage — Follow the Form
 
-> *"Trust the structure. It knows things you don't yet."*
+> _"Trust the structure. It knows things you don't yet."_
 
 #### Learner Characteristics
 
@@ -51,13 +51,15 @@ Shu-stage hos are the most prescriptive form in the system. They follow the full
 - **Duration:** ~2 hours, strictly bounded. The boundary is protective, not arbitrary — it prevents the learner from disappearing into a rabbit hole before they have the navigational skills to find their way back.
 - **Parts:** 4–9 sequenced parts, each 10–25 minutes, with explicit instructions for what to do and what to verify before moving on.
 - **Prerequisites:** Fully specified. The learner checks each item before beginning.
-- **Verification Questions:** Required at the end. These are not quizzes — they test whether the learner can *explain* what they built, not merely confirm that it works.
+- **Verification Questions:** Required at the end. These are not quizzes — they test whether the learner can _explain_ what they built, not merely confirm that it works.
 - **Devlog:** Full reflection including confidence self-assessment (1–5 scale), "what surprised me," and honest identification of what remains opaque.
 - **Commit discipline:** Commit after each part. This builds the habit of clean version control and creates recoverable checkpoints.
 
+Verification is structural in shu-stage hos, not an afterthought. The template requires test commands, completion checklists with quality tools, and understanding verification questions precisely because the learner hasn't yet developed the independent judgment to know when their work is correct. Both the test suite and the linting pipeline are established in Ho 01 and run throughout — they are foundational habits, not final checks. See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §3, and specifically Layer 1 (test coverage) and Layer 1b (the linting pipeline).
+
 #### AI Role
 
-In shu stage, AI functions as an *implementation partner with heavy human verification*. The learner commissions work, reviews it, questions it, and accepts or rejects it. The ho structure provides the scaffolding for this review process — verification questions, devlog reflections, and tiered understanding checks all force the learner to engage with the AI's output critically rather than passively.
+In shu stage, AI functions as an _implementation partner with heavy human verification_. The learner commissions work, reviews it, questions it, and accepts or rejects it. The ho structure provides the scaffolding for this review process — verification questions, devlog reflections, and tiered understanding checks all force the learner to engage with the AI's output critically rather than passively.
 
 The facilitator (or the ho author) has done the architectural thinking in advance. The learner is following a path someone else designed, but doing the walking themselves.
 
@@ -66,7 +68,7 @@ The facilitator (or the ho author) has done the architectural thinking in advanc
 [[ho-01-git-good|Ho 01]](examples/kanyo-pilot/ho-01-git-good.md) is a textbook shu-stage ho. It establishes professional project infrastructure (virtual environments, linting, testing, documentation) through step-by-step instruction:
 
 - Each part has explicit commands to run and expected outputs to verify
-- The ho explains *why* each tool matters ("Without venv: dependency hell")
+- The ho explains _why_ each tool matters ("Without venv: dependency hell")
 - The learner is told what to do and given enough context to understand the rationale
 - Duration target: 2 hours
 - Prerequisite: Ho 0.5 completed, specific tools verified as installed
@@ -84,11 +86,11 @@ The learner does not design the project structure — the ho does. The learner's
 
 ### 2.2 Ha Stage — Break from the Form
 
-> *"You know enough to see where the form doesn't fit. Now reshape it."*
+> _"You know enough to see where the form doesn't fit. Now reshape it."_
 
 #### Learner Characteristics
 
-The ha-stage learner has context. They understand the project's architecture, can read code with reasonable comprehension, and have begun developing their own opinions about how things should work. Critically, they have started *questioning the AI's suggestions* — not from insecurity, but from emerging judgment.
+The ha-stage learner has context. They understand the project's architecture, can read code with reasonable comprehension, and have begun developing their own opinions about how things should work. Critically, they have started _questioning the AI's suggestions_ — not from insecurity, but from emerging judgment.
 
 Ha-stage learners:
 
@@ -109,15 +111,17 @@ Ha-stage hos relax the prescriptive structure while retaining the elements that 
 - **Devlog:** Remains required, but shifts in character. Less "what I learned" and more "what I decided and why." The devlog becomes a design document, not a learning journal.
 - **Commit discipline:** Maintained, but the learner determines the granularity.
 
+At ha stage, the practitioner develops their own verification judgment — learning to calibrate which verification layers to apply based on task risk and criticality. The Agent Task Log tracks not just what was delegated, but what verification was applied to each delegation. Significant delegated work should include cross-agent verification for high-stakes changes. See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §3, particularly Layer 2 (directed self-review) and the emerging use of Layer 3 (cross-agent verification).
+
 #### AI Role
 
-In ha stage, AI shifts from *implementation partner with verification* to *collaborative problem-solver*. The learner drives the approach; the AI accelerates execution. The conversation looks less like instruction and more like two colleagues working through a design problem together.
+In ha stage, AI shifts from _implementation partner with verification_ to _collaborative problem-solver_. The learner drives the approach; the AI accelerates execution. The conversation looks less like instruction and more like two colleagues working through a design problem together.
 
 The learner is now capable of evaluating AI suggestions against their own understanding of the system. They push back. They propose alternatives. They sometimes overrule the AI and are right. Sometimes they overrule the AI and learn something from the resulting failure.
 
 #### Kanyō Evidence: Ho 05.6 — Architecture Redesign
 
-[[ho-05_6-architecture-redesign|Ho 05.6]](examples/kanyo-pilot/ho-05_6-architecture-redesign.md) is the clearest ha-stage ho in the Kanyō arc. The learner faced a system that wasn't working (tee-based clip extraction) and instead of debugging it, stepped back to ask: *"What are we actually trying to solve?"*
+[[ho-05_6-architecture-redesign|Ho 05.6]](examples/kanyo-pilot/ho-05_6-architecture-redesign.md) is the clearest ha-stage ho in the Kanyō arc. The learner faced a system that wasn't working (tee-based clip extraction) and instead of debugging it, stepped back to ask: _"What are we actually trying to solve?"_
 
 This ho demonstrates ha-stage characteristics:
 
@@ -142,11 +146,11 @@ Also notable: [[ho-06-gui-architecture-planning|Ho 06]](examples/kanyo-pilot/ho-
 
 ### 2.3 Ri Stage — Transcend the Form
 
-> *"The system is yours. Maintain it, extend it, keep it running."*
+> _"The system is yours. Maintain it, extend it, keep it running."_
 
 #### Learner Characteristics
 
-The ri-stage practitioner has internalized the methodology's principles. They don't need a template to structure their work — they naturally scope tasks, verify outcomes, document decisions, and maintain quality standards. The principles of the ho (bounded work, clear deliverables, honest self-assessment) have become *how they work*, not something they follow.
+The ri-stage practitioner has internalized the methodology's principles. They don't need a template to structure their work — they naturally scope tasks, verify outcomes, document decisions, and maintain quality standards. The principles of the ho (bounded work, clear deliverables, honest self-assessment) have become _how they work_, not something they follow.
 
 Ri-stage practitioners:
 
@@ -162,14 +166,16 @@ Ri-stage work often doesn't look like a "ho" at all. The formal structure has di
 
 - **Duration:** No time boundary. Work until the problem is solved. Some tasks take 30 minutes; some take a full day.
 - **Format:** Problem specification, not instructional sequence. States the issue, desired outcome, and relevant context. No parts, no prerequisite checks, no verification questions.
-- **Documentation:** Commit messages and brief write-ups focused on *what changed and why*, not on what was learned. The documentation serves future maintainers (including the practitioner's future self), not the learning process.
+- **Documentation:** Commit messages and brief write-ups focused on _what changed and why_, not on what was learned. The documentation serves future maintainers (including the practitioner's future self), not the learning process.
 - **Quality standards:** Maintained through internalized practice (linting, testing, type checking), not through template enforcement.
+
+At ri stage, the full verification stack — automated tests, linting, directed self-review, and cross-agent verification for significant changes — becomes standard practice, not a template requirement but an internalized discipline. The specific danger at ri stage is efficiency erosion: skipping verification on tasks that feel routine. A bug in a "small" change to a state machine is no less dangerous because the change felt easy to write. See the full workflow diagram in [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §4.
 
 #### AI Role
 
-In ri stage, AI is an *implementation accelerator for well-defined tasks*. The practitioner knows exactly what needs to happen and uses AI to execute faster than they could alone. The conversation is directive and efficient: "Fix the departure clip timing. The bug is that we're extracting from the end of the recording file instead of from the last detection time."
+In ri stage, AI is an _implementation accelerator for well-defined tasks_. The practitioner knows exactly what needs to happen and uses AI to execute faster than they could alone. The conversation is directive and efficient: "Fix the departure clip timing. The bug is that we're extracting from the end of the recording file instead of from the last detection time."
 
-There is little pedagogical value in these interactions and that is fine. The learning happened in shu and ha. Ri is about *doing*, with the full competence that earlier stages developed.
+There is little pedagogical value in these interactions and that is fine. The learning happened in shu and ha. Ri is about _doing_, with the full competence that earlier stages developed.
 
 #### Kanyō Evidence
 
@@ -200,12 +206,14 @@ Transitions between stages are not events — they are gradual shifts that a fac
 The learner is ready for ha-stage work when they:
 
 - **Explain design decisions unprompted.** Not just "I did what the ho said" but "I chose this approach because..." The shift from executing to reasoning is the clearest signal.
-- **Question AI suggestions.** When the learner pushes back on an AI recommendation and can articulate *why* ("That adds complexity we don't need" or "That doesn't account for the stream reconnection case"), they are thinking architecturally.
+- **Question AI suggestions.** When the learner pushes back on an AI recommendation and can articulate _why_ ("That adds complexity we don't need" or "That doesn't account for the stream reconnection case"), they are thinking architecturally.
 - **Identify tradeoffs.** The learner sees that choices have costs and can weigh them: speed vs. accuracy, simplicity vs. features, now vs. later.
 - **Self-scope within a ho.** The learner starts breaking parts differently than prescribed, or identifying when a part is too big or too small. They are developing their own sense of work decomposition.
 - **Exceed the time boundary productively.** If the learner consistently runs past 2 hours not because they're lost, but because they're engaged in genuine problem-solving — that's a ha signal, not a discipline failure.
 
-**Caution:** The learner who *says* they understand but cannot explain it to someone else is not ready. Confidence without articulacy is still shu.
+Another signal is verification design: the learner begins questioning whether the template's built-in verification is sufficient and starts designing their own verification approaches — creating tests that go beyond the ho's prescribed checks, or identifying coverage gaps the author didn't anticipate.
+
+**Caution:** The learner who _says_ they understand but cannot explain it to someone else is not ready. Confidence without articulacy is still shu.
 
 ### 3.2 Ha → Ri: From Building to Operating
 
@@ -216,8 +224,9 @@ The transition from ha to ri is often driven by the project itself rather than t
 - **The learner owns the codebase.** They can navigate it without guidance, diagnose problems from logs, and make targeted changes with confidence.
 - **Patterns are internalized.** The learner commits cleanly, tests automatically, documents as a matter of course — not because the template requires it.
 - **The ho template adds friction, not value.** If writing a prerequisites check and verification questions for a 30-minute bug fix feels absurd, the learner has moved past the structure.
+- **Cross-agent verification becomes habitual.** The practitioner reaches for a second evaluation pass on significant changes as a matter of course, not as an occasional practice reserved for moments of uncertainty.
 
-**Caution:** Ri-stage work still requires discipline. The danger is not moving to ri too early (that's rare — the project demands usually enforce appropriate structure). The danger is *losing the reflective practice* that shu and ha developed. A ri-stage practitioner who stops documenting decisions, stops testing, or stops self-assessing has not transcended the form — they've abandoned it.
+**Caution:** Ri-stage work still requires discipline. The danger is not moving to ri too early (that's rare — the project demands usually enforce appropriate structure). The danger is _losing the reflective practice_ that shu and ha developed. A ri-stage practitioner who stops documenting decisions, stops testing, or stops self-assessing has not transcended the form — they've abandoned it.
 
 ---
 
@@ -229,15 +238,15 @@ The most common authoring mistake is writing every ho as if the learner is in sh
 
 **Match the template to the stage:**
 
-| Element | Shu | Ha | Ri |
-|---|---|---|---|
-| **Template** | [[shu-ho-template|Shu Ho Template]](framework/templates/shu-ho-template.md) | [[ha-ho-template|Ha Ho Template]](framework/templates/ha-ho-template.md) | [[ri-ho-template|Ri Ho Template]](framework/templates/ri-ho-template.md) |
-| **Duration** | ~2 hours (strict) | 2–4 hours (flexible) | Until done |
-| **Parts** | 4–9, author-defined | Loosely structured or self-defined | None |
-| **Prerequisites** | Explicit checklist | Brief context | Problem statement |
-| **Verification** | Required questions | Reflection prompts | Commit + optional write-up |
-| **Devlog** | Full (learning focus) | Full (decision focus) | Brief or commit-only |
-| **AI guidance** | "Review and verify each output" | "Discuss approach, then execute" | "Here's the task, go" |
+| Element           | Shu                             | Ha                                                        | Ri                         |
+| ----------------- | ------------------------------- | --------------------------------------------------------- | -------------------------- | ------------------------------------------------------- | ---------------- | ------------------------------------------------------- |
+| **Template**      | [[shu-ho-template               | Shu Ho Template]](framework/templates/shu-ho-template.md) | [[ha-ho-template           | Ha Ho Template]](framework/templates/ha-ho-template.md) | [[ri-ho-template | Ri Ho Template]](framework/templates/ri-ho-template.md) |
+| **Duration**      | ~2 hours (strict)               | 2–4 hours (flexible)                                      | Until done                 |
+| **Parts**         | 4–9, author-defined             | Loosely structured or self-defined                        | None                       |
+| **Prerequisites** | Explicit checklist              | Brief context                                             | Problem statement          |
+| **Verification**  | Required questions              | Reflection prompts                                        | Commit + optional write-up |
+| **Devlog**        | Full (learning focus)           | Full (decision focus)                                     | Brief or commit-only       |
+| **AI guidance**   | "Review and verify each output" | "Discuss approach, then execute"                          | "Here's the task, go"      |
 
 ### 4.2 When to Enforce Structure vs. When to Relax It
 
@@ -256,9 +265,9 @@ The most common authoring mistake is writing every ho as if the learner is in sh
 
 ### 4.3 The Danger Zones
 
-**Keeping beginners in shu too long:** The learner becomes dependent on the template. They wait for instructions instead of developing initiative. They build skill at *following* hos rather than skill at *thinking through problems*. If a learner has completed 6–8 shu-stage hos and still cannot scope a simple task independently, the methodology has overcorrected toward safety.
+**Keeping beginners in shu too long:** The learner becomes dependent on the template. They wait for instructions instead of developing initiative. They build skill at _following_ hos rather than skill at _thinking through problems_. If a learner has completed 6–8 shu-stage hos and still cannot scope a simple task independently, the methodology has overcorrected toward safety.
 
-**Advancing to ha too quickly:** The learner makes confident-sounding decisions based on incomplete understanding. They break things they don't know how to fix. They skip testing because it "slows them down." They produce code that works today but creates compounding debt. The hallmark is *inability to recover from failure* — a ha-stage learner should be able to diagnose and fix their own mistakes.
+**Advancing to ha too quickly:** The learner makes confident-sounding decisions based on incomplete understanding. They break things they don't know how to fix. They skip testing because it "slows them down." They produce code that works today but creates compounding debt. The hallmark is _inability to recover from failure_ — a ha-stage learner should be able to diagnose and fix their own mistakes.
 
 **Skipping ha entirely:** This happens when the learner goes directly from following instructions to doing operational tasks (perhaps because the system goes live before their skills have fully developed). The result is a practitioner who can maintain a system but cannot redesign it — they lack the architectural thinking that ha-stage practice develops.
 
@@ -291,7 +300,7 @@ The ha stage emerges mid-project as the learner develops system-level understand
 - **[[ho-05_6-architecture-redesign|Ho 05.6 — Architecture Redesign]](examples/kanyo-pilot/ho-05_6-architecture-redesign.md):** The pivot point. ~4 hours of deep thinking produced an architectural decision (tee → buffer) that simplified the entire system, removed 800 lines of code, and resolved multiple integration bugs simultaneously. The devlog reads like a technical design document: "Step back before debugging." "RAM is cheap, complexity is expensive." "The boring solution is usually right."
 - **[[ho-06-gui-architecture-planning|Ho 06 — GUI Architecture Planning]](examples/kanyo-pilot/ho-06-gui-architecture-planning.md):** Requirements analysis, technology evaluation, and deployment planning for three frontend components. The learner is doing genuine architecture work — defining interfaces, evaluating tradeoffs between htmx/Alpine.js/React, and making deployment decisions (local Docker vs. Cloudflare Pages).
 
-The ha-stage transition is most visible in the *document format*. Ho 05.6 has no prerequisites checklist, no verification questions, no time-boxed parts. It has: Problem → Thinking Process → Alternatives → Decision → Implementation → Lessons Learned. The structure follows the work, not the template.
+The ha-stage transition is most visible in the _document format_. Ho 05.6 has no prerequisites checklist, no verification questions, no time-boxed parts. It has: Problem → Thinking Process → Alternatives → Decision → Implementation → Lessons Learned. The structure follows the work, not the template.
 
 ### 5.3 Ri Stage: Operational Work
 
@@ -310,30 +319,30 @@ These documents share common traits: they're shorter, more direct, and focused e
 
 Nobody planned for the Kanyō arc to follow shu-ha-ri. It happened because the learner's needs changed as their capability developed, and the methodology — when it worked well — adapted to meet those needs. When the methodology didn't adapt (the 2-hour boundary becoming constraining in ha stage), the learner naturally broke from the form.
 
-This is the model working as intended. The goal was never permanent adherence to the template. The goal was to build capability that eventually outgrows the template. When a learner *needs* the full shu structure to do good work, they should have it. When they don't, the structure should get out of the way.
+This is the model working as intended. The goal was never permanent adherence to the template. The goal was to build capability that eventually outgrows the template. When a learner _needs_ the full shu structure to do good work, they should have it. When they don't, the structure should get out of the way.
 
 **The full Kanyō progression:**
 
-| Ho | Title | Stage | Signal |
-|---|---|---|---|
-| 0.5 | [[ho-0_5-tool-mastery|Tool Mastery]](examples/kanyo-pilot/ho-0_5-tool-mastery.md) | Shu | Orientation, setup |
-| 01 | [[ho-01-git-good|Git Good]](examples/kanyo-pilot/ho-01-git-good.md) | Shu | Step-by-step, full template |
-| 02 | [[ho-02-falcon-vision|Falcon Vision]](examples/kanyo-pilot/ho-02-falcon-vision.md) | Shu | Structured, but reflections deepen |
-| 03 | [[ho-03-live-detection-notification|Live Detection]](examples/kanyo-pilot/ho-03-live-detection-notification.md) | Shu | Prescriptive, harder problems |
-| 04 | [[ho-04-docker-deploy|Docker Deploy]](examples/kanyo-pilot/ho-04-docker-deploy.md) | Shu | New domain (DevOps), back to basics |
-| 05 | [[ho-05-deployment-verification|Deployment Verification]](examples/kanyo-pilot/ho-05-deployment-verification.md) | Shu → Ha | Verifying own work, operational focus |
-| 05.5 | [[ho-05_5-dev-testing|Dev Testing Strategy]](examples/kanyo-pilot/ho-05_5-dev-testing.md) | Ha | Self-directed process improvement |
-| 05.6 | [[ho-05_6-architecture-redesign|Architecture Redesign]](examples/kanyo-pilot/ho-05_6-architecture-redesign.md) | Ha | Tradeoff analysis, architectural judgment |
-| 05.7 | [[ho-05_7-state-redesign|State Machine Redesign]](examples/kanyo-pilot/ho-05_7-state-redesign.md) | Ha → Ri | Major simplification, self-directed |
-| 05.71 | [[ho-05_71-stream-outage-fix|Stream Outage Fix]](examples/kanyo-pilot/ho-05_71-stream-outage-fix.md) | Ri | Targeted debugging |
-| 05.72 | [[ho-05_72-startup-confirmation|Startup Confirmation]](examples/kanyo-pilot/ho-05_72-startup-confirmation.md) | Ri | Feature design and implementation |
-| 06 | [[ho-06-gui-architecture-planning|GUI Architecture]](examples/kanyo-pilot/ho-06-gui-architecture-planning.md) | Ha | Requirements analysis, tech evaluation |
-| 06.1 | [[ho-06_1-admin-gui-implementation|Admin GUI Implementation]](examples/kanyo-pilot/ho-06_1-admin-gui-implementation.md) | Ha | Large build, collaborative |
-| 06.12 | [[ho-06_12-admin-gui-code-check|Code Quality Check]](examples/kanyo-pilot/ho-06_12-admin-gui-code-check.md) | Ri | Routine maintenance |
-| 06.13 | [[ho-06_13-arrival-confirmation-system|Arrival Confirmation]](examples/kanyo-pilot/ho-06_13-arrival-confirmation-system.md) | Ri | Self-directed feature |
-| 06.5 | [[ho-06_5-public-viewer-web-gui|Public Viewer]](examples/kanyo-pilot/ho-06_5-public-viewer-web-gui.md) | Ha | Substantial new build |
-| 06.51 | [[ho-06_51-cloudflare-tunnnel|Cloudflare Tunnel]](examples/kanyo-pilot/ho-06_51-cloudflare-tunnnel.md) | Ri | Infrastructure setup |
-| 07 | [[ho-07-yolo-training|YOLO Training]](examples/kanyo-pilot/ho-07-yolo-training.md) | Ha | New domain (ML), planning mode |
+| Ho    | Title                                  | Stage                                                                                | Signal   |
+| ----- | -------------------------------------- | ------------------------------------------------------------------------------------ | -------- | ----------------------------------------- |
+| 0.5   | [[ho-0_5-tool-mastery                  | Tool Mastery]](examples/kanyo-pilot/ho-0_5-tool-mastery.md)                          | Shu      | Orientation, setup                        |
+| 01    | [[ho-01-git-good                       | Git Good]](examples/kanyo-pilot/ho-01-git-good.md)                                   | Shu      | Step-by-step, full template               |
+| 02    | [[ho-02-falcon-vision                  | Falcon Vision]](examples/kanyo-pilot/ho-02-falcon-vision.md)                         | Shu      | Structured, but reflections deepen        |
+| 03    | [[ho-03-live-detection-notification    | Live Detection]](examples/kanyo-pilot/ho-03-live-detection-notification.md)          | Shu      | Prescriptive, harder problems             |
+| 04    | [[ho-04-docker-deploy                  | Docker Deploy]](examples/kanyo-pilot/ho-04-docker-deploy.md)                         | Shu      | New domain (DevOps), back to basics       |
+| 05    | [[ho-05-deployment-verification        | Deployment Verification]](examples/kanyo-pilot/ho-05-deployment-verification.md)     | Shu → Ha | Verifying own work, operational focus     |
+| 05.5  | [[ho-05_5-dev-testing                  | Dev Testing Strategy]](examples/kanyo-pilot/ho-05_5-dev-testing.md)                  | Ha       | Self-directed process improvement         |
+| 05.6  | [[ho-05_6-architecture-redesign        | Architecture Redesign]](examples/kanyo-pilot/ho-05_6-architecture-redesign.md)       | Ha       | Tradeoff analysis, architectural judgment |
+| 05.7  | [[ho-05_7-state-redesign               | State Machine Redesign]](examples/kanyo-pilot/ho-05_7-state-redesign.md)             | Ha → Ri  | Major simplification, self-directed       |
+| 05.71 | [[ho-05_71-stream-outage-fix           | Stream Outage Fix]](examples/kanyo-pilot/ho-05_71-stream-outage-fix.md)              | Ri       | Targeted debugging                        |
+| 05.72 | [[ho-05_72-startup-confirmation        | Startup Confirmation]](examples/kanyo-pilot/ho-05_72-startup-confirmation.md)        | Ri       | Feature design and implementation         |
+| 06    | [[ho-06-gui-architecture-planning      | GUI Architecture]](examples/kanyo-pilot/ho-06-gui-architecture-planning.md)          | Ha       | Requirements analysis, tech evaluation    |
+| 06.1  | [[ho-06_1-admin-gui-implementation     | Admin GUI Implementation]](examples/kanyo-pilot/ho-06_1-admin-gui-implementation.md) | Ha       | Large build, collaborative                |
+| 06.12 | [[ho-06_12-admin-gui-code-check        | Code Quality Check]](examples/kanyo-pilot/ho-06_12-admin-gui-code-check.md)          | Ri       | Routine maintenance                       |
+| 06.13 | [[ho-06_13-arrival-confirmation-system | Arrival Confirmation]](examples/kanyo-pilot/ho-06_13-arrival-confirmation-system.md) | Ri       | Self-directed feature                     |
+| 06.5  | [[ho-06_5-public-viewer-web-gui        | Public Viewer]](examples/kanyo-pilot/ho-06_5-public-viewer-web-gui.md)               | Ha       | Substantial new build                     |
+| 06.51 | [[ho-06_51-cloudflare-tunnnel          | Cloudflare Tunnel]](examples/kanyo-pilot/ho-06_51-cloudflare-tunnnel.md)             | Ri       | Infrastructure setup                      |
+| 07    | [[ho-07-yolo-training                  | YOLO Training]](examples/kanyo-pilot/ho-07-yolo-training.md)                         | Ha       | New domain (ML), planning mode            |
 
 Note: The stages don't proceed in strict linear order. The learner moved between ha and ri depending on the nature of the work, and occasionally returned to shu-like structure when entering a genuinely new domain (Docker in Ho 04, ML in Ho 07). This is expected and correct.
 
@@ -351,4 +360,4 @@ Note: The stages don't proceed in strict linear order. The learner moved between
 
 ---
 
-*This document is part of the Ho System framework. It describes the public methodology for adapting ho structure to learner development. For guidance on facilitating shu-ha-ri transitions with learners, see the facilitation protocols (proprietary).*
+_This document is part of the Ho System framework. It describes the public methodology for adapting ho structure to learner development. For guidance on facilitating shu-ha-ri transitions with learners, see the facilitation protocols (proprietary)._

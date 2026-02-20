@@ -13,29 +13,30 @@
 This template has two layers:
 
 1. **The ho structure** — sections marked with `#` headers that appear in the finished ho document.
-2. **Authoring notes** — blocks marked with `> 📐 AUTHOR` that explain *why* a section exists, what's cross-project (fixed) vs. project-specific (adapt), and how AI should handle it.
+2. **Authoring notes** — blocks marked with `> 📐 AUTHOR` that explain _why_ a section exists, what's cross-project (fixed) vs. project-specific (adapt), and how AI should handle it.
 
 When creating a ho from this template:
+
 - Keep all `#` header sections (they are structurally required)
 - Read the authoring notes, then delete them from the finished document
 - Sections marked **[LEARNER COMPLETES]** are filled in by the learner during the session, not the author
-- The ha template is *lighter* than shu. Resist the urge to over-specify.
+- The ha template is _lighter_ than shu. Resist the urge to over-specify.
 
 ### How Ha Differs from Shu
 
 The shu template is organized around **parts** — sequenced steps the learner follows. The ha template is organized around **phases** — thinking, execution, and reflection. The difference is structural, not cosmetic:
 
-| | Shu | Ha |
-|---|---|---|
-| **Organizing unit** | Parts (4–9, author-defined) | Phases (3, fixed structure) |
-| **Who scopes the work** | The ho author | The learner |
-| **Duration** | ~2 hours (strict) | 2–4 hours (guideline) |
-| **Primary artifact** | Working code/config | Decision documentation + working code |
-| **AI relationship** | "Review and verify" | "Think together, then execute" |
-| **Devlog character** | Learning journal | Design decision record |
-| **Commit rhythm** | After every part | At natural breakpoints |
+|                         | Shu                         | Ha                                    |
+| ----------------------- | --------------------------- | ------------------------------------- |
+| **Organizing unit**     | Parts (4–9, author-defined) | Phases (3, fixed structure)           |
+| **Who scopes the work** | The ho author               | The learner                           |
+| **Duration**            | ~2 hours (strict)           | 2–4 hours (guideline)                 |
+| **Primary artifact**    | Working code/config         | Decision documentation + working code |
+| **AI relationship**     | "Review and verify"         | "Think together, then execute"        |
+| **Devlog character**    | Learning journal            | Design decision record                |
+| **Commit rhythm**       | After every part            | At natural breakpoints                |
 
-The most important difference: in shu, the ho author has done the architectural thinking. In ha, *the learner does the architectural thinking*, and the template provides the structure for doing it well.
+The most important difference: in shu, the ho author has done the architectural thinking. In ha, _the learner does the architectural thinking_, and the template provides the structure for doing it well.
 
 ### The Three-Phase Model
 
@@ -76,7 +77,7 @@ This is what Ho 05.6 (Architecture Redesign) in the Kanyō pilot did naturally �
 
 ## Template Begins Here
 
-> *Everything below this line is the ho document structure. Authoring notes are inline.*
+> _Everything below this line is the ho document structure. Authoring notes are inline._
 
 ---
 
@@ -87,11 +88,11 @@ This is what Ho 05.6 (Architecture Redesign) in the Kanyō pilot did naturally �
 ```
 
 > 📐 **AUTHOR — Title & Subtitle**
-> *Cross-project structure. Project-specific content.*
+> _Cross-project structure. Project-specific content._
 >
 > Same conventions as shu: memorable title, clear subtitle. The subtitle for a
-> ha-stage ho often describes a *decision* or *transformation* rather than a
-> *feature*: "Redesign clip extraction from segment-based to buffer-based"
+> ha-stage ho often describes a _decision_ or _transformation_ rather than a
+> _feature_: "Redesign clip extraction from segment-based to buffer-based"
 > rather than "Set up clip extraction."
 >
 > Numbering: ha-stage hos often emerge mid-project as decimal numbers (5.5, 5.6)
@@ -109,7 +110,7 @@ This is what Ho 05.6 (Architecture Redesign) in the Kanyō pilot did naturally �
 ```
 
 > 📐 **AUTHOR — Header Fields**
-> *Cross-project structure. Project-specific content.*
+> _Cross-project structure. Project-specific content._
 >
 > **Duration** is 2–4 hours, stated as a guideline. The learner has earned
 > enough self-awareness to manage their own time. The guideline serves as a
@@ -122,6 +123,7 @@ This is what Ho 05.6 (Architecture Redesign) in the Kanyō pilot did naturally �
 > or ri-stage work (just execute) rather than genuine ha-stage work.
 >
 > Examples of good "Decision Required" statements:
+>
 > - "Choose between tee-based and buffer-based clip extraction architecture"
 > - "Select frontend technology stack for admin, viewer, and public interfaces"
 > - "Design the state machine for visit lifecycle management"
@@ -147,13 +149,13 @@ dependencies from other components.]
 ```
 
 > 📐 **AUTHOR — Context**
-> *Cross-project structure. Project-specific content.*
+> _Cross-project structure. Project-specific content._
 >
 > This replaces shu's "Why This Ho Matters" and "Prerequisites." A ha-stage
 > learner doesn't need motivational framing or a prerequisites checklist — they
 > know why they're here and they can verify their own readiness.
 >
-> What they DO need is *decision context*: what's the current state, what
+> What they DO need is _decision context_: what's the current state, what
 > constraints exist, and what's at stake. This is the information required
 > to make a good architectural choice.
 >
@@ -165,7 +167,7 @@ dependencies from other components.]
 > **"Constraints"** prevents the learner from designing in a vacuum. The best
 > architecture in the abstract may be wrong given the actual constraints.
 > "RAM is cheap" was a constraint-aware insight in Ho 05.6 — buffer-based
-> architecture was viable *because* the deployment target had 16GB RAM.
+> architecture was viable _because_ the deployment target had 16GB RAM.
 
 ---
 
@@ -175,18 +177,21 @@ dependencies from other components.]
 ## Understanding Tiers for This Ho
 
 **Tier 2 — Functional Understanding** (the work of this ho):
+
 - [Component/concept]: [What understanding looks like after this session]
 - [Component/concept]: [What understanding looks like after this session]
 
 **Tier 1 — Black Box** (use but don't investigate):
+
 - [Component]: [What you need to know to use it]
 
 **Tier 3 — Deep Understanding** (if this ho develops it):
+
 - [Component]: [What architectural understanding this ho should produce]
 ```
 
 > 📐 **AUTHOR — Understanding Tiers**
-> *Cross-project structure. Project-specific content.*
+> _Cross-project structure. Project-specific content._
 >
 > Ha-stage hos are more likely to produce Tier 3 understanding than shu-stage
 > hos. When the learner is making architectural decisions — evaluating tradeoffs,
@@ -214,16 +219,17 @@ dependencies from other components.]
 
 [Define the problem in your own words. Not what the ho says — what YOU
 understand the problem to be. Include:
+
 - What's currently happening that shouldn't be
 - What's not happening that should be
 - Why the current approach is insufficient]
 ```
 
 > 📐 **AUTHOR — The Problem (Learner-Defined)**
-> *Cross-project structure. The learner fills this in.*
+> _Cross-project structure. The learner fills this in._
 >
 > This is the first major structural difference from shu. In shu, the ho
-> *tells* the learner what the problem is. In ha, the learner *articulates*
+> _tells_ the learner what the problem is. In ha, the learner _articulates_
 > the problem themselves. The ho provides context (above), but the problem
 > definition is the learner's work.
 >
@@ -244,20 +250,21 @@ understand the problem to be. Include:
 **[LEARNER COMPLETES]**
 
 [Identify at least 2 approaches. For each one:
+
 - Brief description (what is it?)
 - Key advantage (what's the best thing about it?)
 - Key risk (what could go wrong or what does it cost?)
 - Fit with constraints (does it work given what's fixed?)]
 
-| Approach | Advantage | Risk | Fits Constraints? |
-|---|---|---|---|
+| Approach     | Advantage    | Risk          | Fits Constraints?        |
+| ------------ | ------------ | ------------- | ------------------------ |
 | [Approach A] | [Best thing] | [Worst thing] | [Yes/No/Partially — why] |
 | [Approach B] | [Best thing] | [Worst thing] | [Yes/No/Partially — why] |
 | [Approach C] | [Best thing] | [Worst thing] | [Yes/No/Partially — why] |
 ```
 
 > 📐 **AUTHOR — Approaches**
-> *Cross-project structure. The learner fills this in.*
+> _Cross-project structure. The learner fills this in._
 >
 > The table format is a scaffold, not a requirement — the learner may prefer
 > prose or a different structure. What IS required is that multiple approaches
@@ -275,6 +282,7 @@ understand the problem to be. Include:
 > recommendation. The AI can inform; the learner decides.
 >
 > Prompt patterns for this phase:
+>
 > - "I'm trying to solve [problem]. I've thought of [A] and [B]. What other
 >   approaches should I consider?"
 > - "What are the tradeoffs between [A] and [B] for a system with [constraints]?"
@@ -294,6 +302,7 @@ here. What does this choice optimize for? What does it sacrifice?
 What would make you reconsider?]
 
 **What this means for implementation:**
+
 - [Key implementation implication 1]
 - [Key implementation implication 2]
 - [What changes in the existing system]
@@ -301,11 +310,11 @@ What would make you reconsider?]
 ```
 
 > 📐 **AUTHOR — Decision**
-> *Cross-project structure. The learner fills this in.*
+> _Cross-project structure. The learner fills this in._
 >
 > The decision section is the most important artifact in a ha-stage ho. It's
 > the evidence that architectural thinking happened. Without it, the learner
-> may have made a good decision but has no record of *why* — which means
+> may have made a good decision but has no record of _why_ — which means
 > they can't learn from it, defend it, or know when to revisit it.
 >
 > **"What would make you reconsider?"** is a powerful question. It forces
@@ -348,7 +357,7 @@ where the risks are.]
 ```
 
 > 📐 **AUTHOR — Implementation Plan**
-> *Cross-project structure. The learner fills this in.*
+> _Cross-project structure. The learner fills this in._
 >
 > The learner defines their own work decomposition. This is a deliberate
 > contrast with shu, where the ho author sequences the parts. The ability
@@ -393,7 +402,7 @@ What did you hand off? What did you review? Did you catch anything?]
 ```
 
 > 📐 **AUTHOR — Work Log and Agent Task Log**
-> *Cross-project structure. The learner fills this in during execution.*
+> _Cross-project structure. The learner fills this in during execution._
 >
 > The Work Log replaces shu's per-part verification steps. The learner is
 > tracking their own progress rather than checking off someone else's steps.
@@ -405,7 +414,6 @@ What did you hand off? What did you review? Did you catch anything?]
 > 1. **Learning:** The learner develops judgment about what to delegate
 >    and what to do manually. Over time, the log reveals patterns in their
 >    delegation decisions.
->
 > 2. **Quality:** If a bug surfaces later, the agent task log helps trace
 >    whether it came from a delegated task that wasn't reviewed carefully
 >    enough. This is diagnostic, not punitive.
@@ -413,10 +421,12 @@ What did you hand off? What did you review? Did you catch anything?]
 > The log should be brief. "Handed agent the test scaffolding, reviewed,
 > added two edge cases it missed" is sufficient. This is working documentation,
 > not a report.
+>
+> The log should also record the verification method applied to each delegation — at minimum, whether the output was run through the lint pipeline and test suite before acceptance. For significant delegated work (changes to core logic, state machines, data models), consider cross-agent verification: having a separate model review the output against the spec before human review. This catches a class of error that human attention tends to miss. See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) Layers 2–3.
 
 ---
 
-```markdown
+````markdown
 ### Commit Points
 
 [Commit at natural breakpoints — when a coherent piece of work is complete.
@@ -426,10 +436,10 @@ Not after every small change, not in one giant commit at the end.]
 git add [files]
 git commit -m "[conventional commit message]"
 \```
-```
+````
 
 > 📐 **AUTHOR — Commit Points**
-> *Cross-project structure.*
+> _Cross-project structure._
 >
 > In shu, commits happen after every part — externally mandated rhythm.
 > In ha, the learner determines commit granularity. The template reminds
@@ -478,7 +488,7 @@ did I learn about my own judgment?"
 ```
 
 > 📐 **AUTHOR — Outcome and Implementation Revealed**
-> *Cross-project structure. The learner fills this in.*
+> _Cross-project structure. The learner fills this in._
 >
 > **"Decision quality"** is the ha-stage equivalent of shu's understanding
 > verification. Instead of "can you explain X?" it asks "was your decision
@@ -508,10 +518,12 @@ did I learn about my own judgment?"
 
 **Performance observations:** [Anything notable — speed, resource usage,
 behavior under load. Only if relevant to this ho.]
+
+**Verification applied:** [Which layers did you use? What did they catch? Where did you under- or over-verify? Layer 1: tests. Layer 1b: lint pipeline. Layer 2: directed self-review. Layer 3: cross-agent verification if applicable.]
 ```
 
 > 📐 **AUTHOR — Performance and Quality**
-> *Cross-project structure. The learner fills this in.*
+> _Cross-project structure. The learner fills this in._
 >
 > This section maintains the quality discipline established in shu without
 > the step-by-step "run this command" scaffolding. The learner reports on
@@ -523,7 +535,7 @@ behavior under load. Only if relevant to this ho.]
 
 ---
 
-```markdown
+````markdown
 ---
 
 ## Devlog Entry
@@ -531,6 +543,7 @@ behavior under load. Only if relevant to this ho.]
 Create or update: `devlog/ho-[N]-[slug].md`
 
 \```markdown
+
 # Ho [N]: [Title] — Devlog
 
 **Date:** [date]
@@ -558,12 +571,15 @@ the learner has enough confidence to reduce complexity.]
 ## Understanding Tiers Achieved
 
 **Tier 2 (Functional):**
+
 - [What I now understand well enough to modify and explain] ✓/✗
 
 **Tier 3 (Deep):**
+
 - [What I now understand at an architectural level — what I designed and could redesign]
 
 **Tier 1 (Black Box):**
+
 - [What I consciously left as a black box]
 
 ## AI Collaboration Reflection
@@ -589,6 +605,7 @@ rhythm useful, or did you find yourself looping back?]
 Instead: "what I learned about making decisions in this kind of system."
 
 Examples from Kanyō:
+
 - "Step back before debugging" (Ho 05.6)
 - "RAM is cheap, complexity is expensive" (Ho 05.6)
 - "The boring solution is usually right" (Ho 05.6)
@@ -607,13 +624,13 @@ Examples from Kanyō:
 [Hindsight. Not self-criticism — honest calibration. What would a
 second attempt look like?]
 \```
-```
+````
 
 > 📐 **AUTHOR — Devlog**
-> *Cross-project structure. Cross-project template.*
+> _Cross-project structure. Cross-project template._
 >
 > The ha-stage devlog is fundamentally different from shu. It's organized
-> around *the decision* rather than *what was learned*. The key sections:
+> around _the decision_ rather than _what was learned_. The key sections:
 >
 > **"The Decision"** — a compressed record of the Phase 1 thinking. Someone
 > reading the devlog months later should understand what was decided, why,
@@ -631,7 +648,7 @@ second attempt look like?]
 > how the learner uses AI across modes.
 >
 > **Confidence scale is recalibrated for ha.** In shu, confidence measures
-> understanding. In ha, it measures *judgment* — can you defend the decision
+> understanding. In ha, it measures _judgment_ — can you defend the decision
 > and apply the reasoning elsewhere? A ha-stage learner at level 5 has
 > extracted a reusable principle, not just solved a problem.
 >
@@ -656,7 +673,7 @@ What needs monitoring?]
 ```
 
 > 📐 **AUTHOR — What's Next**
-> *Cross-project structure. Project-specific content.*
+> _Cross-project structure. Project-specific content._
 >
 > Ha-stage work often opens up multiple paths. The architecture redesign
 > enables GUI development, YOLO fine-tuning, and deployment improvements —
@@ -673,16 +690,16 @@ What needs monitoring?]
 ```markdown
 ---
 
-*Ho authored by: [name or "self-directed"]*
-*Template version: ha-v1 (draft)*
-*Project: [project name]*
-*Phase 1 duration: [thinking time]*
-*Phase 2 duration: [execution time]*
-*Phase 3 duration: [reflection time]*
+_Ho authored by: [name or "self-directed"]_
+_Template version: ha-v1 (draft)_
+_Project: [project name]_
+_Phase 1 duration: [thinking time]_
+_Phase 2 duration: [execution time]_
+_Phase 3 duration: [reflection time]_
 ```
 
 > 📐 **AUTHOR — Metadata**
-> *Cross-project structure.*
+> _Cross-project structure._
 >
 > The phase duration split is new. Tracking how long the learner spends
 > thinking vs. executing vs. reflecting reveals patterns over time:
@@ -766,7 +783,7 @@ What they lacked: explicit AI mode guidance (thinking vs. agent), agent task tra
 
 ---
 
-*This template is part of the Ho System framework.*
-*For shu-stage work, see [[shu-ho-template|Shu Ho Template]](shu-ho-template.md).*
-*For ri-stage work, see [[ri-ho-template|Ri Ho Template]](ri-ho-template.md).*
-*For template selection guidance, see the [[template-selection-guide|Template Selection Guide]] (template-selection-guide.md).*
+_This template is part of the Ho System framework._
+_For shu-stage work, see [[shu-ho-template|Shu Ho Template]](shu-ho-template.md)._
+_For ri-stage work, see [[ri-ho-template|Ri Ho Template]](ri-ho-template.md)._
+_For template selection guidance, see the [[template-selection-guide|Template Selection Guide]] (template-selection-guide.md)._

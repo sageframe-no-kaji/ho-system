@@ -8,7 +8,7 @@
 
 The Ho System is a structured methodology for building production-quality software using AI as an implementation partner. It's designed for people who think in systems — who can architect solutions, evaluate tradeoffs, and make design decisions — but who haven't followed a traditional developer path.
 
-The core insight: the bottleneck in AI-assisted development isn't access to tools. Anyone can prompt an AI to generate code. The bottleneck is *judgment* — knowing what to build, whether what was built is correct, and when the AI is wrong. The Ho System develops that judgment through structured practice on real projects.
+The core insight: the bottleneck in AI-assisted development isn't access to tools. Anyone can prompt an AI to generate code. The bottleneck is _judgment_ — knowing what to build, whether what was built is correct, and when the AI is wrong. The Ho System develops that judgment through structured practice on real projects.
 
 **Ho** (歩) means "step" in Japanese. Each unit of work is a deliberate, bounded step forward — not a sprint, not a leap.
 
@@ -66,37 +66,38 @@ The full model is in [[shu-ha-ri|Shu-Ha-Ri Progression]] (framework/structure/sh
 
 ### Start Here
 
-| Document | What it does |
-|---|---|
-| **You are here** | Orientation and wayfinding |
-| [[kamae-project-framing|Kamae: Project Framing]] (framework/structure/kamae-project-framing.md) | How to plan a project before the first ho |
-| [[template-selection-guide|Template Selection Guide]] (framework/templates/template-selection-guide.md) | Which template to use and when |
+| Document                   | What it does                                                                 |
+| -------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------- |
+| **You are here**           | Orientation and wayfinding                                                   |
+| [[kamae-project-framing    | Kamae: Project Framing]] (framework/structure/kamae-project-framing.md)      | How to plan a project before the first ho |
+| [[template-selection-guide | Template Selection Guide]] (framework/templates/template-selection-guide.md) | Which template to use and when            |
 
 ### Understand the System
 
 These documents define how the Ho System works. Read them to understand the methodology.
 
-| Document | What it covers |
-|---|---|
-| [[ho-foundations-evidence|Foundations and Evidence]] (framework/ho-foundations-evidence.md) | The intellectual case. Why this exists. Theoretical grounding. The vibe coding problem. Pilot evidence. |
-| [[ho-structure|Ho Structure]] (framework/structure/ho-structure.md) | What makes a ho a ho. The five invariants. The numbering system. |
-| [[shu-ha-ri|Shu-Ha-Ri Progression]] (framework/structure/shu-ha-ri.md) | The three stages. How structure adapts. Transition signals. |
-| [[project-arc|The Project Arc]] (framework/structure/project-arc.md) | How hos sequence into complete projects. The five phases. What happens when plans meet reality. |
-| [[tiered-understanding|Tiered Understanding]] (framework/structure/tiered-understanding.md) | Managing what you know and don't know. Honest self-assessment. |
-| [[devlog|The Devlog]] (framework/structure/devlog.md) | The reflection practice. What makes a good devlog. How it evolves across stages. |
+| Document                  | What it covers                                                           |
+| ------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| [[ho-foundations-evidence | Foundations and Evidence]] (framework/ho-foundations-evidence.md)        | The intellectual case. Why this exists. Theoretical grounding. The vibe coding problem. Pilot evidence.         |
+| [[ho-structure            | Ho Structure]] (framework/structure/ho-structure.md)                     | What makes a ho a ho. The five invariants. The numbering system.                                                |
+| [[shu-ha-ri               | Shu-Ha-Ri Progression]] (framework/structure/shu-ha-ri.md)               | The three stages. How structure adapts. Transition signals.                                                     |
+| [[project-arc             | The Project Arc]] (framework/structure/project-arc.md)                   | How hos sequence into complete projects. The five phases. What happens when plans meet reality.                 |
+| [[tiered-understanding    | Tiered Understanding]] (framework/structure/tiered-understanding.md)     | Managing what you know and don't know. Honest self-assessment.                                                  |
+| [[devlog                  | The Devlog]] (framework/structure/devlog.md)                             | The reflection practice. What makes a good devlog. How it evolves across stages.                                |
+| [[verification-practices  | Verification Practices]] (framework/structure/verification-practices.md) | The four-layer verification stack. Test coverage, linting, self-review, cross-agent verification, human review. |
 
 ### Use the Templates
 
 These are the tools. Copy the file, fill it in, commit it.
 
-| Template | When to use it |
-|---|---|
-| [[shu-ho-template|Shu Ho Template]] (framework/templates/shu-ho-template.md) | Writing a prescriptive, author-guided ho session |
-| [[ha-ho-template|Ha Ho Template]] (framework/templates/ha-ho-template.md) | Writing a decision-driven, learner-scoped ho session |
-| [[ri-ho-template|Ri Ho Template]] (framework/templates/ri-ho-template.md) | Recording practitioner-level work |
-| [[agent-task-spec|Agent Task Specification]] (framework/templates/agent-task-spec.md) | Delegating bounded work to AI agents |
-| [[shu-devlog-template|Shu Devlog Template]] (framework/templates/shu-devlog-template.md) | Reflection after a shu-stage ho |
-| [[ha-devlog-template|Ha Devlog Template]] (framework/templates/ha-devlog-template.md) | Reflection after a ha-stage ho |
+| Template              | When to use it                                                      |
+| --------------------- | ------------------------------------------------------------------- | ---------------------------------------------------- |
+| [[shu-ho-template     | Shu Ho Template]] (framework/templates/shu-ho-template.md)          | Writing a prescriptive, author-guided ho session     |
+| [[ha-ho-template      | Ha Ho Template]] (framework/templates/ha-ho-template.md)            | Writing a decision-driven, learner-scoped ho session |
+| [[ri-ho-template      | Ri Ho Template]] (framework/templates/ri-ho-template.md)            | Recording practitioner-level work                    |
+| [[agent-task-spec     | Agent Task Specification]] (framework/templates/agent-task-spec.md) | Delegating bounded work to AI agents                 |
+| [[shu-devlog-template | Shu Devlog Template]] (framework/templates/shu-devlog-template.md)  | Reflection after a shu-stage ho                      |
+| [[ha-devlog-template  | Ha Devlog Template]] (framework/templates/ha-devlog-template.md)    | Reflection after a ha-stage ho                       |
 
 Not sure which template? Start with the [[template-selection-guide|Template Selection Guide]] (framework/templates/template-selection-guide.md).
 
@@ -104,11 +105,11 @@ Not sure which template? Start with the [[template-selection-guide|Template Sele
 
 ## Reading Order
 
-**If you're starting a project:** Kamae → Ho Structure → your stage template → go.
+**If you're starting a project:** Kamae → Ho Structure → Verification Practices → your stage template → go.
 
 **If you're learning the methodology:** Ho Structure → Shu-Ha-Ri → Project Arc → Tiered Understanding → Devlog.
 
-**If you're writing hos for someone else:** Shu-Ha-Ri → the relevant stage template (read the author notes) → Template Selection Guide.
+**If you're writing hos for someone else:** Shu-Ha-Ri → Verification Practices → the relevant stage template (read the author notes) → Template Selection Guide.
 
 **If you're evaluating the methodology:** This document → Ho Structure → Project Arc → the Kanyō pilot examples.
 
