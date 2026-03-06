@@ -35,6 +35,18 @@ A seed is not the beginning of the work. It is the first visible output of work 
 
 ---
 
+## Where Seeds Come From
+
+Before there is research, before there is precedential thinking, there is friction. A problem you hit. A tool that doesn't exist. An external pressure. A curiosity that won't let go. Something that isn't working, and you can't stop noticing.
+
+That friction is the origin. Not the seed — the seed comes later — but the thing that makes a seed worth writing. The most boring architectural site is a flat field: no slope, no neighbors, no trees, no constraints. There is nothing to push against, and without something to push against, there is nothing to design. Every interesting idea comes from friction between intent and reality — between what you want to do and what the world currently allows.
+
+Some friction is personal: a workflow that wastes your time, a need nobody has built for. Some is external: a new technology that creates possibilities that didn't exist before, a change in context that breaks existing solutions. Some is intellectual: a question you keep coming back to, a gap in how a field thinks about itself. The source doesn't matter. What matters is that the friction is real — that it comes from genuine encounter with a problem, not from a desire to build something for its own sake.
+
+What follows the friction — the research, the landscape scanning, the precedential thinking — is how you take that raw encounter and develop it into something buildable. Without the friction, there's nothing to develop. Without the development, there's nothing to build.
+
+---
+
 ## Precedential Thinking
 
 The quality of a seed depends on the quality of the thinking that preceded it. That thinking has a name: **precedential thinking** — the discipline of understanding what exists in a problem space before proposing to build in it.
