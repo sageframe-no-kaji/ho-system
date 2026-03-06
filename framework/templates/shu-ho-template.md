@@ -24,12 +24,12 @@ When creating a ho from this template:
 
 ### Pre-Ho Documents
 
-Before writing individual hos, the project should have these documents (in order of creation):
+Before writing individual hos, the project should have these documents in the [[kamae-project-framing|Kamae]] (framework/structure/kamae-project-framing.md) chain, each building on the last:
 
-1. **Seed** — Raw ideation. What's the idea? What problem does it solve? What's exciting about it? This is brainstorming output — messy is fine. _(Example: The Hōzō concept document.)_
-2. **Architecture Overview** — High-level system design. What are the major components? How do they connect? What's the technology stack? What's the deployment model? This is the document you'd show someone to explain _what you're building_. _(Example: The Kanyō system architecture.)_
-3. **README** — The polished project scope. Written as if the project already exists. What does it do, how do you install it, how do you use it. This forces clarity about what "done" looks like. _(Example: The Hōzō README.md.)_
-4. **Ho Overview** — The sequence plan. What hos are needed, in what order, with what dependencies? This is the project arc made concrete. Feed the seed, architecture overview, and README to the AI and ask it to generate a ho sequence.
+1. **[[project-seed|Seed]]** (framework/templates/project-seed-template.md) — The core idea of the project: the problem, the landscape of what exists, the vision, the audience, the constraints, an initial architectural opinion, and honest self-assessment of where the builder is starting from. The seed is the product of precedential thinking — genuine engagement with the problem space before proposing to build in it. It becomes the evaluative reference against which all downstream decisions are judged. _(Example: The Hōzō seed document.)_
+2. **System Design** — The structured technical vision. Takes the seed's architectural opinions and turns them into decisions: components, data flow, technology stack, deployment model. _(Example: The Kanyō system architecture.)_
+3. **README** — The polished project scope, written as if the project already exists. What does it do, how do you install it, how do you use it. Forces clarity about what "done" looks like. _(Example: The Hōzō README.md.)_
+4. **Ho Overview** — The sequence plan. What hos are needed, in what order, with what dependencies. The Ho Overview is possible because the seed, System Design, and README have already made the hard decisions. Feed all three to the AI and ask it to generate a ho sequence.
 
 Individual hos are then written from the Ho Overview, with this template as the structural guide.
 
@@ -618,19 +618,15 @@ _Ho authored by: [name or "AI-generated from Ho Overview"]_
 _Template version: shu-v1 (draft)_
 _Project: [project name]_
 _Position in arc: Ho [N] of ~[total] planned_
-_Pre-ho documents: [Seed] → [Architecture Overview] → [README] → [Ho Overview]_
+_Pre-ho documents: [Seed] → [System Design] → [README] → [Ho Overview]
 ```
 
 > 📐 **AUTHOR — Metadata**
 > _Cross-project structure._
 >
-> The metadata serves the framework, not the learner. It tracks provenance
-> (who wrote this ho, from what source material) and position (where in the
-> arc). This matters when reviewing and revising ho sequences across projects.
+> The metadata serves the framework, not the learner. It tracks provenance (who wrote this ho, from what source material) and position (where in the > arc). This matters when reviewing and revising ho sequences across projects.
 >
-> The pre-ho document chain (Seed → Architecture Overview → README → Ho Overview)
-> should be referenced so that anyone reading the ho can trace back to the
-> design decisions that shaped it.
+The pre-ho document chain (Seed → System Design → README → Ho Overview) should be referenced so that anyone reading the ho can trace back to the design decisions that shaped it.
 
 ---
 
