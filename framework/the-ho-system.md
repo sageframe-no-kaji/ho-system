@@ -1,3 +1,13 @@
+---
+id: "1.1"
+title: "The Ho System"
+type: foundation
+stage: n/a
+status: stable
+version: "1.0"
+tags: [ho-system, methodology, overview]
+---
+
 # The Ho System (歩)
 
 ## A Collaborative Development Methodology for Building With AI

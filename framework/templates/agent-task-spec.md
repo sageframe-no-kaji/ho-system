@@ -1,3 +1,13 @@
+---
+id: "3.8"
+title: "Agent Task Specification"
+type: template
+stage: n/a
+status: stable
+version: "1.0"
+tags: [ho-system, template, agent, ai-collaboration]
+---
+
 # Agent Task Specification
 
 ## Template for Delegated Implementation Tasks

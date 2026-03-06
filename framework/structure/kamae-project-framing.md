@@ -1,4 +1,12 @@
-## created: 2025-XX-XX updated: 2026-03-05 status: "draft-v2 — Seed integration"
+---
+id: "2.1"
+title: "Kamae: Project Framing"
+type: structure
+stage: n/a
+status: draft
+version: "1.0"
+tags: [ho-system, kamae, project-planning, framing]
+---
 
 # Kamae (構え): Project Framing
 

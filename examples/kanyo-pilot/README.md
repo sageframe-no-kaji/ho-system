@@ -1,3 +1,13 @@
+---
+id: "5.2"
+title: "Kanyō Pilot Project"
+type: example
+stage: n/a
+status: stable
+version: "1.0"
+tags: [ho-system, example, kanyo, pilot]
+---
+
 # Kanyō Pilot Project
 
 Production falcon detection system built using the Ho System.

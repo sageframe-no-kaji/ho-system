@@ -1,3 +1,13 @@
+---
+id: "2.3"
+title: "Ho Structure"
+type: structure
+stage: n/a
+status: stable
+version: "1.0"
+tags: [ho-system, ho, deliverable, structure]
+---
+
 # Ho Structure
 
 ## The Fundamental Unit of Work

@@ -1,3 +1,13 @@
+---
+id: "3.6"
+title: "Shu Devlog Template"
+type: template
+stage: shu
+status: stable
+version: "1.0"
+tags: [ho-system, template, shu, devlog, reflection]
+---
+
 # Ho [N]: [Title] — Devlog
 
 **Date:**

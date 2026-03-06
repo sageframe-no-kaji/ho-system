@@ -1,3 +1,13 @@
+---
+id: "2.7"
+title: "Verification Practices"
+type: structure
+stage: n/a
+status: stable
+version: "1.0"
+tags: [ho-system, verification, quality, testing]
+---
+
 # Verification Practices
 
 ## How the Ho System Ensures Quality in AI-Augmented Development

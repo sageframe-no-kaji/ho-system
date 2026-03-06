@@ -1,15 +1,12 @@
 ---
-
-## created: 2026-03-04T16:35 updated: 2026-03-05 status: draft-v2
-
-# The Project Seed
-
-## The First Kamae Document
-
+id: "3.2"
+title: "Project Seed Template"
+type: template
+stage: n/a
+status: draft
+version: "1.0"
+tags: [ho-system, seed, kamae, template]
 ---
----
-
-## created: 2026-03-04T16:35 updated: 2026-03-05 status: draft-v2
 
 # The Project Seed
 

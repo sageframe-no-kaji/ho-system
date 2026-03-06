@@ -1,3 +1,13 @@
+---
+id: "6.1"
+title: "Integrate Verification Practices"
+type: agent-task
+stage: n/a
+status: draft
+version: "1.0"
+tags: [ho-system, agent-task, verification, integration]
+---
+
 # TASK: INTEGRATE VERIFICATION PRACTICES INTO HO SYSTEM FRAMEWORK
 
 ## GOAL

@@ -1,3 +1,13 @@
+---
+id: "3.4"
+title: "Ha-Stage Ho Template"
+type: template
+stage: ha
+status: stable
+version: "1.0"
+tags: [ho-system, template, ha, ho]
+---
+
 # Ha-Stage Ho Template
 
 ## Template for Decision-Driven Development Sessions

@@ -1,3 +1,13 @@
+---
+id: "1.2"
+title: "The Ho System: Foundations and Evidence"
+type: foundation
+stage: n/a
+status: stable
+version: "1.0"
+tags: [ho-system, methodology, research, evidence]
+---
+
 # The Ho System: Foundations and Evidence
 
 **A Position Paper on Human-AI Collaborative Development**

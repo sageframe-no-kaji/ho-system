@@ -1,3 +1,13 @@
+---
+id: "3.5"
+title: "Ri-Stage Ho Template"
+type: template
+stage: ri
+status: stable
+version: "1.0"
+tags: [ho-system, template, ri, ho]
+---
+
 # Ri-Stage Ho Template
 
 ## Template for Practitioner-Level Work Sessions

@@ -1,3 +1,13 @@
+---
+id: "2.4"
+title: "Shu-Ha-Ri: The Progression Model"
+type: structure
+stage: n/a
+status: stable
+version: "1.0"
+tags: [ho-system, shu-ha-ri, progression, mastery]
+---
+
 # Shu-Ha-Ri: The Progression Model
 
 ## How the Ho System Adapts to Learner Development

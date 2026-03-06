@@ -1,8 +1,14 @@
-Description
+---
+id: "7.2"
+title: "Shodō: A Philosophy of Conversational Knowledge"
+type: seed
+stage: n/a
+status: draft
+version: "1.0"
+tags: [ho-system, seed, shodo, project-artifact]
+---
 
-summary: > The philosophical foundation for Shodō, a local-first system for mining, indexing, and learning from the full history of a person's AI conversations. Establishes the Shūji/Shodō split — practice and the way that emerges from it — the three-level interface model, and the strategic architecture for a future where conversation APIs make this a live, breathing knowledge system.
-
-Shodō: A Philosophy of Conversational Knowledge
+# Shodō: A Philosophy of Conversational Knowledge
 
 ---
 
@@ -166,8 +172,8 @@ The Shodō interface is three nested layers of capability, each valuable on its 
 
 The full corpus of every AI conversation, queryable in natural language. Not keyword grep — semantic search. Embedding-based nearest-neighbor retrieval across the entire history, unified, not siloed per chat.
 
-Ask it: _what was that thing I figured out about bat mitzvah timing?_  
-Ask it: _when did I last work through OPNsense routing?_  
+Ask it: _what was that thing I figured out about bat mitzvah timing?_
+Ask it: _when did I last work through OPNsense routing?_
 Ask it: _what did I conclude about ZFS snapshot retention?_
 
 Results surface the relevant chunk, tagged with conversation source, date, and a direct link back to the original. Thinking isn't siloed — an idea that started in one conversation and got refined across six others should be findable as a continuous thread.
@@ -186,8 +192,8 @@ This is a map of your brain, rendered over time. The calligrapher studying their
 
 Point a lightweight local model at the retrieved chunks and ask synthesis questions:
 
-_Summarize everything I've concluded about home network architecture._  
-_What are the unresolved tensions in my thinking about AI governance?_  
+_Summarize everything I've concluded about home network architecture._
+_What are the unresolved tensions in my thinking about AI governance?_
 _What did I decide about X and did I ever revisit it?_
 
 This doesn't require frontier-model reasoning. The retrieval layer has already done the hard work — the LLM is synthesizing over already-rich, already-relevant source material. A small local model handles this cleanly. RAG pattern, well-understood, excellent tooling, runs entirely on local hardware.
@@ -243,6 +249,6 @@ Shodō is ready when I stop re-solving problems I've already solved.
 
 ---
 
-_Paired with: `[[0.85.10.x1-shodo-ho-prompt]]`_  
-_Parent range: `[[0.80.00-ai-reflection-layer-overview]]`_  
+_Paired with: `[[0.85.10.x1-shodo-ho-prompt]]`_
+_Parent range: `[[0.80.00-ai-reflection-layer-overview]]`_
 _See also: `[[sageframe-cartographer]]`, `[[ho-process]]`, `[[kanyo]]`_

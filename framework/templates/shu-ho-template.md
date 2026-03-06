@@ -1,3 +1,13 @@
+---
+id: "3.3"
+title: "Shu-Stage Ho Template"
+type: template
+stage: shu
+status: stable
+version: "1.0"
+tags: [ho-system, template, shu, ho]
+---
+
 # Shu-Stage Ho Template
 
 ## Template for Prescriptive Learning Sessions

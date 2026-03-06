@@ -1,3 +1,13 @@
+---
+id: "2.6"
+title: "The Devlog"
+type: structure
+stage: n/a
+status: stable
+version: "1.0"
+tags: [ho-system, devlog, reflection, learning]
+---
+
 # The Devlog
 
 ## Reflection as Practice
