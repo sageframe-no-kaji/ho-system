@@ -52,6 +52,10 @@ The methodology is open source. The training and consulting that help teams prac
 
 ---
 
+The Ho System is a response to the emerging gap between AI's capacity to generate code and the human judgment required to produce reliable software. It provides the structure that makes disciplined AI collaboration possible — and distinguishable from vibe coding.
+
+---
+
 ## What's Here
 
 ```
@@ -92,6 +96,15 @@ archive/                           ← Historical documents
 The Ho System emerged from building [Kanyō](https://kanyo.sageframe.net) — a production computer vision system for real-time falcon monitoring at Harvard. Built by a non-developer in six weeks using this methodology. Not a tutorial project. Not a prototype. **Functioning infrastructure in active use.**
 
 That project became the pilot for formalizing the approach you're reading now. For the intellectual foundations — the Access-Judgment Gap, the pedagogy of shu-ha-ri, the critique of vibe coding, and the full evidence narrative — see [Foundations and Evidence](framework/ho-foundations-evidence.md).
+
+---
+
+## Writing & Context
+
+- [Prompting, Not Programming](https://sageframe.substack.com/p/ho-process-methodology) — On the visibility gap between disciplined AI collaboration and vibe coding
+- [Bad Vibes](https://sageframe.substack.com/p/bad-vibes) — On what happens when AI amplifies systems without process
+- [The Bootstrapper's Catch-22](https://sageframe.substack.com/p/the-bootstrappers-catch-22) — On building the tools that build the tools
+- [Thinking Outside the Skull](https://sageframe.substack.com/p/thinking-outside-the-skull) — On distributed cognition and authorship
 
 ---
 
