@@ -111,37 +111,56 @@ A good System Design includes at least one architecture diagram (even ASCII art)
 
 ### 2.3 README
 
-**What it is:** The polished project scope, written as if the project already exists. What it does, how to install it, how to use it. This is the document that ships with the repository.
+**What it is:** The polished project scope, written as if the project already exists. This is the document that ships with the repository. It commits to scope by describing the finished thing — what it does, who it's for, how to get it, what using it feels like.
 
 **Why write it now:** Writing the README before the code exists forces clarity about what "done" looks like. If you can't describe how someone would install and use the finished product, you don't yet know what you're building. The README is a forcing function for scope.
 
-The README takes the System Design's decisions and makes them into concrete, user-facing scope. Its philosophical stem — what the project is _for_, who it serves, why it matters — comes from the seed. Its technical content — what it does, how it works, how to install it — comes from the System Design. The README is where intent meets specification.
+The README takes the System Design's decisions and makes them into concrete, user-facing scope. Its philosophical stem — what the project is _for_, who it serves, why it matters — comes from the seed. Its technical content — what it does, how it works, how to get it — comes from the System Design. The README is where intent meets specification.
 
-The README changes as the project develops. Details sharpen after each ho. Features are added or cut. But the core of it — what this project is and who it's for — should trace back to the seed. When the README starts drifting from the seed's intent, that's a signal to revisit the seed and decide whether the intent has changed.
+The README is the only Kamae document that changes as the project develops. Details sharpen after each ho. Features are added or cut. Placeholders are replaced with real instructions. But the core — what this project is and who it's for — should trace back to the seed. When the README starts drifting from the seed's intent, that's a signal to revisit the seed and decide whether the intent has changed.
 
 **What "done" looks like:**
 
-The README should be publishable as-is on day one of the repository. It should include:
+The README should be publishable as-is on day one of the repository. The territory it covers is constant. How it covers that territory varies by project type.
+
+**Territory (always covered):**
 
 - Project name and one-sentence description
 - What the project does (user-facing, not technical)
-- Installation / setup instructions (can include placeholders like "coming soon" for unbuilt features)
-- Usage examples (the commands or interactions a user would perform)
-- Requirements (what the user needs to have)
-- Development setup (how a contributor would get started)
+- What the project is not (scope boundaries, stated briefly)
+- How to get it (install, deploy, or download — the delivery commitment)
+- Requirements (what the user needs)
+- How it works (appropriate depth for the audience)
+- Development setup (for contributors)
+- Status (what exists, what's in progress)
 - License
+
+**Emphasis varies by project type:**
+
+_Products (GUI applications, user-facing tools):_ The README leads with vision and experience. "Usage" is experiential — a narrative of what a session feels like, not a command reference. Installation is simple (download, drag to Applications). Architecture is minimal or absent — the user doesn't need to know how it works internally. The README is closer to a landing page than a man page.
+
+_Utilities (CLI tools, scripts, automation):_ The README leads with what it does and how to use it. "Usage" is functional — commands, flags, configuration, examples. Installation includes dependency management. Architecture may appear as a brief section for contributors. The README is closer to a reference document.
+
+_Infrastructure (servers, containers, self-hosted services):_ The README leads with what it does and how to deploy it. "Usage" is operational — setup, configuration, monitoring. Installation is deployment (Docker, systemd, etc.). Architecture is relevant because the user is also the operator.
+
+_Libraries/frameworks:_ The README leads with what problem it solves and how to integrate it. "Usage" is code examples. Installation is package management. Architecture is relevant because the user builds on top of it.
+
+The skill (or the person writing the README) should be able to determine the project type from the seed and System Design without being told.
 
 **What "done" does NOT look like:**
 
 - A tutorial (that's what hos are for)
 - An architecture document (that's the System Design)
-- A marketing page (factual, not promotional)
+- A marketing page (factual and experiential, not promotional)
+- A frozen document (the README evolves; the other Kamae documents don't)
 
 **Relationship to what comes next:** The README, along with the Seed and System Design, is fed to AI to generate the Ho Overview. It provides the concrete scope definition that constrains what the ho sequence needs to accomplish.
 
-**Example from Kanyō:** The repo structure, success criteria (minimum viable and stretch goals), and technology stack sections of Ho-00 served this purpose. A standalone README was not written until later.
+**Example from Kanyō (utility/infrastructure):** The repo structure, success criteria (minimum viable and stretch goals), and technology stack sections of Ho-00 served this purpose. A standalone README was not written until later. The appropriate format would have been: what it does, how to deploy, how to configure, how to access the web interface.
 
-**Example from Hōzō:** The README.md included in the Ho-00 document — installation instructions, quick start with config example, requirements for controller and remote box, development setup.
+**Example from Hōzō (infrastructure):** The README.md included in the Ho-00 document — installation instructions, quick start with config example, requirements for controller and remote box, development setup. Strong example of the infrastructure README format.
+
+**Example from Sutra (product):** The README leads with the identity statement ("Sutra is paper that remembers everything. You decide what matters."), describes the experience through the writer's vocabulary (Mark, Trail, Echo, Thread), includes a "Your First Session" narrative walkthrough, and commits to the delivery method (signed .dmg, direct download). Commands, configuration, and architecture are absent from the user-facing sections — the app is the interface.
 
 ---
 
