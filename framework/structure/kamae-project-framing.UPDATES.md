@@ -84,7 +84,7 @@ With the chain diagram updated to reflect five documents and the labels Kamae 1 
 
 **Where:** Throughout the document. Section 2.1 title, Section 3 chain diagram, Section 4 references, Section 7 (Kanyō Evidence).
 
-**Current state:** The document calls Kamae 1 "Concept." The skill that produces it is `ho-seed-collaborator`. The two names refer to the same artifact.
+**Current state:** The document calls Kamae 1 "Concept." The skill that produces it is `ho-kamae-1-seed-collaborator`. The two names refer to the same artifact.
 
 **Rationale:** Naming consistency. Two options:
 
@@ -125,13 +125,13 @@ Kamae sits at project scope. It frames *the specific thing being built*. This is
 
 Practitioner scope is established once per practitioner-tool combination and travels across projects. Kamae is done once per project. The two scopes meet at ho-00, where the project's specific instantiation of the operating discipline gets encoded in the repo.
 
-For the practitioner-scope canonical document, see [[the-operating-discipline]] (`practitioner/the-operating-discipline.md`).
+For the practitioner-scope canonical document, see [[the-operating-discipline]] (`practitioner/operating-discipline.md`).
 ```
 
 **Proposed addition to Section 8:**
 
 ```markdown
-- [[the-operating-discipline|The Operating Discipline]] (practitioner/the-operating-discipline.md) — The practitioner-scope canonical document
+- [[the-operating-discipline|The Operating Discipline]] (practitioner/operating-discipline.md) — The practitioner-scope canonical document
 ```
 
 ---
@@ -255,7 +255,7 @@ When the practitioner names project-specific phases, the names should describe w
 **Proposed wording — add a fourth item:**
 
 ```markdown
-**How the practitioner works across projects.** This document describes Kamae at project scope — the framing for a specific project. The framing for *how the practitioner works* (the operating discipline, environment setup, practitioner profile, the relationship between practitioner stage and the methodology) is practitioner-scope and lives in a parallel document. See [[the-operating-discipline]] (`practitioner/the-operating-discipline.md`) and the practitioner-scope framing document (when it exists).
+**How the practitioner works across projects.** This document describes Kamae at project scope — the framing for a specific project. The framing for *how the practitioner works* (the operating discipline, environment setup, practitioner profile, the relationship between practitioner stage and the methodology) is practitioner-scope and lives in a parallel document. See [[the-operating-discipline]] (`practitioner/operating-discipline.md`) and the practitioner-scope framing document (when it exists).
 ```
 
 ---

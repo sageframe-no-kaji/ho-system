@@ -78,7 +78,6 @@ framework/
     ├── shu-devlog-template.md         Reflection after shu-stage work
     └── ha-devlog-template.md          Reflection after ha-stage work
 examples/                          ← Evidence from practice
-archive/                           ← Historical documents
 ```
 
 ---

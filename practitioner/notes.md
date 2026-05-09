@@ -1,6 +1,6 @@
 ## The Operating Discipline (framework scope)
 
-The philosophical/operational document we drafted today. It sits in `practitioner/the-operating-discipline.md` in the Ho System repo. Its job: state what discipline the practice runs under, and why.
+The philosophical/operational document we drafted today. It sits in `practitioner/operating-discipline.md` in the Ho System repo. Its job: state what discipline the practice runs under, and why.
 
 What it contains: principles. Practice-not-productivity. Understanding over compliance. The verification stack as a four-layer concept (lint → type-check → test → optional cross-model). Permissions discipline. Real-time monitoring. Planning mode. Bounded sessions. Black box calibration. The encoded environment principle.
 
@@ -8,7 +8,7 @@ It does _not_ contain configuration files. It says "linting runs before commit, 
 
 The audience: the practitioner reading to understand the practice. Also: the environment setup skill, which uses the discipline as source material.
 
-## The Environment Setup Skill (`ho-environment-setup-collaborator`)
+## The Environment Setup Skill (`ho-setup-personal-environment-collaborator`)
 
 The skill that turns discipline into encoded environment. Practitioner scope — runs once per practitioner-tool combination, not per project.
 

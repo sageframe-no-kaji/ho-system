@@ -16,7 +16,7 @@ Location: typically under the practitioner's vault structure. For Andrew Marcus:
 
 What it holds:
 
-- The **canonical operating discipline** (`practitioner/the-operating-discipline.md`)
+- The **canonical operating discipline** (`practitioner/operating-discipline.md`)
 - Framework documents describing the methodology (Kamae chain, ho structure, shu-ha-ri arc)
 - Templates and reference material for ho documents
 - Anything else that defines what the Ho System IS
@@ -35,7 +35,7 @@ What it holds:
 - `settings.json`—permissions, theme
 - `modules/`—the always-loaded universals (operating-discipline, practitioner, infrastructure) plus the language module library (loaded per-project)
 - `templates/`—six baseline files, instantiated by the project skill into new projects
-- `skills/`—installed skills (`ho-environment-setup-collaborator`, `ho-project-setup-collaborator`, plus whatever else the practitioner uses)
+- `skills/`—installed skills (`ho-setup-personal-environment-collaborator`, `ho-setup-project-environment-collaborator`, plus whatever else the practitioner uses)
 - `projects/`, `agents/`, `commands/`, `hooks/`—Claude Code's own infrastructure, untouched by Ho skills
 - Conversation history and other session state, untouched by Ho skills
 
@@ -78,7 +78,7 @@ Update cadence: rare. Skills evolve when the practitioner discovers a pattern th
 ```
          ┌──────────────────────────────────────────┐
          │            FRAMEWORK REPO                │
-         │  practitioner/the-operating-discipline   │
+         │   practitioner/operating-discipline      │
          │  Methodology, Kamae chain, ho structure  │
          └──────────────┬───────────────────────────┘
                         │ canonical source
@@ -163,7 +163,7 @@ This is one specific design choice; it could change as we learn more from runnin
 
 ## How the two new skills relate
 
-**`ho-environment-setup-collaborator`** runs once per practitioner-tool combination. It:
+**`ho-setup-personal-environment-collaborator`** runs once per practitioner-tool combination. It:
 
 1. Asks who the practitioner is (configurable: profile)
 2. Asks where their work lives (configurable: infrastructure)
@@ -173,7 +173,7 @@ This is one specific design choice; it could change as we learn more from runnin
 
 After this skill runs, the practitioner has a working baseline for Ho System work in Claude Code. They re-run it when their stack changes or when the operating discipline evolves.
 
-**`ho-project-setup-collaborator`** runs once per new project. It:
+**`ho-setup-project-environment-collaborator`** runs once per new project. It:
 
 1. Asks what kind of project (service, desktop, library, static-site, app frontend)
 2. Asks for the project name and language stack
@@ -218,7 +218,7 @@ If at some point the always-on overhead feels too high, the migration path is cl
 
 ## Maintenance
 
-When the **operating discipline** evolves (you edit the canonical at `practitioner/the-operating-discipline.md`):
+When the **operating discipline** evolves (you edit the canonical at `practitioner/operating-discipline.md`):
 
 - If the practitioner symlinked: nothing to do. The agent reads the new content next session.
 - If the practitioner copied: re-copy the file into `~/.claude/modules/operating-discipline.md`.
@@ -259,7 +259,7 @@ When **a skill's content** evolves:
 
 **Modules loaded everywhere when they shouldn't be.** If an experiment moves a language module into the global CLAUDE.md @import, every session pays for it. Watch the token cost.
 
-**Skills not activating when they should.** If `ho-environment-setup-collaborator` doesn't fire when the practitioner says "set up my Claude Code," the skill description needs broader triggers. Test by asking variations of the activation phrasing.
+**Skills not activating when they should.** If `ho-setup-personal-environment-collaborator` doesn't fire when the practitioner says "set up my Claude Code," the skill description needs broader triggers. Test by asking variations of the activation phrasing.
 
 **Skills activating when they shouldn't.** Inverse problem. If the project skill fires when the practitioner's just opening an existing project, narrow the description.
 

@@ -1,6 +1,6 @@
 # Ho System Skills — Overview
 
-A catalog of the skills that operationalize the Ho System methodology, organized by scope and status. Each skill is a `.skill` package that produces or maintains a specific artifact in the methodology. Together they cover the work of getting a practitioner set up and producing a project end-to-end.
+A catalog of the skills that operationalize the Ho System methodology, organized by scope and status. Each skill is a directory with a `SKILL.md` definition and any bundled references it needs. Together they cover the work of getting a practitioner set up and producing a project end-to-end.
 
 This document is for practitioners who want to understand what skills exist, what each one does, when to use it, and where it sits in the larger architecture. It is also the working catalog the framework uses to track which skills are built, which are planned, and which are deferred.
 
@@ -26,7 +26,7 @@ A second, orthogonal axis: where each skill runs. Some skills are conversational
 
 **IDE-primary skills** modify the file system as their primary output: scaffolding repos, configuring environments, executing agent tasks. The setup skills (environment setup, project setup) live here. Agent-task execution itself is IDE-only.
 
-The two axes interact loosely. Most authoring work is chat-primary regardless of scope. Most configuration work is IDE-primary regardless of scope. The boundary cases — skills that have both conversational and file-system work — pick a primary surface and accept some friction on the other. `ho-design-collaborator` is chat-primary with an IDE escape hatch for mid-build invocation.
+The two axes interact loosely. Most authoring work is chat-primary regardless of scope. Most configuration work is IDE-primary regardless of scope. The boundary cases — skills that have both conversational and file-system work — pick a primary surface and accept some friction on the other. `ho-kamae-5-authoring-collaborator` is chat-primary with an IDE escape hatch for mid-build invocation.
 
 ---
 
@@ -34,7 +34,7 @@ The two axes interact loosely. Most authoring work is chat-primary regardless of
 
 Skills that configure how the practitioner works. These produce artifacts that live in the practitioner's tools, not in any specific project.
 
-### ho-environment-setup-collaborator
+### ho-setup-personal-environment-collaborator
 
 **Status:** Planned, not built
 **Surface:** IDE-primary
@@ -69,7 +69,7 @@ This skill exists as a hypothetical because language selection sometimes matters
 
 Skills that produce or maintain the five Kamae documents, plus the project-setup skill that scaffolds the repo. Each project gets its own complete chain.
 
-### ho-seed-collaborator (Kamae 1)
+### ho-kamae-1-seed-collaborator (Kamae 1)
 
 **Status:** Built
 **Surface:** Chat-primary
@@ -78,7 +78,7 @@ Skills that produce or maintain the five Kamae documents, plus the project-setup
 
 The seed is the thinking document. It captures why the project should exist, what it must do, what's in and out of scope, who it's for. Written for the practitioner first; refined for outsider read later. The seed collaborator is a probing partner — pushes back on underdeveloped framings, surfaces assumptions, names what's missing.
 
-### ho-system-design-collaborator (Kamae 2)
+### ho-kamae-2-system-design-collaborator (Kamae 2)
 
 **Status:** Built
 **Surface:** Chat-primary
@@ -89,7 +89,7 @@ The system design turns the seed's intentions into committed architecture. Compo
 
 The system design typically includes a provisional ho sequence and a deferred decisions table. These are starting material for Kamae 4 (Ho Overview) — the Ho Overview welcomes them but is not beholden to them.
 
-### ho-readme-collaborator (Kamae 3)
+### ho-kamae-3-readme-collaborator (Kamae 3)
 
 **Status:** Built
 **Surface:** Chat-primary
@@ -98,7 +98,7 @@ The system design typically includes a provisional ho sequence and a deferred de
 
 The README is the project's continuously canonical public face. Written in the present tense as if the project exists. Adapts to project type (product, utility, infrastructure, library) — see the skill's project-type guide for detail. Strips frontmatter, marketing-speak, and over-formatted decoration; keeps the practitioner's voice and the project's body and soul.
 
-### ho-overview-collaborator (Kamae 4)
+### ho-kamae-4-overview-collaborator (Kamae 4)
 
 **Status:** Built
 **Surface:** Chat-primary
@@ -107,18 +107,18 @@ The README is the project's continuously canonical public face. Written in the p
 
 The ho overview is the build's directional plan. It identifies phases first (clusters of work that share a theme), then identifies hos within phases. Decisions deferred from the system design appear inline with the ho that resolves them — not in a master table. Phase boundaries are also natural release boundaries (v0.1, v0.2 ... v1.0).
 
-### ho-project-setup-collaborator
+### ho-setup-project-environment-collaborator
 
 **Status:** Planned, not built
 **Surface:** IDE-primary
 **Produces:** A repo scaffold ready for ho-00 — `pyproject.toml`, smoke tests, project-level `CLAUDE.md`, `ho-process/hos/` and `ho-process/agent-tasks/` directory structure, lint stack configured, pre-commit hooks installed, initial commit.
 **When to run:** At project start, before authoring any per-ho document. Update mode handles scaffold adjustments.
 
-The companion to ho-design-collaborator. ho-design-collaborator does chat-side authoring of ho-00 (concept primers, shape decisions); ho-project-setup-collaborator does the IDE-side scaffolding work. They run in sequence — setup first, design against the scaffold it produces.
+The companion to `ho-kamae-5-authoring-collaborator`. `ho-kamae-5-authoring-collaborator` does chat-side authoring of ho-00 (concept primers, shape decisions); `ho-setup-project-environment-collaborator` does the IDE-side scaffolding work. They run in sequence — setup first, design against the scaffold it produces.
 
-ho-design-collaborator's pre-condition check refers to this skill: if the scaffold isn't in place, the practitioner runs ho-project-setup-collaborator first.
+`ho-kamae-5-authoring-collaborator`'s pre-condition check refers to this skill: if the scaffold isn't in place, the practitioner runs `ho-setup-project-environment-collaborator` first.
 
-### ho-design-collaborator (Kamae 5)
+### ho-kamae-5-authoring-collaborator (Kamae 5)
 
 **Status:** Built
 **Surface:** Chat-primary, with IDE escape hatch
@@ -153,21 +153,30 @@ Skills that aren't part of the Kamae chain but support the practice.
 
 DI catches discourse-level failures that survive vocabulary policing — pre-emptive evaluation, performed urgency, throat-clears, false-balance hedges, significance stamps, mirror summaries, emotional instructions, manufactured transitions. The skill returns severity-rated findings with delete/replace/rewrite edits in the practitioner's voice. Used as a quality gate on writing produced by skills earlier in the chain.
 
+### ho-tool-index-maintenance
+
+**Status:** Built
+**Surface:** IDE-primary
+**Produces:** Accurate `INDEX.md` entries and frontmatter maintenance for Ho System repo documents
+**When to run:** When adding, removing, or reclassifying indexed documents in this repository; when frontmatter status, version, stage, or tags drift out of sync
+
+This is a housekeeping skill for stewarding the framework repo itself. It is not part of the Kamae chain and it does not author methodology content. Its job is narrow: keep the navigation layer coherent, preserve ID discipline, and prevent the framework's index from drifting away from the tree it describes.
+
 ---
 
 ## The Order of Operations
 
 For a practitioner new to the methodology, the natural order is:
 
-1. **Read the operating discipline.** Internalize what discipline the methodology assumes. (Currently at `practitioner/the-operating-discipline.md`.)
-2. **Run ho-environment-setup-collaborator** (when built; in IDE). Configure your IDE and agent to know the discipline.
+1. **Read the operating discipline.** Internalize what discipline the methodology assumes. (Currently at `practitioner/operating-discipline.md`.)
+2. **Run ho-setup-personal-environment-collaborator** (when built; in IDE). Configure your IDE and agent to know the discipline.
 3. **For each new project:**
-   - Run **ho-seed-collaborator** in chat — Kamae 1.
-   - Run **ho-system-design-collaborator** in chat — Kamae 2.
-   - Run **ho-readme-collaborator** in chat — Kamae 3.
-   - Run **ho-overview-collaborator** in chat — Kamae 4.
-   - Run **ho-project-setup-collaborator** in IDE (when built) to scaffold the repo.
-   - For each ho in the overview: run **ho-design-collaborator** in chat to author the per-ho document and any agent tasks (Kamae 5), then execute in IDE against the agent task specs.
+   - Run **ho-kamae-1-seed-collaborator** in chat — Kamae 1.
+   - Run **ho-kamae-2-system-design-collaborator** in chat — Kamae 2.
+   - Run **ho-kamae-3-readme-collaborator** in chat — Kamae 3.
+   - Run **ho-kamae-4-overview-collaborator** in chat — Kamae 4.
+   - Run **ho-setup-project-environment-collaborator** in IDE (when built) to scaffold the repo.
+   - For each ho in the overview: run **ho-kamae-5-authoring-collaborator** in chat to author the per-ho document and any agent tasks (Kamae 5), then execute in IDE against the agent task specs.
 4. **Run di on substantial writing artifacts** before publication.
 
 For an experienced practitioner who already has an environment configured and is starting a new project, only steps 3 and 4 apply.
@@ -192,24 +201,25 @@ The same is true across surfaces. A chat-primary skill running in IDE (or vice v
 
 | Skill                               | Scope         | Status                      | Surface           | Kamae # |
 | ----------------------------------- | ------------- | --------------------------- | ----------------- | ------- |
-| ho-environment-setup-collaborator   | Practitioner  | Planned                     | IDE               | —       |
+| ho-setup-personal-environment-collaborator | Practitioner | Planned                | IDE               | —       |
 | ho-onboarding-collaborator (Palana) | Practitioner  | Deferred (separate project) | —                 | —       |
 | ho-stack-selection-collaborator     | Practitioner  | Deferred (build if needed)  | Chat              | —       |
-| ho-seed-collaborator                | Project       | Built                       | Chat              | 1       |
-| ho-system-design-collaborator       | Project       | Built                       | Chat              | 2       |
-| ho-readme-collaborator              | Project       | Built                       | Chat              | 3       |
-| ho-overview-collaborator            | Project       | Built                       | Chat              | 4       |
-| ho-project-setup-collaborator       | Project       | Planned                     | IDE               | —       |
-| ho-design-collaborator              | Project       | Built                       | Chat (IDE escape) | 5       |
+| ho-kamae-1-seed-collaborator        | Project       | Built                       | Chat              | 1       |
+| ho-kamae-2-system-design-collaborator | Project     | Built                       | Chat              | 2       |
+| ho-kamae-3-readme-collaborator      | Project       | Built                       | Chat              | 3       |
+| ho-kamae-4-overview-collaborator    | Project       | Built                       | Chat              | 4       |
+| ho-setup-project-environment-collaborator | Project | Planned                   | IDE               | —       |
+| ho-kamae-5-authoring-collaborator   | Project       | Built                       | Chat (IDE escape) | 5       |
 | di                                  | Cross-cutting | Built                       | Chat              | —       |
+| ho-tool-index-maintenance           | Housekeeping  | Built                       | IDE               | —       |
 
-Built: 6 skills (5 Kamae chain + DI). Planned: 2 skills (env-setup at practitioner scope, project-setup at project scope, both IDE-primary). Deferred: 2 skills (separate-project Palana and conditional stack-selection).
+Built: 7 skills (5 Kamae chain + DI + index maintenance). Planned: 2 skills (env-setup at practitioner scope, project-setup at project scope, both IDE-primary). Deferred: 2 skills (separate-project Palana and conditional stack-selection).
 
 ---
 
 ## What This Document Does NOT Cover
 
-- **Skill authoring methodology.** How to create new skills, debrief from real work to extract them, package them as `.skill` files. That belongs in a separate document on skill development practice.
+- **Skill authoring methodology.** How to create new skills, debrief from real work to extract them, and maintain them over time. That belongs in a separate document on skill development practice.
 - **Skill update and versioning.** As skills evolve through use, their authoritative version updates. The protocol for that — when to revise, when to deprecate, how to communicate changes — is its own concern.
 - **The relationship to other Sageframe skills.** The practitioner may have other skills (`atm-brand-system`, `sageframe-cartographer`, `atm-correspondence`) that are part of their broader workflow but not part of the Ho System framework. Those skills are personal/Sageframe, not Ho System.
 
@@ -219,7 +229,7 @@ Built: 6 skills (5 Kamae chain + DI). Planned: 2 skills (env-setup at practition
 
 - [[design-seed|Design Seed]](framework/design-seed.md) — The governing document for the Ho System
 - [[kamae-project-framing|Kamae: Project Framing]](framework/structure/kamae-project-framing.md) — The Kamae chain explained
-- [[the-operating-discipline|The Operating Discipline]](practitioner/the-operating-discipline.md) — The practitioner-scope canonical document
+- [[the-operating-discipline|The Operating Discipline]](practitioner/operating-discipline.md) — The practitioner-scope canonical document
 - [[shu-ha-ri|Shu-Ha-Ri Progression]](framework/structure/shu-ha-ri.md) — How practitioner stage shapes engagement with the methodology
 
 ---
