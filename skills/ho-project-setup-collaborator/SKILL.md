@@ -81,6 +81,19 @@ Resolve project type before anything else. If the practitioner says "I'm startin
 
 If they don't know yet, that's a signal to step back—they may need to run the seed conversation (`ho-seed-collaborator`) before scaffolding. The seed determines what the project IS; only then can you scaffold it.
 
+### Two Entry Points
+
+---
+Identify the entry point before doing anything else:
+
+1. **No git repo in current directory** → Fresh scaffold
+2. **Git repo exists, no CLAUDE.md, no pyproject.toml** → Adopt into Ho
+3. **Git repo exists, CLAUDE.md present with Ho @imports** → Already scaffolded;
+   redirect to ho-design-collaborator
+---
+
+### Entry Point 1: Fresh Install
+
 ### Phase 1: Discovery
 
 Ask three or four questions to lock the shape:
@@ -120,7 +133,13 @@ Wait for confirmation before proceeding. The practitioner may want to adjust sco
 
 Once confirmed, instantiate the templates with the project's specifics. For a Python service:
 
-1. **Create the project directory.** `mkdir -p ~/Vaults/<account>/<project-name>/src/<package>/utils ~/Vaults/<account>/<project-name>/tests ~/Vaults/<account>/<project-name>/docs`
+1. **Create the project directory.**
+   ```bash
+   mkdir -p <project-path>/src/<package>/utils \
+             <project-path>/tests \
+             <project-path>/docs \
+             <project-path>/ho-process/hos
+   ```
 2. **`pyproject.toml`** from `~/.claude/templates/pyproject.baseline.toml`. Replace placeholders:
    - `<project-name>` → actual project name
    - `<package-name>` → snake_case package
@@ -128,12 +147,27 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
    - `<author>`, `<author-email>` → from git config (or ask)
 3. **`.pre-commit-config.yaml`** from `~/.claude/templates/pre-commit.baseline.yaml`. Verbatim; no placeholders.
 4. **`.gitignore`** from `~/.claude/templates/gitignore.baseline` (Python) or `gitignore.web.baseline` (web project). Verbatim plus any project-specific exclusions the practitioner names.
+
+   > Note: `ho-process/` is not gitignored by default. If the project is or may go public
+   > and the practitioner wants to keep the build record private, add `ho-process/` to
+   > `.gitignore` explicitly. Otherwise leave it tracked.
+
 5. **`.env.example`** from `~/.claude/templates/env.example.baseline`. Replace `MYPROJ_` prefix with the project's actual env var prefix (often the package name uppercased).
 6. **`CLAUDE.md`** from `~/.claude/templates/project-CLAUDE.template.md`. Replace placeholders:
    - `<project-name>` → actual name
    - `<one-line description>` → description
    - Uncomment the relevant language module imports (Python, web, both, etc.)
    - Project-specific rules section: leave as a placeholder for the practitioner to fill in, OR ask for one or two project-specific rules now (private prompt path, project-specific lint rules, etc.)
+   - Ho process section:
+     ```
+     ## Ho process
+
+     Ho documents for this project live in `ho-process/`:
+     - `ho-process/<project>-seed.md` — Kamae 1
+     - `ho-process/<project>-system-design.md` — Kamae 2
+     - `ho-process/ho-overview.md` — Kamae 4
+     - `ho-process/hos/` — per-ho documents (Kamae 5)
+     ```
 7. **`src/<package>/__init__.py`**—empty file with package docstring.
 8. **`tests/test_smoke.py`**—one trivial passing test so pytest has something to run and the verification stack can prove itself before any real code is written.
 9. **`README.md`**—one-line description plus a "Setup" section showing the practitioner's commands (uv sync, pre-commit install, pytest). The practitioner expands later.
@@ -209,6 +243,39 @@ project-specific rules. Connect to GitHub via:
 To start the first ho, run the per-ho skill (when available) or write the
 ho document by hand against `framework/templates/ho-template.md`.
 ```
+
+### Entry Point 2: Update
+
+---
+### Entry Point 3: Adopt Existing Repo into Ho
+
+The practitioner has an existing repo that predates Ho System scaffolding and wants to
+bring it into the discipline without breaking what's there.
+
+Read the repo state first:
+
+```bash
+git remote -v
+ls pyproject.toml
+cat .git/config
+ls .pre-commit-config.yaml
+cat CLAUDE.md 2>/dev/null
+```
+
+Diagnose against the Ho baseline. Name what's present, what's missing, what conflicts:
+
+- **Present and correct** — leave it alone
+- **Present but drifted** — show the drift, ask before touching
+- **Missing** — add it
+- **Conflicts** — surface to practitioner before resolving
+
+Don't reinit git. Don't create a new remote. Don't overwrite a pyproject.toml that has
+real dependencies. Minimum-touch only.
+
+Common adoption targets: projects that predate this skill (Kanyō, m4bmaker, Glassroom).
+These have real configuration. The job is to layer Ho discipline on top, not replace
+what works.
+---
 
 ## Project Type Variations
 

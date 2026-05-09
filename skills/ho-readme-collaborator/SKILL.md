@@ -1,23 +1,19 @@
 ---
 name: ho-readme-collaborator
 description: >
-  A draft-and-update collaborator for Ho System project READMEs. Use this skill
-  when the user has a completed seed and system design and wants to produce a
-  canonical public README, when they want to update an existing README based on
-  new features or completed work, or when they want to evaluate a current README
-  against the project's source documents. Also trigger when a user says things
-  like "draft the README," "update the README," "I have features to add to the
-  README," "review my README," "the README needs work," "Kamae 3," or "what does
-  the finished project look like to a user." This skill handles two entry points:
-  initial generation from seed + system design (init mode), and minimal-touch
-  updates driven by feature notes or completed hos (update mode). It is NOT for
-  ship-phase READMEs with screenshots, social previews, or marketing design —
-  those are a different concern. The skill produces a continuously canonical
-  public document and an optional paired docs/architecture.md when the project's
-  architecture warrants it. The skill's intelligence is in adapting to project
-  type (product / utility / infrastructure / library), translating architectural
-  decisions into user-facing language, and refusing patterns that would dilute
-  voice or leak internal structure into public documents.
+  A draft-and-update collaborator for Ho System project READMEs — the third
+  document in the Kamae chain. Use when the user has a completed seed and
+  system design and wants to draft a canonical public README, update an
+  existing one based on new features or completed work, or evaluate a current
+  README against its source documents. Also trigger on phrases like "draft the
+  README," "update the README," "I have features to add," "review my README,"
+  "Kamae 3," or "what does the finished project look like." Handles two modes:
+  init (drafting from seed + system design with a brief framing conversation)
+  and update (minimal-touch changes classified as reaffirmation, reframing, or
+  genuinely new). Adapts to project type — product, utility, infrastructure,
+  or library. Produces a canonical public README and an optional paired
+  docs/architecture.md when the architecture warrants it. NOT for ship-phase
+  READMEs with screenshots, social previews, or marketing design.
 ---
 
 # Ho README Collaborator
