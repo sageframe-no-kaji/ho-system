@@ -1,0 +1,99 @@
+# .gitignore
+#
+# Ho System Python project baseline.
+# Drop into a new project; add project-specific exclusions at the end.
+
+# ─── Python ─────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.manifest
+*.spec
+share/python-wheels/
+MANIFEST
+
+# ─── Virtual environments ───────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ─── Testing and coverage ───────────────────────────────────────────────
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# ─── Type checking ──────────────────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# ─── Ruff ───────────────────────────────────────────────────────────────
+.ruff_cache/
+
+# ─── Documentation builds ───────────────────────────────────────────────
+docs/_build/
+site/
+
+# ─── Jupyter ────────────────────────────────────────────────────────────
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# ─── IDEs and editors ───────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# ─── Operating system ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Secrets and local config ───────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+!.env.template
+config.yaml
+config.local.yaml
+configs/config.yaml
+configs/config.local.yaml
+
+# ─── Private prompts (Ho System convention) ─────────────────────────────
+prompts/
+/Agent-Tasks/
+
+# ─── Project-specific (add below) ───────────────────────────────────────

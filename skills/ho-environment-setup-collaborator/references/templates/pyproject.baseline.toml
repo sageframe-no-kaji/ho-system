@@ -1,0 +1,146 @@
+# pyproject.baseline.toml
+#
+# Ho System Python project baseline. Drop into a new project; replace placeholders.
+# Placeholders to fill: <project-name>, <package-name>, <description>, <author>, <author-email>
+#
+# Conventions encoded here match ~/.claude/modules/languages-python.md:
+#   - ruff for lint + format (replaces flake8 + black + isort)
+#   - mypy strict
+#   - pytest with --cov-fail-under=90
+#   - src/ layout
+#   - Python 3.11+ minimum, line length 100
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "<project-name>"
+version = "0.1.0"
+description = "<description>"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }  # adjust per project
+authors = [
+    { name = "<author>", email = "<author-email>" },
+]
+dependencies = [
+    # Runtime dependencies. Examples:
+    # "fastapi>=0.115",
+    # "loguru>=0.7",
+    # "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+# Optional feature groups, add as needed:
+# server = ["uvicorn[standard]>=0.30"]
+
+# CLI entry points (uncomment and customize if shipping a CLI):
+# [project.scripts]
+# <project-name> = "<package-name>.main:cli"
+
+[dependency-groups]
+# uv-style dev dependency group.
+# Sync with: `uv sync --all-groups` or `uv sync --group dev`
+dev = [
+    "ruff>=0.7",
+    "mypy>=1.13",
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "pre-commit>=4.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/<package-name>"]
+
+# ────────────────────────────────────────────────────────────────────────
+# Ruff: lint + format
+# Single tool replaces flake8 + black + isort.
+# ────────────────────────────────────────────────────────────────────────
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+# E, W:  pycodestyle errors and warnings
+# F:     pyflakes
+# I:     isort (import ordering)
+# B:     flake8-bugbear (common bugs)
+# UP:    pyupgrade (modernize syntax)
+# N:     pep8-naming
+# RUF:   ruff-specific rules
+# SIM:   flake8-simplify (simplification suggestions)
+select = ["E", "W", "F", "I", "B", "UP", "N", "RUF", "SIM"]
+
+ignore = [
+    # Add project-specific ignores here with brief comments naming why.
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]  # allow `assert False` in tests
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# ────────────────────────────────────────────────────────────────────────
+# mypy: strict type checking
+# Per-module overrides for known dynamic patterns; comment why each exists.
+# ────────────────────────────────────────────────────────────────────────
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+strict_equality = true
+
+# Per-module overrides. Examples (uncomment as needed):
+#
+# [[tool.mypy.overrides]]
+# module = ["<package-name>.utils.logger"]
+# disable_error_code = ["attr-defined"]
+# # loguru Logger has a custom event() method added at runtime; mypy can't see it
+
+# ────────────────────────────────────────────────────────────────────────
+# pytest + coverage
+# Coverage floor enforced; suite fails if line coverage < 90%.
+# ────────────────────────────────────────────────────────────────────────
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+    "--cov=src/<package-name>",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-fail-under=90",
+    "--strict-markers",
+]
+markers = [
+    "slow: marks tests as slow (deselect with -m 'not slow')",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src/<package-name>"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+]

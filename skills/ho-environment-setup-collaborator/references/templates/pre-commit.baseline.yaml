@@ -1,0 +1,52 @@
+# .pre-commit-config.yaml
+#
+# Ho System pre-commit baseline. Drop into a new project.
+# Conventions match ~/.claude/modules/languages-python.md.
+#
+# Install hooks: `pre-commit install`
+# Run manually:  `pre-commit run --all-files`
+
+repos:
+  # General hygiene
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: ['--maxkb=1024']
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  # Ruff: format then check
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.7.4
+    hooks:
+      - id: ruff-format
+      - id: ruff
+        args: [--fix]
+
+  # mypy: strict type checking
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy
+        args: [--config-file=pyproject.toml]
+        additional_dependencies:
+          # Add type stubs for runtime dependencies that need them.
+          # Examples:
+          # - types-requests
+          # - types-pyyaml
+          # - pydantic
+
+  # pytest (optional - uncomment for fast suites; otherwise run in CI)
+  # - repo: local
+  #   hooks:
+  #     - id: pytest
+  #       name: pytest
+  #       entry: pytest
+  #       language: system
+  #       pass_filenames: false
+  #       always_run: true

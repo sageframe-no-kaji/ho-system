@@ -12,7 +12,7 @@ The document is philosophical with technical clarity. It names principles. It al
 
 This document is the source the environment-setup skill draws from when configuring a new practitioner's working environment. It is also a document a practitioner reads on their own, returns to, and eventually internalizes well enough that they can tell when something is off without consulting the page. That is the goal. The discipline becomes invisible by becoming habitual.
 
-This document is shorter than it looks. The reason it has the length it does is that the discipline is real, and naming each piece with the care it deserves takes space. A bulleted summary of these practices would mislead. The bullets would feel manageable. The discipline isn't manageable. It's habitual.
+Naming each piece of the discipline with the care it deserves takes space. A bulleted summary of these practices would mislead. The bullets would feel manageable. The discipline isn't manageable. It's habitual.
 
 ---
 
@@ -20,9 +20,9 @@ This document is shorter than it looks. The reason it has the length it does is 
 
 ### Practice, not productivity
 
-The most important thing to understand before reading anything else here is that the Ho System is not a productivity methodology. It is a practice in the strict sense—committed structured engagement over time, organized around discipline that the practitioner internalizes through repetition until the discipline becomes invisible.
+The Ho System is not a productivity methodology. It is a practice in the strict sense—committed structured engagement over time, organized around discipline that the practitioner internalizes through repetition until the discipline becomes invisible.
 
-This matters because almost everything else written about AI-assisted development describes a productivity methodology. The metrics are throughput. The improvements are speed. The skill is prompting. The tools are interchangeable in principle and judged on speed, latency, integration, and price.
+Almost everything else written about AI-assisted development describes a productivity methodology. The metrics are throughput. The improvements are speed. The skill is prompting. The tools are interchangeable in principle and judged on speed, latency, integration, and price.
 
 The Ho System rejects all of that as the framing of the work. The work is the development of a practitioner. Software comes out the other side because the practitioner has decided to build software. The software is the byproduct of the practice. The practitioner's judgment is what the practice actually develops.
 
@@ -32,7 +32,7 @@ If you read this document and think "this is a lot of overhead for software deve
 
 ### Understanding over compliance
 
-The first and most load-bearing principle of the operating discipline is that the practitioner must understand what is happening in their work. Not at the level of every implementation detail—that is what black-box calibration is for, addressed below—but at the level of what every automated practice is doing, why, and what its violations would mean.
+The first principle of the operating discipline is that the practitioner must understand what is happening in their work. Not at the level of every implementation detail—that is what black-box calibration is for, addressed below—but at the level of what every automated practice is doing, why, and what its violations would mean.
 
 This is why we lint. The lint stack is not an arbitrary set of tools to satisfy the methodology's requirements. Each linter encodes a category of error the practitioner has agreed to not produce. The practitioner should be able to articulate, on demand, what each tool catches and why catching it matters. If you cannot say what `mypy` does, why type checking is load-bearing in your specific project, and what kinds of failures static typing catches that runtime testing wouldn't—you don't yet have a relationship with `mypy`. You have an obligation to it. The operating discipline is the difference.
 
@@ -44,23 +44,23 @@ The principle generalizes. Every automated practice in the operating discipline 
 
 ### Discipline enables judgment
 
-The reason the discipline is non-negotiable is that it is what produces space for judgment. This is non-obvious. It seems like discipline would constrain judgment by ruling out options. The opposite is what happens.
+The discipline is non-negotiable because it allows space for judgment. This is non-obvious. It seems like discipline would constrain judgment by ruling out options, but the opposite is true.
 
 A practitioner who has internalized the lint-test-commit cycle does not have to think about whether to lint or whether to test. The cycle runs. The errors get caught. The practitioner's attention is freed for the parts of the work that actually require judgment—what the system should do, what the architecture should look like, where the boundaries are, what counts as done. The discipline catches the kinds of error that don't require judgment. The practitioner's judgment is reserved for the kinds of question that the discipline can't answer.
 
-This is why every claim in this document about discipline is also a claim about judgment. The point of the verification stack is not to be paranoid. The point is to make verification automatic so that the practitioner's mental energy can go to the questions only the practitioner can answer. The point of bounded sessions is not bureaucracy. The point is to keep the work small enough that the practitioner can hold the whole thing in mind, where judgment can actually operate. The point of documentation is not to satisfy a future colleague. The point is to externalize the parts of the practitioner's understanding that don't fit in a single conversation, so that judgment in the next conversation has somewhere to start.
+This is why every claim in this document about discipline is also a claim about judgment. The verification stack is not paranoia; it makes verification automatic so that the practitioner's mental energy goes to questions only the practitioner can answer. Bounded sessions keep the work small enough to hold in mind. Documentation externalizes the practitioner's understanding so that the next conversation has somewhere to start.
 
-The discipline provides infrastructure--it's what gives judgment space to operate.
+The discipline provides infrastructure—it's what gives judgment space to operate.
 
 ### The encoded environment
 
 The final principle of the philosophy is the structural insight underneath everything else. Discipline does not live in the practitioner's head. It lives in the artifacts.
 
-In an essay called "Three Hours," I described the moment I noticed AI agents working in my repositories had begun following my quality practices unprompted—running the linters, writing the tests, checking coverage—without being told to. I thought briefly that they had internalized my process. They hadn't. The projects had encoded the process. The test infrastructure, the linting config, the commit discipline visible in the git log—the agent reads those artifacts and conforms to the standard it finds.
+An observation worth pausing on: AI agents working in well-encoded repositories begin following the project's quality practices unprompted—running the linters, writing the tests, checking coverage—without being told to. The temptation is to read this as the agent having internalized the process. It hasn't. The project has encoded the process. The test infrastructure, the linting config, the commit discipline visible in the git log—the agent reads those artifacts and conforms to the standard it finds. The methodology did not train the AI. It shaped the environment the AI operates in.
 
 That observation is the structural foundation of this entire document. The practitioner's job is to build environments that encode the discipline. The agent reads the environment and conforms. The methodology does not have to instruct the AI. The artifacts are the instruction.
 
-This has three implications for how the discipline operates. First, the artifacts are load-bearing. A repository without `pyproject.toml`, without `.pre-commit-config.yaml`, without `pytest` configured, without `CLAUDE.md` or its equivalent for whatever IDE the practitioner uses—that repository is not encoded. An agent dropped into it has no standard to conform to and will produce code consistent with whatever its baseline training suggests, which is statistically average code. A repository with the discipline encoded receives different behavior from the same agent.
+This has three implications for how the discipline operates. First, the artifacts carry the discipline. A repository without `pyproject.toml`, without `.pre-commit-config.yaml`, without `pytest` configured, without `CLAUDE.md` or its equivalent for whatever IDE the practitioner uses—that repository is not encoded. An agent dropped into it has no standard to conform to and will produce code consistent with whatever its baseline training suggests, which is statistically average code. A repository with the discipline encoded receives different behavior from the same agent.
 
 Second, the discipline persists across sessions. Conversations end. Context windows fill. Models get updated. What survives is the artifacts. A new instance of the model, dropped into an encoded environment, comes up to speed by reading the artifacts and operating to their standard. The practitioner does not have to re-instruct the discipline at the start of every conversation. The discipline is in the project.
 
@@ -87,8 +87,6 @@ A Ho System project runs a verification stack at every commit. The stack catches
 The four layers are non-negotiable as principles. The specific tools are calibrated to language and project. The cycle is: code → lint → type-check → test → commit. No commit happens unless all four are green. This is enforced by pre-commit hooks where possible, and by practitioner discipline always.
 
 ### The type error discipline
-
-What to do when type checking surfaces an error you have decided to leave in the code.
 
 Type errors fall into three categories. The first is bugs—the type checker has caught a real logical inconsistency that needs to be fixed before commit. These are the easy case. Fix them.
 
@@ -130,13 +128,13 @@ When in doubt, tighten. The cost of a one-extra-prompt confirmation is trivial. 
 
 ### Real-time monitoring
 
-The practitioner watches the agent work. This is one of the most important practices in the operating discipline and one of the easiest to skip when sessions get long or fatigue accumulates.
+The practitioner watches the agent work. Watching is easy to skip when sessions get long or fatigue accumulates. It is also where most preventable mistakes get caught.
 
 Watching means watching the terminal—file writes, command outputs, test results, error messages. Not glancing. Reading. The practitioner is following what the agent is doing as it happens, catching architectural deviations as they occur, surfacing test failures the moment they appear, noticing when the agent is heading down a path the practitioner doesn't endorse.
 
-The reason this matters is that catching deviations early is qualitatively different from catching them late. An architectural choice the agent made twenty minutes ago is encoded in three or four files of code by the time the practitioner notices. Reverting it means understanding what to revert, which means re-establishing the model the practitioner was supposed to be holding the whole time. Catching the same choice the moment it's proposed is a one-line correction.
+Catching deviations early is qualitatively different from catching them late. An architectural choice the agent made twenty minutes ago is encoded in three or four files of code by the time the practitioner notices. Reverting it means understanding what to revert, which means re-establishing the model the practitioner was supposed to be holding the whole time. Catching the same choice the moment it's proposed is a one-line correction.
 
-The practice also has a more subtle effect. An agent operating under live human attention behaves differently than one operating in the background. The behavior is not detection-driven—the agent isn't choosing to behave differently because it knows it's being watched. The difference is in what the practitioner is willing to merge. A practitioner watching the work catches mistakes that would be merged silently if the practitioner were absent. The presence is the verification.
+An agent operating under live human attention behaves differently than one operating in the background. The behavior is not detection-driven—the agent isn't choosing to behave differently because it knows it's being watched. The difference is in what the practitioner is willing to merge. A practitioner watching the work catches mistakes that would be merged silently if the practitioner were absent. The presence is the verification.
 
 Monitoring is not the same as control. The practitioner is not typing. The agent is doing the work. But the practitioner is in the work, attending to it, ready to intervene. This is the inhabited register that distinguishes the practice from automation.
 
@@ -144,9 +142,9 @@ Monitoring is not the same as control. The practitioner is not typing. The agent
 
 Every code-writing session begins in planning mode. The agent reads the relevant ho document—the bounded scope of work for the session—and restates its understanding of the plan, surfaces ambiguities, and proposes its approach. Only after the practitioner explicitly approves does the agent begin writing code.
 
-This practice is one of the highest-leverage parts of the discipline. The reason is that planning mode is where the practitioner's architectural authority lives most concretely. Once the agent is writing code, the practitioner is responding to what's been produced. In planning mode, the practitioner is shaping what gets produced before any of it exists. This is the difference between authoring and editing, and authoring is where the leverage is.
+The reason is that planning mode is where the practitioner's architectural authority lives most concretely. Once the agent is writing code, the practitioner is responding to what's been produced. In planning mode, the practitioner is shaping what gets produced before any of it exists. This is the difference between authoring and editing, and authoring is where the leverage is.
 
-Specifically, planning mode catches three things that are expensive to fix later. It catches misreadings of the ho document—the agent has interpreted the spec one way, the practitioner intended another, and the gap surfaces in the agent's plan. It catches ambiguities—places where the ho document was insufficiently precise, and the practitioner has to either clarify or accept the agent's interpretation. And it catches scope drift—places where the agent is proposing to do more or less than the ho document specified, often for reasons that sound sensible but expand the scope past what the practitioner had bounded.
+Specifically, planning mode catches three things that are expensive to fix later. It catches misreadings of the ho document—the agent has interpreted the spec one way, the practitioner intended another, and the gap surfaces in the agent's plan. It catches ambiguities—places where the ho document was insufficiently precise, and the practitioner has to either clarify or accept the agent's interpretation. It also catches scope drift, where the agent proposes more or less than the ho document specified, often for reasons that sound sensible but expand the scope past what the practitioner had bounded.
 
 The practitioner's job during planning mode is to read the agent's plan critically, ask about ambiguities, push back on scope expansion, and approve only when the plan matches the practitioner's intent. The session does not begin until that approval is explicit. A session that began without planning mode is a session whose architectural decisions were already half-made by the agent before the practitioner had any influence.
 
@@ -154,7 +152,7 @@ The practitioner's job during planning mode is to read the agent's plan critical
 
 Different models do different work well. The operating discipline assumes the practitioner is choosing the model deliberately, and the environment-setup skill should have an opinion about which model fits which task.
 
-For architectural and discursive work—system design, document drafting, philosophical conversation—use the most capable available reasoning model. The cost per token is justified because the work is rare and the quality is load-bearing. Architectural mistakes are expensive to undo.
+For architectural and discursive work—system design, document drafting, philosophical conversation—use the most capable available reasoning model. The cost per token is justified because the work is rare and the quality matters. Architectural mistakes are expensive to undo.
 
 For implementation work—code generation, test writing, refactoring—a slightly cheaper model that is strong at code is often the right choice. Coding-specialized models with reliable tool use are designed for this work and produce better code per token than general-purpose models do.
 
@@ -186,7 +184,7 @@ The third—the right one—is calibrated. The practitioner knows what they unde
 
 The practical version of this discipline: when reading code or designing a system, the practitioner names—to themselves, sometimes in writing—the parts they're treating as opaque. "I am using `requests` and trusting that its retry logic does what I expect; I have not verified the implementation." That is a calibrated black box. "I am using `requests` and assume retries work"—without the explicit acknowledgment that you haven't verified—is an uncalibrated assumption that will eventually surface as a bug whose existence surprises you.
 
-Calibration also tells the practitioner where to focus learning. The black boxes that are load-bearing for the project's correctness should eventually become understood. The ones that are peripheral can stay opaque indefinitely. Knowing which is which is the calibration. Spending learning time on the wrong things is the failure.
+Calibration also tells the practitioner where to focus learning. The black boxes that affect the project's correctness should eventually become understood. The ones that are peripheral can stay opaque indefinitely. Knowing which is which is the calibration. Spending learning time on the wrong things is the failure.
 
 ---
 
@@ -194,7 +192,7 @@ Calibration also tells the practitioner where to focus learning. The black boxes
 
 ### Separation of thinking from coding
 
-The most distinctive structural practice of the Ho System operating discipline is that thinking conversations and coding conversations happen in different tools, with documents bridging them.
+The Ho System operating discipline puts thinking conversations and coding conversations in different tools, with documents bridging them. Almost no one else works this way.
 
 Discursive work—system design, architectural decisions, philosophical conversation, problem definition, anything that requires extended reasoning across multiple turns—happens in a chat-shaped interface where the cognitive register is generative. Claude on the web, ChatGPT, or whatever the practitioner uses for sustained conversation. The artifact is conversation. The output is decisions, captured into project documents.
 
@@ -202,7 +200,7 @@ Coding work—implementation, test writing, refactoring, deployment—happens in
 
 The two are different work and want different tools. The IDE is bad at sustained discursive argument. The chat is bad at running tests and committing code. The practitioner uses each for what it's for.
 
-This is structurally important and not just a preference. The reason is that mixing the two registers in one conversation produces cognitive friction. Every switch from "let's design the auth flow" to "let's actually write the auth code" incurs a context switch, and the conversation accumulates context that's relevant to one register and noise for the other. Two tools, two clean registers.
+The reason is that mixing the two registers in one conversation produces cognitive friction. Every switch from "let's design the auth flow" to "let's actually write the auth code" incurs a context switch, and the conversation accumulates context that's relevant to one register and noise for the other. Two tools, two clean registers.
 
 Documents are how the two halves of the practice talk to each other. When the thinking conversation produces a decision—about architecture, about scope, about what counts as done—the decision goes into a project document: the system design, the README, the relevant ho. The coding conversation reads those documents. It doesn't have to have been present for the conversation that produced them. The documents carry the conclusions across the gap.
 
@@ -244,7 +242,7 @@ These practices are universal in serious software engineering. The reason they'r
 
 ### Reading the model
 
-The thread underneath everything described so far is the relational dimension of the practice. The discipline I've been describing—the verification stack, the permissions, the planning mode, the documentation—is the visible structure. What animates it is something less visible and harder to name.
+The relational nature of the practice ties all of this together. The discipline I've been describing—the verification stack, the permissions, the planning mode, the documentation—is the visible structure. What animates it is something less visible and harder to name.
 
 Some of us have begun calling it pink teaming. Red teaming is adversarial—you probe the model for flaws, try to break it, document its failures. Pink teaming is the cooperative analog. The role of the human is to read the model: to pay sustained attention to what it produces, notice patterns, develop hypotheses about why it does what it does, refine those hypotheses through repeated engagement, and use what you learn to do the next thing more carefully. It is hermeneutic. Reading and re-reading. The model is not an opponent and not a tool. It is a strange interlocutor whose grammar you study by living with it.
 
@@ -254,7 +252,7 @@ In practical terms: a practitioner notices that this particular model handles am
 
 The model has no self that learns the practitioner back. But the practitioner learns the model. And what the practitioner learns shapes how they specify, how they verify, how they read the next output. This is the relationship that the operating discipline is built around. The discipline encodes what the relationship has taught the practitioner to expect, demand, and verify.
 
-This is also why the operating discipline matters more, not less, as the practitioner's skill increases. A novice practitioner needs the discipline to compensate for what they don't yet know about the model. An experienced practitioner needs the discipline to capture what they have learned, in artifacts that can be passed to other practitioners or to future sessions. Without the discipline, the relationship's lessons stay locked in one practitioner's head. With it, they become structural—encoded in repos, in skills, in this document.
+The operating discipline matters more, not less, as the practitioner's skill increases. A novice practitioner needs the discipline to compensate for what they don't yet know about the model. An experienced practitioner needs the discipline to capture what they have learned, in artifacts that can be passed to other practitioners or to future sessions. Without the discipline, the relationship's lessons stay locked in one practitioner's head. With it, they become structural—encoded in repos, in skills, in this document.
 
 The relational dimension also implies a posture toward the model that some practitioners find uncomfortable. The model is not a service to be consumed. It is also not a junior employee to be managed. It is something stranger—a partner in a practice that the practitioner is responsible for. The practitioner is the architectural authority. The model is the agentic capacity. The practice is the relationship. None of those three are interchangeable, and the discipline of the practice is to honor the boundaries between them.
 
