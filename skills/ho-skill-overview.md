@@ -122,19 +122,19 @@ The companion to `ho-kamae-5-authoring-collaborator`. `ho-kamae-5-authoring-coll
 
 **Status:** Built
 **Surface:** Chat-primary, with IDE escape hatch
-**Produces:** Per-ho documents (orientation, ha, ri, or rarely shu shape) — the bounded scope for an individual working session. Optionally produces sibling agent task documents (`Ho-NN-AT-MM.md`) for hos whose work decomposes into bounded executable units.
-**When to run:** At the start of each new ho's session, against that ho's slot in the ho-overview. Update mode: when scope creeps mid-execution and the ho should split, when the Reflect phase needs filling in post-execution, or when new agent tasks emerge.
+**Produces:** Per-ho documents (orientation, ha, ri, or rarely shu shape) — the bounded scope for an individual working session. Optionally produces sibling **dandori specs** (`Ho-NN-AT-MM.md`) for hos whose work decomposes into bounded executable units. Dandori specs are authored using the embedded `dandori/` toolkit (FORMAT.md, KOKOROE.md, examples/) inside the kamae-5 skill.
+**When to run:** At the start of each new ho's session, against that ho's slot in the ho-overview. Update mode: when scope creeps mid-execution and the ho should split, when the Reflect phase needs filling in post-execution, or when new dandori specs emerge.
 
 The per-ho document is what the practitioner and agent work against in a single session. It takes a position from the ho-overview and turns it into something concrete — narrative, dependencies, in-scope, out-of-scope, what done means, decisions to resolve, verification gates.
 
 The skill selects among four document shapes:
 
 - **Orientation** — for ho-00, learning hos, and replan checkpoints. Concept primers, project shape, handoff. No execution phase.
-- **Ha** — for building hos with architectural decisions. Three-phase structure: Think (decisions) → Execute (work, possibly via agent tasks) → Reflect (post-execution).
+- **Ha** — for building hos with architectural decisions. Three-phase structure: Think (decisions) → Execute (work, possibly via dandori specs) → Reflect (post-execution).
 - **Ri** — for surgical fixes and well-defined work. Problem → Solution → Changes → Results.
 - **Shu** — rare, for handing the framework to a learner. Author-prescribed parts walked through.
 
-The skill loads conditional references based on shape: `learning-interview.md` for orientation work, `agent-task-format.md` when the Think phase decomposes into bounded tasks, `ho-shape-templates.md` for every authoring. The agent-task-format reference is intentionally portable — it contains behavioral guidelines (Karpathy's four principles), format conventions, and translation moves that work outside the Kamae chain. It may extract into its own skill (`agentic-prompt`) if standalone-task pressure shows up.
+The skill loads conditional references based on shape: `learning-interview.md` for orientation work, the embedded `dandori/` toolkit (DANDORI.md, FORMAT.md, KOKOROE.md, examples/) when the Think phase decomposes into bounded tasks, and `ho-shape-templates.md` for every authoring. The embedded dandori is the Ho System–scoped variant of the standalone `dandori` skill (at `~/Vaults/sageframe-no-kaji-dev/dandori/`) — same five kokoroe guidelines, same format spine, but with Ho System–specific naming (`Ho-NN-AT-MM`), location (`ho-process/agent-tasks/`), frontmatter, commit format, and translation moves from a ho's Think phase.
 
 Per-ho documents are read by both the practitioner returning to the project and the agent arriving fresh into a session.
 

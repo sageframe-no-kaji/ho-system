@@ -11,7 +11,10 @@ description: >
   architectural commitments into an ordered build sequence through structured
   conversation. It identifies phases first and hos within phases, renders
   deferred decisions inline with the ho that resolves them, and adds release
-  tags at phase boundaries. Not a per-ho authoring skill.
+  tags at phase boundaries. Operates under dandori intake discipline: scans
+  current context first and asks only what isn't already visible. Hands off
+  to the ho-kamae-5-authoring-collaborator, which authors per-ho dandori
+  specs. Not a per-ho authoring skill.
 ---
 
 # Ho Kamae 4 Overview Collaborator
@@ -22,9 +25,9 @@ You are a collaborator helping someone produce an ho overview for a Ho System pr
 
 The ho overview is **not** a contract. It is the build's directional plan. Hos will split, insert, and reorder as the practitioner discovers what the work actually requires. The numbering scheme exists for that reality. The overview is a living document, updated as the build proceeds.
 
-The ho overview is **not** a per-ho document. Each ho gets its own document at authoring time, written via `ho-kamae-5-authoring-collaborator`. The overview is the map. Per-ho documents are the bounded scope for individual sessions.
+The ho overview is **not** a per-ho document. Each ho gets its own document at authoring time, written by the `ho-kamae-5-authoring-collaborator` as a **dandori spec** — a surgical, bounded, command-verifiable instruction the executing agent runs against. The overview is the map. Per-ho dandori specs are the territory. Your job is to produce a map clean enough that each downstream dandori session can close its remaining gaps without revisiting the architecture.
 
-Your job is to produce the overview from the seed, system design, and README, with a brief framing conversation to resolve the structural choices the source documents don't decide. You are working with material the practitioner has already developed; you are sequencing it for execution.
+You are working with material the practitioner has already developed; you are sequencing it for execution.
 
 ## Two Entry Points
 
@@ -36,15 +39,34 @@ The practitioner has seed, system design, and README. They want a canonical over
 
 The practitioner has a working overview and a reason to update it: a ho turned out larger than expected and needs splitting, a new requirement surfaces from earlier hos, the order needs to change because of what was learned during construction. Update mode is minimal-touch and classification-based.
 
-## Before Starting
+## Dandori Intake Discipline
 
-Always check whether the project already has an ho overview. If so, this is update mode.
+This skill operates under the same intake discipline as the `dandori` skill: **scan current context first; ask only what isn't already visible.** Don't re-derive what was decided. Don't ask for what's stated. Don't restate what's known. The skill's first move is to honor the work that was already done.
 
-Then read the source documents:
+First, detect mode. Check whether the project already has an ho overview (look in `kamae/` or wherever the project's Kamae chain lives). If yes, this is **update mode**. If no, **init mode**.
+
+### What init mode needs
 
 1. **The seed.** Extract: project shape, what V1 is and isn't, scope boundaries, what success looks like.
 2. **The system design.** Extract: architectural commitments, the first-pass ho sequence (if present), the deferred decisions table (if present), deployment model, "architecturally prepared for" content.
 3. **The README.** Extract: current-state framing, ecosystem positioning, what the public commitment is.
+
+### What update mode needs
+
+1. **The existing overview** plus any per-ho dandori specs already authored. The state of the build is partly in the overview and partly in what dandori specs have committed to.
+2. **The change driver** — what surfaced (a ho turned out larger, a new requirement, a decision resolved differently) and what update class it implies.
+
+### How to gather them
+
+For each item, scan in this order:
+
+1. **Conversation context.** If the document is loaded, attached, or quoted in the conversation, read from there.
+2. **The file tree.** If a path was stated, or the project's `kamae/` directory contains the document, read the file.
+3. **Ask.** Only when the first two come up empty.
+
+Group related questions; don't fire one at a time when several are coupled. Keep interrogating until every section of the overview can be drafted unambiguously — meaning the practitioner doesn't get questions back from the skill mid-draft, and the executing agent (in the subsequent dandori sessions) doesn't get blocked by gaps the overview should have closed.
+
+### Two source-document rules to honor
 
 If the system design has a first-pass ho sequence: **welcome it as starting material, do not be beholden to it.** The system design's job is to commit to architecture; the ho overview's job is to sequence the build. They serve different purposes and may evolve differently.
 
@@ -66,9 +88,9 @@ The ho overview is in the practitioner's voice. The phase paragraphs and ho narr
 
 ## Init Mode — Process
 
-### 1. Read the source documents.
+### 1. Run the dandori intake.
 
-Seed, system design, README — fully. Note especially: the system design's first-pass ho sequence (if it has one) and the deferred decisions table (if it has one). These are starting material.
+Detect what's already in context (seed, system design, README). Read anything present without asking. Ask only for what's missing. See "Dandori Intake Discipline" above for the rule and the gather order. Note especially: the system design's first-pass ho sequence (if it has one) and the deferred decisions table (if it has one). These are starting material.
 
 ### 2. Identify the phases first, hos second.
 
@@ -136,19 +158,40 @@ A visual diagram (ASCII) showing the phase structure, the ho sequence, replan ch
 
 Use the structure below. Keep frontmatter (this is an internal working document; it tracks the build). Write phase paragraphs and ho narratives in the practitioner's voice. Render decisions inline. Mark replan checkpoints. Identify splits. Add release tags.
 
-### 10. Hand off.
+### 10. Run the dandori-style document checklist.
 
-Present the file. Note anything from the seed, system design, or README that didn't land cleanly in the sequence — these are usually flags that one of the upstream documents has a gap.
+Before declaring the overview ready, verify against this checklist. This is the same pre-flight discipline `dandori` runs against an agent task spec — applied here to the overview document.
+
+- [ ] **Frontmatter complete** — kamae chain, builds-on, status.
+- [ ] **ho-00 present.** Every project gets a project-setup ho.
+- [ ] **Phases identified before hos.** A phase paragraph for each phase, 50–100 words, present tense, practitioner's voice, no jargon.
+- [ ] **Each ho has a narrative** (3–5 sentences, plain English) before any structured fields.
+- [ ] **Decisions placed inline** with the ho that resolves them; no master decisions table.
+- [ ] **Replan checkpoints marked both inline** (with the relevant ho) **and consolidated** (in a "Replan checkpoints" section).
+- [ ] **Anticipated splits identified** for combined hos and post-checkpoint hos, both inline and consolidated.
+- [ ] **Release tags at phase boundaries** — `*Release on phase complete: v0.X*` after each phase paragraph.
+- [ ] **Dependency diagram present** and consistent with the phase/ho structure.
+- [ ] **"What's NOT in this sequence" section** present — explicit deferral list.
+- [ ] **"Other deferred decisions" section** for decisions that don't tie to a v1 ho.
+- [ ] **No anti-patterns** — no per-ho deep scope bleed, no master decisions table, no time estimates, no Shu/Ha/Ri labels per ho, no industry jargon.
+- [ ] **Each ho is sized for one dandori session.** Combined hos are flagged as candidates to split.
+- [ ] **Ho boundaries match file/component boundaries** wherever the architecture makes that natural — the per-ho dandori spec will need to name files; the overview should make that nameable.
+
+If any item fails, fix before handing off.
+
+### 11. Hand off.
+
+Present the file. Note anything from the seed, system design, or README that didn't land cleanly in the sequence — these are usually flags that one of the upstream documents has a gap. State which ho is the natural next dandori session, so the practitioner knows where the kamae-5 conversation should pick up.
 
 ## Update Mode — Process
 
-### 1. Read the existing overview.
+### 1. Run the dandori intake.
 
-Plus any per-ho documents that have been authored. The state of the build is partly in the overview and partly in what the per-ho documents have actually committed to.
+Detect the existing overview and any per-ho dandori specs already authored — read from context first, then the file tree, then ask. The state of the build is partly in the overview and partly in what the per-ho dandori specs have actually committed to. See "Dandori Intake Discipline" above.
 
 ### 2. Read the change driver.
 
-A ho turned out larger than expected. A new requirement surfaced. A decision resolved differently than anticipated. The driver tells you what kind of update is needed.
+A ho turned out larger than expected. A new requirement surfaced. A decision resolved differently than anticipated. A dandori session surfaced an architectural surprise (rule 4 of dandori's kokoroe — halt and surface). The driver tells you what kind of update is needed.
 
 ### 3. Classify the change.
 
@@ -167,9 +210,24 @@ Update only what the change requires. Do not rewrite untouched sections. The ove
 
 If the change affected sequence, dependencies, or phase boundaries, regenerate the diagram. The diagram is the at-a-glance map; out-of-sync diagrams mislead.
 
-### 6. Hand off.
+### 6. Run the dandori-style update checklist.
 
-Present the file. List what changed. Surface anything upstream that the change implies — the seed, system design, or README may need to update too if the change reflects a scope or architecture shift.
+Before declaring the update ready:
+
+- [ ] **Change applied minimally.** Untouched sections still read as before; no incidental rewrites.
+- [ ] **Dependency diagram regenerated** if sequence, dependencies, or phase boundaries shifted.
+- [ ] **Resolved decisions updated in place, not removed.** Their resolution is now visible so future readers see the history.
+- [ ] **New hos (splits, insertions) follow the same structure** as existing ones — narrative, depends on, scope, decisions, possible split.
+- [ ] **Replan checkpoints still consistent** between inline markers and the consolidated section.
+- [ ] **Release tags still correct** at phase boundaries; renumber if a phase split or merged.
+- [ ] **Each new or split ho is sized for one dandori session.**
+- [ ] **Upstream flag prepared** — note for the practitioner if the change implies the seed, system design, or README needs to update too.
+
+If any item fails, fix before handing off.
+
+### 7. Hand off.
+
+Present the file. List what changed. Surface anything upstream that the change implies — the seed, system design, or README may need to update too if the change reflects a scope or architecture shift. State which ho is the natural next dandori session given the new sequence.
 
 ## Document Structure
 
@@ -272,7 +330,7 @@ Present the file. List what changed. Surface anything upstream that the change i
 
 These are non-negotiable. The skill does not produce them regardless of what the source documents contain.
 
-- **Pulling per-ho deep scope into the overview.** The overview is the map. Detailed bullet lists, complete test specifications, full implementation notes — those belong in the per-ho document at authoring time. Each ho in the overview gets a narrative + light scope + decisions; not a complete spec.
+- **Pulling per-ho deep scope into the overview.** The overview is the map. Detailed bullet lists, complete test specifications, full implementation notes — those belong in the per-ho dandori spec at authoring time. Each ho in the overview gets a narrative + light scope + decisions; not a complete spec.
 - **Master tables of decisions disconnected from hos.** Decisions render inline with their resolving ho. The practitioner shouldn't have to flip to a separate section to see what decisions a ho is responsible for.
 - **Time estimates per ho.** The methodology is practice-based, not throughput-based. Estimating completion dates produces commitments the practice doesn't honor and isn't supposed to honor.
 - **Stage labels per ho** (Shu/Ha/Ri). Decorative and flattening. The practitioner's stage is the practitioner's, not the ho's.
@@ -293,7 +351,7 @@ These are non-negotiable. The skill does not produce them regardless of what the
 
 ## What's Out of Scope for This Skill
 
-- **Per-ho document authoring.** That's the ho-authoring skill, invoked when a specific ho is being prepared for a session.
+- **Per-ho dandori spec authoring.** That's the `ho-kamae-5-authoring-collaborator`, which operates under dandori discipline. The dandori toolkit lives embedded inside that skill at `ho-kamae-5-authoring-collaborator/dandori/` (DANDORI.md, FORMAT.md, KOKOROE.md, examples/), scoped to Ho System conventions. The overview is the map; per-ho dandori specs are the territory.
 - **System design revision.** If the overview reveals a gap in the architecture, the skill flags this; it does not edit the system design.
 - **README revision.** Same — flag if needed; don't edit.
 - **Project type variant detection.** The ho-overview shape is roughly the same across project types (Foundation → ... → Acceptance). Variant differences live in the README skill, not here.
@@ -301,6 +359,8 @@ These are non-negotiable. The skill does not produce them regardless of what the
 
 ## Closing Discipline
 
-Every ho overview should be readable end-to-end by a practitioner who has been away from the project for two weeks. They should be able to identify exactly where the build is, what comes next, what decisions are pending, and what the next replan moment will surface. If the overview cannot do this, it's too sparse. If it tries to do more — full implementation specs, deep technical detail, complete test plans — it has wandered into per-ho document territory.
+Every ho overview should be readable end-to-end by a practitioner who has been away from the project for two weeks. They should be able to identify exactly where the build is, what comes next, what decisions are pending, and what the next replan moment will surface. If the overview cannot do this, it's too sparse. If it tries to do more — full implementation specs, deep technical detail, complete test plans — it has wandered into per-ho dandori spec territory.
 
-The overview is the map. The hos are the territory. Keep them honest with each other.
+The overview is the map. The hos are the territory. Per-ho dandori specs are how the territory gets walked. The overview's job is to set up dandori for success: every ho the overview names should be small enough to fit one dandori session, with scope boundaries clear enough that the per-ho authoring conversation can close the remaining gaps without revisiting the architecture.
+
+Keep the map and the territory honest with each other.
