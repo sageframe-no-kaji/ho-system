@@ -1,18 +1,14 @@
 ---
 name: ho-setup-project-environment-collaborator
 description: >
-  A scaffolding collaborator for kicking off new Ho System projects. Use this skill whenever
-  a practitioner is starting a new project, scaffolding a new repository, initializing a new
-  codebase, or asks anything like "set up a new project," "scaffold this repo," "kick off a
-  new project," "init a new [language] project," "I'm starting a new [project type]," "create
-  the boilerplate for this," or "set up the verification stack for this repo." This skill
-  determines project type and language stack, instantiates the per-project baseline files
-  from `~/.claude/templates/`, scaffolds the source layout, configures the verification stack
-  (lint, type check, test, pre-commit), creates a project-level CLAUDE.md that imports the
-  right language modules, and stages the first commit. It is the project-scope companion to
-  `ho-setup-personal-environment-collaborator`, which handles the practitioner-scope `~/.claude/`
-  setup. It assumes that environment exists; if it doesn't, redirect the practitioner to
-  the environment-setup skill first.
+   A scaffolding collaborator for starting new Ho System projects. Use when a practitioner asks
+   to set up a new project or repo, initialize a codebase, create boilerplate, or configure the
+   verification stack. It determines project type and language stack, instantiates project
+   baselines from `~/.claude/templates/`, scaffolds source layout, configures lint/type-check/
+   tests/pre-commit, creates a project-level CLAUDE.md with the right language imports, and
+   prepares the first commit. This is the project-scope companion to
+   `ho-setup-personal-environment-collaborator` (which sets up practitioner-scope `~/.claude/`).
+   If that environment is missing, redirect there first.
 ---
 
 # Ho Project Setup Collaborator

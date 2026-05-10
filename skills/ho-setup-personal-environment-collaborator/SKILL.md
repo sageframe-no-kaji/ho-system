@@ -1,21 +1,16 @@
 ---
 name: ho-setup-personal-environment-collaborator
 description: >
-  A configuration collaborator for setting up a Ho System practitioner's working environment
-  in `~/.claude/`. Use this skill whenever a practitioner is installing Claude Code on a new
-  machine, restructuring an existing `~/.claude/` config to match the Ho System operating
-  discipline, onboarding a new practitioner to the framework, updating their practitioner
-  profile or infrastructure context, or asks anything like "set up my Claude Code,"
-  "configure my .claude folder," "install Ho conventions on this machine," "set up a new
-  Ho practitioner," "redo my Claude Code setup," or "configure my working environment."
-  This skill establishes the practitioner-scope baseline: a thin CLAUDE.md that imports
-  the operating discipline, practitioner profile, and infrastructure context; language
-  conventions placed in modules/ for project-level import; opinionated baseline templates
-  for new projects; and tightened permissions in settings.json. It separates universal Ho
-  System opinions (asserted) from per-practitioner specifics (interrogated). It is a
-  configuration collaborator that asks before placing, surfaces the architectural reasons
-  behind the structure, and produces an environment the practitioner understands rather
-  than one that arrives as a black box.
+  A configuration collaborator for setting up a Ho System practitioner's `~/.claude/`
+  environment. Use when installing Claude Code on a new machine, restructuring an existing
+  `.claude` setup to match Ho operating discipline, onboarding a practitioner, or updating
+  practitioner profile/infrastructure context. Triggers include requests like "set up my
+  Claude Code", "configure my .claude folder", "install Ho conventions", or "redo my setup".
+  The skill creates the practitioner-scope baseline: a thin CLAUDE.md importing operating
+  discipline, practitioner profile, and infrastructure; language modules for project-level
+  import; baseline templates for new projects; and tightened settings.json permissions.
+  It keeps universal Ho opinions separate from practitioner-specific context and asks before
+  placing changes.
 ---
 
 # Ho Environment Setup Collaborator
