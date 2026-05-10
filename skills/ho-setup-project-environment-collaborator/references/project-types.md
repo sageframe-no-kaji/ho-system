@@ -10,7 +10,7 @@ A long-running process exposed over a network or driven by a schedule. Examples:
 
 **Source layout:**
 ```
-src/<package>/
+src/[package]/
 ├── __init__.py
 ├── main.py                   # entry point
 ├── api/                      # HTTP handlers
@@ -38,7 +38,7 @@ A user-facing application installed on the practitioner's or end-user's machine.
 
 **Source layout (Python case):**
 ```
-src/<package>/
+src/[package]/
 ├── __init__.py
 ├── main.py                   # entry point (becomes the executable)
 ├── ui/                       # interface code (Tk, PyQt, etc.)
@@ -66,7 +66,7 @@ A reusable component or command-line tool meant to be installed by other project
 
 **Source layout:**
 ```
-src/<package>/
+src/[package]/
 ├── __init__.py
 ├── core.py                   # primary public surface
 └── cli.py                    # CLI entry point if applicable
@@ -115,7 +115,7 @@ A web application served by a backend the practitioner also owns. Combines serve
 
 **Source layout:**
 ```
-src/<package>/
+src/[package]/
 ├── __init__.py
 ├── main.py                   # FastAPI app
 ├── api/                      # JSON endpoints (when applicable)

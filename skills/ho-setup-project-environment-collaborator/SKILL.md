@@ -4,7 +4,7 @@ description: >
   A scaffolding collaborator for kicking off new Ho System projects. Use this skill whenever
   a practitioner is starting a new project, scaffolding a new repository, initializing a new
   codebase, or asks anything like "set up a new project," "scaffold this repo," "kick off a
-  new project," "init a new <language> project," "I'm starting a new <project type>," "create
+  new project," "init a new [language] project," "I'm starting a new [project type]," "create
   the boilerplate for this," or "set up the verification stack for this repo." This skill
   determines project type and language stack, instantiates the per-project baseline files
   from `~/.claude/templates/`, scaffolds the source layout, configures the verification stack
@@ -23,7 +23,7 @@ You are scaffolding a new project for a Ho System practitioner. The result is a 
 
 - The verification stack configured (ruff, mypy, pytest with coverage floor for Python; analogous for other languages)
 - Pre-commit hooks installed
-- Source layout in place (`src/<package>/`, `tests/`, `docs/`)
+- Source layout in place (`src/[package]/`, `tests/`, `docs/`)
 - A project-level `CLAUDE.md` that imports the relevant language modules from `~/.claude/modules/`
 - Configuration discipline files committed (`.env.example`) and gitignored (`.env`, build artifacts, virtual environments, prompt-privacy patterns)
 - A first commit on `main` with the scaffolding in place
@@ -106,7 +106,7 @@ Ask three or four questions to lock the shape:
 Compute defaults from the answers:
 
 - **Package name.** Convert project name to a Python-importable identifier (replace `-` with `_`). Show the practitioner: "Package name will be `my_project`. Override?"
-- **Repo path.** From the infrastructure module's vault structure: `~/<vault-root>/<account>/<project-name>/`. Confirm.
+- **Repo path.** From the infrastructure module's vault structure: `~/[vault-root]/[account]/[project-name]/`. Confirm.
 - **Project description.** One line. Either pull from the seed if it exists, or ask.
 
 ### Phase 2: Confirm the Build Plan
@@ -116,12 +116,12 @@ Before placing anything, name what you're about to do:
 ```
 About to scaffold:
 
-Path:     ~/Vaults/sageframe/no-kaji-dev/<project-name>/
+Path:     ~/Vaults/sageframe/no-kaji-dev/[project-name]/
 GitHub:   sageframe-no-kaji
-Type:     <type>
+Type:     [type]
 Stack:    Python (uv-managed)
 Files:    pyproject.toml, .pre-commit-config.yaml, .gitignore,
-          .env.example, README.md, CLAUDE.md, src/<package>/__init__.py,
+          .env.example, README.md, CLAUDE.md, src/[package]/__init__.py,
           tests/test_smoke.py
 Modules:  @~/.claude/modules/languages-python.md
 Pre-commit hooks: ruff format, ruff check, mypy
@@ -135,16 +135,16 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
 
 1. **Create the project directory.**
    ```bash
-   mkdir -p <project-path>/src/<package>/utils \
-             <project-path>/tests \
-             <project-path>/docs \
-             <project-path>/ho-process/hos
+   mkdir -p [project-path]/src/[package]/utils \
+             [project-path]/tests \
+             [project-path]/docs \
+             [project-path]/ho-process/hos
    ```
 2. **`pyproject.toml`** from `~/.claude/templates/pyproject.baseline.toml`. Replace placeholders:
-   - `<project-name>` → actual project name
-   - `<package-name>` → snake_case package
-   - `<description>` → one-line description
-   - `<author>`, `<author-email>` → from git config (or ask)
+   - `[project-name]` → actual project name
+   - `[package-name]` → snake_case package
+   - `[description]` → one-line description
+   - `[author]`, `[author-email]` → from git config (or ask)
 3. **`.pre-commit-config.yaml`** from `~/.claude/templates/pre-commit.baseline.yaml`. Verbatim; no placeholders.
 4. **`.gitignore`** from `~/.claude/templates/gitignore.baseline` (Python) or `gitignore.web.baseline` (web project). Verbatim plus any project-specific exclusions the practitioner names.
 
@@ -154,8 +154,8 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
 
 5. **`.env.example`** from `~/.claude/templates/env.example.baseline`. Replace `MYPROJ_` prefix with the project's actual env var prefix (often the package name uppercased).
 6. **`CLAUDE.md`** from `~/.claude/templates/project-CLAUDE.template.md`. Replace placeholders:
-   - `<project-name>` → actual name
-   - `<one-line description>` → description
+   - `[project-name]` → actual name
+   - `[one-line description]` → description
    - Uncomment the relevant language module imports (Python, web, both, etc.)
    - Project-specific rules section: leave as a placeholder for the practitioner to fill in, OR ask for one or two project-specific rules now (private prompt path, project-specific lint rules, etc.)
    - Ho process section:
@@ -163,12 +163,12 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
      ## Ho process
 
      Ho documents for this project live in `ho-process/`:
-     - `ho-process/<project>-seed.md` — Kamae 1
-     - `ho-process/<project>-system-design.md` — Kamae 2
+     - `ho-process/[project]-seed.md` — Kamae 1
+     - `ho-process/[project]-system-design.md` — Kamae 2
      - `ho-process/ho-overview.md` — Kamae 4
      - `ho-process/hos/` — per-ho documents (Kamae 5)
      ```
-7. **`src/<package>/__init__.py`**—empty file with package docstring.
+7. **`src/[package]/__init__.py`**—empty file with package docstring.
 8. **`tests/test_smoke.py`**—one trivial passing test so pytest has something to run and the verification stack can prove itself before any real code is written.
 9. **`README.md`**—one-line description plus a "Setup" section showing the practitioner's commands (uv sync, pre-commit install, pytest). The practitioner expands later.
 
@@ -183,7 +183,7 @@ For a web static site, the file list shifts:
 For an app frontend (Python backend serving HTMX/Jinja2/Tailwind), the file list combines patterns:
 
 - Full Python project structure as above
-- `src/<package>/templates/` and `src/<package>/static/` for the frontend
+- `src/[package]/templates/` and `src/[package]/static/` for the frontend
 - `tailwind.config.js` and `package.json` for the build pipeline
 - `CLAUDE.md` importing both `@~/.claude/modules/languages-python.md` and `@~/.claude/modules/languages-web.md`
 
@@ -192,7 +192,7 @@ For an app frontend (Python backend serving HTMX/Jinja2/Tailwind), the file list
 After files are placed:
 
 ```bash
-cd <project-path>
+cd [project-path]
 git init -b main
 git add -A
 git status                  # show what's about to be committed
@@ -207,7 +207,7 @@ git commit -m "Initial scaffold via ho-setup-project-environment-collaborator"
 Don't push. The practitioner connects to GitHub themselves (or you can offer to do it explicitly):
 
 ```bash
-gh repo create <account>/<project-name> --private --source=. --remote=origin
+gh repo create [account]/[project-name] --private --source=. --remote=origin
 git push -u origin main
 ```
 
@@ -231,13 +231,13 @@ For web projects: `npm install`; for the app frontend: both.
 Surface what was placed and what comes next:
 
 ```
-Scaffolded at: <project-path>
-On main branch, first commit at <hash>.
+Scaffolded at: [project-path]
+On main branch, first commit at [hash].
 Verification stack passes: ruff, mypy, pytest (1 smoke test).
 
 Next: edit README.md to describe the project. Edit CLAUDE.md to add
 project-specific rules. Connect to GitHub via:
-  gh repo create <account>/<project-name> --private --source=. --remote=origin
+  gh repo create [account]/[project-name] --private --source=. --remote=origin
   git push -u origin main
 
 To start the first ho, run the per-ho skill (when available) or write the
@@ -330,7 +330,7 @@ what works.
 A scaffolded project directory with:
 
 - All baseline files instantiated from `~/.claude/templates/`
-- `src/<package>/`, `tests/`, `docs/` directory structure (Python projects)
+- `src/[package]/`, `tests/`, `docs/` directory structure (Python projects)
 - Verification stack installed and passing
 - First commit on `main`
 - A practitioner who can describe what each file is and why it's there

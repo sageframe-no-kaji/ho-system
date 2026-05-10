@@ -2,10 +2,10 @@
 
 Concrete file content for the boilerplate this skill creates. These are not the templates the practitioner has at `~/.claude/templates/`—those handle pyproject.toml, pre-commit, gitignore, env.example, project-CLAUDE. These are the additional files the skill writes when scaffolding (smoke test, package init, README stub).
 
-## Python: `src/<package>/__init__.py`
+## Python: `src/[package]/__init__.py`
 
 ```python
-"""<package-name>: <one-line project description>."""
+"""[package-name]: [one-line project description]."""
 
 __version__ = "0.1.0"
 ```
@@ -23,7 +23,7 @@ Replace with real tests as soon as there's behavior to specify.
 
 def test_package_imports() -> None:
     """The package is importable."""
-    import <package_name>  # noqa: F401  # smoke test
+    import [package_name]  # noqa: F401  # smoke test
 
 
 def test_truth() -> None:
@@ -40,9 +40,9 @@ The smoke test exists so:
 ## README.md (Python project)
 
 ```markdown
-# <project-name>
+# [project-name]
 
-<one-line description>
+[one-line description]
 
 ## Setup
 
@@ -62,7 +62,7 @@ pytest
 
 ## Run
 
-<how to run the project — fill in once the entry point exists>
+[how to run the project — fill in once the entry point exists]
 ```
 
 The README is short by design. The practitioner expands it as the project develops.
@@ -70,9 +70,9 @@ The README is short by design. The practitioner expands it as the project develo
 ## README.md (web project)
 
 ```markdown
-# <project-name>
+# [project-name]
 
-<one-line description>
+[one-line description]
 
 ## Setup
 
@@ -83,18 +83,18 @@ npm install
 ## Develop
 
 ```bash
-npx <eleventy or whatever the dev command is>
+npx [eleventy or whatever the dev command is]
 ```
 
 ## Build
 
 ```bash
-npx <build command>
+npx [build command]
 ```
 
 ## Deploy
 
-<deploy command, e.g., `npx wrangler pages deploy public`>
+[deploy command, e.g., `npx wrangler pages deploy public`]
 ```
 
 ## Dockerfile (when project type is service with Docker deployment)
@@ -122,7 +122,7 @@ RUN uv sync --frozen --no-dev
 
 EXPOSE 8000
 
-CMD ["uv", "run", "python", "-m", "<package_name>.main"]
+CMD ["uv", "run", "python", "-m", "[package_name].main"]
 ```
 
 This is a starting point; the practitioner adapts to their specific deployment.
@@ -133,8 +133,8 @@ This is a starting point; the practitioner adapts to their specific deployment.
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./src/<package>/templates/**/*.html",
-    "./src/<package>/static/js/**/*.js",
+    "./src/[package]/templates/**/*.html",
+    "./src/[package]/static/js/**/*.js",
   ],
   theme: {
     extend: {},
@@ -149,12 +149,12 @@ For Tailwind builds in an app frontend:
 
 ```json
 {
-  "name": "<project-name>",
+  "name": "[project-name]",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i src/<package>/static/css/input.css -o src/<package>/static/css/output.css",
-    "watch:css": "tailwindcss -i src/<package>/static/css/input.css -o src/<package>/static/css/output.css --watch"
+    "build:css": "tailwindcss -i src/[package]/static/css/input.css -o src/[package]/static/css/output.css",
+    "watch:css": "tailwindcss -i src/[package]/static/css/input.css -o src/[package]/static/css/output.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^4.0.0",
@@ -167,7 +167,7 @@ For Eleventy static sites:
 
 ```json
 {
-  "name": "<project-name>",
+  "name": "[project-name]",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -204,28 +204,28 @@ export default function (eleventyConfig) {
 ```njk
 ---
 layout: base.njk
-title: <project-name>
+title: [project-name]
 ---
 
-# <project-name>
+# [project-name]
 
-<one-line description>
+[one-line description]
 ```
 
 Plus a minimal `src/_includes/base.njk`:
 
 ```njk
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }}</title>
-</head>
-<body>
+[!doctype html]
+[html lang="en"]
+[head]
+  [meta charset="utf-8"]
+  [meta name="viewport" content="width=device-width, initial-scale=1"]
+  [title]{{ title }}[/title]
+[/head]
+[body]
   {{ content | safe }}
-</body>
-</html>
+[/body]
+[/html]
 ```
 
 The practitioner customizes from here.

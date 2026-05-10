@@ -12,7 +12,7 @@ The first commit contains everything the project needs to verify itself:
 - `.env.example`
 - `README.md` (stub)
 - `CLAUDE.md` (project-level, importing the right modules)
-- `src/<package>/__init__.py` (Python projects)
+- `src/[package]/__init__.py` (Python projects)
 - `tests/test_smoke.py` (Python projects)
 - `docs/` (empty directory; commit a `.gitkeep` if the SCM doesn't preserve empty dirs)
 
@@ -41,11 +41,11 @@ The first commit uses a descriptive message:
 ```
 Initial scaffold
 
-Project type:    <type>
-Stack:           <languages>
+Project type:    [type]
+Stack:           [languages]
 Verification:    ruff, mypy, pytest with --cov-fail-under=90
 Pre-commit:      installed and verified
-Modules:         <which language modules the project's CLAUDE.md imports>
+Modules:         [which language modules the project's CLAUDE.md imports]
 
 Scaffolded via ho-setup-project-environment-collaborator.
 ```
@@ -91,7 +91,7 @@ If the hooks find issues at this stage (formatting, lint), the templates have a 
 Don't push to GitHub immediately. Pushing is a separate, explicit step the practitioner takes when they're ready:
 
 ```bash
-gh repo create <account>/<project> --private --source=. --remote=origin
+gh repo create [account]/[project] --private --source=. --remote=origin
 git push -u origin main
 ```
 
@@ -100,7 +100,7 @@ The remote may not exist yet, the practitioner may want to think about visibilit
 If the practitioner has multiple GitHub accounts, the `gh` CLI may need to be told which account:
 
 ```bash
-GH_HOST=github.com GH_USERNAME=<account-name> gh repo create ...
+GH_HOST=github.com GH_USERNAME=[account-name] gh repo create ...
 ```
 
 Or the practitioner has authenticated each account separately and `gh` handles routing automatically. Read their `infrastructure.md` for whatever convention they've documented.
