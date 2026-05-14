@@ -136,6 +136,46 @@ tailwind.config.js
 
 **CLAUDE.md imports:** `@~/.claude/modules/languages-python.md` AND `@~/.claude/modules/languages-web.md`.
 
+## Full-stack JS/TS App
+
+A web application where a JavaScript/TypeScript framework handles both frontend rendering and server-side logic — no separate Python backend. Examples: SvelteKit apps, Next.js apps, Remix apps. Use when the domain calls for a single-language stack or when the frontend complexity warrants a full JS framework.
+
+**Language:** TypeScript throughout.
+
+**Source layout (SvelteKit case):**
+```
+src/
+├── app.html              # SvelteKit HTML shell
+├── app.css               # Tailwind v4 entry point (@import "tailwindcss")
+├── app.d.ts              # SvelteKit ambient types
+├── lib/                  # shared utilities and server-only code
+│   ├── db.ts             # database access
+│   └── index.ts          # public lib barrel
+└── routes/               # file-based routing
+    ├── +layout.svelte    # root layout (imports app.css)
+    └── +page.svelte      # routes...
+static/                   # static assets
+tests/                    # Vitest unit tests
+```
+
+**Verification stack:** Biome (lint + format for `.ts`/`.js`/`.svelte`) · `svelte-check` (TypeScript strict across Svelte component internals) · Vitest with **80% coverage floor** (component tests are harder to drive to 90% than pure TS).
+
+**Pre-commit:** lefthook running biome → vitest → svelte-check on every commit.
+
+**Key packages:**
+- `@sveltejs/adapter-node` — Node/Docker deployment; `adapter-cloudflare` or `adapter-vercel` for serverless
+- `tailwindcss` + `@tailwindcss/vite` — Tailwind v4, no separate `tailwind.config.js`
+- `better-sqlite3` — SQLite for homelab projects; add `@types/better-sqlite3`
+- `@biomejs/biome`, `svelte-check`, `vitest`, `@vitest/coverage-v8`, `lefthook` — all devDependencies
+
+**Deployment:** `adapter-node` + Docker for homelab. Use `sageframe-docker-deploy` for the full deployment pass.
+
+**Distribution:** not applicable (apps are deployed).
+
+**CLAUDE.md imports:** `@~/.claude/modules/languages-web.md`.
+
+**Reference project:** `edelmore-diary` (SvelteKit 2 + Svelte 5 + SQLite + Tailwind v4 + Docker homelab).
+
 ## Type-Independent Decisions
 
 Some scaffolding decisions don't depend on project type:

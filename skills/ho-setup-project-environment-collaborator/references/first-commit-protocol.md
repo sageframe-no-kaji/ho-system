@@ -33,6 +33,7 @@ The first commit does NOT include:
 - **IDE files.** `.vscode/`, `.idea/`—gitignored.
 - **Operating system noise.** `.DS_Store`, `Thumbs.db`—gitignored.
 - **The practitioner's prompts.** `prompts/` and similar—gitignored per the practitioner's infrastructure conventions.
+- **`ho-process/`.** The project's build record (kamae documents, hos) lives here and is gitignored by default. The first commit tracks the code baseline; build-record files are private practitioner work. Kamae documents go inside `ho-process/`—not at the project root.
 
 ## Commit Message
 

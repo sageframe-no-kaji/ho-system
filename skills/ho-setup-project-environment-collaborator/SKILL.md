@@ -144,9 +144,9 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
 3. **`.pre-commit-config.yaml`** from `~/.claude/templates/pre-commit.baseline.yaml`. Verbatim; no placeholders.
 4. **`.gitignore`** from `~/.claude/templates/gitignore.baseline` (Python) or `gitignore.web.baseline` (web project). Verbatim plus any project-specific exclusions the practitioner names.
 
-   > Note: `ho-process/` is not gitignored by default. If the project is or may go public
-   > and the practitioner wants to keep the build record private, add `ho-process/` to
-   > `.gitignore` explicitly. Otherwise leave it tracked.
+   > `ho-process/` is gitignored by default. The build record (kamae documents, hos) is
+   > private practitioner work and does not belong in the project's git history. Kamae
+   > documents go inside `ho-process/` — not at the project root.
 
 5. **`.env.example`** from `~/.claude/templates/env.example.baseline`. Replace `MYPROJ_` prefix with the project's actual env var prefix (often the package name uppercased).
 6. **`CLAUDE.md`** from `~/.claude/templates/project-CLAUDE.template.md`. Replace placeholders:
