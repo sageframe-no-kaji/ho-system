@@ -30,7 +30,7 @@ The first commit does NOT include:
 - **`.venv/`, `node_modules/`, build outputs.** Always gitignored.
 - **`.env` (with real values).** The `.env.example` template is committed; the actual `.env` is gitignored.
 - **Project-specific configuration files with real values.** `configs/config.template.yaml` is committed; `configs/config.yaml` is gitignored.
-- **IDE files.** `.vscode/`, `.idea/`—gitignored.
+- **IDE files.** `.vscode/`, `.idea/`, `.claude/`—gitignored.
 - **Operating system noise.** `.DS_Store`, `Thumbs.db`—gitignored.
 - **The practitioner's prompts.** `prompts/` and similar—gitignored per the practitioner's infrastructure conventions.
 - **`ho-process/`.** The project's build record (kamae documents, hos) lives here and is gitignored by default. The first commit tracks the code baseline; build-record files are private practitioner work. Kamae documents go inside `ho-process/`—not at the project root.
