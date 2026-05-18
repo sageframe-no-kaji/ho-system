@@ -1,3 +1,5 @@
+![ho-hanko](ho-hanko.png)
+
 # The Ho System (歩)
 
 **A collaborative development methodology for building with AI while maintaining architectural authority and genuine understanding.**
