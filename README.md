@@ -1,4 +1,4 @@
-![ho-hanko](ho-hanko.png)
+<img src="ho-hanko.png" alt="ho-hanko" width="150" />
 
 # The Ho System (歩)
 
