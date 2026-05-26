@@ -38,6 +38,8 @@ Both are ri-stage tools. The difference:
 
 A ri ho might _contain_ several agent tasks. The ho documents the session; the agent tasks document individual delegated pieces within it.
 
+See [[ho-task-decomposition|Ho-Task Decomposition]] (framework/structure/ho-task-decomposition.md) §7 for the test that distinguishes a ri ho from a standalone task.
+
 ---
 
 ## Template Begins Here

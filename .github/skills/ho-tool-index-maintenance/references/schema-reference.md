@@ -14,6 +14,7 @@ All assigned IDs as of the last index update. Use this to find the next availabl
 | 2.5 | framework/structure/tiered-understanding.md | structure | n/a | stable |
 | 2.6 | framework/structure/devlog.md | structure | n/a | stable |
 | 2.7 | framework/structure/verification-practices.md | structure | n/a | stable |
+| 2.8 | framework/structure/ho-task-decomposition.md | structure | any | draft |
 | 3.1 | framework/templates/template-selection-guide.md | template | any | stable |
 | 3.2 | framework/templates/ho-seed-template.md | template | n/a | draft |
 | 3.3 | framework/templates/shu-ho-template.md | template | shu | stable |
@@ -37,7 +38,7 @@ All assigned IDs as of the last index update. Use this to find the next availabl
 | Layer | Next ID |
 |-------|---------|
 | 1 | 1.3 |
-| 2 | 2.8 |
+| 2 | 2.9 |
 | 3 | 3.9 |
 | 4 | 4.4 |
 | 5 | 5.3 |

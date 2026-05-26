@@ -334,6 +334,7 @@ Hos and commits are not the same thing, but they're deeply linked.
 - [[tiered-understanding|Tiered Understanding]] (framework/structure/tiered-understanding.md) — How understanding depth is tracked within hos
 - [[project-arc|The Project Arc]] (framework/structure/project-arc.md) — How hos sequence into complete arcs
 - [[template-selection-guide|Template Selection Guide]] (framework/templates/template-selection-guide.md) — Choosing the right template
+- [[ho-task-decomposition|Ho-Task Decomposition]] (framework/structure/ho-task-decomposition.md) — How hos and agent tasks compose one architectural thought
 
 ---
 

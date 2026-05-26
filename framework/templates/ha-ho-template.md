@@ -351,6 +351,8 @@ What would make you reconsider?]
 > Build what you decided to build in Phase 1. If the implementation reveals
 > that your decision was wrong, STOP and go back to Phase 1.
 
+> When Execute decomposes into agent tasks, see [[ho-task-decomposition|Ho-Task Decomposition]] (framework/structure/ho-task-decomposition.md) for the canonical pattern: Execute functions as a structural index over the child tasks, not as a section where the practitioner writes code inline.
+
 ### Implementation Plan
 
 **[LEARNER COMPLETES]**

@@ -298,6 +298,8 @@ The "Ho" column links tasks to the ho session they were part of (if any). Many r
 
 ## Relationship to Ho Documents
 
+The canonical specification for how agent tasks relate to ho documents is in [[ho-task-decomposition|Ho-Task Decomposition]] (framework/structure/ho-task-decomposition.md). That document names three relationship types (constitutive children, in-session delegations, standalone tasks), specifies the parent-child binding, and establishes extraction as canonical. The notes below describe how each type manifests at each shu-ha-ri stage.
+
 Agent tasks and ho documents serve different purposes and can coexist:
 
 **Shu stage:** The ho IS the instruction. Agent tasks are rare — the learner is building manually to develop understanding. An author might include an agent task for boilerplate setup ("have Claude Code scaffold the project structure") but the learning work is manual.

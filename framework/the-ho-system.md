@@ -95,6 +95,7 @@ These documents define how the Ho System works. Read them to understand the meth
 | [[tiered-understanding\|Tiered Understanding]] (framework/structure/tiered-understanding.md)       | Managing what you know and don't know. Honest self-assessment.                                                  |
 | [[devlog\|The Devlog]] (framework/structure/devlog.md)                                             | The reflection practice. What makes a good devlog. How it evolves across stages.                                |
 | [[verification-practices\|Verification Practices]] (framework/structure/verification-practices.md) | The four-layer verification stack. Test coverage, linting, self-review, cross-agent verification, human review. |
+| [[ho-task-decomposition\|Ho-Task Decomposition]] (framework/structure/ho-task-decomposition.md)    | How hos and agent tasks compose one architectural thought. The parent-child relationship, the three relationship types, and when to extract. |
 
 ### Use the Templates
 
@@ -119,7 +120,7 @@ Not sure which template? Start with the [[template-selection-guide|Template Sele
 
 **If you're learning the methodology:** Ho Structure → Shu-Ha-Ri → Project Arc → Tiered Understanding → Devlog.
 
-**If you're writing hos for someone else:** Shu-Ha-Ri → Verification Practices → the relevant stage template (read the author notes) → Template Selection Guide.
+**If you're writing hos for someone else:** Shu-Ha-Ri → Verification Practices → Ho-Task Decomposition → the relevant stage template (read the author notes) → Template Selection Guide.
 
 **If you're evaluating the methodology:** This document → Ho Structure → Project Arc → the Kanyō pilot examples.
 

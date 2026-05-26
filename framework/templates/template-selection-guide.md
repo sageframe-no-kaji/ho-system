@@ -190,4 +190,4 @@ These assignments are provisional. A ho planned as ha may turn out to be shu onc
 
 ---
 
-_This document is part of the Ho System framework._ _Templates: [[shu-ho-template|Shu]] (shu-ho-template.md) · [[ha-ho-template|Ha]] (ha-ho-template.md) · [[ri-ho-template|Ri]] (ri-ho-template.md) · [[agent-task-spec|Agent Task]] (agent-task-spec.md)_ _Structure: [[shu-ha-ri|Shu-Ha-Ri Progression]] (framework/structure/shu-ha-ri.md) · [[kamae-project-framing|Kamae: Project Framing]] (framework/structure/kamae-project-framing.md)_
+_This document is part of the Ho System framework._ _Templates: [[shu-ho-template|Shu]] (shu-ho-template.md) · [[ha-ho-template|Ha]] (ha-ho-template.md) · [[ri-ho-template|Ri]] (ri-ho-template.md) · [[agent-task-spec|Agent Task]] (agent-task-spec.md)_ _Structure: [[shu-ha-ri|Shu-Ha-Ri Progression]] (framework/structure/shu-ha-ri.md) · [[kamae-project-framing|Kamae: Project Framing]] (framework/structure/kamae-project-framing.md) · [[ho-task-decomposition|Ho-Task Decomposition]] (framework/structure/ho-task-decomposition.md)_

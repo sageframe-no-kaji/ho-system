@@ -63,6 +63,7 @@ Conceptual specifications. Ordered to follow the practitioner's actual experienc
 | 2.5 | [Tiered Understanding](framework/structure/tiered-understanding.md) | Framework for calibrated comprehension |
 | 2.6 | [The Devlog](framework/structure/devlog.md) | Structured reflection as a learning practice |
 | 2.7 | [Verification Practices](framework/structure/verification-practices.md) | Quality assurance in AI-augmented development |
+| 2.8 | [Ho-Task Decomposition](framework/structure/ho-task-decomposition.md) | How hos and agent tasks compose one architectural thought |
 
 ---
 
