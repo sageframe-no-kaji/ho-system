@@ -132,6 +132,8 @@ Reality introduces three forces that reshape the arc:
 
 **Scope discovery.** Building reveals requirements that weren't visible during planning. The Kanyō plan didn't include "arrival confirmation" or "stream outage handling" because those needs weren't apparent until the system was running and producing false positives. These became Hos 06.13 and 05.71 — work that emerged from operating the system, not from the plan.
 
+Scope discovery is the mechanism by which earlier hos get *responded to* rather than *reopened*. When a closed ho's work turns out to be incomplete or wrong, the response is a new ho in the current build slot — see [[ho-structure|the forward-only principle]] (framework/structure/ho-structure.md). The arc grows forward; the historical record stays intact.
+
 ### 3.3 The Kanyō Arc: Planned vs. Actual
 
 ```

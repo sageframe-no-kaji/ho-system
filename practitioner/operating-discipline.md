@@ -220,6 +220,16 @@ This is also why the chain matters. A new agent arriving in a project doesn't ne
 
 The discipline this implies: write documents thoroughly, write them in present tense, write them as if the project exists even when it doesn't yet, and update them as the project evolves so that the next conversation is reading current truth instead of stale state. A document that has drifted out of sync with the project actively misleads. The discipline of keeping documents current is the discipline of keeping the bootstrap functional.
 
+### Forward-only progress
+
+Closed hos stay closed. When a session surfaces evidence that an earlier ho's work was incomplete, wrong, or has been overtaken by what the project now knows, the response is a new ho in the current build slot — not a reopening, rewrite, or retroactive edit of the earlier one. The earlier ho is a historical record of what was known at the time. The new ho is the response to what is known now.
+
+The practitioner's temptation, when discovering that a prior ho's design didn't hold up, is to "fix" that ho — quietly edit its scope, revise its conclusions, mark it as superseded in place. This corrupts the timeline. A reader of the arc loses the ability to see what the project actually believed at each step, which is one of the things the documentation chain exists to preserve. It also opens the door to endless re-litigation: every closed ho becomes provisional, every old decision becomes editable, and the discipline of *closing work and moving on* erodes.
+
+Forward-only restores the structural rule: the question is never "should we reopen Ho 5?" — the question is always "what new ho responds to what we now know?" The new ho references the earlier one explicitly, names what changed, and supersedes the relevant pieces in the live system. The supersession is part of the record, not hidden inside an amended document.
+
+The mechanical exceptions are typographical — fixing a typo or broken link in a closed ho is fine. Anything that changes what the ho *said* belongs in a new ho. This is the operating-discipline counterpart to the framework's [forward-only principle](../framework/structure/ho-structure.md) and to Rule 1 of the numbering system (abandoned numbers stay dead): the address space and the content are both immutable once closed.
+
 ### Project hygiene
 
 The structural choices that make a project legible to future readers—human and AI—are the visible artifacts of the operating discipline. A practitioner who has these things in place is encoding the discipline. A practitioner who doesn't is hoping the agent will guess.

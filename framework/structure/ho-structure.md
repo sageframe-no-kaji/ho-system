@@ -124,7 +124,29 @@ Five rules govern the numbering system. They're simple, but they matter.
 
 **Rule 5: Three levels maximum.** Major.Minor.Sub. No deeper. If sub-work wants to branch further, either promote it to a new major number or restructure the arc. Deep nesting makes numbers unreadable and signals that the work decomposition needs rethinking, not more digits.
 
-### 3.5 Filename Convention
+### 3.5 The Forward-Only Principle
+
+Closed hos stay closed. When evidence surfaces that an earlier ho's work was incomplete, wrong, or has been overtaken by what the project now knows, the response is a new ho in the current build slot — not a reopening, rewrite, or retroactive edit of the earlier one.
+
+The earlier ho is a historical record of what was known and decided at the time. The new ho is the response to what is known now. Both are kept. The timeline reads as a sequence of honest positions, each correct for its moment, with later hos visibly responding to earlier ones.
+
+This is the same logic as Rule 1 ("Numbers are permanent") applied to content rather than addresses. Rule 1 protects the address space; forward-only protects the record. Together they make the arc trustworthy as history: numbers don't get recycled, and conclusions don't get silently revised.
+
+What forward-only rules out:
+
+- Editing a closed ho's findings, scope, or deliverables to reflect later understanding.
+- "Reopening" a ho to do additional work under its old number.
+- Marking closed hos as failed or invalid in retrospect — they were correct given what was known.
+
+What forward-only enables:
+
+- Endless re-litigation of "closed" work is structurally prevented. The question is never "should we reopen Ho 05.6?" — the question is always "what new ho responds to what we now know?"
+- New hos reference earlier ones explicitly ("Ho 09 supersedes the queue design from Ho 05.6 in light of [the new evidence]"). The supersession is part of the record, not hidden.
+- The devlog and commit history remain truthful. A reader of the arc sees what the project believed at each step, including the steps that turned out to be wrong.
+
+The narrow exceptions are typographical: fixing a typo, broken link, or rendering bug in a closed ho. These don't alter the historical position. Anything that changes what the ho *said* belongs in a new ho.
+
+### 3.6 Filename Convention
 
 Ho documents are named with their number and a short descriptive slug:
 
@@ -145,7 +167,7 @@ The number uses hyphens for dots and underscores for internal separation:
 
 The slug is kebab-case, brief, and descriptive. It should be recognizable at a glance in a directory listing or commit message.
 
-### 3.6 What the Numbers Tell You
+### 3.7 What the Numbers Tell You
 
 The most important property of the numbering system is that the _gap between planned and actual_ tells the project's real story.
 
@@ -191,7 +213,7 @@ A facilitator reviewing this tree knows where the learner struggled (05's comple
 
 An experienced practitioner reviewing their own tree sees where the plan was wrong (05 was underscoped), where emergent work added the most value (05.6 Architecture Redesign removed 800 lines), and where the project's actual shape diverged from its imagined shape.
 
-### 3.7 Numbering and Shu-Ha-Ri
+### 3.8 Numbering and Shu-Ha-Ri
 
 The character of branching correlates with stage:
 
