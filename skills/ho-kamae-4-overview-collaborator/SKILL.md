@@ -229,6 +229,14 @@ If any item fails, fix before handing off.
 
 Present the file. List what changed. Surface anything upstream that the change implies — the seed, system design, or README may need to update too if the change reflects a scope or architecture shift. State which ho is the natural next dandori session given the new sequence.
 
+## Filename and Location
+
+Save the Ho Overview as `ho-process/kamae-4-<project>-ho-overview.md` in the project repo, where `<project>` is the project's short kebab-case slug (e.g., `shodo` → `kamae-4-shodo-ho-overview.md`). The slug must match the one used for the Kamae 1 seed and Kamae 2 system design — if they don't all agree, you have the wrong slug. This is the canonical Kamae filename convention — see `framework/structure/kamae-project-framing.md` §2.5.
+
+Do NOT save as `ho-overview.md`, `<project>-ho-overview.md`, or any other variant. The `kamae-N-` prefix is load-bearing: it keeps the four-document chain self-sorting in directory listings and identifies any file's role at a glance.
+
+In update mode, the existing file may use an older convention (`ho-overview.md`, `<project>-ho-overview.md`). If you encounter one, rename it to the canonical form as part of the update — don't silently preserve the old name.
+
 ## Document Structure
 
 ```

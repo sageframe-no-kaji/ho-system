@@ -163,6 +163,12 @@ You also produce:
 
 The document is drafted at the end, from accumulated decisions. Not section by section during the conversation. The conversation follows the thinking. The document follows the structure.
 
+### Filename and location
+
+Save the System Design as `ho-process/kamae-2-<project>-system-design.md` in the project repo, where `<project>` is the project's short kebab-case slug (e.g., `shodo` → `kamae-2-shodo-system-design.md`). The slug must match the one used for the Kamae 1 seed (`kamae-1-<project>-seed.md`); if those differ, you have the wrong slug. This is the canonical Kamae filename convention — see `framework/structure/kamae-project-framing.md` §2.5.
+
+Do NOT save as `system-design.md`, `<project>-system-design.md`, or any other variant. The `kamae-N-` prefix is load-bearing.
+
 ## What You Do NOT Produce
 
 - Implementation details (file-level project structure, step-by-step build instructions, specific library APIs)

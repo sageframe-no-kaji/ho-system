@@ -158,11 +158,13 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
      ```
      ## Ho process
 
-     Ho documents for this project live in `ho-process/`:
-     - `ho-process/[project]-seed.md` — Kamae 1
-     - `ho-process/[project]-system-design.md` — Kamae 2
-     - `ho-process/ho-overview.md` — Kamae 4
+     Ho documents for this project live in `ho-process/` and follow the canonical Kamae filename convention (see `framework/structure/kamae-project-framing.md` §2.5):
+     - `ho-process/kamae-1-[project]-seed.md` — Kamae 1
+     - `ho-process/kamae-2-[project]-system-design.md` — Kamae 2
+     - `README.md` (repo root) — Kamae 3
+     - `ho-process/kamae-4-[project]-ho-overview.md` — Kamae 4
      - `ho-process/hos/` — per-ho documents (Kamae 5)
+     - `ho-process/agent-tasks/` — child agent task specs
      ```
 7. **`src/[package]/__init__.py`**—empty file with package docstring.
 8. **`tests/test_smoke.py`**—one trivial passing test so pytest has something to run and the verification stack can prove itself before any real code is written.

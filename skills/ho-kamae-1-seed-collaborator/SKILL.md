@@ -204,6 +204,12 @@ You also produce:
 - Challenged assumptions (things they're taking for granted)
 - Honest assessment of readiness (whether the seed is strong enough to move to System Design, or whether more precedential thinking is needed)
 
+### Filename and location
+
+Save the seed as `ho-process/kamae-1-<project>-seed.md` in the project repo, where `<project>` is the project's short kebab-case slug (e.g., `shodo` → `kamae-1-shodo-seed.md`). This is the canonical Kamae filename convention — see `framework/structure/kamae-project-framing.md` §2.5. If a project slug hasn't been chosen yet, ask for one before writing the file rather than guessing. If the `ho-process/` directory doesn't yet exist, create it; if the project hasn't been scaffolded at all, flag that the `ho-setup-project-environment-collaborator` should run first.
+
+Do NOT save as `seed.md`, `<project>-seed.md`, or any other variant. The `kamae-N-` prefix is load-bearing: it makes the four-document chain self-sorting in directory listings and instantly identifies which Kamae document any file is.
+
 ## References
 
 - `references/seed-template-reference.md` — The full seed template with all 13 sections. **Read this before starting any seed conversation.** It is the map of territory to explore.
