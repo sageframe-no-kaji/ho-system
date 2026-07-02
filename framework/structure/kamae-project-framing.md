@@ -4,7 +4,6 @@ title: "Kamae: Project Framing"
 type: structure
 stage: n/a
 status: draft
-version: "1.0"
 tags: [ho-system, kamae, project-planning, framing]
 ---
 
@@ -117,7 +116,7 @@ A good System Design includes at least one architecture diagram (even ASCII art)
 
 The README takes the System Design's decisions and makes them into concrete, user-facing scope. Its philosophical stem — what the project is _for_, who it serves, why it matters — comes from the seed. Its technical content — what it does, how it works, how to get it — comes from the System Design. The README is where intent meets specification.
 
-The README is the only Kamae document that changes as the project develops. Details sharpen after each ho. Features are added or cut. Placeholders are replaced with real instructions. But the core — what this project is and who it's for — should trace back to the seed. When the README starts drifting from the seed's intent, that's a signal to revisit the seed and decide whether the intent has changed.
+The README is a **living document** — it changes continuously as the project develops. Details sharpen after each ho; features are added or cut; placeholders are replaced with real instructions. But it is not the only Kamae document that changes. The chain runs three mutability regimes (merge-decisions D4): the **seed** is a *living parti*, revised in place with deliberate dated revision notes when the project's core intent shifts (§2.1); the **README and ho overview** are *living-continuous*, edited freely as the work evolves; the **System Design** is *frozen* once committed, superseded only by dated addenda (kamae-N.M) rather than in-place edits. The README's core — what this project is and who it's for — should still trace back to the seed. When the README starts drifting from the seed's intent, that's a signal to revisit the seed and decide whether the intent has changed.
 
 **What "done" looks like:**
 
