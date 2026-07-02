@@ -20,6 +20,24 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ## 2026-07-02 — Fable-audit merge (ho-03, standalone drafts move-in)
 
+### Add design-ho template — kind: added
+
+New template `framework/templates/design-ho-template.md` (INDEX 3.9): the in-chain
+wrapper for the visual-design modality — tuner landings (`shape: ri`) and design-session
+batches that want a ho document (`shape: ha`). Companion to 2.11; the skeleton is
+complete, section prose fills in per project (merge-decisions **D10**).
+
+### Add 2.11 Design Work — kind: added
+
+New structure doc `framework/structure/design-work.md` (2.11): the visual-design
+modality — design that legitimately happens partly outside the Ho chain and propagates
+back through frozen artifacts and numbered hos (merge-decisions **D10**). Records the
+eight-step method, the living-register artifact, and the chain-attachment points. No
+`shape: design` (design decomposes into existing shapes). §6 states the
+`ho-kamae-design-collaborator` skill as an actively-tracked roadmap item — the doctrine
+doc plus the practitioner-scope `~/.claude/modules/design-work.md` module are the interim
+reference until it is built (the module ships with this ho, outside the framework repo).
+
 ### Add 2.10 Kamae Addenda — kind: added
 
 New structure doc `framework/structure/kamae-addenda.md` (2.10): the forward-only
