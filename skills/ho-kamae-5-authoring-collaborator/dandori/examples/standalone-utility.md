@@ -2,6 +2,7 @@
 created: 2026-05-09
 type: standalone-agent-task
 project: shuji
+model: claude-haiku-4-5
 status: ready
 ---
 

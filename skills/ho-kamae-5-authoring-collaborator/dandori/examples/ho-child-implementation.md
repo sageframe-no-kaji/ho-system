@@ -4,6 +4,7 @@ type: agent-task
 project: shuji
 parent-ho: 01
 task: 02
+model: claude-sonnet-4-6
 status: ready
 ---
 

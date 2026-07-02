@@ -152,6 +152,12 @@ A ho can produce:
 
 The dandori toolkit loads only when decomposition is warranted. The criteria above are sufficient to make the decision without it.
 
+### Model per spec
+
+Each dandori spec names the model that will execute it, set in the spec's `model` frontmatter field. The choice is vendor-agnostic and follows the operating discipline's model-choice guidance — the most capable reasoning model for architectural work, a strong-at-code model for implementation and tests, the most capable model for verification, a fast cheap model for trivial high-throughput work.
+
+The skill sets this when it proposes the decomposition. It either knows the practitioner's default-by-task mapping (from the project's `CLAUDE.md` or model-choice notes) or asks which agent and model are in use before writing the specs. A spec with no model named is an unmade decision — ask, don't default silently. `dandori/FORMAT.md` carries the field and the full taxonomy.
+
 ## Init Mode — Process
 
 ### 1. Verify pre-conditions and read sources (above).
@@ -189,7 +195,7 @@ Rare. Used when handing the framework to a learner. Use the framework's existing
 
 ### 7. Decide whether to decompose into dandori specs.
 
-For ha and ri shapes (not orientation, not shu), apply the criteria in `Decomposition into Dandori Specs` above. If decomposition is warranted, load the embedded dandori toolkit at `dandori/` for the format, translation moves, and execution discipline. Propose the decomposition to the practitioner — cardinality, scope, and naming. The practitioner ratifies.
+For ha and ri shapes (not orientation, not shu), apply the criteria in `Decomposition into Dandori Specs` above. If decomposition is warranted, load the embedded dandori toolkit at `dandori/` for the format, translation moves, and execution discipline. Propose the decomposition to the practitioner — cardinality, scope, naming, and the model each spec runs under (see `Model per spec`). The practitioner ratifies.
 
 If no decomposition: the Execute phase is a single agent conversation framed by the ho document directly.
 
@@ -238,6 +244,7 @@ These are non-negotiable. The skill does not produce them regardless of what's a
 - **Industry jargon without definition.** "Dogfood," loose "MVP," "shipping" used vaguely. Use plain language or define the term.
 - **Pre-emptive evaluation.** "The most important phase," "the critical decision" — cut. The work either matters and shows it through the work, or it doesn't.
 - **Authoring dandori specs before the Think phase has resolved.** Specs specify execution; specification depends on decisions. If the Think phase isn't done, the specs aren't ready.
+- **Authoring a dandori spec without naming its model.** Every spec names the model that executes it. Leaving it unset is an unmade decision — know the practitioner's default-by-task mapping or ask which agent and model are in use.
 - **Forcing a shape that doesn't fit.** If no shape fits cleanly, surface the discomfort to the practitioner. Don't force-fit.
 
 ## Voice and Style Notes

@@ -67,6 +67,7 @@ type: agent-task
 project: <slug>
 parent-ho: <NN>           # parent ho number, zero-padded (e.g., "01")
 task: <MM>                # task number within the ho, zero-padded
+model: <model-id>         # model that executes this spec — see Model below
 status: ready             # ready | in-progress | complete | blocked
 ---
 ```
@@ -78,11 +79,25 @@ Standalone task:
 created: YYYY-MM-DD
 type: standalone-agent-task
 project: <slug>
+model: <model-id>         # model that executes this spec — see Model below
 status: ready
 ---
 ```
 
 The `parent-ho` and `task` fields link a child task to its parent ho. Standalone tasks omit them and use `type: standalone-agent-task` to be explicit about the absence.
+
+#### Model
+
+Every spec names the model that executes it. The field is vendor-agnostic — the value is whatever model the executing agent runs (`claude-opus-4-8`, `claude-sonnet-4-6`, `gpt-5-codex`, and so on). It is not optional; an unset model is an unmade decision.
+
+The choice follows the operating discipline's model-choice guidance, matched to the spec's work:
+
+- **Architectural / design-heavy** (interface or schema decisions folded into the spec) → the most capable reasoning model.
+- **Implementation / test-writing** → a strong-at-code model, often a cheaper tier than the architectural default.
+- **Verification / review** → the most capable model available; a weaker-than-implementer model won't catch what the implementer missed.
+- **Trivial / high-throughput** (single-line change, mechanical refactor) → a fast, cheap model.
+
+The skill sets this at decomposition time. It either knows the practitioner's default-by-task mapping (from the project's `CLAUDE.md` or model-choice notes) or asks which agent and model are in use before writing the specs — it does not leave the field blank or guess silently.
 
 #### Goal
 
@@ -333,6 +348,7 @@ Standalone tasks use the same format with the standalone naming and frontmatter 
 Before declaring a task ready:
 
 - [ ] Frontmatter complete (created, type, project, status; parent-ho and task for child tasks)
+- [ ] Model named in frontmatter (per the model-choice taxonomy; ask if the default isn't known)
 - [ ] Goal: one to three sentences, unambiguous
 - [ ] Files: full paths, create/modify/read-only marked
 - [ ] Required Changes: each change is concrete, not pseudocode

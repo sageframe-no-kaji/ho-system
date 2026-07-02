@@ -4,6 +4,7 @@ type: agent-task
 project: shuji
 parent-ho: 04
 task: 01
+model: claude-opus-4-8
 status: ready
 ---
 
