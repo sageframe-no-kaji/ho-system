@@ -64,6 +64,7 @@ Conceptual specifications. Ordered to follow the practitioner's actual experienc
 | 2.7 | [Verification Practices](framework/structure/verification-practices.md) | Quality assurance in AI-augmented development |
 | 2.8 | [Ho-Task Decomposition](framework/structure/ho-task-decomposition.md) | How hos and agent tasks compose one architectural thought |
 | 2.9 | [Artifact Type Registry](framework/structure/artifact-type-registry.md) | The taxonomy of every artifact type the practice produces |
+| 2.10 | [Kamae Addenda](framework/structure/kamae-addenda.md) | Mid-build architectural decisions without rewriting history |
 
 ---
 

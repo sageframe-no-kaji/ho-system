@@ -58,7 +58,7 @@ fixes").
 e.g. `kamae-2 §7 (partial — the "no runtime injection" commitment)`), `builds-on:`,
 `next:` (the downstream documents the decision is reflected into).
 **Instances:** sharibako kamae-2.1 (injection), kamae-2.2 (ownership).
-Full doctrine: the Kamae Addenda structure document (framework 2.10, forthcoming).
+Full doctrine: the Kamae Addenda structure document (framework 2.10).
 
 ### 1.3 Ho documents (Kamae 5)
 

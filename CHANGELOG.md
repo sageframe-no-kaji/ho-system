@@ -18,6 +18,18 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-02 — Fable-audit merge (ho-03, standalone drafts move-in)
+
+### Add 2.10 Kamae Addenda — kind: added
+
+New structure doc `framework/structure/kamae-addenda.md` (2.10): the forward-only
+principle applied to the Kamae chain — a mid-build architectural decision (kamae-N.M)
+supersedes a *named part* of a frozen Kamae document while the original stays frozen as
+the record (merge-decisions **D9**). §3 (the three mandatory supersession links) is tied
+to the framework-wide bidirectional-supersession rule in ho-structure §3.5
+(merge-decisions **D7**). Moved in from the Fable-audit draft; the registry's §1.2
+forward pointer drops "forthcoming."
+
 ## 2026-07-02 — Fable-audit merge (ho-02, canonical-layer reconciliation)
 
 ### Index the 2.9 registry — kind: changed
