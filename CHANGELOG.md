@@ -20,6 +20,13 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ## 2026-07-02 — Fable-audit merge (ho-02, canonical-layer reconciliation)
 
+### Index the 2.9 registry — kind: changed
+
+`INDEX.md`: add the 2.9 Artifact Type Registry row to the Structure layer so this ho's new
+document is on the map. Partial execution of **D18** — the new `skills/` and `practitioner/`
+INDEX layers and the larger "is the seven-layer model still right" information-architecture
+question are deferred to a dedicated INDEX design pass (tracked in the ho-process idea log).
+
 ### Name the three Kamae mutability regimes — kind: changed
 
 `framework/structure/kamae-project-framing.md`: amend the claim that the README is "the

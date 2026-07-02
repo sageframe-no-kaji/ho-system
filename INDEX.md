@@ -4,7 +4,6 @@ title: "Ho System Index"
 type: foundation
 stage: n/a
 status: stable
-version: "1.0"
 tags: [ho-system, navigation, index]
 ---
 
@@ -64,6 +63,7 @@ Conceptual specifications. Ordered to follow the practitioner's actual experienc
 | 2.6 | [The Devlog](framework/structure/devlog.md) | Structured reflection as a learning practice |
 | 2.7 | [Verification Practices](framework/structure/verification-practices.md) | Quality assurance in AI-augmented development |
 | 2.8 | [Ho-Task Decomposition](framework/structure/ho-task-decomposition.md) | How hos and agent tasks compose one architectural thought |
+| 2.9 | [Artifact Type Registry](framework/structure/artifact-type-registry.md) | The taxonomy of every artifact type the practice produces |
 
 ---
 
