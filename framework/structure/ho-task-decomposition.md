@@ -4,63 +4,181 @@ title: "Ho-Task Decomposition"
 type: structure
 stage: any
 status: draft
-version: "1.0"
-tags: [ho-system, structure, agent-task, decomposition]
+tags: [ho-system, structure, agent-task, decomposition, model-choice]
 ---
 
 # Ho-Task Decomposition
 
 ## How Hos and Agent Tasks Compose One Architectural Thought
 
-A mature practitioner doesn't write executable specs inside a ho. The ho carries the architecture at the level of decisions; agent tasks carry the same architecture at the level of executable surface. They are one design, written at two resolutions, in separate documents bound by an explicit parent-child relationship.
+A mature practitioner doesn't write executable specs inside a ho. The ho carries the
+architecture at the level of decisions; agent tasks carry the same architecture at the
+level of executable surface. They are one design, written at two resolutions, in
+separate documents bound by an explicit parent-child relationship.
 
-This document names that relationship as canonical. Inline execution within a ho is the exception, reserved for moves too small to warrant their own document. Extraction is the default.
+This document names that relationship as canonical, and names the four operational
+properties that make the agent task a distinct artifact rather than a formatting
+convention: procedural content, executor portability, the escalation clause, and
+one-commit-per-task.
 
 ---
 
 ## 1. The Two Registers
 
-A ho document operates at the **architectural register**. It carries decisions, the reasoning behind them, deferred discoveries, and post-execution reflection. It is read by humans — the practitioner, future maintainers, anyone trying to understand why the system is the way it is. Its content is durable: it survives the project and gets revisited years later.
+A ho document operates at the **architectural register**. It carries decisions, the
+reasoning behind them, deferred discoveries, and post-execution reflection. It is read
+by humans — the practitioner, future maintainers, anyone trying to understand why the
+system is the way it is. Its content is durable: it survives the project and gets
+revisited years later.
 
-An agent task operates at the **executable register**. It carries exact files, exact changes, exact acceptance criteria, exact verification commands. It is read primarily by an autonomous coding agent — and secondarily by the practitioner reviewing the agent's output. Its content is operational: once the work is committed and verified, the task's job is done.
+An agent task operates at the **executable register**. It carries exact files, exact
+changes, exact acceptance criteria, exact verification commands. It is read primarily
+by an autonomous coding agent — and secondarily by the practitioner reviewing the
+agent's output. Its content is operational: once the work is committed and verified,
+the task's job is done.
 
-Mixing the registers in one document damages both. The architectural reasoning gets buried under SQL and pydantic models; the executable spec gets diluted by paragraphs of context the agent doesn't need. The reader — whether human or agent — has to constantly shift cognitive register to extract what they came for.
+Mixing the registers in one document damages both. The architectural reasoning gets
+buried under schemas and signatures; the executable spec gets diluted by paragraphs of
+context the agent doesn't need. Extraction resolves the conflict structurally: each
+document speaks in one voice, and the relationship between them is preserved by
+explicit binding.
 
-Extraction resolves the conflict structurally. Each document speaks in one voice. The relationship between them is preserved by explicit binding.
+### 1.1 The two-tier separation of thinking from coding
+
+The registers are the session-scale instance of the methodology's central operating
+principle, which runs at two scales:
+
+- **Project scale — the Kamae chain.** Thinking artifacts (seed, system design,
+  README, overview: Kamae 1–4) are separated from doing artifacts (per-ho documents:
+  Kamae 5). Thinking happens in discursive sessions; the documents carry the
+  conclusions into build sessions.
+- **Session scale — the Ho ↔ AT split.** Architectural thinking (the ho's Think
+  phase) is separated from executable delegation (the AT). The ho is authored in a
+  discursive register; the AT is executed in an agentic IDE by whatever executor is
+  cheapest that satisfies the spec.
+
+The same move at both scales: extract the thinking into a durable document, so the
+doing can be delegated, verified, and repeated without re-litigating the thinking.
+(This two-scale principle is in active use across the corpus and does not yet have a
+practitioner-authored name.)
 
 ---
 
 ## 2. Three Relationship Types
 
-Agent tasks relate to hos in three distinct ways. The framework's earlier documentation conflated the second and third.
+Agent tasks relate to hos in three distinct ways.
 
 ### 2.1 Constitutive Children
 
-An agent task that is a **constitutive child** of a ho cannot be understood without the parent. Its Context section references architectural decisions from the parent's Think phase. Its Goal realizes commitments the parent made. Its sibling tasks decompose the same architectural thought into ordered executable units. Detached from the parent, the child task is a list of operations without a reason.
+An agent task that cannot be understood without the parent. Its Context section
+references architectural decisions from the parent's Think phase; its Goal realizes
+commitments the parent made; its sibling tasks decompose the same architectural
+thought into ordered executable units. This is the dominant pattern in mature
+practice.
 
-This is the dominant pattern in mature practice. Most agent tasks under a ha-shaped ho are constitutive children.
-
-**Signal:** the task's Context section says "Architectural decisions from [parent ho]'s Think phase" and lists them. The task makes sense only because the parent's reasoning is available.
+**Signal:** the task's Context names the parent ho's decisions ("Strict error handling
+was chosen over lenient mode in v1; see ho-01 Decision 2") and makes sense only
+because that reasoning exists.
 
 ### 2.2 In-Session Delegations
 
-An agent task written mid-session for a bounded piece of work the practitioner is about to delegate. The architectural framing is light or absent — the task captures what to do, not why. The parent ho references the task in its Execute phase, but the task's content is mostly self-contained.
-
-This pattern appears when a session involves both architectural thinking and one or two delegated executions that don't warrant the full decomposition treatment.
+A task written mid-session for a bounded piece of work the practitioner is about to
+delegate. Architectural framing is light or absent; the parent ho references the task
+in its Execute phase, but the task's content is mostly self-contained.
 
 ### 2.3 Standalone Tasks
 
-An agent task that exists outside any ho. Quick fixes, maintenance work, small features that don't merit a session wrapper. The task is fully self-contained. No `parent:` field in the frontmatter; the task stands alone.
-
-Standalone tasks are common in ri-stage work and during ongoing project maintenance.
+A task outside any ho: maintenance ("bump dependency X, fix any breaks"), surgical
+fixes between hos, pre-ho exploration ("inspect a real export and report on its
+schema"). Fully self-contained; no parent fields in the frontmatter. Common in
+ri-stage work and ongoing maintenance.
 
 ---
 
-## 3. The Parent-Child Binding
+## 3. The Four Operational Properties
 
-When an agent task is a constitutive child of a ho, the relationship is made structural through frontmatter and document conventions.
+These properties define the agent task as an artifact type. A spec missing any of
+them is not yet an AT.
 
-### 3.1 Frontmatter
+### 3.1 Procedural — no thinking inside
+
+All architectural decisions have been extracted to the ho. The AT is procedure. If
+writing the spec requires making a decision, the decision belongs upstream — either
+the ho's Think phase resolves it first, or the spec is not ready to author. The
+kamae-5 skill enforces this as an anti-pattern: "Authoring dandori specs before the
+Think phase has resolved."
+
+### 3.2 Executor-portable — the model field
+
+Because there is no thinking in it, the AT can be dispatched to a lighter model, a
+subagent, or any executor that reliably follows a procedural spec. Every AT therefore
+names its executor in a required frontmatter field:
+
+```yaml
+model: claude-sonnet-4-6    # vendor-agnostic; whatever runs the spec
+```
+
+**An unset model is an unmade decision.** The choice follows the operating
+discipline's model-choice guidance, matched to the spec's work:
+
+- Architectural / design-heavy content folded into the spec → the most capable
+  reasoning model
+- Implementation and test-writing → a strong-at-code model, often a cheaper tier
+- Verification / review → the most capable model available (a weaker-than-implementer
+  reviewer won't catch what the implementer missed)
+- Trivial, high-throughput mechanical work → a fast, cheap model
+
+This field is where the operating discipline's *model choice by task* stops being
+advice and becomes an encoded, auditable decision. Reading a project's `agent-tasks/`
+directory shows exactly which tier executed which work.
+
+### 3.3 Escalating — autonomous until something new surfaces
+
+The AT is executed autonomously — *unless it finds something new*. When execution
+surfaces something the ho didn't anticipate — a schema mismatch, a wrong assumption in
+the spec, a real-data shape that contradicts the fixtures, an unanticipated
+dependency — the executing agent stops and surfaces the finding. It does not adapt
+silently, does not rationalize the surprise as "probably fine," and does not acquire
+architectural authority because something feels suboptimal mid-execution.
+
+Two mechanisms carry this:
+
+- **Stop Conditions** (a spec section) name the *anticipated* surprises: "If a real
+  export reveals shape mismatches with the schema, stop and surface findings before
+  modifying the data model."
+- **The general rule** covers the unanticipated ones: any surprise halts the loop.
+  This is kokoroe guideline 4 ("Halt and surface") and it applies whether or not a
+  Stop Condition section exists.
+
+This is the operating discipline's *stop for decisions, not permissions* rule applied
+at the AT layer. The decision that comes back goes to the practitioner (or a heavier
+model in a discursive session); its resolution lands in the parent ho (see §6), and
+execution resumes against the updated record.
+
+### 3.4 One commit per task
+
+Each AT lands as a single commit. Child-task commits use the `ho-NN:` prefix and
+reference the spec by its full ID:
+
+```
+ho-01: add VaultCore filesystem primitives (Ho-01-AT-01)
+```
+
+Standalone tasks use a conventional prefix appropriate to the work (`deps:`, `fix:`,
+`docs:`). The result is a git log that reads as a sequence of ATs grouped by ho —
+the decomposition's visible signature, auditable without opening a single document:
+
+```
+feat(inventory): Host/Service models + sageframe_hosts (Ho-01-AT-01)
+feat(services): SshExecutor + compose walker + sageframe_services (Ho-01-AT-02)
+feat(systemd): Semaphore fan-out + sageframe_systemd_failed (Ho-01-AT-03)
+```
+
+---
+
+## 4. The Parent-Child Binding
+
+### 4.1 Frontmatter
 
 **Parent ho** declares its children:
 
@@ -75,156 +193,188 @@ agent-tasks:
 ---
 ```
 
-**Child task** declares its parent:
+**Child task** declares its parent by number, plus the fields that make it
+independently executable:
 
 ```yaml
 ---
-created: YYYY-MM-DD
+created: 2026-06-30
 type: agent-task
-status: complete
-parent: hos/ho-02-threader-and-chunker.md
+project: sharibako
+parent-ho: "01"        # parent ho number, zero-padded, quoted
+task: "01"             # task number within the ho
+model: claude-sonnet-4-6
+status: ready          # ready | in-progress | complete | blocked
 ---
 ```
 
-The binding is bidirectional. A reader arriving at either document can navigate to the other without searching. Tooling that audits framework coherence can verify that every declared child exists and every claimed parent contains the corresponding entry.
+**Standalone task:**
 
-### 3.2 Naming convention
+```yaml
+---
+created: 2026-05-09
+type: standalone-agent-task
+project: shodo
+model: claude-haiku-4-5
+status: ready
+---
+```
 
-Constitutive children follow the parent's number:
+The binding is bidirectional: a reader arriving at either document navigates to the
+other without searching, and tooling can verify that every declared child exists and
+every claimed parent lists it.
 
-- `Ho-02-AT-01.md` — task 01 under ho-02
-- `Ho-02-AT-02.md` — task 02 under ho-02
-- `Ho-02-AT-03.md` — task 03 under ho-02
+> Revision note: the original 2.8 specified a `parent:` path field
+> (`parent: hos/ho-02-threader-and-chunker.md`). No project uses it; the practiced
+> and dandori-specified form is `parent-ho` + `task` above. This revision adopts the
+> practiced form.
 
-The naming makes the parent-child relationship visible in the file listing. Standalone tasks use the date-slug convention (`agent-task-YYYY-MM-DD-slug.md`); they do not share the ho's number space.
+### 4.2 Naming and location
 
-### 3.3 Context section
+Child tasks: `Ho-NN-AT-MM.md`, zero-padded, in `ho-process/agent-tasks/` — a sibling
+directory to `ho-process/hos/`, because tasks are referenced from hos but read
+independently by the agent, standalone tasks share the directory, and pattern-matching
+across all tasks is easiest in one place.
 
-The child task's Context section names the parent's relevant decisions explicitly:
+Standalone tasks: `Standalone-AT-YYYY-MM-DD-slug.md`, in the same directory. This keeps
+standalone tasks in the `AT` family alongside child `Ho-NN-AT-MM.md` and mirrors the
+`type: standalone-agent-task` frontmatter; the date orders them. Exploration tasks are a
+*use-case* of the standalone type, not a distinct type — they take the same filename, not
+an `Exploration-AT-` prefix. Historical lowercase `agent-task-*` filenames stand as
+record; new projects conform to the `Standalone-AT-` form.
 
-> Architectural decisions from ho-02's Think phase:
->
-> - Exchanges are stored entities; one row per exchange in a new `exchanges` table
-> - Threading lives on exchanges (`thread_id`, `position_in_thread`); no separate threads table
-> - ...
+### 4.3 Spec anatomy
 
-This is not redundant with the parent. The parent argues the decisions; the child surfaces only the decisions the task is realizing. The agent reading the task gets exactly what it needs to execute, without needing to absorb the full architectural reasoning.
+The full format — required sections (frontmatter, Goal, Files, Required Changes,
+Acceptance, Verification, Commit) and optional sections (Context, Problem, Do Not,
+Stop Condition) — lives in the dandori FORMAT reference embedded in the kamae-5 skill.
+The structural rules this document owns: acceptance criteria verify by command,
+verification commands match acceptance one-to-one, and optional sections appear only
+when warranted.
 
 ---
 
-## 4. The Execute Phase as Structural Index
+## 5. The Execute Phase as Structural Index
 
-When a ha-shaped ho has constitutive children, its Execute phase changes function. It is no longer the section where the practitioner does the work. It is the section that **indexes** the children — naming each, stating what it produces, and linking to its document.
-
-A typical Execute phase under decomposition:
+When a ha-shaped ho has constitutive children, its Execute phase is no longer where
+the practitioner does the work — it **indexes** the children: one paragraph per task
+naming what it produces, followed by a link.
 
 ```markdown
 ## Phase 2 — Execute
 
-The work decomposes into three agent tasks, executed in order. Each is its own document at `ho-process/agent-tasks/`.
+Two tasks with a clean seam at the encryption boundary.
 
-### Ho-02-AT-01 — Schema and models
+### Ho-01-AT-01 — Filesystem primitives and pure-filesystem operations
 
-Migration 002 adds `exchanges` and `chunks` tables, plus `messages.exchange_id` via `ALTER TABLE`. ... No threading or chunking logic — just the data shape and the configuration surface.
+Shell.run() utility, VaultError enum, models, layout helpers, and the five
+operations that don't require decryption. No `age` binary needed for these tests.
 
-→ `ho-process/agent-tasks/Ho-02-AT-01.md`
+→ `ho-process/agent-tasks/Ho-01-AT-01.md`
 
-### Ho-02-AT-02 — Threader
-
-...
-
-### Ho-02-AT-03 — Chunker
-
+### Ho-01-AT-02 — age invocation and encryption operations
 ...
 ```
 
-Each entry is a paragraph naming what the child does, followed by a link. The architectural reasoning lives upstream in Think; the operational precision lives downstream in the task documents themselves. Execute is the seam between them.
-
-This is the canonical shape. Execute as a section where the practitioner writes code inline is the special case, reserved for moves too small to warrant their own document — a one-line config change, a single test addition, a trivial dependency bump.
-
----
-
-## 5. Discoveries Crossing Back
-
-Real work surfaces things the design didn't anticipate. When a child task's execution reveals that a parent ho's decision needs revision, the revision is recorded in the **parent**, not the child.
-
-The pattern from Shodō ho-02:
-
-1. ho-02's Think phase committed to `THREAD_MAX_EXCHANGES = 4` as Decision 3.
-2. During AT-03 execution, real-data inspection revealed the 4-cap forced false splits in 75% of threads.
-3. The cap was raised to 50.
-4. The revision is documented in ho-02's Think section (with a note marking it as revised post-execution) and in the Reflect section (with the full evidence).
-5. AT-03 itself contains the executable result of the revised decision — not the deliberation.
-
-The principle: **the ho is the durable architectural record.** Decisions live there, including decisions revised mid-execution. The agent task documents the work that was actually done; the ho documents the design, including changes the work surfaced. A reader returning to the project two years later reads the ho to understand the architecture; they read the agent tasks only if they need to know exactly what code shipped.
+The architectural reasoning lives upstream in Think; operational precision lives
+downstream in the task documents. Execute is the seam. Inline execution in the ho is
+the exception, reserved for moves too small to warrant their own document.
 
 ---
 
-## 6. When to Extract
+## 6. Discoveries Crossing Back
 
-The decomposition question — "does this work warrant a child task, or stay inline?" — has a clear default and a small set of exceptions.
+When a child task's execution reveals that a parent ho's decision needs revision, the
+revision is recorded in the **parent**, not the child. The Shodō ho-02 pattern: the
+Think phase committed to a cap of 4; AT-03's real-data inspection showed the cap
+forced false splits in 75% of threads; the cap was raised to 50; the revision lives in
+ho-02's Decision 3 (marked as revised post-execution) and Reflect (full evidence);
+AT-03 carries only the executable result.
 
-**Default: extract.** Any executable spec long enough to compete with the ho's architectural narrative for attention belongs in a child task. SQL schema, pydantic models, function signatures, test bodies, exact file modifications — these all live in the task, not the ho.
+The principle: **the ho is the durable architectural record.** A reader returning two
+years later reads the ho to understand the architecture, including changes execution
+surfaced; they read the tasks only to know exactly what shipped.
 
-**Exception: trivial moves.** A change small enough that documenting it inline does not damage the ho's legibility may stay. Signals:
-
-- A single short code block (a config constant, a one-line import addition)
-- Work the practitioner intends to do by hand rather than delegate
-- A change too small to verify with its own acceptance and verification sections
-
-Even these may extract. The rule is conservative: when in doubt, extract. The cost of an unnecessary child task is one small document; the cost of a ho cluttered with executable detail is degraded architectural legibility.
-
----
-
-## 7. When the Ho Dissolves
-
-If a piece of work has no architectural content — no decisions to record, no deferred discoveries, no reflection that needs preserving — there should be no ho. The agent task is sufficient on its own. This is what standalone tasks are for.
-
-**Test:** if the ho would contain only a frontmatter, a one-line Context, and a link to a single child task, the ho is not earning its document. Write the task as standalone; skip the ho.
-
-The threshold is architectural content, not work size. A small change that resolves a non-trivial deferred decision deserves a ho. A large change that's pure implementation of an already-decided architecture is a standalone task.
-
-This rule also prevents a degraded pattern: hos written as ceremonial wrappers around tasks that would be clearer standalone. The ho should appear when there is architectural thinking to capture, and only then.
+This section and §3.3 are the same loop seen from two ends: the escalation clause is
+how a discovery gets *out* of the AT; this rule is where the resolution gets
+*recorded*.
 
 ---
 
-## 8. Worked Example: Shodō ho-02
+## 7. When to Extract, When the Ho Dissolves
 
-The canonical example of constitutive-children decomposition. The full documents live at:
+**Default: extract.** Any executable spec long enough to compete with the ho's
+architectural narrative belongs in a child task. When in doubt, extract — the cost of
+an unnecessary child is one small document; the cost of a cluttered ho is degraded
+architectural legibility.
 
-- Parent: `hos/ho-02-threader-and-chunker.md`
-- Children: `agent-tasks/Ho-02-AT-01.md`, `Ho-02-AT-02.md`, `Ho-02-AT-03.md`
+**Exception: trivial moves.** A single short code block, work the practitioner does by
+hand, a change too small to carry its own acceptance section.
 
-What the parent carries:
+**When the ho dissolves:** if the work has no architectural content — no decisions, no
+deferred discoveries, no reflection worth preserving — there should be no ho. Write a
+standalone task. The threshold is architectural content, not work size: a small change
+resolving a non-trivial deferred decision deserves a ho; a large change that is pure
+implementation of decided architecture is a standalone task.
 
-- Six architectural decisions, each argued in 1–3 paragraphs
-- One discovery deferred to execution time (threading patterns on real data)
-- A Phase 2 that indexes the three children with a one-paragraph narrative each
-- A Phase 3 Reflect that records what survived, what was revised, and the evidence behind the revision
-
-What each child carries:
-
-- A Context section naming the specific architectural decisions it realizes
-- Exact files (created and modified)
-- Required Changes at executable resolution — SQL schemas, pydantic class definitions, test bodies, shell commands
-- Acceptance criteria each verifiable by a command
-- Verification commands matching acceptance one-to-one
-- A commit format
-
-Neither document tries to do the other's job. Read in isolation, the ho explains why; the tasks explain what. Read together, they are one architectural thought at two resolutions.
-
-The 4-to-50 cap revision is the load-bearing evidence: it happened during AT-03's execution, but it is recorded in ho-02's Decision 3 (revised inline with a note) and Reflect (full evidence). AT-03 itself contains the executable result; it does not re-argue the decision. This is the durable-record principle in action.
+**Cardinality guidance** (from the kamae-5 skill): zero tasks (orientation, simple ri,
+small ha that fits one conversation), one task (a bounded change worth a surgical
+spec), or N tasks (typical ha decomposition; three to five is common; more than seven
+suggests the ho should split).
 
 ---
 
-## 9. Related Framework Documents
+## 8. The Dandori Bridge
 
-- [[ho-structure|Ho Structure]] (framework/structure/ho-structure.md) — what makes a ho a ho; the five invariants
-- [[agent-task-spec|Agent Task Specification]] (framework/templates/agent-task-spec.md) — the format and use of agent tasks
-- [[ha-ho-template|Ha Ho Template]] (framework/templates/ha-ho-template.md) — the shape under which constitutive-children decomposition most often appears
-- [[ri-ho-template|Ri Ho Template]] (framework/templates/ri-ho-template.md) — where standalone tasks are most common
-- [[template-selection-guide|Template Selection Guide]] (framework/templates/template-selection-guide.md) — which template to use when
+The translation from a ho's Think phase to executable specs is a craft move with a
+name: **dandori** (段取り — preparation, staging). It is operationalized twice:
+
+- **Embedded in the kamae-5 skill** (`dandori/` toolkit: DANDORI.md, FORMAT.md,
+  KOKOROE.md, examples) — the Ho System-scoped variant that authors constitutive
+  children during per-ho authoring.
+- **As a standalone skill** — the lean variant for tasks outside any ho.
+
+The five translation moves (decisions → interface specifications; architectural
+commitments → file boundaries; out-of-scope items → Do Not entries; deferred
+discoveries → Stop Conditions; verification dependencies → ordering) live in
+FORMAT.md. The five kokoroe guidelines the *executing* agent operates under
+(context-first, spec as authorization, verify by command, halt and surface, honor the
+boundary) live in KOKOROE.md and install at the project level via CLAUDE.md.
+
+Dandori is not a utility skill. It is the load-bearing bridge of the operating layer —
+the mechanism by which the two registers stay separated in practice. The skill catalog
+should present it at that altitude.
 
 ---
 
-_This document is part of the Ho System framework. It defines how a single architectural thought decomposes across a parent ho and one or more child agent tasks. The pattern is canonical, not optional._
+## 9. Worked Examples
+
+- **Shodō ho-02** (threader and chunker): six argued decisions, one deferred
+  discovery, three constitutive children, and the 4→50 cap revision — the canonical
+  discoveries-crossing-back instance.
+- **sharibako ho-01** (Vault Core): two children with a clean seam at the encryption
+  boundary (AT-01 needs no `age` binary; AT-02 does), sequenced so AT-01 commits
+  before AT-02 opens; Reflect records that the anticipated ho-level split was not
+  needed because the AT seam carried the density.
+- **sageframe-mcp ho-01**: three children, three commits, `model:` field per spec —
+  the one-commit-per-AT signature quoted in §3.4.
+
+---
+
+## 10. Related Framework Documents
+
+- [[ho-structure|Ho Structure]] — what makes a ho a ho; the five invariants
+- [[artifact-type-registry|Artifact Type Registry]] — the AT as one of the artifact
+  types; sidequests and dogfood findings distinguished
+- [[agent-task-spec|Agent Task Specification]] — ⚠ predates this document; its
+  `[NNN] - Agent Task` filename convention and `tasks/` location are the Kanyō-era
+  format and should be updated or marked historical (see framework debt)
+- [[kamae-project-framing|Kamae: Project Framing]] §2.5 — canonical paths
+- [[template-selection-guide|Template Selection Guide]]
+
+---
+
+_This document is part of the Ho System framework. It defines how a single
+architectural thought decomposes across a parent ho and one or more child agent
+tasks, and the four operational properties of the agent task as an artifact. The
+pattern is canonical, not optional._

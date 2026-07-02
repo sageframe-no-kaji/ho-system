@@ -20,6 +20,28 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ## 2026-07-02 — Fable-audit merge (ho-02, canonical-layer reconciliation)
 
+### Add 2.9 Artifact Type Registry — kind: added
+
+New structure doc `framework/structure/artifact-type-registry.md` (2.9): the taxonomy of
+every artifact type the practice produces, companion to the Kamae *sequence*
+(merge-decisions **D8**). Folds in the closure vocabulary (D2), standalone-AT filename
+(D3), and seed-mutability regimes (D4). Carries the **D14/D15 correction**: "sidequest" is
+a severable build *arc* (§3.1, renamed from "side track"), not an emergent record; the
+old "sidequest = record" type is deleted and §2 rebuilt as a provisional smoke/dogfood
+block (smoke test + dogfood finding). D5 provisional tiers applied as per-entry labels;
+D7 bidirectional supersession made a requirement (§3.1).
+
+### Replace 2.8 Ho-Task Decomposition — kind: replaced
+
+`framework/structure/ho-task-decomposition.md` fully replaced (merge-decisions **D1**).
+Preserves the v1 spine; elevates the skill-layer doctrine into the framework: §1.1 the
+two-tier separation of thinking from coding, §3 the four operational properties
+(procedural / model field / escalation / one-commit), §7 cardinality, §8 the dandori
+bridge, three worked examples. Reconciles child frontmatter to the practiced form
+(`parent-ho` + `task`, superseding the unused `parent:` path). §4.2 states the D3
+standalone-AT filename decision (`Standalone-AT-YYYY-MM-DD-slug.md`) rather than an open
+question. Couples with 2.9 (mutually referential — landed together).
+
 ### Adopt CHANGELOG as the version story; drop per-doc `version:` fields — kind: changed
 
 This file becomes the framework's single version story (merge-decisions **D13**).
