@@ -20,6 +20,16 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ## 2026-07-02 — Fable-audit merge (ho-03, standalone drafts move-in)
 
+### Add 2.12 External-Project Contribution — kind: added
+
+New structure doc `framework/structure/external-contribution.md` (2.12): running Ho
+against an upstream codebase — keep the session discipline, surrender project authority
+(merge-decisions **D11**). The Kamae chain compresses (the issue substitutes for it);
+the session discipline survives intact; the verification stack, commit style, and
+forward-only are renegotiated to the host. Adopts the **sidecar-directory** doctrine —
+Ho artifacts never enter the contribution repo's object database — flagged "one case
+study (supacode)."
+
 ### Add design-ho template — kind: added
 
 New template `framework/templates/design-ho-template.md` (INDEX 3.9): the in-chain

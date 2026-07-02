@@ -66,6 +66,7 @@ Conceptual specifications. Ordered to follow the practitioner's actual experienc
 | 2.9 | [Artifact Type Registry](framework/structure/artifact-type-registry.md) | The taxonomy of every artifact type the practice produces |
 | 2.10 | [Kamae Addenda](framework/structure/kamae-addenda.md) | Mid-build architectural decisions without rewriting history |
 | 2.11 | [Design Work](framework/structure/design-work.md) | The visual-design modality — design that happens partly outside the chain |
+| 2.12 | [External-Project Contribution](framework/structure/external-contribution.md) | Running Ho against someone else's codebase |
 
 ---
 
