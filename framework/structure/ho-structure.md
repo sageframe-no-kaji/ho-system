@@ -4,7 +4,6 @@ title: "Ho Structure"
 type: structure
 stage: n/a
 status: stable
-version: "1.0"
 tags: [ho-system, ho, deliverable, structure]
 ---
 
@@ -143,6 +142,8 @@ What forward-only enables:
 - Endless re-litigation of "closed" work is structurally prevented. The question is never "should we reopen Ho 05.6?" — the question is always "what new ho responds to what we now know?"
 - New hos reference earlier ones explicitly ("Ho 09 supersedes the queue design from Ho 05.6 in light of [the new evidence]"). The supersession is part of the record, not hidden.
 - The devlog and commit history remain truthful. A reader of the arc sees what the project believed at each step, including the steps that turned out to be wrong.
+
+**Supersession links are bidirectional.** When a new document supersedes part of an older one, *both* must reference each other: the new one names what it supersedes, and the older one — where it is a living document that can carry the pointer — gets a forward reference to the new one. A one-way link (the new document points up, the older never names the new) is drift: the record misleads by omission, and whichever document a reader lands on, they should be able to find the other. The cost is one sentence in the older document (merge-decisions D7).
 
 The narrow exceptions are typographical: fixing a typo, broken link, or rendering bug in a closed ho. These don't alter the historical position. Anything that changes what the ho *said* belongs in a new ho.
 
@@ -296,6 +297,8 @@ Additional header fields vary by stage:
 | Decision Required | —                     | ✓          | —   |
 | Commit            | —                     | —          | ✓   |
 
+The `Status` field's terminal values are `complete` and `superseded` — see §5.4 for when a ho flips to each.
+
 ### 5.2 The Body
 
 Shu: Prerequisites → Parts → Completion Checklist → Understanding Verification → Devlog Ha: Context → Phase 1 (Think) → Phase 2 (Execute) → Phase 3 (Reflect) → Devlog Ri: Problem → Solution → What Changed → Results → Notes
@@ -309,6 +312,15 @@ The devlog deserves special attention because it changes the most across stages 
 **In ha,** the devlog is a decision record. What was decided, what alternatives were considered, what the implementation revealed about the decision, what was removed (removal is a ha signature), how AI collaboration split between thinking and agent modes, confidence in judgment.
 
 **In ri,** the devlog dissolves into the ho document. Problem, solution, what changed, results — that IS the record. A separate devlog would duplicate it. The reflection habit is internalized; it doesn't need its own section.
+
+### 5.4 Closure signal
+
+A ho signals that it is closed through its `status:` frontmatter field. There are two terminal states:
+
+- **`complete`** — the ho's deliverable is done and committed. The flip happens after the phase that closes the work: Reflect for ha, Results for ri, and authoring for orientation hos (which are complete once written). An optional `commit:` field records the closing commit hash.
+- **`superseded`** — a later ho has overtaken this one's decisions under the forward-only principle (§3.5). The ho stays in the record; the `status:` marks that its conclusions no longer hold, and the superseding ho is named per the bidirectional-supersession rule.
+
+These two are the whole vocabulary — earlier projects drifted into `closed`, `done`, and `-DONE-` filename prefixes; those are superseded by `complete`. Where a project also keeps a human-readable Reflect trailer at the end of the ho document (a one-line "closed on / by" note), that trailer is a *complementary* signal, not a replacement for the `status:` field.
 
 ---
 

@@ -20,6 +20,15 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ## 2026-07-02 — Fable-audit merge (ho-02, canonical-layer reconciliation)
 
+### Define ho closure vocabulary; generalize bidirectional supersession — kind: changed
+
+`framework/structure/ho-structure.md`: new §5.4 "Closure signal" defines the two terminal
+`status:` states — `complete` and `superseded` — and when a ho flips to each (merge-decisions
+**D2**); §5.1's field table points to it. The prior `closed` / `done` / `-DONE-` conventions
+are superseded. §3.5 (Forward-Only) gains the framework-wide rule that supersession links are
+bidirectional (**D7**), generalizing what previously lived only in the registry's sidequest
+section.
+
 ### Add 2.9 Artifact Type Registry — kind: added
 
 New structure doc `framework/structure/artifact-type-registry.md` (2.9): the taxonomy of
