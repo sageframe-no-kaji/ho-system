@@ -18,6 +18,26 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-02 — Fable-audit merge (ho-3.5, the validation layer)
+
+### Add the Validation layer to 2.7 — kind: added
+
+`framework/structure/verification-practices.md`: new §3 "The Validation Layer" — the "is it
+*good*?" half of quality, paired with the existing verification stack ("is the code
+*right*?") (merge-decisions **D19**). Four modalities carved by *who runs it* (agent vs
+human) × *what is judged* (function → feel → output-quality → real-use): **smoke test**
+(agent, function), **interaction test** (human, function + feel), **eval** (human, output
+quality), **dogfood** (human, real use). Carries the agent-floor/human-verdict sub-axis, the
+governing principle ("a passing smoke test is not validation — it's the floor a human
+interaction test has to clear"), the no-green-bar completion signal (a ho is not `complete`
+on verification alone), and the sharibako ho-04.2 worked example (agent smoke + 346 green
+tests passed; a human interaction test found 2 errors + unusable UI in a failure class smoke
+structurally can't reach). Adds a sixth principle ("verification is not validation");
+existing §3–§7 renumber to §4–§8. Extends 2.7's founding overestimation thesis from
+correctness into goodness. Supersedes the smoke/dogfood artifact framing of **D14/D15**
+(bidirectional per **D7**); D14's core (sidequest = severable build arc) stands. Strips the
+stale `version: "1.0"` field (D13 / IDEA-006).
+
 ## 2026-07-02 — Fable-audit merge (ho-03, standalone drafts move-in)
 
 ### Add 2.12 External-Project Contribution — kind: added

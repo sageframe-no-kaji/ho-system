@@ -4,7 +4,6 @@ title: "Verification Practices"
 type: structure
 stage: n/a
 status: stable
-version: "1.0"
 tags: [ho-system, verification, quality, testing]
 ---
 
@@ -229,7 +228,60 @@ This review is not about finding bugs — the previous layers should have caught
 
 ---
 
-## 3. The Full Verification Workflow
+## 3. The Validation Layer
+
+The verification stack answers one question: **did we build it _right_?** — does the code match the spec. Every layer in Section 2 serves that question. It is only half of quality.
+
+The other half is **validation**: **did we build the _right thing_, and is it _good_?** A system can pass every test, clear every linter, and survive cross-agent and human architectural review — and still be the wrong thing, or a right thing that is confusing, unpleasant, or useless in real hands. Verification cannot catch this, because verification measures conformance to a spec, and the spec itself is what validation interrogates.
+
+This is Section 1's thesis extended. The research there — that humans overestimate AI-assisted work — was about correctness. It holds at least as strongly for goodness. An agent reporting "the feature works" is reporting that it ran; it is not reporting that the feature is _good_, because good is not a property the agent is positioned to judge. Validation is the antidote to overconfidence about goodness, exactly as verification is the antidote to overconfidence about correctness.
+
+### The four modalities
+
+Validation happens in four distinct modalities. Two axes carve them: **who runs it** (the agent, or a human) × **what is judged** (function → feel → output quality → real-use value).
+
+| Modality | What it checks | Who runs it | Produces |
+| --- | --- | --- | --- |
+| **Smoke test** | the real _function_ works end-to-end — an actual walk through the built thing, not a unit test | the **agent** | commits |
+| **Interaction test** | function _plus feel_ — the UI/UX as a human meets it, not just whether it functions | a **human**, hands on a real terminal | commits |
+| **Eval** (graded eval) | _output quality_ — correctness, clarity, judgment; needs human discernment, not a pass/fail robot | a **human** | a graded-eval record |
+| **Dogfood** | the tool's real value, learned by _actually using it_ on a real task | a **human**, as a genuine user | a finding → a ho or think session |
+
+The four are **independent**. A project runs the modalities its work calls for: shodo (a text tool with generative output) runs eval and dogfood hard; sharibako's interactive init has no generative output to grade, so it runs smoke and interaction and skips eval. They are not stages of one pipeline and not "one discipline" — they are four separate checks, selected per project.
+
+Two of the four produce documents and are therefore registered artifact types: **eval** (a graded-eval record) and **dogfood** (a finding) — see the [[artifact-type-registry|Artifact Type Registry]](artifact-type-registry.md) §2. **Smoke and interaction produce only commits**, so they earn no artifact entry; they live here, as practices.
+
+### The floor and the verdict
+
+The who-runs-it axis is not incidental. It carries the doctrine.
+
+**Smoke is agent-run, and therefore a floor — never a verdict.** The agent can walk through the built thing and confirm the function fires. That is worth doing. But it is the same agent whose overconfidence Section 1 documents, checking the same work it just produced, against the same clean inputs it chose. A passing smoke test tells you the floor is clear. It tells you nothing about whether the thing is good.
+
+**Interaction, eval, and dogfood are structurally human-required** — not by convention, but because feel, output quality, and real-use value are precisely the properties the agent overestimates. There is no agent-delegable version of _"I used it hard and it stopped surprising me."_ The verdict on goodness lives with the human because the failure mode being guarded against is the agent's own optimism.
+
+Hence the governing principle — the validation-layer echo of Section 2's _completion is not correctness_:
+
+> A passing smoke test is not validation — it's the floor a human interaction test has to clear.
+
+### No green bar
+
+Verification has completion signals: tests report _N green_, the linter reports clean, coverage reports a number. Validation has none. Smoke has "the walkthrough passed" — but that is the floor, not a verdict. Interaction and dogfood have only the practitioner's honest _"I used it hard and it stopped surprising me."_ Eval produces a graded record, but the grade is a human judgment, not a bar that turns green.
+
+This has a direct consequence for closure. **A ho is not `complete` on verification alone.** Flipping a ho to complete off a passing test count certifies verification as if it were validation — the precise error the verification/validation distinction exists to prevent. When a ho's deliverable is something a human must judge — a feature with a UI, a tool with output, anything _used_ rather than merely _run_ — completion waits on the human verdict, not the green bar.
+
+### Worked example: the smoke floor a human had to clear
+
+The validation counterpart to Kanyō's mypy-caught bug (Section 2, Layer 1b): sharibako ho-04.2, the interactive init.
+
+The **agent's smoke walkthrough passed**, and 346 unit tests were green. Verification was clean by every measure the stack provides. The practitioner then ran the init by hand — an **interaction test** — and found **two real errors plus a UI that made the tool unusable**: the menu did not clear before the follow-up prompt, and a Down-arrow keypress echoed raw `^[[B` into `readLine` because the TTY had not been returned to cooked state.
+
+That failure class is **structurally unreachable by smoke**. It lives in the delta between the harness's clean, chosen input and a real human's messy TTY bytes — the arrow keys, the mis-types, the terminal state a walkthrough never enters. No amount of agent smoke-testing reaches it, because the agent supplies exactly the input that avoids it. Only a hand on a real keyboard finds it. That is why interaction testing is _vital, not optional_: it is not a more-thorough smoke test, it is a different question asked by a different party.
+
+(Note what the example does _not_ exercise: **eval** — init has no generative output to grade. shodo runs eval and dogfood hard precisely because it does. The four modalities are independent, selected per project — the same point from a second angle.)
+
+---
+
+## 4. The Full Verification Workflow
 
 In mature practice (ha/ri stage), the complete verification workflow for a non-trivial task looks like this:
 
@@ -281,7 +333,7 @@ Note that lint and tests are _always_ applied. They are the floor, not a layer y
 
 ---
 
-## 4. Verification as a Developing Skill
+## 5. Verification as a Developing Skill
 
 Verification is not just a practice — it is a skill that develops through the shu-ha-ri progression, just like any other aspect of the methodology.
 
@@ -327,7 +379,7 @@ What the ri-stage practitioner should maintain:
 
 ---
 
-## 5. Verification and the Devlog
+## 6. Verification and the Devlog
 
 Verification practices should be reflected in devlog entries. Not as a compliance exercise, but because the verification record is itself valuable documentation.
 
@@ -351,7 +403,7 @@ The verification record serves three purposes:
 
 ---
 
-## 6. Verification in Kinhin
+## 7. Verification in Kinhin
 
 Kinhin, the Ho System workbench, should support verification practices as structured data rather than prose in devlogs. Specific features to consider:
 
@@ -364,9 +416,9 @@ These are post-MVP features, but the data model should anticipate them. A verifi
 
 ---
 
-## 7. Principles
+## 8. Principles
 
-Five principles govern verification practice in the Ho System:
+Six principles govern quality practice in the Ho System — five for verification, one that binds verification to validation:
 
 **1. Tests and linting are structural, not optional.** Test coverage verifies behavior. Linting verifies code quality. Together, they are how you maintain architectural authority over AI-generated code. Without them, you don't have verification — you have hope. Establish both in Ho 01 and maintain them throughout. The code-lint-test cycle (code → lint → test → fix → re-test → re-lint → commit) is the heartbeat of every development session.
 
@@ -377,6 +429,8 @@ Five principles govern verification practice in the Ho System:
 **4. The verification skill develops.** In shu, it's built into the template. In ha, it becomes judgment. In ri, it's workflow. The progression is from scaffolded habit to internalized practice.
 
 **5. Document what you verified.** The verification record is evidence — of quality, of judgment, of the methodology working. Capture it in devlogs, not because someone requires it, but because future-you will be glad you did.
+
+**6. Verification is not validation.** Verification asks whether the build matches the spec; validation asks whether the spec was the right thing and whether the result is good (Section 3). The verification stack has completion signals; validation has none but the human verdict. A passing smoke test is the floor a human's judgment has to clear, never a substitute for it. The human-in-the-loop extends from correctness into goodness — a ho is not `complete` when the tests are green, only when the thing has been judged good.
 
 ---
 
