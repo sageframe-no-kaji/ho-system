@@ -31,6 +31,8 @@ Seed → System Design → README → Ho Overview
 
 When the Ho Overview is complete, you have enough to write individual hos from the [[shu-ho-template|shu-stage template]] (framework/templates/shu-ho-template.md) or whichever template is appropriate for the learner's level.
 
+**Kamae sits at project scope.** It frames *the specific thing being built*. This is distinct from **practitioner scope** — *how the practitioner works*, regardless of project: the operating discipline (how testing, linting, permissions, and verification are handled), the environment configuration (IDE settings, agent instructions such as `CLAUDE.md`), and the practitioner's profile (stage, language preferences, tool stack). Practitioner scope is established once per practitioner-tool combination and travels across projects; Kamae is done once per project. The two meet at ho-00, where the project's specific instantiation of the operating discipline gets encoded in the repo. For the practitioner-scope canonical document, see [[operating-discipline|The Operating Discipline]] (practitioner/operating-discipline.md).
+
 ---
 
 ## 2. The Four Documents
@@ -93,6 +95,8 @@ Someone reading this document should understand:
 - Scope boundaries (what's v1, what's future, what's explicitly out)
 
 A good System Design includes at least one architecture diagram (even ASCII art) showing the major components and their relationships.
+
+The System Design may also include a provisional ho sequence and a deferred-decisions table at the end. These are *starting material* for Kamae 4 (the Ho Overview) — they reflect the architecture's natural build order and the empirical decisions tied to specific architectural choices. The Ho Overview welcomes them but is not beholden to them; sequence and groupings evolve as the build is planned and executed.
 
 **What "done" does NOT look like:**
 
@@ -175,11 +179,12 @@ The Ho Overview is possible precisely because the upstream documents have alread
 
 The Ho Overview should define:
 
-- A numbered sequence of hos covering the full project scope
-- For each ho: title, goal (one sentence), deliverable (one concrete artifact), and estimated stage (shu/ha/ri)
-- Dependencies between hos (what must be complete before each one can start)
-- Phase groupings (orientation → foundation → construction → integration → polish)
-- Explicit identification of what's in the arc vs. what's deferred
+- **Phase structure as the primary organizing principle.** Phases come first; hos populate phases. Each phase has a paragraph describing what it produces and what's true at the end of the phase that wasn't true at the start. Hos within a phase are nested under the phase header. The phase structure makes the architecture visible at the planning level.
+- For each ho: title, narrative (3–5 sentences in plain English), dependencies, what's in scope (light), what's out of scope (light), and any decisions the ho resolves.
+- Release tags at phase boundaries (v0.1, v0.2 … v1.0) — each completed phase produces a tagged release that marks "this phase is done."
+- Explicit identification of what's in the arc vs. what's deferred.
+
+The Ho Overview welcomes the System Design's first-pass ho sequence and deferred-decisions table as starting material. It is not beholden to them: the two documents serve different purposes and evolve at different speeds, and do not need to mirror each other. Decisions deferred from the System Design are rendered **inline with the ho that resolves them**, not as a master table — when the practitioner is reading or executing a given ho, the decisions that ho is supposed to resolve are visible in that ho's section. Anything that doesn't tie to a specific v1 ho — visual identity, post-v1 features — is enumerated at the end of the Ho Overview under "Other deferred decisions."
 
 **What "done" does NOT look like:**
 
@@ -195,7 +200,39 @@ The Ho Overview should define:
 
 ---
 
-### 2.5 Filenames and Location
+### 2.5 Per-Ho Documents (Kamae 5)
+
+**What it is:** The bounded scope for a single working session, written at the start of executing each ho. A per-ho document takes a position from the Ho Overview and turns it into something the practitioner and the agent can work against in one session. Each ho gets its own document.
+
+Per-ho documents are the fifth link in the chain — **Kamae 5** — but they differ from the four framing documents in *when* they are produced. The framing documents (§§2.1–2.4) are written up front, before any ho runs. The per-ho document is written later, at build time, one per ho, using the same kamae logic: getting in stance before doing the work. It is a framing document for one session rather than for the whole project — which is why the chain has four *framing* documents but five links.
+
+**What it's NOT:** A restatement of what's in the Ho Overview. A vague description of "the next thing to do." A document written after the work is done. The per-ho document is the *plan* for the session, written *before* the work begins.
+
+**What "done" looks like:**
+
+A per-ho document should define:
+
+- The ho's heading and number (matching the Ho Overview)
+- A short narrative of what the ho accomplishes
+- Explicit dependencies (what must be in place before this ho can start)
+- What's in scope, in concrete enough detail that the agent can execute against it
+- What "done" means — concrete acceptance criteria, including the verification and validation gates the ho commits to
+- What's out of scope (boundaries the agent should refuse to cross)
+- Decisions the ho resolves, with the criteria for resolving them
+
+**What "done" does NOT look like:**
+
+- Implementation specifics the agent should determine ("use this exact algorithm")
+- Architectural decisions that belong upstream ("decide Postgres or SQLite")
+- A walkthrough of every file the agent will touch (over-specifies)
+
+**Relationship to the chain:** The per-ho document is what the agent reads at session start — the most direct manifestation of the encoded environment, telling the agent exactly what success looks like for this session. It is generated from the Ho Overview (§2.4): feed the overview plus the relevant shape template to AI and write the ho. Its filename convention is given with the rest of the chain in §2.6.
+
+**Example from Kanyō:** Each ho document in the pilot served this function, though they varied in how strictly they encoded acceptance criteria. The framework formalizes the role they were already playing.
+
+---
+
+### 2.6 Filenames and Location
 
 The four documents live in the project repo under `ho-process/`, with the README at the repo root.
 
@@ -347,6 +384,7 @@ The framework separates these concerns not because the combined approach failed,
 - [[shu-ha-ri|Shu-Ha-Ri Progression]] (framework/structure/shu-ha-ri.md) — How ho structure adapts to learner development
 - [[shu-ho-template|Shu Ho Template]] (framework/templates/shu-ho-template.md) — Template for writing prescriptive ho sessions
 - [[project-arc|Project Arc]] (framework/structure/project-arc.md) — How hos sequence into complete project arcs
+- [[operating-discipline|The Operating Discipline]] (practitioner/operating-discipline.md) — The practitioner-scope canonical document (how the practitioner works, across projects)
 
 ---
 
