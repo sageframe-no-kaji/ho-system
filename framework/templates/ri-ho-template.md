@@ -140,7 +140,7 @@ Examples:
 >
 > If nothing was caught, say so: "All clean." If a layer was skipped deliberately, note it: "No cross-agent review — isolated utility function with full test coverage." Deliberate choices are documented decisions; unrecorded omissions are gaps.
 >
-> See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) for the full four-layer stack.
+> See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) for the full five-layer stack.
 
 ---
 

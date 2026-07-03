@@ -365,7 +365,7 @@ What the ha-stage practitioner should develop:
 
 ### In Ri: Verification Is Workflow
 
-The ri-stage practitioner has internalized verification as the way work gets done. The four-layer stack is not a checklist they consult — it's the natural rhythm of their process. They specify a task, the agent implements it, they run the verification layers appropriate to the task's risk level, and they commit.
+The ri-stage practitioner has internalized verification as the way work gets done. The five-layer stack is not a checklist they consult — it's the natural rhythm of their process. They specify a task, the agent implements it, they run the verification layers appropriate to the task's risk level, and they commit.
 
 The danger at ri stage is _efficiency erosion_ — skipping verification because "it's a small change" or "I'm confident the agent got it right." This is the exact cognitive trap the research documents: overconfidence in AI-assisted output. The ri-stage practitioner must maintain the discipline even when the task feels routine.
 

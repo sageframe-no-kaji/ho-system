@@ -51,6 +51,16 @@ doc-map row names the **five-layer** stack (settling the four-layer/five-item dr
 [ho] item 5) and adds the validation layer — whether the *right thing* was built
 (finding D-6, propagating D19 up from 2.7).
 
+### Validation-awareness in 1.2; settle the layer count framework-wide — kind: changed
+
+`ho-foundations-evidence.md` (1.2 §1.3): the overconfidence answer now pairs the
+verification stack with the **validation** layer (whether the *right thing* was built),
+extending D19's overconfidence-into-goodness thesis into the foundations (finding D-6).
+The "four-layer" label is settled to **five-layer** ([ho] item 5) at every site — 1.2,
+1.1, `verification-practices.md` (§5 ri-workflow), and `ri-ho-template.md` — matching
+2.7 §2's canonical five layers (the count half was known drift; the
+validation-blindness half was new since D19).
+
 ## 2026-07-03 — post-audit correction (fork-A completion)
 
 ### Complete the fork-A term swap in design-work + template — kind: changed
