@@ -4,12 +4,12 @@ title: "Design Work"
 type: structure
 stage: n/a
 status: draft
-tags: [ho-system, design, visual, modality]
+tags: [ho-system, design, visual, tuning]
 ---
 
 # Design Work
 
-## Design Tuning — the Design Modality
+## Design Tuning — the Design Method
 
 Some work in a Ho System project is not architecture and not implementation: it is
 *design* — deciding what the thing looks like, sounds like, feels like, under
@@ -23,7 +23,7 @@ propagates back into the chain through frozen artifacts and numbered hos.
 The framework sanctions this explicitly. Design conversations are the one place where
 the "thinking happens in chat, conclusions land in documents" rule produces artifacts
 that are neither Kamae documents nor hos — session pages, the Basis of Design, spikes —
-and the modality below is how those artifacts stay accountable to the chain instead of
+and the method below is how those artifacts stay accountable to the chain instead of
 drifting beside it.
 
 ---
@@ -33,7 +33,7 @@ drifting beside it.
 For generated or data-driven visuals, the usual design flow — mock it up, approve it,
 build it — fails, because the look is produced by an algorithm across configurations
 nobody has seen. A mockup lies; the algorithm will do something the mockup didn't.
-The modality replaces the mockup phase with steps that keep design and implementation
+Design tuning replaces the mockup phase with steps that keep design and implementation
 in continuous contact. (design-process-note, "The core problem.")
 
 The same logic covers non-procedural cases more loosely: any design whose target is
@@ -96,7 +96,7 @@ can't be generated algorithmically and rules in effects that are natural byprodu
 of the data and algorithm. "Does this look good?" becomes "does this look like what
 the algorithm is actually doing?"
 
-## 3. How the modality attaches to the Ho chain
+## 3. How design tuning attaches to the Ho chain
 
 Three attachment points keep out-of-chain design work accountable:
 
@@ -120,7 +120,7 @@ not SVG — "Sutra is HTML"), tuner scope narrows to what's genuinely by-feel
 the project's layer structure (sutra: ten sessions in alphabet / grammar / signature
 layers). The eight steps are the spine, not a ritual.
 
-## 4. Artifacts the modality produces
+## 4. Artifacts design tuning produces
 
 | Artifact | Role | Lives at | Mutability |
 |---|---|---|---|
@@ -161,11 +161,11 @@ isolated session prompts in the project's constraint vocabulary) and step 3
 collaborators rather than a strict authoring skill. It is deliberately not built yet:
 two projects in, with the second adapting freely, building now risks freezing the
 pattern before ri has had its say — its shape will be legible once a third project
-runs the modality.
+runs design tuning.
 
 Until it exists, **this doctrine document plus the `~/.claude/modules/design-work.md`
 module are the interim reference — a clear, usable stand-in for the skill, not a
-placeholder.** The modality runs by hand from them: the pre-written session prompts and
+placeholder.** The method runs by hand from them: the pre-written session prompts and
 the Basis-of-Design discipline are cheap to execute directly. The skill, when built, will
 automate that hand-work; it will not replace the doctrine.
 

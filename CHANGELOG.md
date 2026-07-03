@@ -28,8 +28,10 @@ pass 2, finding **B1**). Seven residual design-sense "register" uses in
 the template's `## Register propagations` heading and its closing `living-register` (the exact
 pre-rename term a new project would copy) — replaced with Basis of Design / propagation. Also
 drops the residual "tuner landings" category labels → "landings" (naming record #3). Completes
-ho-04's declared intent; the decision (fork A, **D20**) was already made. The standalone word
-"modality" (finding D-5) is left pending a practitioner ruling.
+ho-04's declared intent; the decision (fork A, **D20**) was already made. Also sweeps the
+standalone word "modality" (finding D-5, practitioner ruled) → "method" / "design tuning" in 2.11
+and the INDEX row — the framework reserves "modality" for the four *validation* modalities, per
+the naming record's own reasoning for rejecting "the tuning modality."
 
 ## 2026-07-03 — Fable-audit merge (ho-04, naming + glossary)
 
