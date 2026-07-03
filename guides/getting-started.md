@@ -3,8 +3,7 @@ id: "4.1"
 title: "Getting Started with the Ho System"
 type: guide
 stage: n/a
-status: stable
-version: "1.0"
+status: stub
 tags: [ho-system, onboarding, getting-started]
 ---
 

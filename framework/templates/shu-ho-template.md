@@ -624,7 +624,7 @@ see the arc.]
 ---
 
 _Ho authored by: [name or "AI-generated from Ho Overview"]_
-_Template version: shu-v1 (draft)_
+_Template version: shu-v1_
 _Project: [project name]_
 _Position in arc: Ho [N] of ~[total] planned_
 _Pre-ho documents: [Seed] → [System Design] → [README] → [Ho Overview]

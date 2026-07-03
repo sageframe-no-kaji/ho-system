@@ -702,7 +702,7 @@ What needs monitoring?]
 ---
 
 _Ho authored by: [name or "self-directed"]_
-_Template version: ha-v1 (draft)_
+_Template version: ha-v1_
 _Project: [project name]_
 _Phase 1 duration: [thinking time]_
 _Phase 2 duration: [execution time]_

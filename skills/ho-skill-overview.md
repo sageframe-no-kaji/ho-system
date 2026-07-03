@@ -36,7 +36,7 @@ Skills that configure how the practitioner works. These produce artifacts that l
 
 ### ho-setup-personal-environment-collaborator
 
-**Status:** Planned, not built
+**Status:** Built
 **Surface:** IDE-primary
 **Produces:** IDE-specific agent configuration (CLAUDE.md, codex configuration, VS Code settings, pre-commit hook templates, opinionated lint stack defaults)
 **When to run:** Once per practitioner-tool combination. After running, the practitioner's environment knows the operating discipline and the agent will conform to it across projects.
@@ -109,7 +109,7 @@ The ho overview is the build's directional plan. It identifies phases first (clu
 
 ### ho-setup-project-environment-collaborator
 
-**Status:** Planned, not built
+**Status:** Built
 **Surface:** IDE-primary
 **Produces:** A repo scaffold ready for ho-00 — `pyproject.toml`, smoke tests, project-level `CLAUDE.md`, `ho-process/hos/` and `ho-process/agent-tasks/` directory structure, lint stack configured, pre-commit hooks installed, initial commit.
 **When to run:** At project start, before authoring any per-ho document. Update mode handles scaffold adjustments.
@@ -169,13 +169,13 @@ This is a housekeeping skill for stewarding the framework repo itself. It is not
 For a practitioner new to the methodology, the natural order is:
 
 1. **Read the operating discipline.** Internalize what discipline the methodology assumes. (Currently at `practitioner/operating-discipline.md`.)
-2. **Run ho-setup-personal-environment-collaborator** (when built; in IDE). Configure your IDE and agent to know the discipline.
+2. **Run ho-setup-personal-environment-collaborator** (in IDE). Configure your IDE and agent to know the discipline.
 3. **For each new project:**
    - Run **ho-kamae-1-seed-collaborator** in chat — Kamae 1.
    - Run **ho-kamae-2-system-design-collaborator** in chat — Kamae 2.
    - Run **ho-kamae-3-readme-collaborator** in chat — Kamae 3.
    - Run **ho-kamae-4-overview-collaborator** in chat — Kamae 4.
-   - Run **ho-setup-project-environment-collaborator** in IDE (when built) to scaffold the repo.
+   - Run **ho-setup-project-environment-collaborator** in IDE to scaffold the repo.
    - For each ho in the overview: run **ho-kamae-5-authoring-collaborator** in chat to author the per-ho document and any agent tasks (Kamae 5), then execute in IDE against the agent task specs.
 4. **Run di on substantial writing artifacts** before publication.
 
@@ -201,19 +201,19 @@ The same is true across surfaces. A chat-primary skill running in IDE (or vice v
 
 | Skill                               | Scope         | Status                      | Surface           | Kamae # |
 | ----------------------------------- | ------------- | --------------------------- | ----------------- | ------- |
-| ho-setup-personal-environment-collaborator | Practitioner | Planned                | IDE               | —       |
+| ho-setup-personal-environment-collaborator | Practitioner | Built                  | IDE               | —       |
 | ho-onboarding-collaborator (Palana) | Practitioner  | Deferred (separate project) | —                 | —       |
 | ho-stack-selection-collaborator     | Practitioner  | Deferred (build if needed)  | Chat              | —       |
 | ho-kamae-1-seed-collaborator        | Project       | Built                       | Chat              | 1       |
 | ho-kamae-2-system-design-collaborator | Project     | Built                       | Chat              | 2       |
 | ho-kamae-3-readme-collaborator      | Project       | Built                       | Chat              | 3       |
 | ho-kamae-4-overview-collaborator    | Project       | Built                       | Chat              | 4       |
-| ho-setup-project-environment-collaborator | Project | Planned                   | IDE               | —       |
+| ho-setup-project-environment-collaborator | Project | Built                     | IDE               | —       |
 | ho-kamae-5-authoring-collaborator   | Project       | Built                       | Chat (IDE escape) | 5       |
 | di                                  | Cross-cutting | Built                       | Chat              | —       |
 | ho-tool-index-maintenance           | Housekeeping  | Built                       | IDE               | —       |
 
-Built: 7 skills (5 Kamae chain + DI + index maintenance). Planned: 2 skills (env-setup at practitioner scope, project-setup at project scope, both IDE-primary). Deferred: 2 skills (separate-project Palana and conditional stack-selection).
+Built: 9 skills (5 Kamae chain + DI + index maintenance + env-setup at practitioner scope + project-setup at project scope). Deferred: 2 skills (separate-project Palana and conditional stack-selection).
 
 ---
 

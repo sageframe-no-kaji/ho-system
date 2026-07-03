@@ -61,25 +61,41 @@ The Ho System is a response to the emerging gap between AI's capacity to generat
 ## What's Here
 
 ```
-framework/
-├── the-ho-system.md               ← Start here
-├── ho-foundations-evidence.md      ← The intellectual case (position paper)
-├── structure/                     ← How the system works
-│   ├── ho-structure.md                What a ho is. The numbering system.
-│   ├── shu-ha-ri.md                   Three stages of practitioner development
-│   ├── kamae-project-framing.md       Planning before the first ho
-│   ├── project-arc.md                 How hos sequence into complete projects
-│   ├── tiered-understanding.md        Managing what you know and don't know
-│   └── devlog.md                      The reflection practice
-└── templates/                     ← Tools you copy and use
-    ├── template-selection-guide.md    Which template, when
-    ├── shu-ho-template.md             Author-guided session
-    ├── ha-ho-template.md              Decision-driven session
-    ├── ri-ho-template.md              Practitioner recording format
-    ├── agent-task-spec.md             Delegating work to AI agents
-    ├── shu-devlog-template.md         Reflection after shu-stage work
-    └── ha-devlog-template.md          Reflection after ha-stage work
-examples/                          ← Evidence from practice
+framework/                          ← The methodology itself
+├── the-ho-system.md                   ← Start here
+├── ho-foundations-evidence.md         The intellectual case (position paper)
+├── glossary.md                        Canonical terms
+├── structure/                        ← How the system works
+│   ├── kamae-project-framing.md          Planning before the first ho
+│   ├── ho-structure.md                   What a ho is. The numbering system.
+│   ├── project-arc.md                    How hos sequence into complete projects
+│   ├── shu-ha-ri.md                      Three stages of practitioner development
+│   ├── tiered-understanding.md           Managing what you know and don't know
+│   ├── devlog.md                         The reflection practice
+│   ├── verification-practices.md         Verification and validation
+│   ├── ho-task-decomposition.md          Delegating a ho's work to agents
+│   ├── artifact-type-registry.md         The taxonomy of artifacts the practice produces
+│   ├── kamae-addenda.md                  Mid-build architectural change (forward-only)
+│   ├── design-work.md                    The visual-design modality
+│   └── external-contribution.md          Running Ho against an upstream repo
+└── templates/                        ← Tools you copy and use
+    ├── template-selection-guide.md       Which template, when
+    ├── ho-seed-template.md               The project seed (first Kamae document)
+    ├── shu-ho-template.md                Author-guided session
+    ├── ha-ho-template.md                 Decision-driven session
+    ├── ri-ho-template.md                 Practitioner recording format
+    ├── shu-devlog-template.md            Reflection after shu-stage work
+    ├── ha-devlog-template.md             Reflection after ha-stage work
+    ├── agent-task-spec.md                Delegating work to AI agents
+    └── design-ho-template.md             In-chain wrapper for design work
+guides/                             ← Practitioner orientation (stubs, in progress)
+practitioner/                       ← Practitioner-scope operating discipline
+skills/                             ← Kamae collaborator skills + catalog (ho-skill-overview.md)
+examples/                           ← Evidence from practice (the Kanyō pilot)
+ho-process/                         ← This repo's own ho process (hos, ideas, agent-tasks)
+INDEX.md                            ← The complete document map
+CHANGELOG.md                        ← The framework's version story
+CONTRIBUTING.md
 ```
 
 ---

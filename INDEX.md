@@ -117,9 +117,9 @@ Practical orientation for new and continuing practitioners.
 
 | ID | Document | Description |
 |----|----------|-------------|
-| 4.1 | [Getting Started](guides/getting-started.md) | First steps with the Ho System |
-| 4.2 | [Choosing a Project](guides/choosing-a-project.md) | How to select a good first project |
-| 4.3 | [AI Collaboration](guides/ai-collaboration.md) | Working with AI as an implementation partner |
+| 4.1 | [Getting Started](guides/getting-started.md) | Stub — first steps with the Ho System (not yet written) |
+| 4.2 | [Choosing a Project](guides/choosing-a-project.md) | Stub — how to select a good first project (not yet written) |
+| 4.3 | [AI Collaboration](guides/ai-collaboration.md) | Stub — working with AI as an implementation partner (not yet written) |
 
 ---
 
