@@ -70,6 +70,14 @@ conflation is also fixed at the 0.5 description and the filename example
 (`ho-00-overview.md` → `ho-00-orientation.md`). Matches all current practice and the
 glossary's ho-00 entry (merge-decisions D7, bidirectional).
 
+### Mark agent-task-spec's tracking convention historical — kind: changed
+
+`agent-task-spec.md` (3.8): the `tasks/` directory and `NNN - Agent Task` filenames in
+the Tracking section predate 2.8's canonical `ho-process/agent-tasks/` + `Ho-NN-AT-MM.md`
+/ `Standalone-AT-…` conventions ([ho] item 4). Added a historical-convention note; the
+filesystem-as-tracker principle and the forward pointer to 2.8 stand. Also the last
+"four-layer" → "five-layer" site (:264), completing the layer-count settling.
+
 ## 2026-07-03 — post-audit correction (fork-A completion)
 
 ### Complete the fork-A term swap in design-work + template — kind: changed

@@ -261,11 +261,13 @@ Writing a good agent task is half the work. What the practitioner does after the
 3. **Cross-agent verification for critical path changes.** For anything touching state machines, timing logic, data integrity, or security — have a separate model review the diff against the spec before human review. See Layer 3 in [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md).
 4. **Human architectural review for all accepted work.** The practitioner reads the code. Not skims — reads. Automated tools catch what they’re designed to catch; human review catches the architectural misalignments that tools miss.
 
-The full four-layer verification stack is documented in [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md).
+The full five-layer verification stack is documented in [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md).
 
 ---
 
 ## Tracking
+
+> **Historical convention.** The `tasks/` directory and `NNN - Agent Task` filenames shown below predate the canonical agent-task conventions in [[ho-task-decomposition|Ho-Task Decomposition]] (framework/structure/ho-task-decomposition.md §4) and the [[artifact-type-registry|artifact-type registry]] (framework/structure/artifact-type-registry.md §1.4): child specs live in `ho-process/agent-tasks/` as `Ho-NN-AT-MM.md`, standalone specs as `Standalone-AT-YYYY-MM-DD-slug.md`. The *filesystem-as-tracker* principle below still holds; the specific names and location are superseded. New projects follow 2.8 — the drifted `tasks/` filenames stand as historical record.
 
 Agent tasks should be trackable. Minimum viable tracking:
 
