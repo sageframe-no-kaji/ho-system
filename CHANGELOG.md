@@ -18,6 +18,19 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-03 — post-audit correction (fork-A completion)
+
+### Complete the fork-A term swap in design-work + template — kind: changed
+
+Finishes the register → Basis-of-Design swap that ho-04 declared but left incomplete (Fable
+pass 2, finding **B1**). Seven residual design-sense "register" uses in
+`framework/structure/design-work.md` and `framework/templates/design-ho-template.md` — including
+the template's `## Register propagations` heading and its closing `living-register` (the exact
+pre-rename term a new project would copy) — replaced with Basis of Design / propagation. Also
+drops the residual "tuner landings" category labels → "landings" (naming record #3). Completes
+ho-04's declared intent; the decision (fork A, **D20**) was already made. The standalone word
+"modality" (finding D-5) is left pending a practitioner ruling.
+
 ## 2026-07-03 — Fable-audit merge (ho-04, naming + glossary)
 
 ### Name the twelve unnamed concepts across their home docs — kind: renamed

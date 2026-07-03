@@ -88,7 +88,7 @@ method transfers.
 8. **New visual modes are A/B spikes, not replacements.** A second design variant ships
    as a toggleable alternative and has to earn its place. (shoshin: hachure shipped as
    `?render=hachure`, then promoted to an independent simultaneous layer once the A/B
-   showed the registers were complementary.)
+   showed the two variants were complementary.)
 
 **Governing principle** (from session 1, recurring throughout): *character comes from
 process, not decoration.* It has architectural teeth — it rules out effects that
@@ -108,7 +108,7 @@ Three attachment points keep out-of-chain design work accountable:
    shoshin's ho-04 has no ho document; kamae-4 defines it as pure Claude Design work
    whose artifacts live in `design/claude-design/` (session pages, exports,
    coherence-check, spike). Downstream hos cite the design files directly in
-   `builds-on:`. This is sanctioned: the record is the register and the session
+   `builds-on:`. This is sanctioned: the record is the Basis of Design and the session
    artifacts, not a ceremonial ho document restating them.
 3. **Propagation returns via numbered hos** — implementation hos consume the frozen
    Basis of Design; decimal-inserted landing hos (06.5, 07.5) land the by-feel values
@@ -144,9 +144,9 @@ with the propagation rule standing in for the addendum mechanism.
 
 The evidence says design work already decomposes into existing shapes plus
 out-of-chain sessions: the design sessions are outside the chain (no ho document at
-all); tuner landings are ri-shaped (problem/solution/changes/results fits "move
-sliders, land values, lock commit"); implementation-from-register hos are ordinary
-ha. A fifth shape would blur the shape system's clean question ("what structure does
+all); landings are ri-shaped (problem/solution/changes/results fits "move
+sliders, land values, lock commit"); implementation-from-Basis-of-Design hos are
+ordinary ha. A fifth shape would blur the shape system's clean question ("what structure does
 this session's document need?") to encode a *content domain*, which shapes don't
 otherwise do. What's needed instead is this doctrine document plus the design-ho
 template (§7) for the landing/session-wrapper cases. If a third project's design
@@ -166,19 +166,20 @@ runs the modality.
 Until it exists, **this doctrine document plus the `~/.claude/modules/design-work.md`
 module are the interim reference — a clear, usable stand-in for the skill, not a
 placeholder.** The modality runs by hand from them: the pre-written session prompts and
-the register discipline are cheap to execute directly. The skill, when built, will
+the Basis-of-Design discipline are cheap to execute directly. The skill, when built, will
 automate that hand-work; it will not replace the doctrine.
 
 ## 7. The design-ho template
 
-For the in-chain wrapper cases — tuner landings, and design-session batches that DO
+For the in-chain wrapper cases — landings, and design-session batches that DO
 want a ho document — use the **design-ho template**
 (`framework/templates/design-ho-template.md`, INDEX 3.9). It carries ho-document
 frontmatter with `shape: ri` (landings are ri; session-batch wrappers may be ha) and
 sections for the questions in scope, the hard constraints (palette, reproducibility,
 medium, out-of-scope), the parameters frozen at session end (numbers, not
-descriptions), parked items, the landing record (tuner landings only), and any
-register propagations. The skeleton is complete; section prose fills in per project.
+descriptions), parked items, the landing record (landings only), and any
+propagations to the Basis of Design. The skeleton is complete; section prose fills in
+per project.
 
 ## 8. The `~/.claude/modules/design-work.md` module
 

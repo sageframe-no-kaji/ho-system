@@ -49,15 +49,15 @@ and what downstream work unblocks.>
 session prompt's constraint block, or the tuner list for a landing>
 
 ## Frozen at session end
-<parameter: value — numbers, not descriptions. These update the register.>
+<parameter: value — numbers, not descriptions. These update the Basis of Design.>
 
 ## Parked
 <one line each; items belonging to later questions>
 
-## Landing record (tuner landings only)
+## Landing record (landings only)
 <values landed, against what corpus/scale, commit that locks them>
 
-## Register propagations
+## Propagation record
 <any frozen-earlier values this session revised, each with its named reason>
 ```
 
@@ -65,4 +65,4 @@ session prompt's constraint block, or the tuner list for a landing>
 
 _This template is part of the Ho System framework. It is the in-chain companion to
 [[design-work|Design Work]] (framework/structure/design-work.md); the eight-step
-modality and the living-register discipline live there._
+method and the propagation discipline live there._
