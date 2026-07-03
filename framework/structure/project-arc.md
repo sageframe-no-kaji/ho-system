@@ -4,7 +4,6 @@ title: "The Project Arc"
 type: structure
 stage: n/a
 status: stable
-version: "1.0"
 tags: [ho-system, arc, sequencing, project-planning]
 ---
 

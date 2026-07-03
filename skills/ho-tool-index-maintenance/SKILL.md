@@ -43,7 +43,6 @@ title: "Human-readable title"
 type: foundation | structure | template | guide | example | seed | agent-task
 stage: shu | ha | ri | any | n/a
 status: draft | stable | deprecated
-version: "major.minor"         # e.g. "1.0"
 tags: [ho-system, ...]         # always includes ho-system
 ---
 ```
@@ -105,11 +104,10 @@ tags: [ho-system, ...]         # always includes ho-system
 
 ### 4. Update a document's frontmatter
 
-**Trigger:** A document's status, version, stage, or tags need updating.
+**Trigger:** A document's status, stage, or tags need updating.
 
 **Permitted changes:**
 - `status`: draft → stable → deprecated
-- `version`: increment minor for content changes, major for structural rewrites
 - `stage`: only change if the document's intended audience has genuinely changed
 - `tags`: add or remove tags that reflect actual content
 

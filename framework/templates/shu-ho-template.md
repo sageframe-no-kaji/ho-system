@@ -4,7 +4,6 @@ title: "Shu-Stage Ho Template"
 type: template
 stage: shu
 status: stable
-version: "1.0"
 tags: [ho-system, template, shu, ho]
 ---
 

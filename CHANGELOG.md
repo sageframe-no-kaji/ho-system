@@ -18,6 +18,22 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-03 — mechanical stale-ref cleanup (ho-05)
+
+Pointer- and status-level hygiene under the doctrine ho-02/03/3.5/04/07 landed. No
+canonical document changes meaning here — only stale references, statuses, and metadata.
+
+### Execute the repo-wide `version:` sweep — kind: changed
+
+Stripped the `version: "1.0"` frontmatter field from the 14 remaining framework
+documents D13's per-doc-version drop had not yet reached — the sweep the ho-02 D13 entry
+deferred to this ho (IDEA-006). `CHANGELOG.md` is now the sole version story, with no
+per-document `version:` field left anywhere in `framework/`. The
+`ho-tool-index-maintenance` skill (both the `.github/skills/` and `skills/` copies) drops
+`version:` from its maintained-fields guidance and frontmatter-schema block, so a future
+index pass does not re-add it. `framework/templates/Seed Template Checklist.md` keeps its
+field pending archival later in this ho.
+
 ## 2026-07-03 — canonical-claims reconciliation (ho-07)
 
 Reconciles the foundation/structure layer with settled doctrine ho-02 missed

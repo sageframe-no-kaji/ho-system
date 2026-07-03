@@ -4,7 +4,6 @@ title: "Ha Devlog Template"
 type: template
 stage: ha
 status: stable
-version: "1.0"
 tags: [ho-system, template, ha, devlog, reflection]
 ---
 

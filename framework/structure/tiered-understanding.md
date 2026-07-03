@@ -4,7 +4,6 @@ title: "Tiered Understanding"
 type: structure
 stage: n/a
 status: stable
-version: "1.0"
 tags: [ho-system, understanding, tiers, comprehension]
 ---
 

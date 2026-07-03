@@ -4,7 +4,6 @@ title: "Agent Task Specification"
 type: template
 stage: n/a
 status: stable
-version: "1.0"
 tags: [ho-system, template, agent, ai-collaboration]
 ---
 

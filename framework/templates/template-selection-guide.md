@@ -4,7 +4,6 @@ title: "Template Selection Guide"
 type: template
 stage: any
 status: stable
-version: "1.0"
 tags: [ho-system, templates, selection, guide]
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: ho-tool-index-maintenance
-description: 'Maintain the Ho System INDEX.md and document frontmatter. Use when: adding a new document to the repo index, removing a document from the index, updating a description in the index, updating frontmatter fields (status, version, tags, stage). Do NOT use for editing framework content, renaming files, or changing the layer hierarchy.'
+description: 'Maintain the Ho System INDEX.md and document frontmatter. Use when: adding a new document to the repo index, removing a document from the index, updating a description in the index, updating frontmatter fields (status, tags, stage). Do NOT use for editing framework content, renaming files, or changing the layer hierarchy.'
 argument-hint: 'What changed? (e.g. "added guides/new-guide.md" or "update status of 2.3 to stable")'
 ---
 
@@ -35,7 +35,6 @@ title: "Human-readable title"
 type: foundation | structure | template | guide | example | seed | agent-task
 stage: shu | ha | ri | any | n/a
 status: draft | stable | deprecated
-version: "major.minor"
 tags: [ho-system, ...]         # always includes ho-system
 ---
 ```
@@ -78,10 +77,9 @@ tags: [ho-system, ...]         # always includes ho-system
 
 ### Update frontmatter fields
 
-Permitted without asking: `status`, `version`, `tags`, `stage`
+Permitted without asking: `status`, `tags`, `stage`
 Not permitted without asking: `id`, `type`, `title`
 
-- `version`: increment minor for content updates, major for structural rewrites
 - `status`: draft → stable → deprecated (one direction only unless instructed)
 
 ---

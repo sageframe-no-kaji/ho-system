@@ -4,7 +4,6 @@ title: "Shu-Ha-Ri: The Progression Model"
 type: structure
 stage: n/a
 status: stable
-version: "1.0"
 tags: [ho-system, shu-ha-ri, progression, mastery]
 ---
 

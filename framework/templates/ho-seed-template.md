@@ -4,7 +4,6 @@ title: "Project Seed Template"
 type: template
 stage: n/a
 status: draft
-version: "1.0"
 tags: [ho-system, seed, kamae, template]
 ---
 

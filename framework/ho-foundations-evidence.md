@@ -4,7 +4,6 @@ title: "The Ho System: Foundations and Evidence"
 type: foundation
 stage: n/a
 status: stable
-version: "1.0"
 tags: [ho-system, methodology, research, evidence]
 ---
 
