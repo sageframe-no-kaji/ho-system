@@ -103,9 +103,9 @@ Three levels is the maximum. If a sub wants to branch further, that's a signal t
 
 ### 3.3 Special Positions
 
-**Zero (00):** The Ho Overview. Every project arc starts here. Ho 00 is the plan itself — the sequence map, the phase assignments, the dependency graph. It's the document the author produces during Kamae to define the arc.
+**Zero (00):** The orientation ho. Every project arc starts here. Ho 00 is the project's first working session — it establishes pre-conditions, primes the concepts the build needs, fixes the project's ho-shape conventions, and hands off to the first building ho. The *sequence* plan itself — the phase assignments and dependency graph — lives in the **Ho Overview**, the Kamae 4 document ([[kamae-project-framing|Kamae: Project Framing]] (framework/structure/kamae-project-framing.md) §2.4), not in ho-00. (Earlier framework versions equated ho-00 with the Ho Overview; that usage is superseded — the overview is Kamae 4, and ho-00 is the orientation-shaped first ho. Live instances: this repo's `ho-00-orientation.md`, plus sharibako and sageframe-mcp. Merge-decisions D7, bidirectional supersession.)
 
-**Point-five (0.5):** The conventional position for an inserted ho between two planned majors. Ho 0.5 (Tool Mastery) sits between the overview (00) and the first real work (01). It's reserved for "we need a step here that wasn't in the original plan, and it logically precedes the next major."
+**Point-five (0.5):** The conventional position for an inserted ho between two planned majors. Ho 0.5 (Tool Mastery) sits between ho-00 (orientation) and the first real work (01). It's reserved for "we need a step here that wasn't in the original plan, and it logically precedes the next major."
 
 **The .0 and .00 positions** within a branch are never used. Ho 05.0 doesn't exist — it would be Ho 05. Ho 05.70 doesn't exist — it would be Ho 05.7. The number extends only when new work branches off.
 
@@ -159,7 +159,7 @@ The number uses hyphens for dots and underscores for internal separation:
 
 | Ho Number | Filename                                  |
 | --------- | ----------------------------------------- |
-| 00        | `ho-00-overview.md`                       |
+| 00        | `ho-00-orientation.md`                    |
 | 0.5       | `ho-0_5-tool-mastery.md`                  |
 | 01        | `ho-01-git-good.md`                       |
 | 05.7      | `ho-05_7-state-redesign.md`               |

@@ -61,6 +61,15 @@ The "four-layer" label is settled to **five-layer** ([ho] item 5) at every site 
 2.7 §2's canonical five layers (the count half was known drift; the
 validation-blindness half was new since D19).
 
+### ho-00 identity: orientation ho, not the Ho Overview — kind: changed
+
+`ho-structure.md` §3.3: "Zero (00): The Ho Overview … Ho 00 is the plan itself" is
+superseded by the **orientation-ho** meaning (finding B2b) — ho-00 is the project's
+first working session; the sequence plan lives in the Kamae 4 Ho Overview. The
+conflation is also fixed at the 0.5 description and the filename example
+(`ho-00-overview.md` → `ho-00-orientation.md`). Matches all current practice and the
+glossary's ho-00 entry (merge-decisions D7, bidirectional).
+
 ## 2026-07-03 — post-audit correction (fork-A completion)
 
 ### Complete the fork-A term swap in design-work + template — kind: changed
