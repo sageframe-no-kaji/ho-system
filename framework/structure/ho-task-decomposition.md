@@ -381,7 +381,7 @@ should present it at that altitude.
 - [[agent-task-spec|Agent Task Specification]] — ⚠ predates this document; its
   `[NNN] - Agent Task` filename convention and `tasks/` location are the Kanyō-era
   format and should be updated or marked historical (see framework debt)
-- [[kamae-project-framing|Kamae: Project Framing]] §2.5 — canonical paths
+- [[kamae-project-framing|Kamae: Project Framing]] §2.6 — canonical paths
 - [[template-selection-guide|Template Selection Guide]]
 
 ---

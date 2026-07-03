@@ -40,7 +40,7 @@ next practitioner what to do with it:
 the four Kamae collaborator skills.
 **Lifecycle:** drafted → committed. Mutability varies by document — see §6.
 **Location:** `ho-process/kamae-<N>-<project>-<doctype>.md`; the README is the repo
-root `README.md` with no prefix (see kamae-project-framing §2.5).
+root `README.md` with no prefix (see kamae-project-framing §2.6).
 **Frontmatter (observed canonical form, sharibako):** `created`, `status`, `type`
 (`seed` | `system-design` | `readme` | `ho-overview`), `project`, `stage: kamae-N`,
 `kamae-chain`, `builds-on`, `next`.
@@ -104,7 +104,7 @@ practitioner directly via the standalone dandori skill (standalone tasks).
 
 **Lifecycle:** `ready` → `in-progress` → `complete` | `blocked`.
 **Location:** `ho-process/agent-tasks/Ho-<NN>-AT-<MM>.md` (child; the canonical
-sibling-of-`hos/` placement per kamae-project-framing §2.5 and dandori FORMAT.md).
+sibling-of-`hos/` placement per kamae-project-framing §2.6 and dandori FORMAT.md).
 Standalone tasks share the directory as `Standalone-AT-YYYY-MM-DD-slug.md`
 (merge-decisions D3; see ho-task-decomposition §4.2).
 **Frontmatter:** `created`, `type: agent-task` (child) or `type:
