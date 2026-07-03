@@ -8,6 +8,8 @@ version: "1.0"
 tags: [ho-system, seed, shodo, project-artifact]
 ---
 
+> Archived 2026-07-03 (ho-05). A Shodō project seed that sat at the ho-system repo root as a stray artifact; its content describes a pre-Kamae "seed + Ho prompt" structure. Preserved as historical record — not a current Ho System document.
+
 # Shodō: A Philosophy of Conversational Knowledge
 
 ---

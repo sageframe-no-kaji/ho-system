@@ -8,6 +8,8 @@ version: "1.0"
 tags: [ho-system, seed, checklist, kamae]
 ---
 
+> Archived 2026-07-03 (ho-05). The 2026-03 framework-update task list triggered by the seed-template review. Items 1–7 landed; item 8 was mooted (design-seed archived); its two live residue items were the README file-tree (fixed in ho-05, stale-ref item 11) and item 9, the foundations-evidence precedential-thinking revision (carried forward as IDEA-009). Preserved as historical record.
+
 # Framework Update Task List
 
 ## Context

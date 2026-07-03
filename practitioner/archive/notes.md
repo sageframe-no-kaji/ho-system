@@ -1,3 +1,5 @@
+> Archived 2026-07-03 (ho-05). Drafting-session notes from the operating-discipline and setup-skill work; their content was promoted into SKILLS-ARCHITECTURE and the setup skills. Preserved as historical record — not current doctrine.
+
 ## The Operating Discipline (framework scope)
 
 The philosophical/operational document we drafted today. It sits in `practitioner/operating-discipline.md` in the Ho System repo. Its job: state what discipline the practice runs under, and why.
