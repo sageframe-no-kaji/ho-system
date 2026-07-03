@@ -3,7 +3,7 @@ id: "2.8"
 title: "Ho-Task Decomposition"
 type: structure
 stage: any
-status: draft
+status: stable
 tags: [ho-system, structure, agent-task, decomposition, model-choice]
 ---
 

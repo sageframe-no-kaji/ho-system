@@ -3,7 +3,7 @@ id: "2.9"
 title: "Artifact Type Registry"
 type: structure
 stage: n/a
-status: draft
+status: stable
 tags: [ho-system, structure, artifacts, registry]
 ---
 
@@ -126,7 +126,7 @@ projects (satori's `devlog/` directory, kanyo pilot).
 
 The **validation** layer — the "is it *good*?" half of quality, paired with the "is it
 *right*?" verification stack — is defined in full in [[verification-practices|Verification
-Practices]](verification-practices.md) §3. It runs in four modalities across two axes (*who
+Practices]] (verification-practices.md) §3. It runs in four modalities across two axes (*who
 runs it*: agent vs human; *what is judged*: function → feel → output-quality → real-use):
 **smoke test**, **interaction test**, **eval**, and **dogfood**. Only two of the four produce
 documents and therefore earn a registry entry — **eval** (§2.1) and the **dogfood finding**
@@ -202,7 +202,7 @@ is the canonical example.
 - Local ho numbering with a letter prefix (ho-A1 … ho-A5)
 - An explicit `supersedes:` clause against the specific main-kamae-4 bullet the
   sidequest overtakes, plus a documented cascade reading order
-- Its own smoke pass and release-tag consequences
+- Its own validation pass (in shodo's case, an eval) and release-tag consequences
 
 **Bidirectional supersession (required).** The supersession link must run *both* ways
 (merge-decisions **D7**): the sidequest's phase overview names the main-kamae-4 bullet
@@ -300,7 +300,7 @@ forward-only's application: forward-only governs how *frozen* and *sealed* chang
 |---|---|---|
 | **living** | README (kamae-3), ho overview (kamae-4), seed (kamae-1, see note), the Basis of Design (2.11) | Edited in place as the project evolves. Overview edits are forward-looking only: dead numbers stay dead, checkpoint outcomes get recorded, historical entries aren't rewritten. "Small frequent updates beat large rare ones" (sharibako kamae-4). |
 | **frozen** | System design (kamae-2) | Not edited in place; changed only by a superseding addendum. Body preserved as-authored; a reader's-note pointer at the top names the addenda; the addenda carry the change (sharibako kamae-2 + 2.1 + 2.2). Thaw-able through the addendum mechanism, and still governs the build. |
-| **sealed** | Closed hos, addenda, dogfood findings, devlogs/Reflect, executed ATs, propagation-ledger commits | Final — never changes. Typographical fixes only; anything that changes what the document *said* belongs in a new document. A future document may *respond* (forward-only), but nothing supersedes it in force — it is already history. |
+| **sealed** | Closed hos, sidequests, addenda, dogfood findings, devlogs/Reflect, executed ATs, propagation-ledger commits | Final — never changes. Typographical fixes only; anything that changes what the document *said* belongs in a new document. A future document may *respond* (forward-only), but nothing supersedes it in force — it is already history. |
 
 **Seed note (decided — merge-decisions D4).** The seed is a **living parti**, revised in
 place with dated revision notes: sharibako's kamae-1 was revised when kamae-2.1 landed,

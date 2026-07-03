@@ -3,7 +3,7 @@ id: "2.12"
 title: "External-Project Contribution"
 type: structure
 stage: n/a
-status: draft
+status: stable
 tags: [ho-system, external, contribution, pull-request]
 ---
 

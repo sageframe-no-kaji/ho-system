@@ -3,7 +3,7 @@ id: "2.10"
 title: "Kamae Addenda"
 type: structure
 stage: n/a
-status: draft
+status: stable
 tags: [ho-system, kamae, decisions, forward-only]
 ---
 

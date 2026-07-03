@@ -3,7 +3,7 @@ id: "1.3"
 title: "Glossary"
 type: foundation
 stage: n/a
-status: draft
+status: stable
 tags: [ho-system, glossary, vocabulary]
 ---
 
@@ -36,7 +36,9 @@ is the **Basis of Design**, not a "register." _(ho-task-decomposition 2.8 §1.)_
 **Basis of Design** — The single file holding a project's landed design decisions as
 explicit numeric parameters — the source of truth the tuners land into, the spikes
 validate against, and the implementation ports from. Holds the _frozen_ values at any
-moment (the _living_ happens in the **propagation ledger**). Generalizes past visual to any
+moment (the _living_ happens in the **propagation ledger**): the file itself is living —
+propagated with named-reason commits only — while each landed value is frozen until a
+propagation moves it. Generalizes past visual to any
 design parameter, interaction thresholds included. Named from the AEC term of art; not a
 "register" (see _architectural register_). _(design-work 2.11 §2–4.)_
 
@@ -182,9 +184,9 @@ _(ho-task-decomposition 2.8 §1.1.)_
 life. **living** — revised in place (README, overview, seed by dated revision, the Basis of
 Design). **frozen** — not edited in place, changed only by a superseding addendum (system
 design); thaw-able through the addendum mechanism, still governs the build. **sealed** —
-final, never changes (closed hos, addenda, dogfood findings, executed ATs,
-propagation-ledger commits); a future document may _respond_ but nothing supersedes it in
-force. Forward-only governs frozen and sealed; living is the declared exception.
+final, never changes (closed hos, sidequests, addenda, dogfood findings, devlogs/Reflect,
+executed ATs, propagation-ledger commits); a future document may _respond_ but nothing
+supersedes it in force. Forward-only governs frozen and sealed; living is the declared exception.
 _(artifact-type-registry 2.9 §6.)_
 
 **notes/** — The `ho-process/notes/` location where pre-ho findings live (dated finding
@@ -253,13 +255,13 @@ simultaneously. _(shu-ha-ri 2.4.)_
 
 **sidecar** — A record kept in a sibling directory outside a fork's working tree, separately
 owned, so the practitioner's ho-process never enters the contribution's object database. The
-pattern is the **sidecar directory**; the artifact is a **sidecar record**. _(external-
-contribution 2.12.)_
+pattern is the **sidecar directory**; the artifact is a **sidecar record**.
+_(external-contribution 2.12.)_
 
 **sidequest** — A bounded, severable capability _arc_ inside a project: its own folder, its
 own phase-overview (`type: ho-overview-phase`), local letter-prefixed numbering (ho-A1…), an
-explicit `supersedes:` against the main overview (bidirectional), its own smoke pass. It is
-_work_, an arc — the counterpart to the dogfood finding's record. (The earlier "sidequest =
+explicit `supersedes:` against the main overview (bidirectional), its own validation pass
+(in shodo's case, an eval). It is _work_, an arc — the counterpart to the dogfood finding's record. (The earlier "sidequest =
 emergent record" definition was a mislabeling, now corrected — those files are dogfood
 findings.) _(artifact-type-registry 2.9 §3.1.)_
 

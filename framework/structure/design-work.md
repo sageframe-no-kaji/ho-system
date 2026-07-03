@@ -3,7 +3,7 @@ id: "2.11"
 title: "Design Work"
 type: structure
 stage: n/a
-status: draft
+status: stable
 tags: [ho-system, design, visual, tuning]
 ---
 

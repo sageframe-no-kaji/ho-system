@@ -45,6 +45,22 @@ flagged for the practitioner. New `skills/` and `practitioner/` layers, CONTRIBU
 CHANGELOG placement, the near-empty layer 7, and the unindexed audit-brief working docs all
 stay deferred to the INDEX taxonomy pass (IDEA-007).
 
+### Canonicalize the sealed-set membership; fold Fable pass-2 coherence fixes — kind: changed
+
+Fable pass-2 **D-2**: the `sealed` mutability set had three different memberships (naming
+record, registry §6, glossary). Made registry §6 the canonical enumeration and added
+**sidequests** to its sealed row (naming-record #8 — a closed sidequest is closed hos plus a
+spent phase-overview); the glossary `sealed` entry now mirrors it (regaining the
+devlogs/Reflect it had dropped). **D-3**: a reconciling clause in the glossary
+Basis-of-Design entry — the file is living via named-reason propagation, each landed value
+frozen between propagations. **D-4**: "its own smoke pass" → "its own validation pass (in
+shodo's case, an eval)" in registry §3.1 and the glossary sidequest entry (post-**D19**
+vocabulary — smoke is the agent-run floor, but shodo ran an eval). **N5**: the merged-set
+docs 2.8 / 2.9 / 2.10 / 2.11 / 2.12 / 1.3 flip `status: draft → stable` to match 2.7 and the
+rest of the landed structure layer (2.1 left `draft` — flagged for the practitioner). No
+doctrine changes — the doctrine was already coherent; these align its compression into the
+glossary and registry.
+
 ## 2026-07-03 — canonical-claims reconciliation (ho-07)
 
 Reconciles the foundation/structure layer with settled doctrine ho-02 missed
