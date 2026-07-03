@@ -23,19 +23,20 @@ Kamae begins with ideation, not after it. The discipline of understanding a prob
 
 The Kanyō pilot did this implicitly — the Ho-00 overview document was a single artifact that combined brainstorming, architecture, tool selection, and ho sequencing into one 350-line document. It worked, but it conflated concerns that serve different purposes and that change at different rates. Separating them makes the process repeatable and the outputs more useful.
 
-Project Framing produces four documents, in order. Each builds on the previous one and increases the level of commitment:
+Project Framing produces four framing documents, in order. Each builds on the previous one and increases the level of commitment:
 
 ```
 Seed → System Design → README → Ho Overview
+(K1)    (K2)            (K3)     (K4)
 ```
 
-When the Ho Overview is complete, you have enough to write individual hos from the [[shu-ho-template|shu-stage template]] (framework/templates/shu-ho-template.md) or whichever template is appropriate for the learner's level.
+When the Ho Overview is complete, you have enough to write individual hos from the [[shu-ho-template|shu-stage template]] (framework/templates/shu-ho-template.md) or whichever template is appropriate for the learner's level. Those per-ho documents are the fifth link in the chain — the **Kamae 5** documents (§2.5), written one per ho at build time rather than during the framing phase. Four framing documents; five links.
 
 **Kamae sits at project scope.** It frames *the specific thing being built*. This is distinct from **practitioner scope** — *how the practitioner works*, regardless of project: the operating discipline (how testing, linting, permissions, and verification are handled), the environment configuration (IDE settings, agent instructions such as `CLAUDE.md`), and the practitioner's profile (stage, language preferences, tool stack). Practitioner scope is established once per practitioner-tool combination and travels across projects; Kamae is done once per project. The two meet at ho-00, where the project's specific instantiation of the operating discipline gets encoded in the repo. For the practitioner-scope canonical document, see [[operating-discipline|The Operating Discipline]] (practitioner/operating-discipline.md).
 
 ---
 
-## 2. The Four Documents
+## 2. The Four Framing Documents
 
 ### 2.1 The Project Seed
 
@@ -155,7 +156,7 @@ The skill (or the person writing the README) should be able to determine the pro
 - A tutorial (that's what hos are for)
 - An architecture document (that's the System Design)
 - A marketing page (factual and experiential, not promotional)
-- A frozen document (the README evolves; the other Kamae documents don't)
+- A frozen document — the README is *living-continuous* and evolves as the project develops. (Only the System Design is frozen; the seed and Ho Overview are living too — see the mutability regimes above.)
 
 **Relationship to what comes next:** The README, along with the Seed and System Design, is fed to AI to generate the Ho Overview. It provides the concrete scope definition that constrains what the ho sequence needs to accomplish.
 
@@ -234,7 +235,7 @@ A per-ho document should define:
 
 ### 2.6 Filenames and Location
 
-The four documents live in the project repo under `ho-process/`, with the README at the repo root.
+The four framing documents live in the project repo under `ho-process/`, with the README at the repo root.
 
 **Pattern:** `kamae-<N>-<project>-<doctype>.md` for documents 1, 2, and 4. The README (Kamae 3) is the canonical repo-root `README.md` and does *not* take a `kamae-3-` prefix — it ships as the public face of the repository under its standard name.
 
@@ -255,7 +256,7 @@ The `kamae-N-` prefix exists because these documents are read together as a chai
 
 ## 3. The Chain
 
-The four documents form a chain of increasing commitment. Each one takes the previous document's output and narrows what's possible — turning opinions into decisions, decisions into scope, scope into a buildable sequence:
+The five documents form a chain of increasing commitment. Each one takes the previous document's output and narrows what's possible — turning opinions into decisions, decisions into scope, scope into a buildable sequence, and the sequence into session-level work:
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -282,13 +283,13 @@ The four documents form a chain of increasing commitment. Each one takes the pre
 │                                                              │
 │         ↓ generates                                          │
 │                                                              │
-│  INDIVIDUAL HOS    "Here's what to do in this session."      │
+│  PER-HO DOCUMENTS  "Here's what to do in this session."      │
 │  (from templates)   → Parts, verification, devlog            │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
 ```
 
-Each step increases commitment. The seed is exploratory — opinions are provisional, architecture is directional, scope is approximate. The System Design commits to architecture. The README commits to scope. The Ho Overview commits to a build order. The individual hos commit to specific session-level work.
+Each step increases commitment. The seed (K1) is exploratory — opinions are provisional, architecture is directional, scope is approximate. The System Design (K2) commits to architecture. The README (K3) commits to scope. The Ho Overview (K4) commits to a build order. The individual per-ho documents (K5) commit to specific session-level work.
 
 **The chain is not always linear.** Writing the System Design may reveal that the seed's vision is too broad. Writing the README may expose a gap in the System Design. Writing the Ho Overview may reveal that a component needs to be split across multiple hos that weren't obvious from the System Design alone. Expect to loop back and revise earlier documents as later ones surface problems.
 
@@ -300,7 +301,7 @@ Each step increases commitment. The seed is exploratory — opinions are provisi
 
 ### For a Brand-New Project
 
-Write all four documents in order. Don't skip steps. The seed might take an hour or two — but the precedential thinking that feeds it may have taken days, weeks, or longer. The System Design might take an hour. The README might take 30 minutes. The Ho Overview might take an hour. Total investment in the documents themselves: 3–5 hours before writing any hos.
+Write all four framing documents in order. Don't skip steps. The seed might take an hour or two — but the precedential thinking that feeds it may have taken days, weeks, or longer. The System Design might take an hour. The README might take 30 minutes. The Ho Overview might take an hour. Total investment in the documents themselves: 3–5 hours before writing any hos.
 
 The seed's time budget is different from the other documents because it draws on upstream work. The precedential thinking — researching the landscape, trying existing tools, talking to people who have the problem — may happen over days or weeks before you sit down to write the seed. The writing itself captures what you've already been thinking. The other three documents are produced in a more concentrated burst, each building on the last.
 
@@ -348,7 +349,7 @@ The Ho Overview assigns each planned ho to a phase. Individual hos may shift bet
 
 **How to write good hos from the Ho Overview.** That's what the ho templates (`framework/templates/`) are for. The Ho Overview tells you _what_ to write. The template tells you _how_ to structure it.
 
-**How to adapt the framing process for different project types.** The four-document chain was developed from software projects. Whether it applies unchanged to other domains (data analysis, research, hardware, writing) is an open question. See [[design-seed|Design Seed §6]] (framework/design-seed.md) for open questions about domain adaptation.
+**How to adapt the framing process for different project types.** The framing chain — the four framing documents — was developed from software projects. Whether it applies unchanged to other domains (data analysis, research, hardware, writing) is an open question. See [[design-seed|Design Seed §6]] (framework/design-seed.md) for open questions about domain adaptation.
 
 ---
 

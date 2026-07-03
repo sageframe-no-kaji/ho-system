@@ -18,6 +18,31 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-03 — canonical-claims reconciliation (ho-07)
+
+Reconciles the foundation/structure layer with settled doctrine ho-02 missed
+(Fable pass 2, findings B2a/B2b/D-1/D-6). Executes decided doctrine — it makes no
+new architectural call.
+
+### Merge the UPDATES catalog into 2.1; adopt the five-document chain — kind: changed
+
+Merged the four CONFIRMED updates from `kamae-project-framing.UPDATES.md` (Kamae 5 /
+five-document chain; practitioner-scope acknowledgment; System Design ↔ Ho Overview
+"not beholden"; phase-first Ho Overview with release tags) into 2.1, then removed the
+catalog (labeled "discard after merge"). New §2.5 "Per-Ho Documents (Kamae 5)";
+Filenames renumbered §2.6. The three SUGGESTED updates were dropped per the catalog's
+own legend. Root fix for B2a — the glossary's five-document citation now resolves to a
+source that agrees.
+
+### 2.1 four→five by sense; complete the D4 mutability amendment — kind: changed
+
+Resolved every "four documents" occurrence by sense rather than a blanket rename: the
+**framing phase** still produces four *framing* documents (§2 header, §§1/2.6/4/6), while
+**the chain** is the five-link chain (§1 diagram K-labels, §3 count + diagram node
+`INDIVIDUAL HOS` → `PER-HO DOCUMENTS`, the K1–K5 walkthrough). Also completed merge-decisions
+**D4**: the residual "the README evolves; the other Kamae documents don't" claim (finding
+D-1) now states the living/frozen model (only the System Design is frozen).
+
 ## 2026-07-03 — post-audit correction (fork-A completion)
 
 ### Complete the fork-A term swap in design-work + template — kind: changed
