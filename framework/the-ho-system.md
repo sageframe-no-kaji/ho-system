@@ -38,7 +38,7 @@ project           session, with structure        extend
                   that adapts as you grow
 ```
 
-**[[kamae-project-framing|Kamae]]** (framework/structure/kamae-project-framing.md) is the planning phase. You produce four documents — concept, system design, README, and ho overview — that turn a raw idea into a buildable plan.
+**[[kamae-project-framing|Kamae]]** (framework/structure/kamae-project-framing.md) is the planning phase. You produce the five-document Kamae chain — seed, system design, README, ho overview (the four framing documents), and the per-ho documents (Kamae 5) generated from them — turning a raw idea into a buildable plan and the bounded sessions that execute it.
 
 **The ho sequence** is the build. Each ho is a bounded session (~2 hours in early stages, flexible later) that produces a real deliverable — working code, passing tests, a deployed service. Hos are numbered, committed to version control, and followed by structured reflection.
 
@@ -94,7 +94,7 @@ These documents define how the Ho System works. Read them to understand the meth
 | [[project-arc\|The Project Arc]] (framework/structure/project-arc.md)                              | How hos sequence into complete projects. The five phases. What happens when plans meet reality.                 |
 | [[tiered-understanding\|Tiered Understanding]] (framework/structure/tiered-understanding.md)       | Managing what you know and don't know. Honest self-assessment.                                                  |
 | [[devlog\|The Devlog]] (framework/structure/devlog.md)                                             | The reflection practice. What makes a good devlog. How it evolves across stages.                                |
-| [[verification-practices\|Verification Practices]] (framework/structure/verification-practices.md) | The four-layer verification stack. Test coverage, linting, self-review, cross-agent verification, human review. |
+| [[verification-practices\|Verification Practices]] (framework/structure/verification-practices.md) | The five-layer verification stack (test coverage, linting, self-review, cross-agent verification, human review) — and the validation layer for whether the *right thing* was built. |
 | [[ho-task-decomposition\|Ho-Task Decomposition]] (framework/structure/ho-task-decomposition.md)    | How hos and agent tasks compose one architectural thought. The parent-child relationship, the three relationship types, and when to extract. |
 
 ### Use the Templates

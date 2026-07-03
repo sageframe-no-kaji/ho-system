@@ -43,6 +43,14 @@ Resolved every "four documents" occurrence by sense rather than a blanket rename
 **D4**: the residual "the README evolves; the other Kamae documents don't" claim (finding
 D-1) now states the living/frozen model (only the System Design is frozen).
 
+### Propagate the five-document chain + validation-awareness into 1.1 — kind: changed
+
+`the-ho-system.md` (1.1): the Kamae summary (§ The Arc) now names the five-document
+chain and drops the pre-seed term "concept" (finding B2a); the Verification Practices
+doc-map row names the **five-layer** stack (settling the four-layer/five-item drift,
+[ho] item 5) and adds the validation layer — whether the *right thing* was built
+(finding D-6, propagating D19 up from 2.7).
+
 ## 2026-07-03 — post-audit correction (fork-A completion)
 
 ### Complete the fork-A term swap in design-work + template — kind: changed
