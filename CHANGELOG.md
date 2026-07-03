@@ -38,6 +38,19 @@ correctness into goodness. Supersedes the smoke/dogfood artifact framing of **D1
 (bidirectional per **D7**); D14's core (sidequest = severable build arc) stands. Strips the
 stale `version: "1.0"` field (D13 / IDEA-006).
 
+### Rebuild registry §2 to eval + dogfood — kind: changed
+
+`framework/structure/artifact-type-registry.md`: §2 retitled "Validation artifacts" and
+rebuilt to the two validation modalities that produce documents (merge-decisions **D19**) —
+**eval** (§2.1, a graded-eval record) and the **dogfood finding** (§2.2). Renames the old
+§2.1 "smoke test" → **eval** (the entry mislabeled the human-graded output-quality pass; the
+true agent-run smoke test is a *practice*, now homed in 2.7 §3 with no registry entry — as is
+the interaction test). shodo's `smoke-handoff` / `smoke-results` re-home as `eval-handoff` /
+`eval-results` (the `smoke-` token dropped). Drops the "one discipline, two artifacts"
+framing; adds the altitude note (the validation *layer* is canon per D19; the two artifact
+*types* stay canonical-provisional, single-project). Cross-referenced to 2.7 §3; §3–§7
+untouched. Supersedes the D14/D15 artifact structure (bidirectional per **D7**).
+
 ## 2026-07-02 — Fable-audit merge (ho-03, standalone drafts move-in)
 
 ### Add 2.12 External-Project Contribution — kind: added

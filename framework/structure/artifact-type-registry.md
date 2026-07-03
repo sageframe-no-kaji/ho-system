@@ -122,46 +122,65 @@ projects (satori's `devlog/` directory, kanyo pilot).
 
 ---
 
-## 2. Smoke/dogfood *(provisional — one project)*
+## 2. Validation artifacts
 
-The smoke/dogfood layer is **one discipline with two artifacts**, recording what live
-use surfaces as opposed to what the plan intended. It is **provisional**: shodo is the
-only project running it, and unusually deep — treated like the design modality (promote
-the project-local skill with a framework-catalog entry; write the full structure doc
-when a *second* project runs a smoke pass, not before).
+The **validation** layer — the "is it *good*?" half of quality, paired with the "is it
+*right*?" verification stack — is defined in full in [[verification-practices|Verification
+Practices]](verification-practices.md) §3. It runs in four modalities across two axes (*who
+runs it*: agent vs human; *what is judged*: function → feel → output-quality → real-use):
+**smoke test**, **interaction test**, **eval**, and **dogfood**. Only two of the four produce
+documents and therefore earn a registry entry — **eval** (§2.1) and the **dogfood finding**
+(§2.2). **Smoke and interaction are practices**: they produce commits, no document, so they
+live in 2.7 §3, not here. (This answers the old "does smoke earn a registry entry?" — no; it
+earns a place in the validation layer, not the artifact map.)
 
-A correction is baked into this section (merge-decisions **D14/D15**). An earlier audit
-read shodo's `ho-04-smoke-sidequest-*` files as a canonical "sidequest = record"
-artifact type. They are not: they are **dogfood findings**, and "sidequest" is a
-*different* type entirely — a severable build arc (§3.1). The `sidequest` token in those
-filenames is a naming collision to drop.
+**Altitude note (canon layer, provisional types).** The validation *layer* is canonical
+doctrine (2.7 §3, merge-decisions **D19**) — it no longer waits on a second project. The two
+artifact *types* below sit at a separate altitude: both are still single-project (shodo), so
+by this registry's own evidentiary rule they carry the **canonical-provisional** tier — adopt
+on the second use. The layer is settled; the document formats are not yet corpus-proven.
 
-### 2.1 Smoke test *(canonical-provisional — adopt on 2nd use)*
+A correction is baked into this section (merge-decisions **D14/D15**, superseded in part by
+**D19**). An earlier audit read shodo's `ho-04-smoke-sidequest-*` files as a canonical
+"sidequest = record" artifact type. They are not: they are **dogfood findings**, and
+"sidequest" is a *different* type entirely — a severable build arc (§3.1). The `sidequest`
+token in those filenames is a naming collision to drop. D19 further corrects the D14/D15
+framing itself: this is not "one discipline, two artifacts" but four independent modalities,
+of which only two are artifacts.
 
-**Purpose:** the graded pass — a regression floor plus a new-capability set, with a
-grader/observer split and a corpus-delta check. Two paired documents in practice: a
-self-contained *handoff* framing the pass, and a *results* document recording graded
-outcomes.
-**Frontmatter:** `type: smoke-handoff`, `type: smoke-results`.
-**Location / instances:** shodo main arc and Subproject-A; produced by the project-local
-`ho-smoke-collaborator` skill — a promotion candidate (it self-describes as "a sibling
-to the Kamae authoring skills: it feeds Kamae 5's Reflect phase without writing it").
+### 2.1 Eval (graded eval) *(canonical-provisional — adopt on 2nd use)*
+
+**Purpose:** a graded pass on *output quality* — correctness, clarity, judgment — the
+validation modality that needs human discernment rather than a pass/fail robot (2.7 §3). A
+regression floor plus a new-capability set, with a grader/observer split and a corpus-delta
+check. Two paired documents in practice: a self-contained *handoff* framing the pass, and a
+*results* document recording graded outcomes.
+**Frontmatter:** `type: eval-handoff`, `type: eval-results`.
+**Location / instances:** shodo main arc and Subproject-A; the instances carry the historical
+`smoke-handoff` / `smoke-results` tokens — new instances use `eval-handoff` / `eval-results`
+(the `smoke-` token is dropped, as `smoke-sidequest-` was). Produced by the project-local
+`ho-smoke-collaborator` skill — a promotion candidate, re-scoped to the validation modalities
+it serves (IDEA-004); it self-describes as "a sibling to the Kamae authoring skills: it feeds
+Kamae 5's Reflect phase without writing it."
+
+> **Name correction (D19).** This entry is what earlier drafts mislabeled a "smoke test." In
+> the validation layer (2.7 §3) the *smoke test* is the agent-run function check — a
+> *practice*, not an artifact — while this human-graded output-quality pass is the **eval**.
 
 ### 2.2 Dogfood finding *(canonical-provisional — adopt on 2nd use)*
 
-**Purpose:** a real-use finding — the practitioner's actual query *as a user*, the
-attempts, the ranked results, and the finding that falls out. Documents a real hunt,
-not planned work; nothing to execute. Named after the *finding*.
-**Lifecycle:** `recorded` — terminal on creation. Never "completed"; it is evidence,
-and its findings feed later hos' Think phases.
+**Purpose:** a real-use finding — the practitioner's actual query *as a user*, the attempts,
+the ranked results, and the finding that falls out (2.7 §3, modality *d*). Documents a real
+hunt, not planned work; nothing to execute. Named after the *finding*.
+**Lifecycle:** `recorded` — terminal on creation. Never "completed"; it is evidence, and its
+findings feed later hos' Think phases.
 **Location:** `ho-process/hos/`. shodo's instances are the mislabeled
 `ho-<NN>-smoke-sidequest-<M>-<slug>.md` files; the `smoke-sidequest` token predates this
 correction — new instances drop `sidequest`.
 **Instances:** shodo (5 with frontmatter + 2 pre-convention drafts).
 
 > The earlier "sidequest frontmatter schema" open question (two variants in shodo) is
-> **withdrawn**: it analyzed the dogfood-finding schema, not the §3.1 sidequest type. It
-> re-scopes under the smoke/dogfood question if the discipline is canonized.
+> **withdrawn**: it analyzed the dogfood-finding schema, not the §3.1 sidequest type.
 
 ---
 
