@@ -257,7 +257,7 @@ Tests pass. Looks good.
 
 This tells you nothing about test coverage, whether higher layers were applied, or whether anything was caught and fixed. It's the verification equivalent of "no challenges" in the challenges section.
 
-See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §5 for guidance on what each layer costs and when to apply it selectively.
+See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §4 for guidance on what each layer costs and when to apply it selectively.
 
 ---
 

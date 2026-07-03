@@ -64,7 +64,7 @@ Shu-stage hos are the most prescriptive form in the system. They follow the full
 - **Devlog:** Full reflection including confidence self-assessment (1–5 scale), "what surprised me," and honest identification of what remains opaque.
 - **Commit discipline:** Commit after each part. This builds the habit of clean version control and creates recoverable checkpoints.
 
-Verification is structural in shu-stage hos, not an afterthought. The template requires test commands, completion checklists with quality tools, and understanding verification questions precisely because the learner hasn't yet developed the independent judgment to know when their work is correct. Both the test suite and the linting pipeline are established in Ho 01 and run throughout — they are foundational habits, not final checks. See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §3, and specifically Layer 1 (test coverage) and Layer 1b (the linting pipeline).
+Verification is structural in shu-stage hos, not an afterthought. The template requires test commands, completion checklists with quality tools, and understanding verification questions precisely because the learner hasn't yet developed the independent judgment to know when their work is correct. Both the test suite and the linting pipeline are established in Ho 01 and run throughout — they are foundational habits, not final checks. See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §2, and specifically Layer 1 (test coverage) and Layer 1b (the linting pipeline).
 
 #### AI Role
 
@@ -120,7 +120,7 @@ Ha-stage hos relax the prescriptive structure while retaining the elements that 
 - **Devlog:** Remains required, but shifts in character. Less "what I learned" and more "what I decided and why." The devlog becomes a design document, not a learning journal.
 - **Commit discipline:** Maintained, but the learner determines the granularity.
 
-At ha stage, the practitioner develops their own verification judgment — learning to calibrate which verification layers to apply based on task risk and criticality. The Agent Task Log tracks not just what was delegated, but what verification was applied to each delegation. Significant delegated work should include cross-agent verification for high-stakes changes. See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §3, particularly Layer 2 (directed self-review) and the emerging use of Layer 3 (cross-agent verification).
+At ha stage, the practitioner develops their own verification judgment — learning to calibrate which verification layers to apply based on task risk and criticality. The Agent Task Log tracks not just what was delegated, but what verification was applied to each delegation. Significant delegated work should include cross-agent verification for high-stakes changes. See [[verification-practices|Verification Practices]] (framework/structure/verification-practices.md) §2, particularly Layer 2 (directed self-review) and the emerging use of Layer 3 (cross-agent verification).
 
 #### AI Role
 
