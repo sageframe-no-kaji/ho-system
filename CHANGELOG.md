@@ -34,6 +34,17 @@ per-document `version:` field left anywhere in `framework/`. The
 index pass does not re-add it. `framework/templates/Seed Template Checklist.md` keeps its
 field pending archival later in this ho.
 
+### Reconcile INDEX layers 6 and 7 — kind: changed
+
+`INDEX.md`: added `agent-task-2026-05-25-integrate-ho-task-decomposition.md` as **6.2** —
+it was written but never indexed. Removed **7.2** (Shodō Seed) and **7.3** (Seed Template
+Checklist); both were archived to `practitioner/archive/` in this ho, so they leave the map
+as the other archived documents already have. **7.1** (project-checklist.md) is left in
+place but points at a gitignored file — a pre-existing public-INDEX → private-doc leak,
+flagged for the practitioner. New `skills/` and `practitioner/` layers, CONTRIBUTING/
+CHANGELOG placement, the near-empty layer 7, and the unindexed audit-brief working docs all
+stay deferred to the INDEX taxonomy pass (IDEA-007).
+
 ## 2026-07-03 — canonical-claims reconciliation (ho-07)
 
 Reconciles the foundation/structure layer with settled doctrine ho-02 missed

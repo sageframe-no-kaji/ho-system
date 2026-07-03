@@ -141,6 +141,7 @@ Delegated implementation tasks handed to AI agents.
 | ID | Document | Description |
 |----|----------|-------------|
 | 6.1 | [Integrate Verification Practices](agent-tasks/agent-task-integrate-verification-practices.md) | Task spec for verification integration into the framework |
+| 6.2 | [Integrate Ho-Task Decomposition](agent-tasks/agent-task-2026-05-25-integrate-ho-task-decomposition.md) | Task spec for placing the ho-task-decomposition document into the framework |
 
 ---
 
@@ -151,5 +152,3 @@ Active seeds, checklists, and working documents for projects under development. 
 | ID | Document | Description |
 |----|----------|-------------|
 | 7.1 | [Ho System Codification Checklist](private/project-checklist.md) | Phase 1 codification task tracking |
-| 7.2 | [Shodō Seed](Shodo-seed.md) | Project seed for the Shodō conversational knowledge system |
-| 7.3 | [Seed Template Checklist](framework/templates/Seed%20Template%20Checklist.md) | Framework update task list triggered by seed template review |
