@@ -78,6 +78,14 @@ the Tracking section predate 2.8's canonical `ho-process/agent-tasks/` + `Ho-NN-
 filesystem-as-tracker principle and the forward pointer to 2.8 stand. Also the last
 "four-layer" → "five-layer" site (:264), completing the layer-count settling.
 
+### Repoint glossary citations after the §2.5→§2.6 renumber — kind: changed
+
+The two glossary entries citing `2.1 §2.5` for the `ho-process/` layout (`ho-process/`,
+`notes/`) now cite **§2.6** — the Filenames section moved when §2.5 became "Per-Ho
+Documents." Keeps the pointer aimed at the section that describes the directory layout.
+(The deeper D-7 content mismatch — `ideas.md`/`learning/`/`notes/` not yet in that
+section — remains ho-05/ho-06's, per the ho.)
+
 ## 2026-07-03 — post-audit correction (fork-A completion)
 
 ### Complete the fork-A term swap in design-work + template — kind: changed

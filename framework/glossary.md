@@ -132,7 +132,7 @@ next major." _(ho-structure 2.3 §3.3.)_
 
 **ho-process/** — The project directory holding the Ho System's artifacts: the Kamae
 documents, `hos/`, `agent-tasks/`, and any project-specific layers (`learning/`, `notes/`,
-`ideas.md`). The README lives at repo root, not here. _(kamae-project-framing 2.1 §2.5.)_
+`ideas.md`). The README lives at repo root, not here. _(kamae-project-framing 2.1 §2.6.)_
 
 **interaction test** — A validation modality (b): a human, hands on a real terminal,
 checking function _plus feel_ — the UI/UX a smoke test structurally can't reach (the delta
@@ -190,7 +190,7 @@ _(artifact-type-registry 2.9 §6.)_
 **notes/** — The `ho-process/notes/` location where pre-ho findings live (dated finding
 documents) before any ho consumes them via `builds-on:`. A location, not a first-class
 artifact type. Its complement is `ideas.md`: **notes/ is evidence behind you; ideas.md is
-intentions ahead of you.** _(kamae-project-framing 2.1 §2.5.)_
+intentions ahead of you.** _(kamae-project-framing 2.1 §2.6.)_
 
 **orientation ho** — The ho shape for ho-00, learning-only sessions, and replan checkpoints:
 framing without execution — pre-conditions, concept primers, project shape, handoff. No
