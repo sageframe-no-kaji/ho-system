@@ -19,7 +19,7 @@ In martial arts, **kamae (構え)** is the ready stance — how you position you
 
 In the Ho System, kamae is everything that happens before the first ho. It takes a project from its earliest articulation — the core idea, the problem it addresses, the research that grounds it — and produces a structured plan that hos can be written from. Without it, the first ho is guessing at scope, the second ho discovers the architecture was wrong, and the third ho gets thrown out entirely.
 
-Kamae begins with ideation, not after it. The discipline of understanding a problem space before proposing to build in it — what the Ho System calls [[precedential-thinking|precedential thinking]] — is the first act of project framing, not a prerequisite to it. The [[project-seed|Project Seed]] (framework/templates/project-seed-template.md) captures the output of that thinking and becomes the evaluative foundation against which all downstream decisions are judged.
+Kamae begins with ideation, not after it. The discipline of understanding a problem space before proposing to build in it — what the Ho System calls [[ho-seed-template#Precedential Thinking|precedential thinking]] — is the first act of project framing, not a prerequisite to it. The [[ho-seed-template|Project Seed]] (framework/templates/ho-seed-template.md) captures the output of that thinking and becomes the evaluative foundation against which all downstream decisions are judged.
 
 The Kanyō pilot did this implicitly — the Ho-00 overview document was a single artifact that combined brainstorming, architecture, tool selection, and ho sequencing into one 350-line document. It worked, but it conflated concerns that serve different purposes and that change at different rates. Separating them makes the process repeatable and the outputs more useful.
 
@@ -73,7 +73,7 @@ In architecture, this is the _parti_ — the core organizational idea that every
 
 **Example from Hōzō:** The seed document that described the pain point (home-lab users want off-site ZFS backups without a second NAS), the landscape (existing tools require both machines running), the idea (wake-on-demand orchestrator), the constraints (specific hardware, home network), and the architectural opinion (single controller container, WOL-based).
 
-**Template:** See [[project-seed|Project Seed Template]] (framework/templates/project-seed-template.md) for the full template with section descriptions.
+**Template:** See [[ho-seed-template|Project Seed Template]] (framework/templates/ho-seed-template.md) for the full template with section descriptions.
 
 ---
 
@@ -327,7 +327,7 @@ A ri-stage practitioner who has internalized the chain may **combine or skip lay
 
 Project Framing produces the _plan_. The Project Arc is the _execution_. The Ho Overview is the bridge between them — it's the last framing document and the first arc document.
 
-The project arc phases (from the [[design-seed|Design Seed]] (framework/design-seed.md) §3.2):
+The project arc phases (from the [[design-seed-v1|Design Seed]] (practitioner/archive/design-seed-v1.md) §3.2):
 
 |Phase|Hos|Focus|
 |---|---|---|
@@ -345,11 +345,11 @@ The Ho Overview assigns each planned ho to a phase. Individual hos may shift bet
 
 **How to engage AI at each stage.** The framing documents are natural places for AI collaboration (developing a seed through conversation, evaluating architecture decisions, generating a ho sequence from a system design). But the _how_ — what prompts to use, which AI mode (thinking vs. agent) is appropriate, how to evaluate AI suggestions at each stage — is a facilitation concern, not a structural one. That guidance lives in the facilitation layer, not here.
 
-**How to facilitate seed development.** The [[project-seed|Project Seed Template]] (framework/templates/project-seed-template.md) defines the structure. How to coach someone through precedential thinking, how to diagnose a thin seed, how to probe rather than prompt — that's facilitation work, not structural specification.
+**How to facilitate seed development.** The [[ho-seed-template|Project Seed Template]] (framework/templates/ho-seed-template.md) defines the structure. How to coach someone through precedential thinking, how to diagnose a thin seed, how to probe rather than prompt — that's facilitation work, not structural specification.
 
 **How to write good hos from the Ho Overview.** That's what the ho templates (`framework/templates/`) are for. The Ho Overview tells you _what_ to write. The template tells you _how_ to structure it.
 
-**How to adapt the framing process for different project types.** The framing chain — the four framing documents — was developed from software projects. Whether it applies unchanged to other domains (data analysis, research, hardware, writing) is an open question. See [[design-seed|Design Seed §6]] (framework/design-seed.md) for open questions about domain adaptation.
+**How to adapt the framing process for different project types.** The framing chain — the four framing documents — was developed from software projects. Whether it applies unchanged to other domains (data analysis, research, hardware, writing) is an open question. See [[design-seed-v1|Design Seed §6]] (practitioner/archive/design-seed-v1.md) for open questions about domain adaptation.
 
 ---
 
@@ -380,8 +380,8 @@ The framework separates these concerns not because the combined approach failed,
 
 ## 8. Related Framework Documents
 
-- [[design-seed|Design Seed]] (framework/design-seed.md) — The governing document for the Ho System
-- [[project-seed|Project Seed Template]] (framework/templates/project-seed-template.md) — Template for the first Kamae document
+- [[design-seed-v1|Design Seed]] (practitioner/archive/design-seed-v1.md) — The Ho System's founding design document (archived)
+- [[ho-seed-template|Project Seed Template]] (framework/templates/ho-seed-template.md) — Template for the first Kamae document
 - [[shu-ha-ri|Shu-Ha-Ri Progression]] (framework/structure/shu-ha-ri.md) — How ho structure adapts to learner development
 - [[shu-ho-template|Shu Ho Template]] (framework/templates/shu-ho-template.md) — Template for writing prescriptive ho sessions
 - [[project-arc|Project Arc]] (framework/structure/project-arc.md) — How hos sequence into complete project arcs

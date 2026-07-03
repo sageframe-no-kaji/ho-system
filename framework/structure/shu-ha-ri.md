@@ -365,7 +365,7 @@ Note: The stages don't proceed in strict linear order. The learner moved between
 - [[shu-ho-template|Shu Ho Template]](framework/templates/shu-ho-template.md) — Full prescriptive template for shu-stage hos
 - [[ha-ho-template|Ha Ho Template]](framework/templates/ha-ho-template.md) — Flexible template for ha-stage hos
 - [[ri-ho-template|Ri Ho Template]](framework/templates/ri-ho-template.md) — Minimal format for ri-stage operational tasks
-- [[design-seed|Design Seed]](framework/design-seed.md) — The governing document for the Ho System
+- [[design-seed-v1|Design Seed]](practitioner/archive/design-seed-v1.md) — The Ho System's founding design document (archived)
 
 ---
 

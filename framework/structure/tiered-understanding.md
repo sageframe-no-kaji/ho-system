@@ -322,7 +322,7 @@ The goal is not to get everything to Tier 3. The goal is to have the _right thin
 
 ## 8. Related Framework Documents
 
-- [[design-seed|Design Seed]] (framework/design-seed.md) — §3.3 introduces the tiered understanding model
+- [[design-seed-v1|Design Seed]] (practitioner/archive/design-seed-v1.md) — §3.3 introduces the tiered understanding model
 - [[shu-ha-ri|Shu-Ha-Ri Progression]] (framework/structure/shu-ha-ri.md) — How tier usage changes across stages
 - [[shu-ho-template|Shu Ho Template]] (framework/templates/shu-ho-template.md) — Author-declared tier assignments
 - [[ha-ho-template|Ha Ho Template]] (framework/templates/ha-ho-template.md) — Learner-declared tier assignments

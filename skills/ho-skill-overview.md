@@ -227,7 +227,7 @@ Built: 7 skills (5 Kamae chain + DI + index maintenance). Planned: 2 skills (env
 
 ## Related Framework Documents
 
-- [[design-seed|Design Seed]](framework/design-seed.md) — The governing document for the Ho System
+- [[design-seed-v1|Design Seed]](practitioner/archive/design-seed-v1.md) — The Ho System's founding design document (archived)
 - [[kamae-project-framing|Kamae: Project Framing]](framework/structure/kamae-project-framing.md) — The Kamae chain explained
 - [[the-operating-discipline|The Operating Discipline]](practitioner/operating-discipline.md) — The practitioner-scope canonical document
 - [[shu-ha-ri|Shu-Ha-Ri Progression]](framework/structure/shu-ha-ri.md) — How practitioner stage shapes engagement with the methodology

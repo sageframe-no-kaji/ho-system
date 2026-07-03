@@ -340,7 +340,7 @@ Hos and commits are not the same thing, but they're deeply linked.
 
 ## 7. Related Framework Documents
 
-- [[design-seed|Design Seed]] (framework/design-seed.md) — §3.1 introduces the ho as unit of work
+- [[design-seed-v1|Design Seed]] (practitioner/archive/design-seed-v1.md) — §3.1 introduces the ho as unit of work
 - [[shu-ha-ri|Shu-Ha-Ri Progression]] (framework/structure/shu-ha-ri.md) — How ho structure adapts across stages
 - [[kamae-project-framing|Kamae: Project Framing]] (framework/structure/kamae-project-framing.md) — Where major ho numbers are assigned
 - [[tiered-understanding|Tiered Understanding]] (framework/structure/tiered-understanding.md) — How understanding depth is tracked within hos
