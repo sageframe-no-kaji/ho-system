@@ -17,7 +17,7 @@ tags: [ho-system, methodology, research, evidence]
 
 ---
 
-> _This document lays out the intellectual foundations of the Ho System — the problem it addresses, the traditions it draws from, the evidence from its first pilot, and the questions that remain open. For the structural framework, templates, and practical orientation, see [The Ho System](https://claude.ai/chat/the-ho-system.md)._
+> _This document lays out the intellectual foundations of the Ho System — the problem it addresses, the traditions it draws from, the evidence from its first pilot, and the questions that remain open. For the structural framework, templates, and practical orientation, see [The Ho System](the-ho-system.md)._
 
 ---
 
@@ -320,28 +320,6 @@ World Economic Forum & European Commission/OECD. (2025). AI Literacy Framework (
 _This is a living document. It will evolve as the Ho System is applied to new projects, tested with new learners, and refined through practice. The framework documents contain the structural specification; this paper contains the argument for why it exists._
 
 _— ATM, February 2026_
-
-# License
-
-© 2026 Andrew Todd Marcus
-
-This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
-
-You are free to:
-
-- Share — copy and redistribute the material in any medium or format
-
-Under the following terms:
-
-- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made
-- NonCommercial — You may not use the material for commercial purposes
-- NoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material
-
-For consulting, training, or commercial use inquiries, contact: andrew@blueprintforcreativity.com
-
-Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
-
----
 
 # License
 

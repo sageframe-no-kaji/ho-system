@@ -35,6 +35,6 @@ Methodology for Building With AI. [https://github.com/sageframe-no-kaji/ho-syste
 
 ## License
 
-This repository is licensed under [Creative Commons BY-NC-ND 4.0](https://claude.ai/chat/LICENSE). Contributions in the form of issues and discussions are welcome. By participating, you agree that any feedback may inform future versions of the methodology.
+This repository is licensed under [Creative Commons BY-NC-ND 4.0](LICENSE). Contributions in the form of issues and discussions are welcome. By participating, you agree that any feedback may inform future versions of the methodology.
 
 For consulting, training, or commercial licensing: [tyro@sageframe.net]

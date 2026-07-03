@@ -283,7 +283,8 @@ Two standalone devlog templates are provided as tools — copy the file, fill it
 
 - [[shu-devlog-template|Shu Devlog Template]] (framework/templates/shu-devlog-template.md) — Learning journal format. Understanding tiers, confidence calibrated for comprehension, AI collaboration basics.
 - [[ha-devlog-template|Ha Devlog Template]] (framework/templates/ha-devlog-template.md) — Decision record format. The Decision section, What Was Removed, AI collaboration split into thinking/agent modes, confidence calibrated for judgment.
-- **Ri devlog:** No separate template. The [[ri-ho-template|Ri Ho Template]] (framework/templates/ri-ho-template.md) document IS the reflection.
+
+Ri stage has no separate devlog template: the [[ri-ho-template|Ri Ho Template]] (framework/templates/ri-ho-template.md) document IS the reflection.
 
 The ho templates ([[shu-ho-template|Shu Ho Template]] (framework/templates/shu-ho-template.md) and [[ha-ho-template|Ha Ho Template]] (framework/templates/ha-ho-template.md)) also contain embedded devlog sections with authoring notes explaining why each section exists and what to look for. The standalone templates are the tool; the embedded versions are the documentation.
 

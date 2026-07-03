@@ -248,8 +248,8 @@ The most common authoring mistake is writing every ho as if the learner is in sh
 **Match the template to the stage:**
 
 | Element           | Shu                             | Ha                                                        | Ri                         |
-| ----------------- | ------------------------------- | --------------------------------------------------------- | -------------------------- | ------------------------------------------------------- | ---------------- | ------------------------------------------------------- |
-| **Template**      | [[shu-ho-template               | Shu Ho Template]](framework/templates/shu-ho-template.md) | [[ha-ho-template           | Ha Ho Template]](framework/templates/ha-ho-template.md) | [[ri-ho-template | Ri Ho Template]](framework/templates/ri-ho-template.md) |
+| ----------------- | ------------------------------- | --------------------------------------------------------- | -------------------------- |
+| **Template**      | [[shu-ho-template\|Shu Ho Template]](framework/templates/shu-ho-template.md) | [[ha-ho-template\|Ha Ho Template]](framework/templates/ha-ho-template.md) | [[ri-ho-template\|Ri Ho Template]](framework/templates/ri-ho-template.md) |
 | **Duration**      | ~2 hours (strict)               | 2–4 hours (flexible)                                      | Until done                 |
 | **Parts**         | 4–9, author-defined             | Loosely structured or self-defined                        | None                       |
 | **Prerequisites** | Explicit checklist              | Brief context                                             | Problem statement          |
@@ -333,25 +333,25 @@ This is the model working as intended. The goal was never permanent adherence to
 **The full Kanyō progression:**
 
 | Ho    | Title                                  | Stage                                                                                | Signal   |
-| ----- | -------------------------------------- | ------------------------------------------------------------------------------------ | -------- | ----------------------------------------- |
-| 0.5   | [[ho-0_5-tool-mastery                  | Tool Mastery]](examples/kanyo-pilot/ho-0_5-tool-mastery.md)                          | Shu      | Orientation, setup                        |
-| 01    | [[ho-01-git-good                       | Git Good]](examples/kanyo-pilot/ho-01-git-good.md)                                   | Shu      | Step-by-step, full template               |
-| 02    | [[ho-02-falcon-vision                  | Falcon Vision]](examples/kanyo-pilot/ho-02-falcon-vision.md)                         | Shu      | Structured, but reflections deepen        |
-| 03    | [[ho-03-live-detection-notification    | Live Detection]](examples/kanyo-pilot/ho-03-live-detection-notification.md)          | Shu      | Prescriptive, harder problems             |
-| 04    | [[ho-04-docker-deploy                  | Docker Deploy]](examples/kanyo-pilot/ho-04-docker-deploy.md)                         | Shu      | New domain (DevOps), back to basics       |
-| 05    | [[ho-05-deployment-verification        | Deployment Verification]](examples/kanyo-pilot/ho-05-deployment-verification.md)     | Shu → Ha | Verifying own work, operational focus     |
-| 05.5  | [[ho-05_5-dev-testing                  | Dev Testing Strategy]](examples/kanyo-pilot/ho-05_5-dev-testing.md)                  | Ha       | Self-directed process improvement         |
-| 05.6  | [[ho-05_6-architecture-redesign        | Architecture Redesign]](examples/kanyo-pilot/ho-05_6-architecture-redesign.md)       | Ha       | Tradeoff analysis, architectural judgment |
-| 05.7  | [[ho-05_7-state-redesign               | State Machine Redesign]](examples/kanyo-pilot/ho-05_7-state-redesign.md)             | Ha → Ri  | Major simplification, self-directed       |
-| 05.71 | [[ho-05_71-stream-outage-fix           | Stream Outage Fix]](examples/kanyo-pilot/ho-05_71-stream-outage-fix.md)              | Ri       | Targeted debugging                        |
-| 05.72 | [[ho-05_72-startup-confirmation        | Startup Confirmation]](examples/kanyo-pilot/ho-05_72-startup-confirmation.md)        | Ri       | Feature design and implementation         |
-| 06    | [[ho-06-gui-architecture-planning      | GUI Architecture]](examples/kanyo-pilot/ho-06-gui-architecture-planning.md)          | Ha       | Requirements analysis, tech evaluation    |
-| 06.1  | [[ho-06_1-admin-gui-implementation     | Admin GUI Implementation]](examples/kanyo-pilot/ho-06_1-admin-gui-implementation.md) | Ha       | Large build, collaborative                |
-| 06.12 | [[ho-06_12-admin-gui-code-check        | Code Quality Check]](examples/kanyo-pilot/ho-06_12-admin-gui-code-check.md)          | Ri       | Routine maintenance                       |
-| 06.13 | [[ho-06_13-arrival-confirmation-system | Arrival Confirmation]](examples/kanyo-pilot/ho-06_13-arrival-confirmation-system.md) | Ri       | Self-directed feature                     |
-| 06.5  | [[ho-06_5-public-viewer-web-gui        | Public Viewer]](examples/kanyo-pilot/ho-06_5-public-viewer-web-gui.md)               | Ha       | Substantial new build                     |
-| 06.51 | [[ho-06_51-cloudflare-tunnnel          | Cloudflare Tunnel]](examples/kanyo-pilot/ho-06_51-cloudflare-tunnnel.md)             | Ri       | Infrastructure setup                      |
-| 07    | [[ho-07-yolo-training                  | YOLO Training]](examples/kanyo-pilot/ho-07-yolo-training.md)                         | Ha       | New domain (ML), planning mode            |
+| ----- | -------------------------------------- | ------------------------------------------------------------------------------------ | -------- |
+| 0.5   | [[ho-0_5-tool-mastery\|Tool Mastery]](examples/kanyo-pilot/ho-0_5-tool-mastery.md)                          | Shu      | Orientation, setup                        |
+| 01    | [[ho-01-git-good\|Git Good]](examples/kanyo-pilot/ho-01-git-good.md)                                   | Shu      | Step-by-step, full template               |
+| 02    | [[ho-02-falcon-vision\|Falcon Vision]](examples/kanyo-pilot/ho-02-falcon-vision.md)                         | Shu      | Structured, but reflections deepen        |
+| 03    | [[ho-03-live-detection-notification\|Live Detection]](examples/kanyo-pilot/ho-03-live-detection-notification.md)          | Shu      | Prescriptive, harder problems             |
+| 04    | [[ho-04-docker-deploy\|Docker Deploy]](examples/kanyo-pilot/ho-04-docker-deploy.md)                         | Shu      | New domain (DevOps), back to basics       |
+| 05    | [[ho-05-deployment-verification\|Deployment Verification]](examples/kanyo-pilot/ho-05-deployment-verification.md)     | Shu → Ha | Verifying own work, operational focus     |
+| 05.5  | [[ho-05_5-dev-testing\|Dev Testing Strategy]](examples/kanyo-pilot/ho-05_5-dev-testing.md)                  | Ha       | Self-directed process improvement         |
+| 05.6  | [[ho-05_6-architecture-redesign\|Architecture Redesign]](examples/kanyo-pilot/ho-05_6-architecture-redesign.md)       | Ha       | Tradeoff analysis, architectural judgment |
+| 05.7  | [[ho-05_7-state-redesign\|State Machine Redesign]](examples/kanyo-pilot/ho-05_7-state-redesign.md)             | Ha → Ri  | Major simplification, self-directed       |
+| 05.71 | [[ho-05_71-stream-outage-fix\|Stream Outage Fix]](examples/kanyo-pilot/ho-05_71-stream-outage-fix.md)              | Ri       | Targeted debugging                        |
+| 05.72 | [[ho-05_72-startup-confirmation\|Startup Confirmation]](examples/kanyo-pilot/ho-05_72-startup-confirmation.md)        | Ri       | Feature design and implementation         |
+| 06    | [[ho-06-gui-architecture-planning\|GUI Architecture]](examples/kanyo-pilot/ho-06-gui-architecture-planning.md)          | Ha       | Requirements analysis, tech evaluation    |
+| 06.1  | [[ho-06_1-admin-gui-implementation\|Admin GUI Implementation]](examples/kanyo-pilot/ho-06_1-admin-gui-implementation.md) | Ha       | Large build, collaborative                |
+| 06.12 | [[ho-06_12-admin-gui-code-check\|Code Quality Check]](examples/kanyo-pilot/ho-06_12-admin-gui-code-check.md)          | Ri       | Routine maintenance                       |
+| 06.13 | [[ho-06_13-arrival-confirmation-system\|Arrival Confirmation]](examples/kanyo-pilot/ho-06_13-arrival-confirmation-system.md) | Ri       | Self-directed feature                     |
+| 06.5  | [[ho-06_5-public-viewer-web-gui\|Public Viewer]](examples/kanyo-pilot/ho-06_5-public-viewer-web-gui.md)               | Ha       | Substantial new build                     |
+| 06.51 | [[ho-06_51-cloudflare-tunnnel\|Cloudflare Tunnel]](examples/kanyo-pilot/ho-06_51-cloudflare-tunnnel.md)             | Ri       | Infrastructure setup                      |
+| 07    | [[ho-07-yolo-training\|YOLO Training]](examples/kanyo-pilot/ho-07-yolo-training.md)                         | Ha       | New domain (ML), planning mode            |
 
 Note: The stages don't proceed in strict linear order. The learner moved between ha and ri depending on the nature of the work, and occasionally returned to shu-like structure when entering a genuinely new domain (Docker in Ho 04, ML in Ho 07). This is expected and correct.
 
