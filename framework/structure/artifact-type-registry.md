@@ -231,15 +231,18 @@ second use."
 **Instances:** edelmore/apps/reader (ho-01-extract-design, ho-02-extract-book,
 ho-03-extract-narration → `packages/@edelmore/*`).
 
-### 3.3 Tuner-landing hos
+### 3.3 Landing hos
 
-**Purpose:** a ho whose deliverable is "land visual/behavioral parameter values by
-feel against real data" — judgment work, not feature work. Deliverable is a set of
-committed default values plus the commit that locks them ("tuner landing — lock the
-practitioner's by-feel pass as the field defaults").
+**Purpose:** a ho whose deliverable is landing visual/behavioral parameter values at
+their **kagen** (加減 — the felt-right degree) by feel against real data — judgment work,
+not feature work. Deliverable is a set of committed default values plus the commit that
+locks them ("landing — lock the practitioner's by-feel pass as the field defaults"). The
+method that produces them is **design tuning** (2.11).
 **Shape:** typically ri (shoshin ho-06.5, ho-07.5); the category edge is fuzzy —
 ho-07.6 is ha-shaped rendering work the design-process-note nonetheless lists among
-landings. The registry treats "tuner-landing" as a *deliverable kind*, not a shape.
+landings, and the act survives without literal tuners, which is why the category is named
+for the landing, not the instrument. The registry treats "landing" as a *deliverable
+kind*, not a shape.
 **Instances:** shoshin-no-sono (06.5, 07.5, ho-A-6.0), sutra (planned, folded into
 ho-03/05), shodo (informal).
 
@@ -247,13 +250,16 @@ ho-03/05), shodo (informal).
 
 ## 4. Other provisional types
 
-### 4.1 Teaching notes *(canonical-provisional — adopt on 2nd use)*
+### 4.1 Learning walkthrough *(canonical-provisional — adopt on 2nd use)*
 
-**Purpose:** a plain-language post-execution walkthrough of what a ho actually built,
-written for the practitioner's own comprehension — the learning layer separated from
-the architectural record. Analogy in the source: "ho-01 built the engine block …
-bench-test it under load."
-**Frontmatter:** `type: teaching-note`, `about-ho: "NN"`, `audience: practitioner`.
+**Purpose:** a plain-language, retrospective post-execution walkthrough of what a ho
+actually built, addressed to the practitioner **as learner** — the learning layer
+separated from the architectural record. Analogy in the source: "ho-01 built the engine
+block … bench-test it under load."
+**Frontmatter:** `type: learning-walkthrough`, `about-ho: "NN"`, `audience: practitioner`.
+The `type: teaching-note` token in sharibako's instances is superseded — new instances use
+`learning-walkthrough` ("learning," not "teaching": the document centers the practitioner
+as learner, not the document as teacher).
 **Location:** `ho-process/learning/ho-<NN>-what-happened.md`.
 **Instances:** sharibako (ho-00, ho-01). One project — but it operationalizes the
 framework's own claim that the deliverable and the learning are distinct outputs, and
@@ -285,14 +291,16 @@ carries. Recorded as historical variance, not a pattern to reproduce.
 
 ## 6. Mutability regimes (cross-cutting)
 
-Not every Kamae artifact has the same mutability. The corpus practices three regimes;
-naming them removes a recurring ambiguity in forward-only's application:
+Not every artifact has the same mutability. The corpus practices one axis with three
+values — **living | frozen | sealed** — and naming them removes a recurring ambiguity in
+forward-only's application: forward-only governs how *frozen* and *sealed* change
+(supersede forward, never edit), while *living* is the declared exception (edited in place).
 
-| Regime | Applies to | Rule |
+| Value | Applies to | Rule |
 |---|---|---|
-| **Living** | README (kamae-3), ho overview (kamae-4), seed (kamae-1, see note) | Edited in place as the project evolves. Overview edits are forward-looking only: dead numbers stay dead, checkpoint outcomes get recorded, historical entries aren't rewritten. "Small frequent updates beat large rare ones" (sharibako kamae-4). |
-| **Frozen, superseded by addendum** | System design (kamae-2) | Body preserved as-authored; a reader's-note pointer at the top names the addenda; the addenda carry the change (sharibako kamae-2 + 2.1 + 2.2). |
-| **Permanent record** | Closed hos, addenda, dogfood findings, devlogs/Reflect, executed ATs | Typographical fixes only. Anything that changes what the document *said* belongs in a new document. |
+| **living** | README (kamae-3), ho overview (kamae-4), seed (kamae-1, see note), the Basis of Design (2.11) | Edited in place as the project evolves. Overview edits are forward-looking only: dead numbers stay dead, checkpoint outcomes get recorded, historical entries aren't rewritten. "Small frequent updates beat large rare ones" (sharibako kamae-4). |
+| **frozen** | System design (kamae-2) | Not edited in place; changed only by a superseding addendum. Body preserved as-authored; a reader's-note pointer at the top names the addenda; the addenda carry the change (sharibako kamae-2 + 2.1 + 2.2). Thaw-able through the addendum mechanism, and still governs the build. |
+| **sealed** | Closed hos, addenda, dogfood findings, devlogs/Reflect, executed ATs, propagation-ledger commits | Final — never changes. Typographical fixes only; anything that changes what the document *said* belongs in a new document. A future document may *respond* (forward-only), but nothing supersedes it in force — it is already history. |
 
 **Seed note (decided — merge-decisions D4).** The seed is a **living parti**, revised in
 place with dated revision notes: sharibako's kamae-1 was revised when kamae-2.1 landed,
@@ -307,13 +315,17 @@ overview = living-continuous; system design = frozen + addenda.**
 
 Practitioner-authored; the registry states the field, not the answer.
 
-1. **Names** for the still-unnamed concepts — the teaching-note type, the tuner-landing
-   category, and the others in the concepts-without-names deliverable.
+*None open.* The last item — **names** for the still-unnamed concepts — was resolved in the
+2026-07-03 naming checkpoint; the vocabulary is in the [[glossary|Glossary]] (1.3). The
+concepts this registry surfaced are now named: the **learning walkthrough** (§4.1), the
+**landing ho** and **kagen** (§3.3), and the **mutability** axis (§6, living | frozen |
+sealed) — and, in their own homes, the **Basis of Design** and **propagation ledger** (2.11),
+**mind / hand** and **tripwired** (2.8), and **declared compression** (kamae-project-framing).
 
-*Resolved in the 2026-07-02 Fable-audit merge (no longer open):* closure signaling
-(§1.3, D2), the standalone-AT filename (§1.4, D3), seed mutability (§6, D4), and the
-withdrawn "sidequest frontmatter schema" question (§2.2, D14). The severable-capability
-arc is now named **sidequest** (§3.1).
+*Resolved earlier, in the 2026-07-02 Fable-audit merge:* closure signaling (§1.3, D2), the
+standalone-AT filename (§1.4, D3), seed mutability (§6, D4), and the withdrawn "sidequest
+frontmatter schema" question (§2.2, D14). The severable-capability arc is named **sidequest**
+(§3.1).
 
 ---
 

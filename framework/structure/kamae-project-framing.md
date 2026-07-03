@@ -279,6 +279,10 @@ Writing the seed retroactively is particularly valuable. The precedential thinki
 
 If you've completed one project with the Ho System and are starting a second (as with Hōzō following Kanyō), the framing phase is faster. You already know the methodology, the templates, and the rhythm. The seed and System Design are where the new thinking happens. The README and Ho Overview follow established patterns.
 
+### For a Ri-Stage Practitioner: Declared Compression
+
+A ri-stage practitioner who has internalized the chain may **combine or skip layers** — folding the seed and System Design into one document, or running an arc off an existing record (an audit, a prior project's artifacts) instead of authoring a fresh chain. This is legitimate, but only as a **declared compression**: the move is written down where the next session will read it — a note at the top of the compressed document naming what was combined and why — never a silent elision. The declaration is what keeps the result accountable: a reader can still see what the project committed to and in what order, which is the whole point of the chain. The move, done in the open, is a *declared compression*; the result is a **compressed chain**. Silent skipping is drift, not compression. (Canonical declared instance: sageframe-mcp's ho-00; this framework's own ho overview runs on a declared compressed chain.)
+
 ---
 
 ## 5. Relationship to the Project Arc

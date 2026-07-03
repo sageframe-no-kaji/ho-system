@@ -46,6 +46,7 @@ Core philosophy and evidence base. Everything else is grounded here.
 |----|----------|-------------|
 | 1.1 | [The Ho System](framework/the-ho-system.md) | Full methodology overview — the definitive introduction |
 | 1.2 | [Foundations & Evidence](framework/ho-foundations-evidence.md) | Intellectual basis, research grounding, and pilot evidence |
+| 1.3 | [Glossary](framework/glossary.md) | The framework's working vocabulary — every term, with its defining document |
 
 ---
 
@@ -65,7 +66,7 @@ Conceptual specifications. Ordered to follow the practitioner's actual experienc
 | 2.8 | [Ho-Task Decomposition](framework/structure/ho-task-decomposition.md) | How hos and agent tasks compose one architectural thought |
 | 2.9 | [Artifact Type Registry](framework/structure/artifact-type-registry.md) | The taxonomy of every artifact type the practice produces |
 | 2.10 | [Kamae Addenda](framework/structure/kamae-addenda.md) | Mid-build architectural decisions without rewriting history |
-| 2.11 | [Design Work](framework/structure/design-work.md) | The visual-design modality — design that happens partly outside the chain |
+| 2.11 | [Design Work](framework/structure/design-work.md) | Design tuning — the design modality; design that happens partly outside the chain |
 | 2.12 | [External-Project Contribution](framework/structure/external-contribution.md) | Running Ho against someone else's codebase |
 
 ---
@@ -93,7 +94,7 @@ Reusable document structures. Start with the selection guide if you're unsure wh
 | 3.3 | [Shu Ho Template](framework/templates/shu-ho-template.md) | Prescriptive learning sessions |
 | 3.4 | [Ha Ho Template](framework/templates/ha-ho-template.md) | Decision-driven development sessions |
 | 3.5 | [Ri Ho Template](framework/templates/ri-ho-template.md) | Practitioner-level recording format |
-| 3.9 | [Design Ho Template](framework/templates/design-ho-template.md) | In-chain wrapper for tuner landings and design-session batches |
+| 3.9 | [Design Ho Template](framework/templates/design-ho-template.md) | In-chain wrapper for landings and design-session batches |
 
 **Devlogs (Reflection)**
 

@@ -9,20 +9,21 @@ tags: [ho-system, design, visual, modality]
 
 # Design Work
 
-## The Visual-Design Modality
+## Design Tuning — the Design Modality
 
 Some work in a Ho System project is not architecture and not implementation: it is
 *design* — deciding what the thing looks like, sounds like, feels like, under
 constraints an algorithm or a real corpus will impose. The practice has developed a
-distinct modality for this work, invented in shoshin-no-sono and adopted-with-
-adaptation in sutra. Its defining property: **part of the work legitimately happens
-outside the Ho chain**, in isolated design conversations, and propagates back into
-the chain through frozen artifacts and numbered hos.
+distinct method for this work — **design tuning** — invented in shoshin-no-sono and
+adopted-with-adaptation in sutra. It covers any sensory/experiential design (visual,
+motion, interaction feel), not just visual. Its defining property: **part of the work
+legitimately happens outside the Ho chain**, in isolated design conversations, and
+propagates back into the chain through frozen artifacts and numbered hos.
 
 The framework sanctions this explicitly. Design conversations are the one place where
 the "thinking happens in chat, conclusions land in documents" rule produces artifacts
-that are neither Kamae documents nor hos — session pages, registers, spikes — and the
-modality below is how those artifacts stay accountable to the chain instead of
+that are neither Kamae documents nor hos — session pages, the Basis of Design, spikes —
+and the modality below is how those artifacts stay accountable to the chain instead of
 drifting beside it.
 
 ---
@@ -56,18 +57,20 @@ method transfers.
    captions, then a recommendation. Anything belonging to a later question goes in
    one line under "parked." Isolation prevents scope-creep; the pre-written prompt
    means the session judges answers instead of defining questions.
-3. **Freeze each decision in a living register.** The winning variant is extracted
-   into a register file (`design/visual-register.html`) with **frozen parameters —
-   numbers, not descriptions**. The frozen parameters are the implementation spec. A
-   frozen decision can be *propagated* (updated when a later coherence check reveals
-   a problem) but only with a commit that names the reason — never silently.
+3. **Freeze each decision in the Basis of Design.** The winning variant is extracted
+   into the **Basis of Design** file (`design/basis-of-design.html`; historical
+   instances: `visual-register.html`) with **frozen parameters — numbers, not
+   descriptions**. The frozen parameters are the implementation spec. A frozen decision
+   can be *propagated* (updated when a later coherence check reveals a problem) but only
+   with a commit that names the reason — never silently. That running trail of
+   named-reason propagation commits is the **propagation ledger**.
 4. **Coherence check before code.** Once the core alphabet is frozen, assemble all of
    it in one hand-built scene. Elements that read right in isolation interact as a
    system; the check is where the interactions surface (shoshin: solo-peak contour
    weights 0.85/1.7 read too heavy in a multi-peak field → lightened to 0.5/0.95,
    explicitly).
 5. **Design spike in the actual technical environment.** One spike validating the
-   frozen register against the real algorithmic constraints, with stand-in data. The
+   frozen Basis of Design against the real algorithmic constraints, with stand-in data. The
    spike is the reference artifact — "the target is what the spike produced."
    Implementation ports the spike; it doesn't copy it.
 6. **Implement with every visual parameter exposed as a tuner.** Never hard-code a
@@ -77,11 +80,13 @@ method transfers.
 7. **By-feel landing pass against real data.** With the algorithm on real data and
    parameters exposed, the practitioner moves sliders until the result reads right —
    judgment work, not specification work, done at the actual corpus and actual scale.
-   Landed values are logged in the ho document and committed as defaults ("tuner
-   landing — lock the practitioner's by-feel pass as the field defaults"). This step
-   is the tuner-landing ho category (artifact-type registry §3.3).
-8. **New visual modes are A/B spikes, not replacements.** A second register ships as
-   a toggleable alternative and has to earn its place. (shoshin: hachure shipped as
+   The target is the parameter's **kagen** (加減) — its felt-right degree. Landed values
+   are logged in the ho document and committed as defaults ("landing — lock the
+   practitioner's by-feel pass as the field defaults"). A ho whose deliverable is
+   landing values at their kagen, locked by a commit, is a **landing ho** (artifact-type
+   registry §3.3).
+8. **New visual modes are A/B spikes, not replacements.** A second design variant ships
+   as a toggleable alternative and has to earn its place. (shoshin: hachure shipped as
    `?render=hachure`, then promoted to an independent simultaneous layer once the A/B
    showed the registers were complementary.)
 
@@ -106,7 +111,7 @@ Three attachment points keep out-of-chain design work accountable:
    `builds-on:`. This is sanctioned: the record is the register and the session
    artifacts, not a ceremonial ho document restating them.
 3. **Propagation returns via numbered hos** — implementation hos consume the frozen
-   register; decimal-inserted tuner-landing hos (06.5, 07.5) land the by-feel values
+   Basis of Design; decimal-inserted landing hos (06.5, 07.5) land the by-feel values
    inside the chain where forward-only and commit-traceability apply.
 
 Adaptation is expected (sutra ho-02.1): output medium changes with the project (HTML,
@@ -119,19 +124,21 @@ layers). The eight steps are the spine, not a ritual.
 
 | Artifact | Role | Lives at | Mutability |
 |---|---|---|---|
-| Session prompts | Pre-written one-question briefs | `design/claude-design/` | permanent record |
-| Session pages | Rendered variant sheets (A–D + recommendation) | `design/claude-design/` | permanent record |
-| **Living register** | Frozen decisions as numbers; the implementation spec | `design/visual-register.html` | living — propagated with named-reason commits only |
-| Coherence check | Hand-built all-frozen-elements scene | `design/claude-design/` | permanent record |
-| Design spike | Register validated against real constraints; the reference target | `design/claude-design/` | permanent record |
+| Session prompts | Pre-written one-question briefs | `design/claude-design/` | sealed |
+| Session pages | Rendered variant sheets (A–D + recommendation) | `design/claude-design/` | sealed |
+| **Basis of Design** | Frozen decisions as numbers; the implementation spec | `design/basis-of-design.html` | living — propagated with named-reason commits only |
+| **Propagation ledger** | The named-reason commit trail updating the Basis of Design | git history | sealed (per commit) |
+| Coherence check | Hand-built all-frozen-elements scene | `design/claude-design/` | sealed |
+| Design spike | Basis of Design validated against real constraints; the reference target | `design/claude-design/` | sealed |
 | Tuner panel | Live parameter controls in the implementation | app code | living until landing |
-| Landing commits | By-feel values locked as defaults | git history + ho doc | permanent record |
+| Landing commits | By-feel values locked as defaults | git history + ho doc | sealed |
 
-The **living register** is a genuinely new artifact category — the only *living*
-design artifact, the seam between out-of-chain sessions and in-chain implementation.
-It plays the same role for visual decisions that the kamae-2 system design plays for
-architectural ones, with the propagation rule standing in for the addendum mechanism.
-(Unnamed as a type — see the artifact-type registry §7 open list.)
+The **Basis of Design** is a genuinely new artifact category — the source of truth for
+landed design decisions, the seam between out-of-chain sessions and in-chain
+implementation. It holds the *frozen* values at any moment; the *living* happens in the
+**propagation ledger**, the named-reason commit trail that updates it. It plays the same
+role for design decisions that the kamae-2 system design plays for architectural ones,
+with the propagation rule standing in for the addendum mechanism.
 
 ## 5. Should `shape: design` exist? — Recommendation: no
 
@@ -150,7 +157,7 @@ work refuses to fit, revisit.
 A design-work skill is on the roadmap — an active intention, not a "revisit someday."
 A skill would add value at steps 1–2 (interrogating the question list, generating the
 isolated session prompts in the project's constraint vocabulary) and step 3
-(maintaining the living register), and it may be a *looser* skill than the four Kamae
+(maintaining the Basis of Design), and it may be a *looser* skill than the four Kamae
 collaborators rather than a strict authoring skill. It is deliberately not built yet:
 two projects in, with the second adapting freely, building now risks freezing the
 pattern before ri has had its say — its shape will be legible once a third project
@@ -177,7 +184,7 @@ register propagations. The skeleton is complete; section prose fills in per proj
 
 A small `design-work.md` module — imported per-project like the language modules —
 carries the session-behavior rules an agent needs *while implementing*: the eight steps
-in compressed form, the register-propagation rule (never silent), the
+in compressed form, the propagation rule (never silent), the
 never-hard-code-a-value-before-it-moves rule, and the A/B-not-replacement rule. These
 are steps 6–8, which happen in the IDE; the doctrine above is reference, not always-on
 context, so it stays out of the module. The module is practitioner-scope and lives

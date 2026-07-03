@@ -18,6 +18,35 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-03 — Fable-audit merge (ho-04, naming + glossary)
+
+### Name the twelve unnamed concepts across their home docs — kind: renamed
+
+The naming checkpoint (2026-07-03) named the twelve concepts from `concepts-without-names`;
+the names land in their home framework docs first (Path A — land, then index). **2.8
+ho-task-decomposition:** §1.1 names the two-tier principle **mind / hand** (epigraph *mens et
+manus*); §3.3 names the AT-escalation property **tripwired** (escalation stays the mechanism).
+**2.11 design-work:** the modality is **design tuning**; the living register → **Basis of
+Design** + **propagation ledger**; tuner-landing → **landing ho** + **kagen** (加減). **2.9
+artifact-type-registry:** §3.3 Tuner-landing → **Landing hos**; §4.1 Teaching notes →
+**Learning walkthrough** (`type: teaching-note` superseded by `learning-walkthrough`); §6
+mutability reframed as the **living | frozen | sealed** axis ("permanent record" → sealed);
+§7 open-names item closed. **2.1 kamae-project-framing:** §4 adds **declared compression** /
+**compressed chain** (the ri-stage move of combining chain layers, legitimate only when
+declared). The "register" collision is ruled fork A: register stays the cognitive altitude
+(architectural / executable); the design file drops the word. Naming record:
+`private/audit/naming-record.md`; timeline pointer merge-decisions **D20**.
+
+### Add the Glossary (1.3) — kind: added
+
+New foundation doc `framework/glossary.md` (1.3): the framework's working vocabulary, each
+term with its defining document (merge-decisions **D12**). Indexes the twelve just-named
+concepts, the four validation modalities (smoke / interaction / eval / dogfood, from 2.7 §3),
+and the ~40 terms already in use. Replaces the stale draft entries (register(visual) → Basis
+of Design; side track/subproject + old "sidequest = record" → sidequest; teaching note →
+learning walkthrough). INDEX gains the 1.3 Foundation row. Lands last of the framework docs,
+per D12.
+
 ## 2026-07-02 — Fable-audit merge (ho-3.5, the validation layer)
 
 ### Add the Validation layer to 2.7 — kind: added

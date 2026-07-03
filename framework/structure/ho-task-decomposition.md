@@ -43,7 +43,7 @@ context the agent doesn't need. Extraction resolves the conflict structurally: e
 document speaks in one voice, and the relationship between them is preserved by
 explicit binding.
 
-### 1.1 The two-tier separation of thinking from coding
+### 1.1 The two-tier separation of thinking from coding — mind and hand
 
 The registers are the session-scale instance of the methodology's central operating
 principle, which runs at two scales:
@@ -59,8 +59,15 @@ principle, which runs at two scales:
 
 The same move at both scales: extract the thinking into a durable document, so the
 doing can be delegated, verified, and repeated without re-litigating the thinking.
-(This two-scale principle is in active use across the corpus and does not yet have a
-practitioner-authored name.)
+
+This principle is named **mind / hand**: *mind* is the thinking (the Kamae chain at
+project scale, the ho's Think phase at session scale); *hand* is the doing (the
+Kamae-5/per-ho layer at project scale, the agent task at session scale). One
+architectural thought held at two registers — the thinking extracted into a durable
+artifact so the hand can be delegated (cheaper model, later session, agent) without
+re-litigating the mind. The Latin epigraph is *mens et manus*. The distinction earns a
+diagnostic phrase: **a hand problem** is the execution fighting you while the design is
+sound; **a mind problem** is the design itself being wrong.
 
 ---
 
@@ -154,6 +161,11 @@ This is the operating discipline's *stop for decisions, not permissions* rule ap
 at the AT layer. The decision that comes back goes to the practitioner (or a heavier
 model in a discursive session); its resolution lands in the parent ho (see §6), and
 execution resumes against the updated record.
+
+This property — bounded autonomy with a halt-and-surface tripwire — is what makes an AT
+safe to delegate to a cheaper executor: the AT is **tripwired**. *Escalation* is the
+mechanism; *tripwired* is the property. It is the word to reach for in the explanatory
+sentence — "ATs are safe to delegate because they are tripwired."
 
 ### 3.4 One commit per task
 

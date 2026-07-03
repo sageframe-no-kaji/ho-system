@@ -9,12 +9,12 @@ tags: [ho-system, template, design, ho]
 
 # Design Ho Template
 
-For the in-chain wrapper cases of the visual-design modality (see Design Work,
-framework 2.11): **tuner landings**, and **design-session batches that DO want a ho
-document**. The design *sessions* themselves usually run outside the chain with no ho
-document (their record is the register and the session artifacts); this template is for
-the numbered hos that consume or land those decisions inside the chain, where
-forward-only and commit-traceability apply.
+For the in-chain wrapper cases of **design tuning** (see Design Work, framework 2.11):
+**landings**, and **design-session batches that DO want a ho document**. The design
+*sessions* themselves usually run outside the chain with no ho document (their record is
+the Basis of Design and the session artifacts); this template is for the numbered hos that
+consume or land those decisions inside the chain, where forward-only and
+commit-traceability apply.
 
 Landings are `shape: ri` (problem → solution → changes → results fits "move sliders,
 land values, lock commit"); session-batch wrappers may be `shape: ha`. The skeleton is
@@ -32,7 +32,7 @@ ho: ""
 kamae: 5
 shape: ri            # landings are ri; session-batch wrappers may be ha
 builds-on:
-  - design/visual-register.html
+  - design/basis-of-design.html
   - <the design sessions this ho consumes or produces>
 ---
 
