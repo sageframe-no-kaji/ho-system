@@ -72,14 +72,13 @@ AI-generated code is particularly prone to these issues. An agent producing 200 
 
 The linting pipeline is established in the first ho of every project arc, alongside testing. The specific tools will vary by language and project, but the principle is constant: automated enforcement of quality standards that the human should not have to check manually.
 
-For Python projects (the Ho System's primary implementation language as of this writing), a proven pipeline:
+For Python projects (the Ho System's primary implementation language as of this writing), the linter is a **local choice** — the operating discipline's own resolution: **`ruff`**, or **`flake8` + `black` + `isort`**. Either works; the choice is made per project, not prescribed by the framework.
 
-- **black** — Code formatting. Eliminates all style debates. The code looks one way.
-- **isort** — Import organization. Consistent, alphabetical, grouped by source.
-- **flake8** — Style and structural checking. Catches issues black doesn't — unused imports, undefined names, overly complex functions.
-- **mypy** — Type checking. Catches type errors at analysis time rather than runtime. This is where real bugs hide.
+- **`ruff`** — Formatting, import organization, and style/structural linting in a single fast pass. Consolidates what the three-tool combination does; faster, and the leaner default.
+- **`flake8` + `black` + `isort`** — The conservative, widely-deployed combination: `black` formats (one canonical style, no style debates), `isort` organizes imports, `flake8` catches what formatting doesn't — unused imports, undefined names, overly complex functions. More tools, a more mature ecosystem.
+- **`mypy`** — Type checking, run alongside whichever linter. Catches type errors at analysis time rather than runtime. This is where real bugs hide.
 
-The pipeline runs in a fixed order. Formatting first (black, isort), then analysis (flake8, mypy). Formatting tools change the code; analysis tools only report. Running them in the wrong order produces noise.
+Whichever linter, the ordering principle holds: **formatting first** (it changes the code), **analysis and type-checking second** (they only report). Running them in the wrong order produces noise.
 
 **The Code-Lint-Test Cycle:**
 
@@ -89,7 +88,7 @@ The discipline is not "code, then lint at the end." It is a cycle that runs cont
 Code (implement the change)
   │
   ▼
-Lint (black → isort → flake8 → mypy)
+Lint (ruff → mypy)
   │
   ├── Issues found ──▶ Fix ──▶ Lint again
   │
@@ -123,7 +122,7 @@ By Ho 06, the linting pipeline was habitual — the practitioner ran it reflexiv
 | Stage | Linting practice                                                                                                                                                                                                              | Who drives it                                             |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
 | Shu   | Pipeline established in Ho 01. The ho template includes lint commands in verify steps. The completion checklist requires "quality tools pass." The learner builds the habit through repetition.                               | The ho author specifies the tools and commands.           |
-| Ha    | The practitioner runs the pipeline automatically. They may add project-specific linting rules (custom flake8 plugins, stricter mypy settings) as the codebase matures.                                                        | The practitioner, as part of their development rhythm.    |
+| Ha    | The practitioner runs the pipeline automatically. They may add project-specific linting rules (custom lint rules, stricter mypy settings) as the codebase matures.                                                        | The practitioner, as part of their development rhythm.    |
 | Ri    | The pipeline is part of every agent task's implicit contract. Agent-produced code that fails linting is rejected before review. The practitioner may integrate linting into pre-commit hooks or CI for automated enforcement. | Automated, with practitioner oversight of rule evolution. |
 
 ---
@@ -292,7 +291,7 @@ Task Specification
 Implementation (coding agent)
        │
        ▼
-Lint (black → isort → flake8 → mypy) ── FAIL ──▶ Fix and re-lint
+Lint (ruff → mypy) ── FAIL ──▶ Fix and re-lint
        │
       CLEAN
        │
@@ -341,13 +340,13 @@ Verification is not just a practice — it is a skill that develops through the 
 
 The shu-stage practitioner doesn't need to think about verification because the ho template does it for them. Every part has a verify step. The completion checklist is binary — pass or fail. The linting pipeline runs after every implementation step. The verification questions test understanding. The commit discipline creates recovery points.
 
-The learner is building the _habit_ of the code-lint-test cycle without bearing the _design burden_ of deciding what to verify and how. By the end of shu stage, running `black → isort → flake8 → mypy → pytest` should feel as natural as saving a file. This is the scaffolding in action.
+The learner is building the _habit_ of the code-lint-test cycle without bearing the _design burden_ of deciding what to verify and how. By the end of shu stage, running `ruff → mypy → pytest` should feel as natural as saving a file. This is the scaffolding in action.
 
 What the shu-stage practitioner should internalize:
 
 - Nothing is complete until it's verified — both lint-clean AND test-passing
 - "It looks right" is not verification — running the tools is verification
-- Linting errors are not cosmetic — mypy catches real bugs, flake8 catches structural problems
+- Linting errors are not cosmetic — mypy catches real bugs, the linter catches structural problems
 - Verification questions are for you, not for anyone else — be honest
 
 ### In Ha: Verification Becomes Judgment
@@ -387,7 +386,7 @@ Verification practices should be reflected in devlog entries. Not as a complianc
 
 In the devlog's "What Was Built" or "AI Collaboration Reflection" section:
 
-- **What verification was applied:** "Full lint pipeline clean (black, isort, flake8, mypy), test suite passing (114 tests), cross-checked the state machine changes with Opus, reviewed architectural fit myself"
+- **What verification was applied:** "Full lint pipeline clean (ruff, mypy), test suite passing (114 tests), cross-checked the state machine changes with Opus, reviewed architectural fit myself"
 - **What verification caught:** "mypy flagged a type mismatch in the new timeout parameter — was passing string instead of int. Self-review caught a missing edge case in the timeout logic. Cross-agent review flagged that the new state wasn't being tested. All issues fixed before commit."
 - **What was NOT verified and why:** "Skipped cross-agent verification on the CSS changes — low risk, no behavioral impact." (This is honest documentation, not a confession.)
 

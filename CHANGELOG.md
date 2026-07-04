@@ -18,6 +18,20 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-03 — verification tool-framing (ho-08)
+
+### Reframe 2.7 linting as a local tool choice — kind: changed
+
+`framework/structure/verification-practices.md` (2.7) Layer 1b canonized `black / isort /
+flake8 / mypy` as *the* Python lint pipeline, while the operating discipline (and current
+practice) run **ruff + mypy** and frame the linter as a local choice. Adopted the operating
+discipline's own resolution: the linter is **`ruff`, or `flake8 + black + isort`** — either
+works, chosen per project, not prescribed by the framework; `mypy` runs alongside whichever.
+Updated the Layer 1b definition, both workflow diagrams, the shu-habit line, and the devlog
+example to the leaner `ruff + mypy` default (the historical Kanyō evidence and the sample
+devlog entry in 2.6 stay as-is). Closes the tool-framing half of stale-ref [ho] item 5
+(IDEA-010); ho-07 had already settled the layer count.
+
 ## 2026-07-03 — idea-log convention (ho-06)
 
 ### Add 2.13 The Idea Log — kind: added
