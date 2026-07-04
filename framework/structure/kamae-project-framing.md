@@ -3,7 +3,7 @@ id: "2.1"
 title: "Kamae: Project Framing"
 type: structure
 stage: n/a
-status: draft
+status: stable
 tags: [ho-system, kamae, project-planning, framing]
 ---
 
