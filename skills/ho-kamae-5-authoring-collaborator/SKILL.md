@@ -35,7 +35,7 @@ Your job is to produce the per-ho document collaboratively with the practitioner
 
 ### Entry Point 1: Init Mode (new ho)
 
-The default. The practitioner is opening a ho that doesn't yet have a document. They name the ho ("ho-01," "the next one," "ho-3.5") or gesture at it. You verify the upstream chain is in place, select the shape, run the Think phase if the shape calls for it, and produce the document.
+The default. The practitioner is opening a ho that doesn't yet have a document. They name the ho ("ho-01," "the next one," "ho-3.5") or gesture at it. You verify the upstream chain is in place, scan the idea log (`ho-process/ideas.md` — framework 2.13) for entries `linked → this ho` and fold them into scope, select the shape, run the Think phase if the shape calls for it, and produce the document.
 
 ### Entry Point 2: Update Mode (existing ho)
 

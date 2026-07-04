@@ -132,6 +132,8 @@ A replan checkpoint is a natural pause point where the practitioner stops, evalu
 
 Replan checkpoints get a clearly-marked callout in the document, both inline with the relevant ho and consolidated in a "Replan checkpoints" section.
 
+**Review the idea log at each checkpoint.** At every replan checkpoint, scan the project's `ho-process/ideas.md` (the idea log — framework 2.13): pull any ideas `linked →` a now-imminent ho into the plan, and re-scan `independent` entries for anything the completed work has made relevant. The checkpoint is where filed intentions rejoin the build.
+
 ### 6. Identify anticipated splits and insertions.
 
 The numbering scheme (ho-7 → ho-7.1, ho-7.2; new ho between ho-3 and ho-4 → ho-3.5) exists because plans evolve. Naming the likely splits and insertions makes the sequence's flexibility visible and prevents the practitioner from treating the plan as fixed.
