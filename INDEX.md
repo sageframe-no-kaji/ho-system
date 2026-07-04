@@ -149,6 +149,4 @@ Delegated implementation tasks handed to AI agents.
 
 Active seeds, checklists, and working documents for projects under development. These are not framework documents — they are instances of the framework in use.
 
-| ID | Document | Description |
-|----|----------|-------------|
-| 7.1 | [Ho System Codification Checklist](private/project-checklist.md) | Phase 1 codification task tracking |
+_Currently none in the public tree: this repo's own project artifacts live in `ho-process/` (gitignored), and superseded ones are in `practitioner/archive/`. Whether this layer persists is part of the INDEX taxonomy pass (IDEA-007)._
