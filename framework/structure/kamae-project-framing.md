@@ -250,6 +250,8 @@ The four framing documents live in the project repo under `ho-process/`, with th
 
 **Per-ho documents** (the Kamae 5 phase) live under `ho-process/hos/` and follow the [[ho-structure|ho filename convention]] (framework/structure/ho-structure.md §3.6): `ho-<number>-<slug>.md`. **Child agent-task specs** live under `ho-process/agent-tasks/` and follow `Ho-<NN>-AT-<NN>.md` (see [[ho-task-decomposition|Ho Task Decomposition]] (framework/structure/ho-task-decomposition.md) §4.2).
 
+**Project-specific layers** also live under `ho-process/` as the project needs them: `notes/` (dated pre-ho findings a later ho cites via `builds-on:`), `learning/` (post-execution learning walkthroughs — see [[artifact-type-registry|Artifact Type Registry]] (framework/structure/artifact-type-registry.md) §4.1), and `ideas.md` (the **idea log** — the forward-only backlog of what the project might do next; convention in [[idea-log|The Idea Log]] (framework/structure/idea-log.md) §2.13). These are optional and project-shaped; not every project carries all three.
+
 The `kamae-N-` prefix exists because these documents are read together as a chain — directory sort order then reflects the conceptual order, and the prefix immediately identifies which Kamae document an arbitrary file is. The README is the only exception, and it is exempted deliberately: it must be discoverable as `README.md` by every tool, host, and reader that touches the repo.
 
 ---
