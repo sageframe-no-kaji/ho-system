@@ -18,6 +18,19 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-03 — idea-log convention (ho-06)
+
+### Add 2.13 The Idea Log — kind: added
+
+New structure doc `framework/structure/idea-log.md` (2.13): canonizes the idea-log convention
+the framework repo already dogfoods (merge-decisions **D16**) — a findable, forward-only
+per-project backlog (`ho-process/ideas.md`) with stable `IDEA-NNN` ids, four dispositions
+(independent → linked → resolved / dropped, never deleted), and two rituals (capture-on-surface,
+review-at-each-ho-boundary). `kamae-project-framing` §2.6 gains the project-specific ho-process
+layers (`notes/`, `learning/`, `ideas.md`), which closes coherence finding **D-7** (the glossary's
+§2.6 citations now resolve to a section that names them). INDEX gains the 2.13 row; the idea-log
+review hook is added to the kamae-4 and kamae-5 collaborator skills (skills/ layer).
+
 ## 2026-07-03 — mechanical stale-ref cleanup (ho-05)
 
 Pointer- and status-level hygiene under the doctrine ho-02/03/3.5/04/07 landed. No

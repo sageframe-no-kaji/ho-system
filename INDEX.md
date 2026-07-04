@@ -68,6 +68,7 @@ Conceptual specifications. Ordered to follow the practitioner's actual experienc
 | 2.10 | [Kamae Addenda](framework/structure/kamae-addenda.md) | Mid-build architectural decisions without rewriting history |
 | 2.11 | [Design Work](framework/structure/design-work.md) | Design tuning — the design method; design that happens partly outside the chain |
 | 2.12 | [External-Project Contribution](framework/structure/external-contribution.md) | Running Ho against someone else's codebase |
+| 2.13 | [The Idea Log](framework/structure/idea-log.md) | The forward-only idea/feature backlog, reviewed at every ho boundary |
 
 ---
 
