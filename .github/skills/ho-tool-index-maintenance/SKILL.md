@@ -18,7 +18,7 @@ Stop and ask the human before doing any of these:
 
 - Editing the content of any framework, structure, template, guide, or example document
 - Renaming or moving files
-- Changing the seven-layer hierarchy or layer definitions
+- Changing the layer hierarchy (0–9; 7 is retired) or layer definitions
 - Changing the frontmatter schema (adding/removing fields)
 - Changing the `type` taxonomy values
 - Renumbering IDs wholesale
@@ -32,7 +32,7 @@ Stop and ask the human before doing any of these:
 ---
 id: "{layer}.{sequence}"       # e.g. "2.3"
 title: "Human-readable title"
-type: foundation | structure | template | guide | example | seed | agent-task
+type: foundation | structure | template | guide | example | seed | agent-task | practitioner | skill
 stage: shu | ha | ri | any | n/a
 status: draft | stable | deprecated
 tags: [ho-system, ...]         # always includes ho-system
@@ -43,13 +43,15 @@ tags: [ho-system, ...]         # always includes ho-system
 
 | type | layer |
 |------|-------|
-| foundation | 1 (0 for index itself) |
+| foundation | 1 (0 for repo meta: index, changelog, contributing) |
 | structure | 2 |
 | template | 3 |
 | guide | 4 |
 | example | 5 |
-| agent-task | 6 or 7 |
-| seed | 7 |
+| agent-task | 6 |
+| seed | none — seeds live gitignored in `ho-process/` or in `practitioner/archive/` (layer 7 retired) |
+| practitioner | 8 |
+| skill | 9 (the catalog `skills/ho-skill-overview.md`; individual skills are not indexed) |
 
 ---
 
@@ -98,8 +100,4 @@ Not permitted without asking: `id`, `type`, `title`
 
 Read the document's first section, then check the type → layer table. If still unclear — ask. A wrong entry is worse than a missing one.
 
----
-
-## Reference
-
-See [references/schema-reference.md](./references/schema-reference.md) for the full ID registry and all current assigned IDs.
+INDEX.md is the sole ID authority — derive current and next-available IDs from it directly. (A separate schema-reference cache existed and drifted; retired 2026-07-03, ho-09.)

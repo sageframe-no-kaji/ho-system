@@ -1,6 +1,7 @@
 ---
+id: "6.4"
 created: 2026-07-01
-type: agent-task-context
+type: agent-task
 purpose: Prior-audit findings for the Fable framework audit (see fable-audit-brief.md)
 audit-model: Claude Opus 4.7 (1M context)
 audit-scope: sageframe-no-kaji-dev/ + sageframe-irori/sageframe-mcp

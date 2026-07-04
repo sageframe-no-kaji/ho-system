@@ -1,3 +1,12 @@
+---
+id: "0.3"
+title: "Contributing"
+type: foundation
+stage: n/a
+status: stable
+tags: [ho-system, contributing]
+---
+
 # Contributing to The Ho System
 
 This is a living methodology. It gets stronger with evidence from practice.

@@ -1,3 +1,12 @@
+---
+id: "9.1"
+title: "Ho System Skills — Overview"
+type: skill
+stage: n/a
+status: living
+tags: [ho-system, skills, catalog]
+---
+
 # Ho System Skills — Overview
 
 A catalog of the skills that operationalize the Ho System methodology, organized by scope and status. Each skill is a directory with a `SKILL.md` definition and any bundled references it needs. Together they cover the work of getting a practitioner set up and producing a project end-to-end.

@@ -1,4 +1,5 @@
 ---
+id: "6.3"
 created: 2026-07-01
 type: agent-task
 audit-target: Ho System framework (this repo) + practitioner's Ho System practice

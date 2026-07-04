@@ -1,3 +1,12 @@
+---
+id: "8.4"
+title: "Module Structure"
+type: practitioner
+stage: n/a
+status: stable
+tags: [ho-system, practitioner, environment, modules]
+---
+
 ~/.claude/
 │
 ├── CLAUDE.md [MASTER, ~40-60 lines]

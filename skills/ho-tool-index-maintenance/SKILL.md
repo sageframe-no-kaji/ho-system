@@ -22,7 +22,7 @@ This skill does **not** authorize:
 
 - Editing the content of any framework, structure, template, guide, or example document
 - Renaming, moving, or deleting files
-- Changing the seven-layer hierarchy (layers 1–7 and their definitions)
+- Changing the layer hierarchy (layers 0–9 and their definitions; 7 is retired)
 - Changing the frontmatter schema (adding/removing fields)
 - Changing the `type` taxonomy values
 - Renumbering IDs wholesale (e.g. "I'll reorder the whole layer")
@@ -40,7 +40,7 @@ Every non-README `.md` file in the repository carries this frontmatter block:
 ---
 id: "{layer}.{sequence}"       # e.g. "2.3" — layer 2, third document
 title: "Human-readable title"
-type: foundation | structure | template | guide | example | seed | agent-task
+type: foundation | structure | template | guide | example | seed | agent-task | practitioner | skill
 stage: shu | ha | ri | any | n/a
 status: draft | stable | deprecated
 tags: [ho-system, ...]         # always includes ho-system
@@ -48,7 +48,7 @@ tags: [ho-system, ...]         # always includes ho-system
 ```
 
 **ID rules:**
-- Layer prefix matches the INDEX.md section number (1–7, plus 0 for the index itself)
+- Layer prefix matches the INDEX.md section number (0–6, 8–9; layer 7 is retired — never assign new 7.x IDs)
 - Sequence is assigned in reading/logical order within the layer
 - IDs are unique across the entire repository
 - Gaps are allowed (e.g. 2.1, 2.2, 2.4 — if 2.3 was removed)
@@ -58,13 +58,15 @@ tags: [ho-system, ...]         # always includes ho-system
 
 | type | lives in layer |
 |------|---------------|
-| foundation | 1 (or 0 for index) |
+| foundation | 1 (or 0 for repo meta: index, changelog, contributing) |
 | structure | 2 |
 | template | 3 |
 | guide | 4 |
 | example | 5 |
-| agent-task | 6 (task specs) or 7 (working docs) |
-| seed | 7 |
+| agent-task | 6 |
+| seed | none — seeds live gitignored in `ho-process/` or in `practitioner/archive/` (layer 7 retired) |
+| practitioner | 8 |
+| skill | 9 (the catalog `skills/ho-skill-overview.md`; individual skills are not indexed) |
 
 ---
 

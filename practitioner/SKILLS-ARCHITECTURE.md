@@ -1,3 +1,12 @@
+---
+id: "8.3"
+title: "Ho System Environment Architecture"
+type: practitioner
+stage: n/a
+status: stable
+tags: [ho-system, practitioner, environment, architecture]
+---
+
 # Ho System Environment Architecture
 
 How the pieces fit. Read this once to understand the shape; come back when something feels off.

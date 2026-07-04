@@ -17,17 +17,23 @@ tags: [ho-system, navigation, index]
 
 Every document in the Ho System has an **ID** in the format `{layer}.{sequence}` — the layer number locates it in the hierarchy below, the sequence number reflects reading order within that layer. IDs appear in each document's frontmatter and throughout this index.
 
-**Seven layers, each with a distinct role:**
+**The layers, each with a distinct role:**
 
 | Layer | What it contains | Who needs it |
 |-------|-----------------|--------------|
+| **0. Repo Meta** | The map, the changelog, the contribution guide | Anyone orienting to the repository itself |
 | **1. Foundation** | Core philosophy and evidence | Any new reader; the conceptual anchor |
 | **2. Structure** | Specifications for how the system works | Practitioners and ho authors |
 | **3. Templates** | Fill-in structures for hos, devlogs, seeds | Anyone starting a session or project |
 | **4. Guides** | Practical orientation | New practitioners |
 | **5. Examples** | Concrete instances of the methodology | Learners and facilitators |
 | **6. Agent Tasks** | Delegated implementation specs | AI agents and their supervisors |
-| **7. Artifacts** | Active project seeds and working documents | The practitioner who owns each project |
+| **8. Practitioner** | The operating discipline and environment architecture | Practitioners configuring their practice |
+| **9. Skills** | The skill catalog that operationalizes the methodology | Practitioners and their agents |
+
+Layer **7 (Project Artifacts)** is retired (2026-07-03, ho-09): its occupants were
+archived or live gitignored in `ho-process/`. The number stays dead — no new 7.x IDs are
+assigned (forward-only).
 
 **Entry points by intent:**
 
@@ -35,6 +41,18 @@ Every document in the Ho System has an **ID** in the format `{layer}.{sequence}`
 - *Starting a project?* → Read [2.1](framework/structure/kamae-project-framing.md) → [2.2](framework/structure/project-arc.md) → open [3.2](framework/templates/ho-seed-template.md)
 - *About to run a session?* → Go to [3.1](framework/templates/template-selection-guide.md)
 - *Unclear on a concept?* → Scan Layer 2 by topic
+
+---
+
+## 0. Repo Meta
+
+The repository's own navigation and record-keeping.
+
+| ID | Document | Description |
+|----|----------|-------------|
+| 0.1 | [Ho System Index](INDEX.md) | This map — master navigation for the framework |
+| 0.2 | [Changelog](CHANGELOG.md) | The framework's version story — structural changes, newest first |
+| 0.3 | [Contributing](CONTRIBUTING.md) | What contributions the framework wants and how to send them |
 
 ---
 
@@ -143,11 +161,39 @@ Delegated implementation tasks handed to AI agents.
 |----|----------|-------------|
 | 6.1 | [Integrate Verification Practices](agent-tasks/agent-task-integrate-verification-practices.md) | Task spec for verification integration into the framework |
 | 6.2 | [Integrate Ho-Task Decomposition](agent-tasks/agent-task-2026-05-25-integrate-ho-task-decomposition.md) | Task spec for placing the ho-task-decomposition document into the framework |
+| 6.3 | [Fable Audit Brief](agent-tasks/fable-audit-brief.md) | Historical — the 2026-07 framework-audit brief handed to Fable |
+| 6.4 | [Fable Audit Prior Findings](agent-tasks/fable-audit-prior-findings.md) | Historical — prior-audit findings packaged as context for the Fable audit |
+| 6.5 | [Opus Audit Merge Brief](agent-tasks/opus-audit-merge-brief.md) | Historical — the merge-session brief that turned audit findings into decisions D1–D20 |
 
 ---
 
-## 7. Project Artifacts
+## 7. Project Artifacts — retired
 
-Active seeds, checklists, and working documents for projects under development. These are not framework documents — they are instances of the framework in use.
+Retired 2026-07-03 (ho-09). The layer held active project seeds and working documents;
+its occupants were archived to `practitioner/archive/` or live gitignored in
+`ho-process/`. No new 7.x IDs are assigned.
 
-_Currently none in the public tree: this repo's own project artifacts live in `ho-process/` (gitignored), and superseded ones are in `practitioner/archive/`. Whether this layer persists is part of the INDEX taxonomy pass (IDEA-007)._
+---
+
+## 8. Practitioner
+
+The operating discipline and the environment it runs in — practitioner-scope, not
+project-scope.
+
+| ID | Document | Description |
+|----|----------|-------------|
+| 8.1 | [The Operating Discipline](practitioner/operating-discipline.md) | The operational rules a practitioner works under — verification, posture, workflow |
+| 8.2 | [Operating Discipline — Rationale](practitioner/operating-discipline-rationale.md) | The philosophy and argument grounding the operational rules |
+| 8.3 | [Environment Architecture](practitioner/SKILLS-ARCHITECTURE.md) | How the practitioner's setup fits together — the four locations and their roles |
+| 8.4 | [Module Structure](practitioner/module-structure.md) | The `~/.claude/` layout — files, scopes, and what imports what |
+
+---
+
+## 9. Skills
+
+The skills that operationalize the methodology. Individual skills are cataloged by 9.1,
+not indexed row-by-row.
+
+| ID | Document | Description |
+|----|----------|-------------|
+| 9.1 | [Ho System Skills — Overview](skills/ho-skill-overview.md) | The skill catalog — what exists, what each one does, and where it sits |

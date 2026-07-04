@@ -1,4 +1,5 @@
 ---
+id: "6.2"
 created: 2026-05-25
 type: agent-task
 status: ready

@@ -1,4 +1,5 @@
 ---
+id: "6.5"
 created: 2026-07-02
 type: agent-task
 audit-source: private/audit/fable-2026-07-01/ (Fable, ran 2026-07-02)

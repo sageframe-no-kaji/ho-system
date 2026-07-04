@@ -1,4 +1,5 @@
 ---
+id: "0.2"
 title: "Changelog"
 type: foundation
 status: living
@@ -17,6 +18,31 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 `kind:` — `added` · `replaced` · `changed` · `renamed` · `removed` · `deprecated`
 
 ---
+
+## 2026-07-03 — INDEX layers and hygiene (ho-09)
+
+### Reorganize the INDEX layer model — kind: changed
+
+Executes the layers half of IDEA-007 (the D18 remainder ho-02 deferred). Layer **7
+(Project Artifacts)** is retired — empty since ho-05's archival pass; the number stays
+dead, no new 7.x IDs (forward-only). Layer **0** becomes the explicit repo-meta layer
+(0.1 INDEX, 0.2 CHANGELOG, 0.3 CONTRIBUTING). Two layers added: **8 Practitioner**
+(operating discipline 8.1, rationale 8.2, environment architecture 8.3, module structure
+8.4) and **9 Skills** (the catalog `skills/ho-skill-overview.md` as 9.1; individual
+skills are cataloged there, not indexed row-by-row). The three committed 2026-07 audit
+briefs are indexed as historical rows 6.3–6.5. Frontmatter `id` blocks added to all
+newly indexed documents (and the missing `id: "6.2"`); `fable-audit-prior-findings.md`
+normalized from the off-taxonomy `agent-task-context` to `agent-task`. The type taxonomy
+gains `practitioner` (→ 8) and `skill` (→ 9). The larger IA question — whether the layer
+model should become a navigation experience — stays deferred (IDEA-007 carries it).
+
+### Retire the schema-reference ID cache — kind: removed
+
+`.github/skills/ho-tool-index-maintenance/references/schema-reference.md` drifted
+comprehensively within weeks of writing (missing 1.3, 2.9–2.13, 3.9; still listed the
+archived 7.2/7.3; next-available table wrong in four layers). Deleted; INDEX.md is the
+sole ID authority and the skill derives current/next IDs from it directly. Both SKILL.md
+copies (`skills/` and `.github/skills/`) updated to the new layer model and taxonomy.
 
 ## 2026-07-03 — verification tool-framing (ho-08)
 

@@ -1,3 +1,12 @@
+---
+id: "8.1"
+title: "The Operating Discipline"
+type: practitioner
+stage: n/a
+status: stable
+tags: [ho-system, practitioner, operating-discipline]
+---
+
 # The Operating Discipline
 
 _Of the Ho System, for practitioners — operational rules_
