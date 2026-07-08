@@ -136,9 +136,9 @@ Practical orientation for new and continuing practitioners.
 
 | ID | Document | Description |
 |----|----------|-------------|
-| 4.1 | [Getting Started](guides/getting-started.md) | Stub — first steps with the Ho System (not yet written) |
-| 4.2 | [Choosing a Project](guides/choosing-a-project.md) | Stub — how to select a good first project (not yet written) |
-| 4.3 | [AI Collaboration](guides/ai-collaboration.md) | Stub — working with AI as an implementation partner (not yet written) |
+| 4.1 | [Getting Started](guides/getting-started.md) | Draft — the first arc, concretely: install, seed, walk the chain, open and close the first ho |
+| 4.2 | [Choosing a Project](guides/choosing-a-project.md) | Draft — what makes a good first project, sizing, the black-box discipline, worked shapes |
+| 4.3 | [AI Collaboration](guides/ai-collaboration.md) | Draft — the operating posture: planning mode, watching, bounded sessions, verification, ownership |
 
 ---
 
