@@ -55,8 +55,8 @@ _Plain: The one file that holds a project's settled design values as explicit nu
 **build record** — The append-only log grafted onto the tail of the K4 **ho overview**: one
 entry per ho close and per replan checkpoint, each shaped as a **state-summary block**, never
 rewritten. Cold and forward-only — the human-facing, canonical ledger of what a build actually
-did, the counterpart to the *hot* **working-memory handoff**. _(kamae-project-framing 2.1 §2.4;
-cross-session-continuity 2.14 §8.)_
+did, the counterpart to the *hot* **working-memory handoff**.
+_(kamae-project-framing 2.1 §2.4; cross-session-continuity 2.14 §8.)_
 
 _Plain: A running, add-only list at the bottom of the build plan recording what each step actually finished and where the build stands._
 
@@ -446,8 +446,8 @@ _Plain: One always-present file per project holding where the build is, so any n
 **state-summary block** — The four-field block emitted at every ho close and every session end:
 COMPLETED, NEXT, ACTION ITEMS / BLOCKS, PROJECT LIFECYCLE. Fixed labels and fixed order, so it is
 both human-glanceable and machine-parseable — the universal minimum of **cross-session
-continuity** and a hook surface for automation. _(cross-session-continuity 2.14 §3;
-operating-discipline.)_
+continuity** and a hook surface for automation.
+_(cross-session-continuity 2.14 §3; operating-discipline.)_
 
 _Plain: A short, fixed four-line status — done, next, blockers, and how far along — written at the end of every work session._
 
