@@ -22,13 +22,13 @@ autonomous coding agent reads to execute one bounded unit of work. Procedural (n
 architectural decisions inside), executor-portable (names its `model:`), **tripwired**
 (halts and surfaces on surprise), one commit per task. Authored via dandori. Child tasks
 (`Ho-NN-AT-MM.md`) descend from a ho; standalone tasks stand alone.
-_(ho-task-decomposition 2.8; artifact-type-registry 2.9 §1.4; agent-task-spec.)_
+_(ho-task-decomposition 2.8 §1; artifact-type-registry 2.9 §1.4; agent-task-spec.)_
 
 _Plain: A precise, checkable spec an autonomous coding agent runs to do one bounded piece of work, halting rather than improvising when it meets a surprise._
 
 **arc** — The complete sequence of hos that takes a project from idea to running system;
 "a narrative of building" with a beginning (Kamae), a characteristic phase shape, and a
-planned-versus-actual evolution the numbering makes legible. _(project-arc 2.2.)_
+planned-versus-actual evolution the numbering makes legible. _(project-arc 2.2 §1; project-arc 2.2 §2)_
 
 _Plain: The full sequence of steps that carries a project from first idea to running system._
 
@@ -93,7 +93,7 @@ build record) carries the thread as a side effect of being well-kept — and *ex
 place: the **state memory (Kamae 6)**, always present, with the universal **state-summary
 block** at its top and the **working-memory handoff** body grown by event-gated accretion.
 Kept honest by the freshness, **hot / cold**, and graduated-compaction disciplines. Promoted
-from the pālana pilot. _(cross-session-continuity 2.14; continuity-discipline 5.3.)_
+from the pālana pilot. _(cross-session-continuity 2.14 §1; continuity-discipline 5.3.)_
 
 _Plain: Keeping track of where a build is between work sessions, especially when no person is there to remember it._
 
@@ -119,14 +119,14 @@ build spikes, expose values as live tuners, land them by feel against real data 
 scale, and freeze the result into the Basis of Design. Covers any sensory/experiential
 design — visual, motion, interaction feel — not just visual. Part of it legitimately
 happens outside the Ho chain and propagates back through frozen artifacts and numbered hos.
-_(design-work 2.11.)_
+_(design-work 2.11 §1; design-work 2.11 §2)_
 
 _Plain: Settling a design's feel by building throwaway try-outs, watching real values move, and locking the ones that feel right._
 
 **devlog** — Structured reflection written after a ho; "the artifact that distinguishes 'I
 built this' from 'AI built this while I watched.'" A learning journal in shu, a decision
 record in ha, dissolved into the ho document itself in ri — in current practitioner-shape
-documents its function is carried by the Reflect phase (ha) or Results (ri). _(devlog 2.6;
+documents its function is carried by the Reflect phase (ha) or Results (ri). _(devlog 2.6 §1;
 ho-structure 2.3 §5.3.)_
 
 _Plain: A structured write-up done after a session that records what was decided and learned, so the work reads as yours rather than the machine's._
@@ -158,7 +158,7 @@ _Plain: Finished work stays finished; a mistake is answered with a new document,
 **ha (破)** — "Break from the form." The middle shu-ha-ri stage: the practitioner scopes
 their own work and makes decisions inside a Think → Execute → Reflect structure. Also the ho
 shape for building sessions where architectural thinking precedes specifying. _(shu-ha-ri
-2.4; ho-shape-templates.)_
+2.4 §2.2; ho-shape-templates.)_
 
 _Plain: The middle stage where the practitioner breaks from the set form to scope and decide their own work._
 
@@ -222,14 +222,14 @@ six-link chain — seed (K1), system design (K2), README (K3), ho overview (K4),
 (K5), and the **state memory** (K6) — all on the *same footing* but in two roles: K1–K4 are
 **preparation**, the up-front framing ladder (opinions → decisions → scope → sequence); K5–K6
 are **action-time** — K5 the *pre-action* document for each session, K6 the *record of action*,
-the living cross-session memory. _(kamae-project-framing 2.1.)_
+the living cross-session memory. _(kamae-project-framing 2.1 §1; kamae-project-framing 2.1 §3)_
 
 _Plain: The ready stance and the chain of documents that keeps a build oriented — four written up front to frame it, two written as it runs to keep its place._
 
 **Kamae addendum (kamae-N.M)** — A decimal-suffixed decision document that supersedes a
 named part of a frozen Kamae document without editing it; carries the reopening
 justification, the declined alternatives, and the propagation record. Forward-only applied
-to architecture. _(kamae-addenda 2.10; sharibako kamae-2.1/2.2.)_
+to architecture. _(kamae-addenda 2.10 §2; sharibako kamae-2.1/2.2.)_
 
 _Plain: A follow-on decision document that overrides a named part of an earlier framing document without editing it, carrying its own justification and record._
 
@@ -309,7 +309,7 @@ _Plain: The single core idea a whole project is organized around, the reference 
 progression (orientation → foundation → construction → integration → operations); (2)
 _overview phases_ — project-specific clusters of hos sharing a theme, the primary cognitive
 unit of Kamae 4, each ending in a release tag; (3) _session phases_ — Think, Execute, Reflect
-inside a ha ho. _(project-arc 2.2; kamae-4 skill; ha template.)_
+inside a ha ho. _(project-arc 2.2 §2; kamae-4 skill; ha template.)_
 
 _Plain: A named stage of work, used at three scales — the whole project's progression, a cluster of related sessions, and the steps within a single session._
 
@@ -359,7 +359,7 @@ skill; sharibako kamae-4's three checkpoints.)_
 _Plain: A named pause in the plan where the practitioner stops, weighs real evidence, and decides whether to continue, insert, or rethink._
 
 **ri (離)** — "Transcend the form." The stage where structure is internalized; and the ho
-shape for well-defined work: Problem → Solution → Changes → Results. _(shu-ha-ri 2.4;
+shape for well-defined work: Problem → Solution → Changes → Results. _(shu-ha-ri 2.4 §2.3;
 ho-shape-templates.)_
 
 _Plain: The stage where the form has been so internalized the practitioner moves past it, working from mastery rather than rules._
@@ -378,21 +378,21 @@ _Plain: The structural form a session document takes, chosen at authoring time, 
 
 **shu (守)** — "Follow the form." The learner stage with author-prescribed structure; as a ho
 shape, rare in architectural-authority practice — used when handing the framework to a
-learner. _(shu-ha-ri 2.4; ho-shape-templates.)_
+learner. _(shu-ha-ri 2.4 §2.1; ho-shape-templates.)_
 
 _Plain: The beginner stage of following a prescribed form exactly, before earning the judgment to depart from it._
 
 **shu-ha-ri (守破離)** — The three-stage progression model by which the methodology's
 structure adapts to practitioner development: follow the form, break from it deliberately,
 transcend it. Domain-local — a practitioner can be ri in Python and shu in Docker
-simultaneously. _(shu-ha-ri 2.4.)_
+simultaneously. _(shu-ha-ri 2.4 §1; shu-ha-ri 2.4 §2)_
 
 _Plain: The three-stage path of mastery — follow the form, break from it deliberately, then transcend it — held separately for each skill._
 
 **sidecar** — A record kept in a sibling directory outside a fork's working tree, separately
 owned, so the practitioner's ho-process never enters the contribution's object database. The
 pattern is the **sidecar directory**; the artifact is a **sidecar record**.
-_(external-contribution 2.12.)_
+_(external-contribution 2.12 §1; external-contribution 2.12 §2)_
 
 _Plain: A record kept in a sibling folder outside a fork's working tree, so your own process files never mix into someone else's repository._
 
@@ -439,7 +439,7 @@ session reads first to get back into stance. Carries the **state-summary block**
 sections switch on as the build first needs them. Private by default, published only by
 closeout election; hot and non-canonical; kept honest by the freshness and **hot / cold**
 rules and by graduated compaction.
-_(kamae-project-framing 2.1 §2.7; cross-session-continuity 2.14.)_
+_(kamae-project-framing 2.1 §2.7; cross-session-continuity 2.14 §4.)_
 
 _Plain: One always-present file per project holding where the build is, so any new session can pick it up._
 
@@ -470,7 +470,7 @@ _Plain: The fixed three-part rhythm of a building session — decide first, buil
 (use without investigating), Tier 2 Functional (configure, troubleshoot, explain — the
 default target), Tier 3 Deep (could redesign). Declaring tiers honestly is a core skill;
 tiers are declared in shu, self-assigned in ha, internalized in ri. _(tiered-understanding
-2.5.)_
+2.5 §2.)_
 
 _Plain: Naming honestly how well you grasp something, on a three-step scale from use-it-blindly to could-rebuild-it._
 
