@@ -334,6 +334,15 @@ work; git holds it; sealed per commit. _(design-work 2.11 §2–4.)_
 
 _Plain: The running log of changes to the settled values, each commit naming why the value moved._
 
+**README (Kamae 3)** — The Kamae 3 document: the polished project scope, written as if the
+project already exists and publishable on day one of the repository. Its stem — what the
+project is for, who it serves — comes from the seed; its technical content from the System
+Design. A forcing function for scope: if you can't describe installing and using the
+finished thing, you don't yet know what you're building. Living-continuous, edited freely
+as the work evolves. _(kamae-project-framing 2.1 §2.3; kamae-3 skill.)_
+
+_Plain: The project's front-page description, written before the code exists as if the finished thing had already shipped — so the scope has to be decided in order to write it._
+
 **Reflect** — The post-execution phase of a ha ho (and by extension the reflective close of
 any session): did the design hold, which decisions were revised on what evidence, what
 changes for the next ho. The durable record of discoveries that crossed back from execution.
@@ -458,6 +467,15 @@ back. The supersession is part of the record, never hidden in an edit. _(ho-stru
 §3.5; kamae-addenda 2.10 §3; artifact-type-registry 2.9 §3.1.)_
 
 _Plain: Names exactly what a newer document overtakes; the older one keeps a pointer back, and nothing is erased._
+
+**system design (Kamae 2)** — The Kamae 2 document: the structured technical vision — major
+components and how they connect, data flow, technology stack with rationale, deployment
+model, scope boundaries. Turns the seed's architectural opinions into decisions, each
+traceable to the seed's core idea; no implementation details (those belong to individual
+hos). Frozen once committed — superseded by dated addenda (kamae-N.M), never edited in
+place. _(kamae-project-framing 2.1 §2.2; kamae-2 skill.)_
+
+_Plain: The document that settles how the system works — its parts, connections, and technology choices — before any code is written._
 
 **Think / Execute / Reflect** — The fixed three-phase structure of a ha ho: decisions
 documented before building; the build (usually an index of agent tasks); honest
