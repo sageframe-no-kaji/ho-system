@@ -19,6 +19,16 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-10 — Kamae 2/3 glossary headwords
+
+### Glossary gains system design (Kamae 2) and README (Kamae 3) — kind: changed
+
+The two Kamae chain links that had no glossary headword, extracted from
+kamae-project-framing 2.1 §2.2 / §2.3 in the glossary's compressed register. Driver: the
+ho-actually star renders the Kamae chain as an ordered sequence (star-actually engine
+ho-02), and its ingest generates nodes from glossary headwords — K2 and K3 had no entry,
+so no node. The chain now resolves at all six links.
+
 ## 2026-07-10 — sage-zfs portability practice report
 
 ### Add the encoded-environment portability report (5.4) — kind: added
