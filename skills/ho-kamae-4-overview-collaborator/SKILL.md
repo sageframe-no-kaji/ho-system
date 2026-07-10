@@ -156,11 +156,22 @@ Render as `*Release on phase complete: v0.X*` after each phase paragraph, and re
 
 A visual diagram (ASCII) showing the phase structure, the ho sequence, replan checkpoints, and release tags. The diagram is the document's at-a-glance map.
 
-### 9. Draft the document.
+### 9. Add the build-record tail.
 
-Use the structure below. Keep frontmatter (this is an internal working document; it tracks the build). Write phase paragraphs and ho narratives in the practitioner's voice. Render decisions inline. Mark replan checkpoints. Identify splits. Add release tags.
+The overview ends with a `## Build record` section header — empty at authoring time, append-only thereafter. The overview above it is a *forward* plan (living-continuous — statuses flip, hos insert); the build record below it is the *cold*, append-only ledger of what actually happened. This is the practitioner-facing half of cross-session continuity — the human's progress ledger, against the agent's private hot State Memory (K6). See `framework/structure/kamae-project-framing.md` §2.4 and `framework/structure/cross-session-continuity.md` §8.
 
-### 10. Run the dandori-style document checklist.
+When you generate the overview, add the section header and one line explaining the rule, so the convention is legible to whoever appends the first entry:
+
+- **One entry per ho close and per replan checkpoint.** Each entry takes the shape of a **state-summary block** — `COMPLETED / NEXT / ACTION ITEMS or BLOCKS / PROJECT LIFECYCLE` (`kamae | dev | beta | production`), verbatim labels — with as much surrounding prose as the moment warrants (the question a checkpoint asked, the evidence, the practitioner's ruling).
+- **Cold and append-only.** Entries are added, never rewritten. The build record obeys forward-only like any closed record. This is the opposite discipline from the forward plan above it, which is edited freely.
+
+Do not populate the record with entries yourself; it starts empty and accretes as hos close.
+
+### 10. Draft the document.
+
+Use the structure below. Keep frontmatter (this is an internal working document; it tracks the build). Write phase paragraphs and ho narratives in the practitioner's voice. Render decisions inline. Mark replan checkpoints. Identify splits. Add release tags. End with the empty `## Build record` section.
+
+### 11. Run the dandori-style document checklist.
 
 Before declaring the overview ready, verify against this checklist. This is the same pre-flight discipline `dandori` runs against an agent task spec — applied here to the overview document.
 
@@ -175,13 +186,14 @@ Before declaring the overview ready, verify against this checklist. This is the 
 - [ ] **Dependency diagram present** and consistent with the phase/ho structure.
 - [ ] **"What's NOT in this sequence" section** present — explicit deferral list.
 - [ ] **"Other deferred decisions" section** for decisions that don't tie to a v1 ho.
+- [ ] **Empty `## Build record` section** present at the tail, with its append-only / state-summary-shaped convention noted and no entries pre-filled.
 - [ ] **No anti-patterns** — no per-ho deep scope bleed, no master decisions table, no time estimates, no Shu/Ha/Ri labels per ho, no industry jargon.
 - [ ] **Each ho is sized for one dandori session.** Combined hos are flagged as candidates to split.
 - [ ] **Ho boundaries match file/component boundaries** wherever the architecture makes that natural — the per-ho dandori spec will need to name files; the overview should make that nameable.
 
 If any item fails, fix before handing off.
 
-### 11. Hand off.
+### 12. Hand off.
 
 Present the file. Note anything from the seed, system design, or README that didn't land cleanly in the sequence — these are usually flags that one of the upstream documents has a gap. State which ho is the natural next dandori session, so the practitioner knows where the kamae-5 conversation should pick up.
 
@@ -334,6 +346,13 @@ In update mode, the existing file may use an older convention (`ho-overview.md`,
 ## What to do with this document
 
 [Closing direction: how the overview gets used, how it gets updated]
+
+## Build record
+
+[Empty at authoring time. Append-only thereafter — one state-summary-shaped
+ entry per ho close and per replan checkpoint (COMPLETED / NEXT / ACTION ITEMS
+ or BLOCKS / PROJECT LIFECYCLE), with prose around it. Cold and forward-only:
+ entries are added, never rewritten. See kamae-project-framing §2.4.]
 ```
 
 ## Anti-Patterns the Skill Refuses

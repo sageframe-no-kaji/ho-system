@@ -390,6 +390,7 @@ Confirm each item before marking this ho complete:
 - [ ] [Specific functional test — e.g., "Run `hozo --help` and see usage output"]
 - [ ] [Git log shows clean commits for each part]
 - [ ] Devlog entry completed (see below)
+- [ ] State-summary block written to the project's K6 State Memory (see "Close the Session")
 ```
 
 > 📐 **AUTHOR — Completion Checklist**
@@ -618,6 +619,40 @@ see the arc.]
 
 ---
 
+````markdown
+---
+
+## Close the Session: State-Summary Block
+
+The last prescribed step. Finishing this ho ends a session, and every session ends by stating
+where it leaves the build. Write the state-summary block to the project's State Memory (Kamae 6)
+at `ho-process/kamae-6-<project>-state-memory.md`, replacing the block pinned at its top. Fixed
+labels, fixed order — type them exactly:
+
+\```markdown
+**STATE-SUMMARY**
+- **COMPLETED** — [what this ho finished]
+- **NEXT** — [the single pointer to what comes next]
+- **ACTION ITEMS / BLOCKS** — [open items; a block says so loudly, or `none`]
+- **PROJECT LIFECYCLE** — [kamae | dev | beta | production]
+\```
+
+If the project's ho overview (Kamae 4) has a build record, append this same block there too, with
+a sentence of prose around it.
+````
+
+> 📐 **AUTHOR — State-Summary Block**
+> _Cross-project structure. Fixed labels, non-negotiable._
+>
+> The block is the universal minimum of cross-session continuity — cheap to produce, and a
+> fixed, machine-parseable hook surface (the labels are verbatim and ordered on purpose). For a
+> shu-stage learner it is one more prescribed step with an exact form to follow, which is
+> exactly the register shu wants. See [[cross-session-continuity|Cross-Session Continuity]]
+> (framework/structure/cross-session-continuity.md) §3 for the block and §8 for the build
+> record. Put this step after the devlog so the block reflects the completed session.
+
+---
+
 ## Template Metadata
 
 ```markdown
@@ -653,6 +688,7 @@ These constraints apply to ALL shu-stage hos regardless of project:
 8. **Devlog entry required.** Written immediately after completion.
 9. **Verification questions test understanding, not completion.** "Why" not "did."
 10. **Common issues section.** Populated after first run, anticipated before.
+11. **State-summary block at session close.** The final prescribed step: the block (COMPLETED / NEXT / ACTION ITEMS or BLOCKS / PROJECT LIFECYCLE, verbatim labels, fixed order) is written to the project's K6 State Memory, and appended to the K4 build record where one exists.
 
 ---
 

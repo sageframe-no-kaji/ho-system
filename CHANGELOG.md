@@ -21,6 +21,23 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ## 2026-07-09 — cross-session continuity doctrine (ho-10)
 
+### Skills and templates scaffold and enforce K6 and the state-summary block (ho-11) — kind: changed
+
+The cross-session-continuity doctrine (2.14) is now carried by scaffold and template, not by the
+agent remembering to read it. The project scaffolder
+(`ho-setup-project-environment-collaborator`) creates `ho-process/kamae-6-<project>-state-memory.md`
+at init with a seeded state-summary block, and asks one repo-visibility-keyed posture question
+(private repo → track K6; public repo → gitignore `ho-process/` and offer the nested-private-repo
+option; floor → unversioned), wiring `.gitignore` accordingly. The ho-overview collaborator
+(`ho-kamae-4-overview-collaborator`) now ends every overview with an empty, append-only
+`## Build record` section (kamae-project-framing §2.4). The per-ho authoring collaborator
+(`ho-kamae-5-authoring-collaborator`) makes each per-ho document state its close discipline —
+fill Reflect/Results, flip `status: complete`, write the state-summary block to K6, append the
+build-record entry to K4. The three ho templates (`ha-`, `ri-`, `shu-ho-template.md`) each gain a
+closing state-summary section showing the block once (verbatim labels, fixed order): with Reflect
+in ha, with Results in ri, as the final prescribed step in shu. Driven by **ho-11**, off the 2.14
+doctrine.
+
 ### Extend the Kamae chain to six links — State Memory (Kamae 6) — kind: changed
 
 The Kamae chain gains a sixth link: the **State Memory** (`kamae-project-framing.md` §2.7), a

@@ -205,6 +205,15 @@ Write the per-ho document at `ho-process/hos/ho-NN-<slug>.md`. Slug is short and
 
 If dandori spec children emerged, generate them at `ho-process/agent-tasks/Ho-NN-AT-MM.md`. Each spec is its own file. Run them against the format checklist in `dandori/FORMAT.md` before declaring ready.
 
+**Write the ho-close discipline into the document.** Every per-ho document's close/Reflect section states what closing the ho requires — so the executing session doesn't have to remember it. Closing a ho is four moves, together:
+
+1. **Fill the Reflect section** (ha) / **Results** (ri) with the post-execution findings.
+2. **Flip `status:` to `complete`** in the frontmatter.
+3. **Write the state-summary block to the project's K6** — `ho-process/kamae-6-<project>-state-memory.md`, refreshing the block at the top (fixed labels, fixed order: `COMPLETED / NEXT / ACTION ITEMS or BLOCKS / PROJECT LIFECYCLE`). This is the operating discipline's mandatory session-end rule; a ho close is also a session end. See `framework/structure/cross-session-continuity.md` §3, §5.
+4. **Append a build-record entry to K4** — one state-summary-shaped entry on the tail of `ho-process/kamae-4-<project>-ho-overview.md` (`framework/structure/kamae-project-framing.md` §2.4). Cold, append-only.
+
+The shape templates in `references/ho-shape-templates.md` carry this in each shape's close; the framework templates (`framework/templates/{ha,ri,shu}-ho-template.md`) show the block once. Make sure the document you generate states the four moves in its close, not just "fill in Reflect."
+
 ### 9. Surface what's still open.
 
 Some decisions defer to execution-time discovery (the export schema doesn't fully reveal until you see real data). Some decisions defer to a later ho (path 1 vs path 2 for ho-shape was deferred from ho-00 to ho-01 in shodō). Name them in the document explicitly so the next session knows what's pending.
@@ -270,3 +279,5 @@ These are non-negotiable. The skill does not produce them regardless of what's a
 Every per-ho document should be readable end-to-end by a practitioner — or a fresh agent — opening the project for the first time today. After reading the document, the question "what is this session for?" should have a clear answer. So should "what's in scope, what's out of scope, what's done when, what's deferred."
 
 If a per-ho document needs the practitioner to also have the ho-overview open to understand what's happening, it's too sparse. If it tries to reproduce what the ho-overview already says, it's wandering into the wrong territory. The per-ho document frames the bounded scope for one session. Keep it bounded.
+
+And every per-ho document names how it closes. The document opens the session's bounded scope; its close/Reflect section states the four moves that end it — fill Reflect (or Results), flip `status: complete`, write the state-summary block to the project's K6, append the build-record entry to K4 (see step 8, `Generate the document`). A ho whose close says only "fill in Reflect" leaves the continuity work implicit, and implicit continuity work is the work that gets skipped.

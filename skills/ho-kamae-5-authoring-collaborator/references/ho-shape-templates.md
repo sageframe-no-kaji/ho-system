@@ -70,6 +70,20 @@ For replan checkpoints: **Evaluation** — what was built vs what was planned, w
 
 [What the next ho needs at session start. What's deferred to it. Practical actions to take between this session and the next.]
 
+### Closing this ho
+
+Even an orientation ho ends a session — so it closes the same way: flip `status: complete` and
+write the state-summary block to the project's K6
+(`ho-process/kamae-6-<project>-state-memory.md`, §3 of cross-session-continuity). If this ho is
+tracked in K4's build record, append its entry too (§2.4 of kamae-project-framing). The block,
+verbatim labels and order:
+
+**STATE-SUMMARY**
+- **COMPLETED** — <what this session finished>
+- **NEXT** — <the single pointer to what comes next>
+- **ACTION ITEMS / BLOCKS** — <open items; blocks loudly, or `none`>
+- **PROJECT LIFECYCLE** — <kamae | dev | beta | production>
+
 ---
 
 _Authored: YYYY-MM-DD._
@@ -171,6 +185,19 @@ agent-tasks:
 - **What broke that the tests didn't catch?**
 - **Followups for the next ho or beyond.**
 
+### Closing this ho
+
+Closing = fill this Reflect + flip `status: complete` + write the state-summary block to the
+project's K6 (`ho-process/kamae-6-<project>-state-memory.md`, §3 of cross-session-continuity) +
+append a build-record entry to K4 (`ho-process/kamae-4-<project>-ho-overview.md`, §2.4 of
+kamae-project-framing). The block, verbatim labels and order:
+
+**STATE-SUMMARY**
+- **COMPLETED** — <what this ho finished>
+- **NEXT** — <the single pointer to what comes next>
+- **ACTION ITEMS / BLOCKS** — <open items; blocks loudly, or `none`>
+- **PROJECT LIFECYCLE** — <kamae | dev | beta | production>
+
 ---
 
 _Authored: YYYY-MM-DD (Think phase)._
@@ -242,6 +269,19 @@ If agent tasks: → `ho-process/agent-tasks/Ho-NN-AT-MM.md`
 ## Results
 
 [What's true now that wasn't before. Verification that the change held. Any side effects.]
+
+### Closing this ho
+
+Closing = fill Results + flip `status: complete` + write the state-summary block to the
+project's K6 (`ho-process/kamae-6-<project>-state-memory.md`, §3 of cross-session-continuity) +
+append a build-record entry to K4 (`ho-process/kamae-4-<project>-ho-overview.md`, §2.4 of
+kamae-project-framing). The block, verbatim labels and order:
+
+**STATE-SUMMARY**
+- **COMPLETED** — <what this ho finished>
+- **NEXT** — <the single pointer to what comes next>
+- **ACTION ITEMS / BLOCKS** — <open items; blocks loudly, or `none`>
+- **PROJECT LIFECYCLE** — <kamae | dev | beta | production>
 
 ---
 

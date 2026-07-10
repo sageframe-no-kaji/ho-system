@@ -546,6 +546,39 @@ behavior under load. Only if relevant to this ho.]
 
 ---
 
+```markdown
+### State-Summary Block
+
+**[LEARNER COMPLETES — the last thing this ho does]**
+
+Closing this ho ends a session, so write the state-summary block to the project's State Memory
+(Kamae 6) at `ho-process/kamae-6-<project>-state-memory.md`, refreshing the block pinned at its
+top. Fixed labels, fixed order:
+
+**STATE-SUMMARY**
+- **COMPLETED** — [what this ho finished]
+- **NEXT** — [the single pointer to what comes next]
+- **ACTION ITEMS / BLOCKS** — [open items; a block says so loudly, or `none`]
+- **PROJECT LIFECYCLE** — [kamae | dev | beta | production]
+
+Then flip this ho's `status:` to `complete` and append one build-record entry (this same block,
+with prose around it) to the tail of the K4 ho-overview.
+```
+
+> 📐 **AUTHOR — State-Summary Block**
+> _Cross-project structure. Fixed labels, non-negotiable._
+>
+> This is the universal minimum of cross-session continuity — a ho close is also a session end,
+> and the operating discipline requires every session to end by stating where it leaves the
+> build. The four labels are verbatim and ordered because the block is a machine-parseable hook
+> surface, not free-form prose. See [[cross-session-continuity|Cross-Session Continuity]]
+> (framework/structure/cross-session-continuity.md) §3 for the block, §8 for the build record.
+>
+> Keep it cheap: it is the minimum a fresh session needs to pick the build back up, not a
+> summary of the devlog below.
+
+---
+
 ````markdown
 ---
 
@@ -739,6 +772,7 @@ These constraints apply to ALL ha-stage hos regardless of project:
 6. **Devlog entry required.** Written after completion, organized around the decision.
 7. **Quality discipline maintained.** Tests and quality tools are the learner's responsibility, not the template's. But they must be run and reported on.
 8. **Commit at natural breakpoints.** The learner determines granularity. Zero commits and one-giant-commit are both signals worth examining.
+9. **State-summary block at close.** Closing the ho ends a session; the block (COMPLETED / NEXT / ACTION ITEMS or BLOCKS / PROJECT LIFECYCLE, verbatim labels) is written to the project's K6 State Memory, `status:` flips to `complete`, and a build-record entry appends to the K4 overview. See [[cross-session-continuity|Cross-Session Continuity]] (framework/structure/cross-session-continuity.md) §3, §8.
 
 ---
 

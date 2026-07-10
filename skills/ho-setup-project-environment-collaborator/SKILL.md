@@ -98,6 +98,12 @@ Ask three or four questions to lock the shape:
 2. **Project type.** Service, desktop, library, static-site, app frontend.
 3. **Language stack.** Python? Web? Both? (Cross-reference with project type—a service is usually Python or Rust; a static site is web; an app frontend is both Python and web; etc.)
 4. **GitHub account.** Which one? (Look at `~/.claude/modules/infrastructure.md` for the practitioner's accounts. If they have only one, skip the question. If they have multiple, ask.)
+5. **State Memory (K6) versioning posture.** One question, keyed to repo visibility. Every project gets a Kamae 6 State Memory (`ho-process/kamae-6-<project>-state-memory.md`) — always present, private by default. What varies is whether its hot history is versioned (`framework/structure/cross-session-continuity.md` §10, three postures):
+   - **Private repo** → track K6 with the rest of `ho-process/`. Versioned, private, zero extra machinery.
+   - **Public repo** → gitignore `ho-process/` (so the raw K6 never ships) and offer to version it as a **nested private repo** — `git init` inside the ignored directory (posture 2, **recommended**). The public repo carries the cold public record; the nested repo carries the hot history.
+   - **Floor** → leave `ho-process/` unversioned. Legitimate; loses hot *history*, never a lesson.
+
+   Default to tracked for a private repo and to the nested-private-repo offer for a public one. The path is fixed regardless of posture.
 
 Compute defaults from the answers:
 
@@ -147,6 +153,12 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
    > `ho-process/` is gitignored by default. The build record (kamae documents, hos) is
    > private practitioner work and does not belong in the project's git history. Kamae
    > documents go inside `ho-process/` — not at the project root.
+   >
+   > This is also what keeps the K6 State Memory private (§10, private-by-default): its raw
+   > register never ships in a public repo. Wire the gitignore to the posture chosen in Phase 1
+   > — a public repo gitignores `ho-process/` (and versions it as a nested private repo if the
+   > practitioner took that offer); a private repo tracks `ho-process/`, so the gitignore leaves
+   > it in.
 
 5. **`.env.example`** from `~/.claude/templates/env.example.baseline`. Replace `MYPROJ_` prefix with the project's actual env var prefix (often the package name uppercased).
 6. **`CLAUDE.md`** from `~/.claude/templates/project-CLAUDE.template.md`. Replace placeholders:
@@ -164,11 +176,36 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
      - `README.md` (repo root) — Kamae 3
      - `ho-process/kamae-4-[project]-ho-overview.md` — Kamae 4
      - `ho-process/hos/` — per-ho documents (Kamae 5)
+     - `ho-process/kamae-6-[project]-state-memory.md` — Kamae 6 (State Memory)
      - `ho-process/agent-tasks/` — child agent task specs
      ```
-7. **`src/[package]/__init__.py`**—empty file with package docstring.
-8. **`tests/test_smoke.py`**—one trivial passing test so pytest has something to run and the verification stack can prove itself before any real code is written.
-9. **`README.md`**—one-line description plus a "Setup" section showing the practitioner's commands (uv sync, pre-commit install, pytest). The practitioner expands later.
+7. **`ho-process/kamae-6-[project]-state-memory.md`**—the project's State Memory (Kamae 6), created at init so the fixed path exists from day one (`framework/structure/cross-session-continuity.md` §4, §10). Frontmatter: `created` (today), `type: state-memory`, `project` (slug), `kamae: 6`, `status: living`. Body is a fresh state-summary block — verbatim labels, fixed order — that reflects a just-scaffolded project:
+   ```markdown
+   ---
+   created: [today]
+   type: state-memory
+   project: [project]
+   kamae: 6
+   status: living
+   ---
+
+   # [project] — State Memory (Kamae 6)
+
+   The build's living cross-session memory. Always present, read first by every returning
+   session to get back into stance. The block below is refreshed at every ho close and every
+   session end. HOT and non-canonical — the cold record (git, per-ho Reflect, the K4
+   build-record) wins on conflict. See `framework/structure/cross-session-continuity.md` (2.14).
+
+   **STATE-SUMMARY**
+   - **COMPLETED** — project scaffolded (verification stack, source layout, first commit).
+   - **NEXT** — first ho.
+   - **ACTION ITEMS / BLOCKS** — none.
+   - **PROJECT LIFECYCLE** — kamae.
+   ```
+   The body grows beneath the block by event-gated accretion only as the build needs it (§4.2) — nothing more is scaffolded now.
+8. **`src/[package]/__init__.py`**—empty file with package docstring.
+9. **`tests/test_smoke.py`**—one trivial passing test so pytest has something to run and the verification stack can prove itself before any real code is written.
+10. **`README.md`**—one-line description plus a "Setup" section showing the practitioner's commands (uv sync, pre-commit install, pytest). The practitioner expands later.
 
 For a web static site, the file list shifts:
 
@@ -201,6 +238,16 @@ Show the practitioner the list. Confirm. Then:
 ```bash
 git commit -m "Initial scaffold via ho-setup-project-environment-collaborator"
 ```
+
+If the practitioner chose the nested-private-repo posture (public repo, Phase 1 question 5), `ho-process/` is gitignored above and gets its own git repo so its hot history is versioned separately from the public repo:
+
+```bash
+git -C [project-path]/ho-process init -b main
+git -C [project-path]/ho-process add -A
+git -C [project-path]/ho-process commit -m "Initial ho-process scaffold (State Memory, ho dirs)"
+```
+
+The K6 State Memory and ho documents now live in the nested repo, tracked and private; the public repo carries the cold public record only. No remote yet — the practitioner adds a private remote when ready.
 
 Don't push. The practitioner connects to GitHub themselves (or you can offer to do it explicitly):
 
@@ -329,6 +376,7 @@ A scaffolded project directory with:
 
 - All baseline files instantiated from `~/.claude/templates/`
 - `src/[package]/`, `tests/`, `docs/` directory structure (Python projects)
+- A Kamae 6 State Memory at `ho-process/kamae-6-[project]-state-memory.md`, seeded with a fresh state-summary block, versioned per the chosen posture
 - Verification stack installed and passing
 - First commit on `main`
 - A practitioner who can describe what each file is and why it's there

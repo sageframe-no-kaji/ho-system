@@ -157,6 +157,28 @@ Observed behavior. Performance notes if applicable.]
 ---
 
 ```markdown
+## State-Summary Block
+
+Closing the ho ends a session — write the block to the project's State Memory (Kamae 6),
+`ho-process/kamae-6-<project>-state-memory.md`, refreshing the block at its top. Fixed labels,
+fixed order:
+
+**STATE-SUMMARY**
+- **COMPLETED** — [what this ho finished]
+- **NEXT** — [the single pointer to what comes next]
+- **ACTION ITEMS / BLOCKS** — [open items; a block says so loudly, or `none`]
+- **PROJECT LIFECYCLE** — [kamae | dev | beta | production]
+
+Then append the same block (with prose around it) as a build-record entry on the K4 overview.
+```
+
+> 📐 **AUTHOR — State-Summary Block**
+>
+> Even ri-stage work closes by leaving a place-marker. The block is the universal minimum of cross-session continuity: cheap, fixed-shape, machine-parseable. The four labels are verbatim and ordered — this is a hook surface, not a status note. See [[cross-session-continuity|Cross-Session Continuity]] (framework/structure/cross-session-continuity.md) §3, and §2.4 of [[kamae-project-framing|Kamae: Project Framing]] (framework/structure/kamae-project-framing.md) for the build record. One line each; don't inflate it.
+
+---
+
+```markdown
 ## Notes
 
 [Optional. Anything worth recording that doesn't fit above:
@@ -177,7 +199,7 @@ Observed behavior. Performance notes if applicable.]
 
 ## That's It
 
-Five sections: Problem, Solution, What Changed, Results, Notes. No phases, no verification questions, no understanding tiers, no devlog template, no confidence scale. The practitioner has internalized all of that. The template is a recording format, not a learning structure.
+Problem, Solution, What Changed, Verification, Results, a State-Summary Block at close, and an optional Notes. No phases, no verification questions, no understanding tiers, no devlog template, no confidence scale. The practitioner has internalized all of that. The template is a recording format, not a learning structure — and the block is the one non-negotiable close move, the cheap universal minimum of cross-session continuity.
 
 ### What's Deliberately Absent (and Why)
 
@@ -203,6 +225,7 @@ Even at ri stage, some constraints hold:
 2. **Problem and Solution are required.** What was wrong, what you did about it. Everything else is optional.
 3. **What Changed must be traceable.** Either a file manifest, a commit hash, or both. Someone must be able to find the actual code changes from this document.
 4. **Quality tools are still run.** No template section enforces this — but tests pass, linting is clean, types check. If they don't, that's a problem regardless of what the template says.
+5. **The state-summary block is written at close.** Closing the ho ends a session; the block (COMPLETED / NEXT / ACTION ITEMS or BLOCKS / PROJECT LIFECYCLE, verbatim labels, fixed order) goes to the project's K6 State Memory and a matching entry appends to the K4 build record. Cheap, always; the one continuity move ri stage does not skip.
 
 ---
 
