@@ -38,6 +38,16 @@ closing state-summary section showing the block once (verbatim labels, fixed ord
 in ha, with Results in ri, as the final prescribed step in shu. Driven by **ho-11**, off the 2.14
 doctrine.
 
+### Add the autonomous build kickoff template (3.10) — kind: added
+
+New Layer-3 template: `framework/templates/autonomous-kickoff-template.md`, indexed as **3.10**,
+`status: draft`. The kickoff prompt for the autonomous / human-as-designer mode — the agent
+authors the whole Kamae chain in the practitioner's voice and executes it, with the 2.14
+continuity wiring (full-body K6, freshness, hot/cold verification, heartbeat, sealed-decisions
+banking) encoded from the first message, plus the ratification gate and tripwires the pālana run
+(5.3) proved necessary. Draft honestly: implied by doctrine, validated by no build yet — it
+graduates on the first project that runs from it.
+
 ### Extend the Kamae chain to six links — State Memory (Kamae 6) — kind: changed
 
 The Kamae chain gains a sixth link: the **State Memory** (`kamae-project-framing.md` §2.7), a

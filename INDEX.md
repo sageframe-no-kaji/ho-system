@@ -115,6 +115,7 @@ Reusable document structures. Start with the selection guide if you're unsure wh
 | 3.4 | [Ha Ho Template](framework/templates/ha-ho-template.md) | Decision-driven development sessions |
 | 3.5 | [Ri Ho Template](framework/templates/ri-ho-template.md) | Practitioner-level recording format |
 | 3.9 | [Design Ho Template](framework/templates/design-ho-template.md) | In-chain wrapper for landings and design-session batches |
+| 3.10 | [Autonomous Build Kickoff Template](framework/templates/autonomous-kickoff-template.md) | The prompt that starts a fully autonomous build — wires 2.14 from the first message (draft, pending first validating run) |
 
 **Devlogs (Reflection)**
 
