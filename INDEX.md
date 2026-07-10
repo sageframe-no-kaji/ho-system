@@ -74,7 +74,7 @@ Conceptual specifications. Ordered to follow the practitioner's actual experienc
 
 | ID | Document | Description |
 |----|----------|-------------|
-| 2.1 | [Kamae: Project Framing](framework/structure/kamae-project-framing.md) | The pre-ho phase — from idea to buildable plan |
+| 2.1 | [Kamae: Project Framing](framework/structure/kamae-project-framing.md) | Getting and staying in stance — the six-link Kamae chain, from idea to buildable plan to build-time memory |
 | 2.2 | [Project Arc](framework/structure/project-arc.md) | How hos sequence into complete projects |
 | 2.3 | [Ho Structure](framework/structure/ho-structure.md) | The fundamental unit of work — what a ho is and isn't |
 | 2.4 | [Shu-Ha-Ri Progression](framework/structure/shu-ha-ri.md) | How the system adapts as the practitioner develops |
@@ -87,6 +87,7 @@ Conceptual specifications. Ordered to follow the practitioner's actual experienc
 | 2.11 | [Design Work](framework/structure/design-work.md) | Design tuning — the design method; design that happens partly outside the chain |
 | 2.12 | [External-Project Contribution](framework/structure/external-contribution.md) | Running Ho against someone else's codebase |
 | 2.13 | [The Idea Log](framework/structure/idea-log.md) | The forward-only idea/feature backlog, reviewed at every ho boundary |
+| 2.14 | [Cross-Session Continuity](framework/structure/cross-session-continuity.md) | Carrying the build's thread across sessions — the universal state-summary block and the State Memory (Kamae 6) that holds it, with their freshness, hot/cold, and compaction disciplines |
 
 ---
 
@@ -150,6 +151,7 @@ Concrete instances of the methodology in practice.
 |----|----------|-------------|
 | 5.1 | [Learning Process Reflections](examples/learning-process.md) | Post-project learning reflections |
 | 5.2 | [Kanyō Pilot](examples/kanyo-pilot/README.md) | Production falcon detection system — the founding project |
+| 5.3 | [pālana Pilot — Continuity Discipline](examples/palana-autonomous/continuity-discipline.md) | The first autonomous build's four-layer continuity system, as a repeatable process + proposed framework additions |
 
 ---
 

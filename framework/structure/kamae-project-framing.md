@@ -17,7 +17,7 @@ tags: [ho-system, kamae, project-planning, framing]
 
 In martial arts, **kamae (構え)** is the ready stance — how you position yourself before engaging. You're not fighting yet, but you're oriented correctly. Feet set, weight balanced, awareness open. You don't rush in; you set your stance first.
 
-In the Ho System, kamae is everything that happens before the first ho. It takes a project from its earliest articulation — the core idea, the problem it addresses, the research that grounds it — and produces a structured plan that hos can be written from. Without it, the first ho is guessing at scope, the second ho discovers the architecture was wrong, and the third ho gets thrown out entirely.
+In the Ho System, kamae is getting — and staying — in stance for the build. Most of its work happens before the first ho: it takes a project from its earliest articulation — the core idea, the problem it addresses, the research that grounds it — and produces a structured plan that hos can be written from. Without it, the first ho is guessing at scope, the second ho discovers the architecture was wrong, and the third ho gets thrown out entirely. But the stance is kept, not just taken: two of the chain's links are written at build time — the per-ho documents (§2.5) that take the stance for each session, and the State Memory (§2.7) that recovers it after every context wipe. In martial arts too, kamae is not only the stance you open from; it is the stance you return to between exchanges.
 
 Kamae begins with ideation, not after it. The discipline of understanding a problem space before proposing to build in it — what the Ho System calls [[ho-seed-template#Precedential Thinking|precedential thinking]] — is the first act of project framing, not a prerequisite to it. The [[ho-seed-template|Project Seed]] (framework/templates/ho-seed-template.md) captures the output of that thinking and becomes the evaluative foundation against which all downstream decisions are judged.
 
@@ -30,13 +30,15 @@ Seed → System Design → README → Ho Overview
 (K1)    (K2)            (K3)     (K4)
 ```
 
-When the Ho Overview is complete, you have enough to write individual hos from the [[shu-ho-template|shu-stage template]] (framework/templates/shu-ho-template.md) or whichever template is appropriate for the learner's level. Those per-ho documents are the fifth link in the chain — the **Kamae 5** documents (§2.5), written one per ho at build time rather than during the framing phase. Four framing documents; five links.
+When the Ho Overview is complete, you have enough to write individual hos from the [[shu-ho-template|shu-stage template]] (framework/templates/shu-ho-template.md) or whichever template is appropriate for the learner's level. Those per-ho documents are the fifth link in the chain — the **Kamae 5** documents (§2.5), written one per ho at build time rather than during the framing phase. A sixth link joins them at build time: the **State Memory** (§2.7 — **Kamae 6**), the project's living cross-session memory, written continuously as the build runs and read first by every returning session. Four framing documents; six links.
+
+All six are Kamae documents on the **same footing** — equally first-class, equally findable. They split by *role*, not rank: **K1–K4 are preparation** — the up-front framing ladder (opinions → decisions → scope → sequence), written once; **K5 and K6 are action-time** — K5 the *pre-action* document that takes the stance for each session, K6 the *record of action* that keeps the whole build's place across the context wipes between sessions. Commitment is a matter of scale: the project-scale ladder runs K1–K4; K5 commits at session scale — one ho's worth of bounded intent; K6 commits nothing — it records. (In an autonomous build K6 is the single most-read document of all — a peer, if anything primary, never lesser.)
 
 **Kamae sits at project scope.** It frames *the specific thing being built*. This is distinct from **practitioner scope** — *how the practitioner works*, regardless of project: the operating discipline (how testing, linting, permissions, and verification are handled), the environment configuration (IDE settings, agent instructions such as `CLAUDE.md`), and the practitioner's profile (stage, language preferences, tool stack). Practitioner scope is established once per practitioner-tool combination and travels across projects; Kamae is done once per project. The two meet at ho-00, where the project's specific instantiation of the operating discipline gets encoded in the repo. For the practitioner-scope canonical document, see [[operating-discipline|The Operating Discipline]] (practitioner/operating-discipline.md).
 
 ---
 
-## 2. The Four Framing Documents
+## 2. The Kamae Documents
 
 ### 2.1 The Project Seed
 
@@ -199,13 +201,15 @@ The Ho Overview welcomes the System Design's first-pass ho sequence and deferred
 
 **Example from Hōzō:** Not yet written as a standalone document. The Ho-00 project setup document was written directly, effectively skipping this step. The framework formalizes what Kanyō did informally.
 
+**The build record.** The Ho Overview is a *forward* plan — the map, not the territory. For builds that want a running account of what actually happened, an **append-only build-record log** may be grafted onto the *tail* of the overview: one entry per ho close and per replan checkpoint, added below the forward plan, never rewritten. The forward plan above stays *living-continuous* (statuses flip, hos insert); the record below is *cold* and append-only — it obeys forward-only like any closed record. Each entry takes the shape of a **state-summary block** — COMPLETED / NEXT / ACTION ITEMS or BLOCKS / PROJECT LIFECYCLE (`kamae | dev | beta | production`) — with as much surrounding prose as the moment warrants (the question a checkpoint asked, the evidence, the practitioner's ruling). This turns K4 from a pure plan into a plan with its own history grown onto it, and it is the practitioner-facing (public, canonical) half of cross-session continuity: the [[cross-session-continuity|working-memory handoff]] (framework/structure/cross-session-continuity.md) is the agent's private *hot* cache, while the build record is the human's *cold* ledger. Originated in the pālana pilot ([[continuity-discipline|5.3]] (examples/palana-autonomous/continuity-discipline.md)); its continuity role is specified in [[cross-session-continuity|Cross-Session Continuity]] (framework/structure/cross-session-continuity.md).
+
 ---
 
 ### 2.5 Per-Ho Documents (Kamae 5)
 
 **What it is:** The bounded scope for a single working session, written at the start of executing each ho. A per-ho document takes a position from the Ho Overview and turns it into something the practitioner and the agent can work against in one session. Each ho gets its own document.
 
-Per-ho documents are the fifth link in the chain — **Kamae 5** — but they differ from the four framing documents in *when* they are produced. The framing documents (§§2.1–2.4) are written up front, before any ho runs. The per-ho document is written later, at build time, one per ho, using the same kamae logic: getting in stance before doing the work. It is a framing document for one session rather than for the whole project — which is why the chain has four *framing* documents but five links.
+Per-ho documents are the fifth link in the chain — **Kamae 5** — but they differ from the four framing documents in *when* they are produced. The framing documents (§§2.1–2.4) are written up front, before any ho runs. The per-ho document is written later, at build time, one per ho, using the same kamae logic: getting in stance before doing the work. It is a framing document for one session rather than for the whole project — which is why the chain has four *framing* documents but six links (the fifth is this per-ho layer; the sixth is the **State Memory**, §2.7).
 
 **What it's NOT:** A restatement of what's in the Ho Overview. A vague description of "the next thing to do." A document written after the work is done. The per-ho document is the *plan* for the session, written *before* the work begins.
 
@@ -235,9 +239,9 @@ A per-ho document should define:
 
 ### 2.6 Filenames and Location
 
-The four framing documents live in the project repo under `ho-process/`, with the README at the repo root.
+The single-instance Kamae documents live in the project repo under `ho-process/`, with the README at the repo root.
 
-**Pattern:** `kamae-<N>-<project>-<doctype>.md` for documents 1, 2, and 4. The README (Kamae 3) is the canonical repo-root `README.md` and does *not* take a `kamae-3-` prefix — it ships as the public face of the repository under its standard name.
+**Pattern:** `kamae-<N>-<project>-<doctype>.md` for documents 1, 2, 4, and 6. The README (Kamae 3) is the canonical repo-root `README.md` and does *not* take a `kamae-3-` prefix — it ships as the public face of the repository under its standard name.
 
 | Kamae | Document | Path |
 |---|---|---|
@@ -245,6 +249,7 @@ The four framing documents live in the project repo under `ho-process/`, with th
 | 2 | System Design | `ho-process/kamae-2-<project>-system-design.md` |
 | 3 | README | `README.md` (repo root) |
 | 4 | Ho Overview | `ho-process/kamae-4-<project>-ho-overview.md` |
+| 6 | State Memory | `ho-process/kamae-6-<project>-state-memory.md` (§2.7) |
 
 `<project>` is the project's short slug in kebab-case (e.g., `shodo`, `hozo`, `kanyo`). It matches the slug used elsewhere in the project (repo name, package name) so the filenames are predictable from any one of them.
 
@@ -256,9 +261,35 @@ The `kamae-N-` prefix exists because these documents are read together as a chai
 
 ---
 
+### 2.7 Kamae 6: State Memory
+
+**What it is:** The build's living cross-session memory — one per project, always present, written continuously as the build runs. The four framing documents (§§2.1–2.4) get the *project* into stance once; the per-ho documents (§2.5) get each *session* into stance; the State Memory is how a *returning* session gets back into stance after its context is wiped. It is the first thing a fresh agent reads to reconstitute where the build is, without re-deriving it from the whole chain. Alone among the six links it is *living and reflexive* — never "done" until the project is, and holding the running state of the other five so a new session can pick them up.
+
+**The body grows by event-gated accretion.** The file is always present — that is the whole point: there is one clear, fixed place the state lives. What varies is how much *body* accrues beneath the block, and that is decided by what the build actually encounters, not by a mode declared up front: sealed decisions appear with the first practitioner ruling that supersedes the chain (banked cold at that same moment); the do-not-rediscover traps with the first hard-won finding; queues with the first deferred item; and the dense per-ho log, the practitioner's verbatim voice, and the alert heartbeat switch on when the human stops watching — the only genuinely mode-gated tier. The two build modes remain real as descriptions of the common endpoints: **active-oversight** builds (human watching, carrying much of the thread) typically settle at the shallow levels, while **autonomous / human-as-designer** builds run the full body — it does the human's two vanished jobs, holding intent between sessions and being what the build reconstitutes from, paired with the heartbeat as the asynchronous substitute for presence. That is the mode the pālana pilot proved ([[continuity-discipline|5.3]] (examples/palana-autonomous/continuity-discipline.md)).
+
+**The always-present minimum — the state-summary block.** Pinned at the top of the file, refreshed at every ho close and every session end:
+
+```
+**STATE-SUMMARY**
+- **COMPLETED** — what was just finished.
+- **NEXT** — the single pointer to what comes next.
+- **ACTION ITEMS / BLOCKS** — open items, and anything blocking (loudly, never buried).
+- **PROJECT LIFECYCLE** — kamae | dev | beta | production.
+```
+
+Fixed labels, fixed order — human-glanceable and machine-parseable (a hook surface). Every project's State Memory carries this block, however short or attended the build.
+
+**The body — the working-memory handoff.** Beneath the block the file grows into the full handoff when the build needs it (autonomous / long builds): sealed decisions (constitutional — dated, attributed, never relitigated), a dense per-ho log (commit / tests / coverage / CI, each with a `NEXT:` pointer), a do-not-rediscover traps section, queues, and the practitioner's voice verbatim.
+
+**Authority and upkeep.** The State Memory is HOT — mutable, non-canonical, subordinate to the cold record (git, per-ho Reflect, the K4 build record); the cold record wins on conflict. It holds no original authority: a sealed decision is banked in a cold canonical home at the moment of sealing (a Kamae addendum, a dated seed revision, a new ho, or a build-record entry), and the K6 copy is the cache of that record. It is kept honest by the freshness rule (update at every real pause — a stale memory misleads *confidently*), and kept from bloating by **graduated-and-preserving compaction**: the active ho untouched, recent closed hos lightly trimmed, closed phases collapsed to a phase state-summary at phase close — but sealed decisions, the do-not-rediscover traps, and the current block are *never* pruned, and no lesson is deleted until it is verified banked in a cold canonical home. The full specification — including the accretion ladder, the compaction cadence and size tripwire, and the publication election — lives in [[cross-session-continuity|Cross-Session Continuity]] (framework/structure/cross-session-continuity.md).
+
+**Location and privacy:** `ho-process/kamae-6-<project>-state-memory.md` — the *path is fixed* so the next session, and any hook, always knows exactly where to look. The file is **private by default** (gitignored): its body is written raw, in the practitioner's actual voice, never for an audience, and publication is a deliberate closeout election. Versioning follows the repo: a private repo tracks it; a public repo versions the gitignored `ho-process/` as a nested private repo; running it unversioned is the legitimate floor (see Cross-Session Continuity §10).
+
+---
+
 ## 3. The Chain
 
-The five documents form a chain of increasing commitment. Each one takes the previous document's output and narrows what's possible — turning opinions into decisions, decisions into scope, scope into a buildable sequence, and the sequence into session-level work:
+The chain reads in order. Each framing document takes the previous one's output and narrows what's possible — opinions into decisions, decisions into scope, scope into a buildable sequence — and the sequence generates the per-ho documents that carry the work into sessions:
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -291,7 +322,9 @@ The five documents form a chain of increasing commitment. Each one takes the pre
 └──────────────────────────────────────────────────────────────┘
 ```
 
-Each step increases commitment. The seed (K1) is exploratory — opinions are provisional, architecture is directional, scope is approximate. The System Design (K2) commits to architecture. The README (K3) commits to scope. The Ho Overview (K4) commits to a build order. The individual per-ho documents (K5) commit to specific session-level work.
+Commitment increases down the chain, at two scales. The project-scale ladder is the framing four: the seed (K1) is exploratory — opinions are provisional, architecture is directional, scope is approximate; the System Design (K2) commits to architecture; the README (K3) commits to scope; the Ho Overview (K4) commits to a build order. The per-ho documents (K5) carry commitment at session scale — each one commits a single session to bounded work, the pre-action stance for one ho.
+
+The **State Memory (K6)** commits nothing — it records. It is not a further narrowing of possibility but the build's living record of *where it is*, written continuously as the chain executes and read first by every returning session. Preparation commits; the pre-action commits; the record keeps the place. See §2.7.
 
 **The chain is not always linear.** Writing the System Design may reveal that the seed's vision is too broad. Writing the README may expose a gap in the System Design. Writing the Ho Overview may reveal that a component needs to be split across multiple hos that weren't obvious from the System Design alone. Expect to loop back and revise earlier documents as later ones surface problems.
 

@@ -52,6 +52,14 @@ design parameter, interaction thresholds included. Named from the AEC term of ar
 
 _Plain: The one file that holds a project's settled design values as explicit numbers, the source of truth everything else builds from._
 
+**build record** — The append-only log grafted onto the tail of the K4 **ho overview**: one
+entry per ho close and per replan checkpoint, each shaped as a **state-summary block**, never
+rewritten. Cold and forward-only — the human-facing, canonical ledger of what a build actually
+did, the counterpart to the *hot* **working-memory handoff**. _(kamae-project-framing 2.1 §2.4;
+cross-session-continuity 2.14 §8.)_
+
+_Plain: A running, add-only list at the bottom of the build plan recording what each step actually finished and where the build stands._
+
 **builds-on** — Frontmatter field listing the upstream documents a ho or Kamae document
 depends on; the cascade reading order. Opening any document pulls the context behind it by
 following the chain. _(corpus-wide convention.)_
@@ -78,6 +86,16 @@ architectural thought. The dominant AT relationship in mature practice.
 _(ho-task-decomposition 2.8 §2.1.)_
 
 _Plain: A child unit of work that only makes sense alongside the parent it was split from._
+
+**cross-session continuity** — Carrying a build's thread across sessions when the human is not
+the one holding it. Continuity is *implicit* everywhere — the cold record (git, Reflect, the
+build record) carries the thread as a side effect of being well-kept — and *explicit* in one
+place: the **state memory (Kamae 6)**, always present, with the universal **state-summary
+block** at its top and the **working-memory handoff** body grown by event-gated accretion.
+Kept honest by the freshness, **hot / cold**, and graduated-compaction disciplines. Promoted
+from the pālana pilot. _(cross-session-continuity 2.14; continuity-discipline 5.3.)_
+
+_Plain: Keeping track of where a build is between work sessions, especially when no person is there to remember it._
 
 **dandori (段取り)** — Preparation; staging; the carpenter's setup, the chef's mise en
 place. Operationally: the discipline and format for translating a ho's resolved Think phase
@@ -182,6 +200,16 @@ documents, `hos/`, `agent-tasks/`, and any project-specific layers (`learning/`,
 
 _Plain: The project folder that holds the methodology's working artifacts — the framing documents, the session records, and the task specs._
 
+**hot / cold** — The two temperatures of a build's memory. **hot** — mutable, non-canonical,
+overwritten every pause: the working-memory handoff file, its live queues and `NEXT:` pointer.
+**cold** — sealed and canonical: git, Reflect, the build record. On conflict the cold record
+wins; forward-only governs cold, and hot is exempt because it is not the record. A finding lives
+hot, then graduates cold at ho close (the hot/cold finding lifecycle); a sealed decision banks
+cold at the moment of sealing, the hot copy a cache.
+_(cross-session-continuity 2.14 §6.)_
+
+_Plain: The split between a scratch memory you keep rewriting and the permanent record you never edit — with the rule that the permanent one always wins._
+
 **interaction test** — A validation modality (b): a human, hands on a real terminal,
 checking function _plus feel_ — the UI/UX a smoke test structurally can't reach (the delta
 between clean chosen input and a real human's messy TTY). Produces commits, no document — a
@@ -189,12 +217,14 @@ practice, not an artifact type. _(verification-practices 2.7 §3.)_
 
 _Plain: A human at a real terminal checking that something works and feels right, not just that the code runs._
 
-**Kamae (構え)** — The ready stance: everything that happens before (and framing around) the
-build. Produces the five-document chain — seed (K1), system design (K2), README (K3), ho
-overview (K4), per-ho documents (K5) — each step increasing commitment: opinions → decisions
-→ scope → sequence → session. _(kamae-project-framing 2.1.)_
+**Kamae (構え)** — The ready stance: getting and staying oriented for the build. Produces a
+six-link chain — seed (K1), system design (K2), README (K3), ho overview (K4), per-ho documents
+(K5), and the **state memory** (K6) — all on the *same footing* but in two roles: K1–K4 are
+**preparation**, the up-front framing ladder (opinions → decisions → scope → sequence); K5–K6
+are **action-time** — K5 the *pre-action* document for each session, K6 the *record of action*,
+the living cross-session memory. _(kamae-project-framing 2.1.)_
 
-_Plain: The ready stance and all the framing done before a build, producing a chain of documents that move from opinions to a session plan._
+_Plain: The ready stance and the chain of documents that keeps a build oriented — four written up front to frame it, two written as it runs to keep its place._
 
 **Kamae addendum (kamae-N.M)** — A decimal-suffixed decision document that supersedes a
 named part of a frozen Kamae document without editing it; carries the reopening
@@ -246,9 +276,12 @@ _Plain: The core principle of splitting one idea into its thinking (the mind) an
 life. **living** — revised in place (README, overview, seed by dated revision, the Basis of
 Design). **frozen** — not edited in place, changed only by a superseding addendum (system
 design); thaw-able through the addendum mechanism, still governs the build. **sealed** —
-final, never changes (closed hos, sidequests, addenda, dogfood findings, devlogs/Reflect,
-executed ATs, propagation-ledger commits); a future document may _respond_ but nothing
-supersedes it in force. Forward-only governs frozen and sealed; living is the declared exception.
+final, the text never changes (closed hos, sidequests, addenda, dogfood findings,
+devlogs/Reflect, executed ATs, propagation-ledger commits, sealed decisions); reopening carries
+gravity — a sealed record is history (a future document may _respond_, nothing supersedes it in
+force), a sealed decision's force yields only to a deliberate, recorded supersession.
+Forward-only governs frozen and sealed; living is the declared exception — and the **state
+memory (Kamae 6)** is living *and non-canonical*: the hot posture.
 _(artifact-type-registry 2.9 §6.)_
 
 _Plain: The scale of how much an artifact may change over its life — living (revised freely), frozen (changed only by override), or sealed (never again)._
@@ -285,6 +318,15 @@ before proposing to build in it; the research posture that feeds the seed.
 _(ho-seed-template.)_
 
 _Plain: Studying what already exists in a problem space before proposing to build anything new in it._
+
+**project lifecycle** — Where the thing being built sits in its life: `kamae` (pre-build, still
+framing), `dev` (building, not yet user-exercised), `beta` (real users or the practitioner
+driving it, hardening), `production` (shipped, in use). The fourth field of the
+**state-summary block**. Orthogonal to the practitioner's **shu-ha-ri** stage and to the
+`stage:` Kamae field — and deliberately not named "status," which belongs to a document's own
+`status:` frontmatter state. _(cross-session-continuity 2.14 §3.)_
+
+_Plain: A one-word label for how far along a project is, from planning to shipped._
 
 **propagation ledger** — The running record of propagation commits that update the **Basis
 of Design**, each naming the reason the value moved. Where the _living_ happens for design
@@ -390,6 +432,25 @@ FORMAT.md.)_
 
 _Plain: A self-contained agent task that belongs to no larger session — maintenance, a surgical fix, or early exploration._
 
+**state memory (Kamae 6)** — The project's living cross-session memory: the sixth Kamae link, a
+single always-present file (`ho-process/kamae-6-<project>-state-memory.md`) that a returning
+session reads first to get back into stance. Carries the **state-summary block** at its top
+(always) and the **working-memory handoff** body beneath, grown by event-gated accretion —
+sections switch on as the build first needs them. Private by default, published only by
+closeout election; hot and non-canonical; kept honest by the freshness and **hot / cold**
+rules and by graduated compaction.
+_(kamae-project-framing 2.1 §2.7; cross-session-continuity 2.14.)_
+
+_Plain: One always-present file per project holding where the build is, so any new session can pick it up._
+
+**state-summary block** — The four-field block emitted at every ho close and every session end:
+COMPLETED, NEXT, ACTION ITEMS / BLOCKS, PROJECT LIFECYCLE. Fixed labels and fixed order, so it is
+both human-glanceable and machine-parseable — the universal minimum of **cross-session
+continuity** and a hook surface for automation. _(cross-session-continuity 2.14 §3;
+operating-discipline.)_
+
+_Plain: A short, fixed four-line status — done, next, blockers, and how far along — written at the end of every work session._
+
 **supersedes** — Frontmatter field (and body discipline) naming exactly what an artifact
 overtakes — section-precise for Kamae addenda, decision-precise for hos. Supersession links
 are **bidirectional**: the new document names what it supersedes, the older carries a pointer
@@ -435,6 +496,15 @@ the four modalities (smoke test, interaction test, eval, dogfood). A passing ver
 stack is not validation. _(verification-practices 2.7 §2–3.)_
 
 _Plain: The two halves of quality — verification asks whether it was built right, validation asks whether the right thing was built and whether it's any good._
+
+**working-memory handoff** — The body of the **state memory** (Kamae 6): the dense material a
+fresh agent reads to reconstitute a build's whole state without opening code — sealed decisions,
+a per-ho log, do-not-rediscover traps, queues, and the practitioner's voice verbatim. Grows by
+event-gated accretion (light under active oversight, carrying the build when autonomous); the
+state-memory file that holds it is always present. Hot, non-canonical; kept honest by the
+freshness and **hot / cold** rules. _(cross-session-continuity 2.14 §4; continuity-discipline 5.3.)_
+
+_Plain: The detailed contents of the state-memory file that let the next session pick up exactly where the build left off._
 
 ---
 

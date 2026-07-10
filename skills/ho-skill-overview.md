@@ -21,7 +21,7 @@ The Ho System operates at two distinct scopes. Skills are organized accordingly.
 
 **Practitioner scope.** How the practitioner works, regardless of project. The operating discipline, the IDE configuration, the agent instructions, the practitioner's persistent preferences. Practitioner-scope artifacts travel with the practitioner across every project. Practitioner-scope skills are typically run once per practitioner-tool combination, not once per project.
 
-**Project scope.** What gets built. The Kamae chain — five documents that frame, sequence, and execute the work of a specific project. Project-scope skills are run for each new project, with each project getting its own complete chain.
+**Project scope.** What gets built. The Kamae chain — six links that frame, sequence, execute, and remember the work of a specific project. Project-scope skills are run for each new project, with each project getting its own complete chain.
 
 The two scopes meet at ho-00 (the project setup ho), where the practitioner's operating discipline gets instantiated in a specific repo's `pyproject.toml`, pre-commit hooks, folder structure, and so on. Beyond that meeting point, the scopes operate independently.
 

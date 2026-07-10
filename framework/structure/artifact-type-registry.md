@@ -300,7 +300,16 @@ forward-only's application: forward-only governs how *frozen* and *sealed* chang
 |---|---|---|
 | **living** | README (kamae-3), ho overview (kamae-4), seed (kamae-1, see note), the Basis of Design (2.11) | Edited in place as the project evolves. Overview edits are forward-looking only: dead numbers stay dead, checkpoint outcomes get recorded, historical entries aren't rewritten. "Small frequent updates beat large rare ones" (sharibako kamae-4). |
 | **frozen** | System design (kamae-2) | Not edited in place; changed only by a superseding addendum. Body preserved as-authored; a reader's-note pointer at the top names the addenda; the addenda carry the change (sharibako kamae-2 + 2.1 + 2.2). Thaw-able through the addendum mechanism, and still governs the build. |
-| **sealed** | Closed hos, sidequests, addenda, dogfood findings, devlogs/Reflect, executed ATs, propagation-ledger commits | Final — never changes. Typographical fixes only; anything that changes what the document *said* belongs in a new document. A future document may *respond* (forward-only), but nothing supersedes it in force — it is already history. |
+| **sealed** | Closed hos, sidequests, addenda, dogfood findings, devlogs/Reflect, executed ATs, propagation-ledger commits, sealed decisions | Final — the text never changes. Typographical fixes only; anything that changes what the document *said* belongs in a new document. Reopening carries **gravity**, never done casually: a sealed *record* is already history — a future document may *respond* (forward-only), nothing supersedes it in force; a sealed *decision* still governs, and its force yields only to a deliberate, recorded supersession. |
+
+**The hot posture — the state memory (Kamae 6).** The [[cross-session-continuity|state
+memory]] (framework/structure/cross-session-continuity.md) is *living* in form — edited in
+place, continuously — but unlike the living Kamae documents it is **non-canonical**: a HOT
+cache subordinate to the cold record, exempt from forward-only precisely because it is not the
+record (the cold record wins on conflict, 2.14 §6). One per project, `type: state-memory`,
+`status: living`, at the fixed path `ho-process/kamae-6-<project>-state-memory.md`, private by
+default. The sealed decisions it carries are *caches* of rulings banked cold at the moment of
+sealing — the container's temperature does not touch the decision's gravity.
 
 **Seed note (decided — merge-decisions D4).** The seed is a **living parti**, revised in
 place with dated revision notes: sharibako's kamae-1 was revised when kamae-2.1 landed,

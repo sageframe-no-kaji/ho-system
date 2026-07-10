@@ -37,7 +37,7 @@ project           session, with structure        extend
                   that adapts as you grow
 ```
 
-**[[kamae-project-framing|Kamae]]** (framework/structure/kamae-project-framing.md) is the planning phase. You produce the five-document Kamae chain — seed, system design, README, ho overview (the four framing documents), and the per-ho documents (Kamae 5) generated from them — turning a raw idea into a buildable plan and the bounded sessions that execute it.
+**[[kamae-project-framing|Kamae]]** (framework/structure/kamae-project-framing.md) is the planning phase. You produce the Kamae chain — seed, system design, README, ho overview (the four framing documents), the per-ho documents (Kamae 5) generated from them, and the State Memory (Kamae 6) that carries the build's state across sessions — turning a raw idea into a buildable plan, the bounded sessions that execute it, and the memory that keeps them oriented.
 
 **The ho sequence** is the build. Each ho is a bounded session (~2 hours in early stages, flexible later) that produces a real deliverable — working code, passing tests, a deployed service. Hos are numbered, committed to version control, and followed by structured reflection.
 

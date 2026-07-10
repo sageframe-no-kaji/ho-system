@@ -19,6 +19,61 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-09 — cross-session continuity doctrine (ho-10)
+
+### Extend the Kamae chain to six links — State Memory (Kamae 6) — kind: changed
+
+The Kamae chain gains a sixth link: the **State Memory** (`kamae-project-framing.md` §2.7), a
+per-project *living* cross-session memory at a fixed path
+(`ho-process/kamae-6-<project>-state-memory.md`), always present, read first by every returning
+session to get back into stance. All six links are now framed on the **same footing** in two
+roles — K1–K4 **preparation** (the up-front framing ladder), K5–K6 **action-time** (K5 the
+pre-action document per session, K6 the record of action) — with commitment disambiguated by
+scale: the project-scale ladder is K1–K4, K5 commits at session scale, K6 records. Kamae's own
+definition widens accordingly: getting *and staying* in stance. The chain intro, §1 definition,
+§2 header, §2.6 filename table/pattern, §3 count and closing note, and the `Kamae` glossary
+entry update accordingly; the artifact-type registry (2.9 §6) registers `type: state-memory`,
+names the **hot** posture (living *and* non-canonical), and sharpens `sealed` to
+gravity-of-reopening. Grounded in the pālana pilot (5.3); resolved from the practitioner
+rulings recorded in ho-10 (D10-8, refined by the pre-commit cross-model review in D10-9) — the
+state-summary's home *is* the rule, so it gets a fixed, first-class location rather than a
+negotiable one.
+
+### Add the cross-session continuity doctrine (2.14) — kind: added
+
+New Layer-2 structure doc: `framework/structure/cross-session-continuity.md`, indexed as
+**2.14**. Specifies the **explicit continuity** — the State Memory (K6), against the *implicit*
+continuity the whole cold record already carries: the **universal state-summary block**
+(COMPLETED / NEXT / ACTION ITEMS or BLOCKS / PROJECT LIFECYCLE, at every ho close and session
+end — a fixed parseable hook surface) pinned at the top, and the **working-memory body**
+beneath it, grown by **event-gated accretion** (sections switch on as the build first needs
+them; only the per-ho log + voice + heartbeat tier is mode-gated, for unattended builds — the
+mode the pālana pilot proved). Disciplines that keep the mutable file honest: freshness (update
+at every real pause), hot/cold authority (K6 is non-canonical and holds no original authority —
+sealed decisions bank cold at the moment of sealing, the K6 copy a cache; the cold record —
+git, Reflect, build record — wins), and graduated-and-preserving compaction (never delete a
+lesson; compact at phase close and on a ~25–30 KB session-start tripwire). The file is
+**private by default**, raw-register, published only by closeout election; versioning follows
+the repo (tracked in a private repo; a nested private `ho-process/` repo under a public one —
+recommended; unversioned as the floor). Lands alongside: a session-end state-summary rule in
+the operating discipline (8.1, both the repo copy and the installed `~/.claude` copy); the K4
+**build-record convention** (kamae-project-framing §2.4); and seven glossary terms (1.3).
+Executes **IDEA-011** via **ho-10**; reviewed pre-commit by a cross-model pass (D10-9).
+
+## 2026-07-09 — pālana continuity practice report
+
+### Add the pālana pilot continuity discipline (5.3) — kind: added
+
+New Layer-5 example: `examples/palana-autonomous/continuity-discipline.md`, indexed as
+**5.3**. A practice report from the first *autonomous* Ho build — how it maintained
+cross-session continuity with no human carrying the thread, as a repeatable four-layer
+process (working-memory handoff file, public build-record log on K4, per-ho Reflect, an
+ntfy heartbeat). Documents where the pilot conforms to, extends, and invents beyond the
+framework's document-as-memory model, and proposes four additions for autonomous /
+long-running builds (a named working-memory artifact, a K4 build-record convention, an
+alerting heartbeat, the hot/cold finding lifecycle). Evidence, not doctrine — nothing
+here supersedes a structure document. `examples/README.md` updated.
+
 ## 2026-07-03 — INDEX layers and hygiene (ho-09)
 
 ### Reorganize the INDEX layer model — kind: changed
