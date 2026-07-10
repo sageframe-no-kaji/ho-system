@@ -153,6 +153,7 @@ Concrete instances of the methodology in practice.
 | 5.1 | [Learning Process Reflections](examples/learning-process.md) | Post-project learning reflections |
 | 5.2 | [Kanyō Pilot](examples/kanyo-pilot/README.md) | Production falcon detection system — the founding project |
 | 5.3 | [pālana Pilot — Continuity Discipline](examples/palana-autonomous/continuity-discipline.md) | The first autonomous build's four-layer continuity system, as a repeatable process + proposed framework additions |
+| 5.4 | [sage-zfs — Encoded Environment Portability](examples/sage-zfs-codex/encoded-environment-portability.md) | The first Ho build on a non-Claude agent — one AGENTS.md carried the discipline across the vendor boundary; evaluation + practitioner testimony |
 
 ---
 

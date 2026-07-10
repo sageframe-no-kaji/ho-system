@@ -19,6 +19,21 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-10 — sage-zfs portability practice report
+
+### Add the encoded-environment portability report (5.4) — kind: added
+
+New Layer-5 example: `examples/sage-zfs-codex/encoded-environment-portability.md`, indexed as
+**5.4**. A practice report from the first Ho System build run on a non-Claude agent — sage-zfs,
+handed to Codex (gpt-5.6-sol) with a single repo-root `AGENTS.md` as the entire adaptation:
+corpus pointers, skills read as procedure documents, the distilled operating rules, and the
+project's hard limits. The run produced a conformant Kamae chain (scaffold, 26-ho K4, K6 with
+verbatim block), a correctly executed sealed-decision banking on first contact, and a declared
+compression for the pre-K4 scaffold. Includes the cross-model evaluation findings, practitioner
+testimony on reading the new model, and two proposals: bless the AGENTS.md pattern as a
+scaffolder-emitted template, and name the cross-vendor axis in model choice. Evidence, not
+doctrine — one run, chain phase only. `examples/README.md` updated.
+
 ## 2026-07-09 — cross-session continuity doctrine (ho-10)
 
 ### Skills and templates scaffold and enforce K6 and the state-summary block (ho-11) — kind: changed
