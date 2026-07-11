@@ -1,0 +1,78 @@
+{
+  "keisaku": 1,
+  "works": [
+    {
+      "id": "ho-system",
+      "name": "Ho System",
+      "native_script": "歩",
+      "native_translation": "Step",
+      "hero": "Architectural authority held. Implementation partnered.",
+      "importance": 9,
+      "featured": true,
+      "group": "methodology",
+      "themes": [
+        "craft",
+        "agency"
+      ],
+      "sort_order_within_group": 10,
+      "tags": [
+        "methodology",
+        "published",
+        "human-ai-collaboration",
+        "shu-ha-ri",
+        "open-source"
+      ],
+      "media": [
+        "methodology"
+      ],
+      "status": "shipped",
+      "repo": "git@github-no-kaji:sageframe-no-kaji/ho-system.git",
+      "deployment": [
+        {
+          "label": "Methodology site",
+          "url": "https://atmarcus.net/ho"
+        },
+        {
+          "label": "GitHub repo",
+          "url": "https://github.com/sageframe-no-kaji/ho-system"
+        }
+      ],
+      "created": "2026-01-01",
+      "last_updated": "2026-07-10",
+      "conceived": "2025-12-12",
+      "short_description": "Published open methodology for human-AI collaborative software development in which the human practitioner maintains full architectural authority while using AI as an implementation partner. The core unit is a ho — a bounded ~2-hour session producing something real, connecting to the project arc via commit hash, ending with structured reflection. Practitioners progress through Shu-Ha-Ri stages; tiered understanding (Black Box, Functional, Deep) gives an honest frame for tracking what's understood versus delegated.",
+      "substantive_description": [
+        "The dominant frame for AI-assisted development assumes the model leads. Vibe coding names the position with unembarrassed clarity: the human gestures, the model generates, the human accepts or rejects. The Ho System refuses the position.",
+        "It treats AI as an implementation partner inside a discipline the human owns — architectural authority held, structural decisions made consciously, every session bounded, every artifact reviewed. Eight production systems shipped under it, including a computer vision platform at Harvard and a ZFS backup orchestrator with 278 tests at 99% coverage.",
+        "The deeper claim is about agency in the age of capable models. Capable models tempt the practitioner to delegate the parts of the work that build the practitioner's judgment. The Ho System is the operational answer to that temptation: a methodology that lets you ship without becoming someone who cannot ship alone."
+      ],
+      "images": {
+        "gallery": []
+      },
+      "state": {
+        "stage": "production",
+        "last": "**ho-10 CLOSED** (2026-07-10: Reflect filled, status complete, K4 build-record tail created with its first two entries). Full arc shipped and pushed: 2.14 doctrine + six-link chain (`b14d7da`, `38f8762`, after D10-8/D10-9 review + DI audit), ho-11 skills embed (`02de575`), template 3.10 autonomous kickoff (`cbc60e8`, draft — IDEA-012 tracks validation). hosystem deployed (six-link chain, K6 interim sumi, session-15 prompt raised); ho-actually propagated + repaired (7 nodes, DOTALL ingest, frontmatter preservation, env fixed); K6 fleet seeded 20/20 repos. **keisaku staged**: repo `sageframe-no-kaji/keisaku` (private, `4da7e43`), K1 seated, `prompts/kickoff.md` filled, ntfy topic `sageframe-keisaku-build`.",
+        "next": "Practitioner: fire keisaku (3.10's first validating run — subscribe to the ntfy topic first). New since last block: **example 5.4 pushed (`a0cb57d`)** — sage-zfs/Codex portability report (first non-Claude Ho build; chain conformant; sealed-decision protocol executed by Codex on first contact); sage-zfs itself is chain-complete, evaluated, cleared to ho-01 under Codex. 5.4 carries two proposals for a future ho: AGENTS.md as a scaffolder-emitted template (bi-vendor repos by default) + the cross-vendor axis in model choice.",
+        "as_of": "2026-07-10"
+      },
+      "_keisaku": {
+        "generated_at": "2026-07-10T23:58:14",
+        "generator_version": "1",
+        "sources": {
+          "readme": "README.md",
+          "contract": "ho-process/kamae-6-ho-system-state-memory.md"
+        },
+        "derived_defaults": {
+          "id": "ho-system",
+          "name": "The Ho System (歩)",
+          "media": [
+            "software"
+          ],
+          "status": "shipped",
+          "created": "2026-02-09"
+        },
+        "contract_issues": []
+      }
+    }
+  ]
+}
