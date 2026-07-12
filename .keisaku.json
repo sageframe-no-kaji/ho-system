@@ -38,7 +38,7 @@
         }
       ],
       "created": "2026-01-01",
-      "last_updated": "2026-07-10",
+      "last_updated": "2026-07-12",
       "conceived": "2025-12-12",
       "short_description": "Published open methodology for human-AI collaborative software development in which the human practitioner maintains full architectural authority while using AI as an implementation partner. The core unit is a ho — a bounded ~2-hour session producing something real, connecting to the project arc via commit hash, ending with structured reflection. Practitioners progress through Shu-Ha-Ri stages; tiered understanding (Black Box, Functional, Deep) gives an honest frame for tracking what's understood versus delegated.",
       "substantive_description": [
@@ -51,12 +51,12 @@
       },
       "state": {
         "stage": "production",
-        "last": "**ho-10 CLOSED** (2026-07-10: Reflect filled, status complete, K4 build-record tail created with its first two entries). Full arc shipped and pushed: 2.14 doctrine + six-link chain (`b14d7da`, `38f8762`, after D10-8/D10-9 review + DI audit), ho-11 skills embed (`02de575`), template 3.10 autonomous kickoff (`cbc60e8`, draft — IDEA-012 tracks validation). hosystem deployed (six-link chain, K6 interim sumi, session-15 prompt raised); ho-actually propagated + repaired (7 nodes, DOTALL ingest, frontmatter preservation, env fixed); K6 fleet seeded 20/20 repos. **keisaku staged**: repo `sageframe-no-kaji/keisaku` (private, `4da7e43`), K1 seated, `prompts/kickoff.md` filled, ntfy topic `sageframe-keisaku-build`.",
-        "next": "Practitioner: fire keisaku (3.10's first validating run — subscribe to the ntfy topic first). New since last block: **example 5.4 pushed (`a0cb57d`)** — sage-zfs/Codex portability report (first non-Claude Ho build; chain conformant; sealed-decision protocol executed by Codex on first contact); sage-zfs itself is chain-complete, evaluated, cleared to ho-01 under Codex. 5.4 carries two proposals for a future ho: AGENTS.md as a scaffolder-emitted template (bi-vendor repos by default) + the cross-vendor axis in model choice.",
-        "as_of": "2026-07-10"
+        "last": "**ho-12 OPENED** (2026-07-11, the ho-status companion). Authored the ho + 5 agent-task specs (private). Design settled with the practitioner: a *derived* progress roster (not a fifth hand-maintained source) — one source (ho frontmatter `title`/`description`/`status` + K4 phase order) → three renders (a `ho-status.json` feed, a `ho-status.md` glance with a single `state` enum → Doc×Done glyphs, and a cross-project HTML dashboard, ho-13). Root `metadata/` zone holds `keisaku.json` + `ho-status.json` + `ho-status.md`; visibility inherited from the repo's ho-process posture (gitignore `metadata/` iff ho work is private); the dashboard reads local working trees. keisaku stays a co-located light cache, coordinated via a handoff prompt (relocate + summary passthrough). **Two framework commits landed** (branch `ho-12-ho-status-companion`): `654d9b2` — `title`/`description` required practitioner-track frontmatter (ho-structure §5.1, design 3.9, K5 skill repo + installed); `249df89` (AT-02) — the ho-status doctrine (kamae-project-framing §2.4 with json schema + `state` enum + md render + visibility posture; `metadata/` zone §2.6; refresh in cross-session-continuity §3; glossary; CHANGELOG). **AT-04 done** (local): keisaku handoff prompt at `ho-process/agent-tasks/keisaku-metadata-handoff.md`. Prior arc cold-banked: ho-10/11 closed, 2.14 shipped, K6 fleet 20/20, keisaku staged.",
+        "next": "Two tasks remain on ho-12: **AT-03** (skill wiring — K5 close gains roster-regen in SKILL.md + the four shape closes; K4 overview notes the companion; scaffolder seeds root `metadata/` + gitignores it when ho-work is private; sync all installed `~/.claude` copies, ho-11 insertion precedent), then **AT-05** (backfill title/description onto the 13 hos + produce ho-system's `metadata/ho-status.{json,md}` + add `metadata/` to `.gitignore`). Then close ho-12, add its K4 entry, PR the branch. ho-13 = generator + dashboard; ho-14 = fleet rollout (Sonnet titles, Haiku generation).",
+        "as_of": "2026-07-12"
       },
       "_keisaku": {
-        "generated_at": "2026-07-11T13:34:15",
+        "generated_at": "2026-07-12T10:36:23",
         "generator_version": "1",
         "sources": {
           "readme": "README.md",
