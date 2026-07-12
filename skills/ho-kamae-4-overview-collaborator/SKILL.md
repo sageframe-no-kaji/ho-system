@@ -167,6 +167,8 @@ When you generate the overview, add the section header and one line explaining t
 
 Do not populate the record with entries yourself; it starts empty and accretes as hos close.
 
+The build record has a companion the overview does not author but should know about: the **ho-status roster** (`metadata/ho-status.md` + `metadata/ho-status.json`, `framework/structure/kamae-project-framing.md` §2.4). Where the build record is a *log* — what happened, in order — the roster is a *standing snapshot* of where every ho stands right now, derived from ho frontmatter over this overview's phase order. It is generated, not hand-authored, and refreshed on ho close (§2.4). The K4 overview is the roster's phase-order source; it does not maintain the roster itself.
+
 ### 10. Draft the document.
 
 Use the structure below. Keep frontmatter (this is an internal working document; it tracks the build). Write phase paragraphs and ho narratives in the practitioner's voice. Render decisions inline. Mark replan checkpoints. Identify splits. Add release tags. End with the empty `## Build record` section.
