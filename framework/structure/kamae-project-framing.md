@@ -203,6 +203,37 @@ The Ho Overview welcomes the System Design's first-pass ho sequence and deferred
 
 **The build record.** The Ho Overview is a *forward* plan — the map, not the territory. For builds that want a running account of what actually happened, an **append-only build-record log** may be grafted onto the *tail* of the overview: one entry per ho close and per replan checkpoint, added below the forward plan, never rewritten. The forward plan above stays *living-continuous* (statuses flip, hos insert); the record below is *cold* and append-only — it obeys forward-only like any closed record. Each entry takes the shape of a **state-summary block** — COMPLETED / NEXT / ACTION ITEMS or BLOCKS / PROJECT LIFECYCLE (`kamae | dev | beta | production`) — with as much surrounding prose as the moment warrants (the question a checkpoint asked, the evidence, the practitioner's ruling). This turns K4 from a pure plan into a plan with its own history grown onto it, and it is the practitioner-facing (public, canonical) half of cross-session continuity: the [[cross-session-continuity|working-memory handoff]] (framework/structure/cross-session-continuity.md) is the agent's private *hot* cache, while the build record is the human's *cold* ledger. Originated in the pālana pilot ([[continuity-discipline|5.3]] (examples/palana-autonomous/continuity-discipline.md)); its continuity role is specified in [[cross-session-continuity|Cross-Session Continuity]] (framework/structure/cross-session-continuity.md).
 
+**The ho-status companion (the roster).** Where the build record is a *log* — what happened, in order — the ho-status companion is a *roster*: a standing snapshot of every phase and ho, showing where each one stands right now. Log answers "what happened when"; roster answers "where does everything stand." It is **derived, not authored** — a render of ho frontmatter (`title`, `description`, `status`, `closed`) over the overview's phase order, never a hand-maintained second source, since a hand-kept table drifts from the frontmatter it duplicates. One source, three renders: a machine `ho-status.json` feed, an in-repo `ho-status.md` glance, and a cross-project HTML dashboard.
+
+The artifacts live in a per-repo **`metadata/` zone at the repo root** — the home for derived machine state, shared with the keisaku cache. Its **visibility is inherited**: a repo that keeps its ho work private (gitignores `ho-process/`) gitignores `metadata/` too — a full roster of ho titles is at least as sensitive as the hos — while a repo that tracks its ho work tracks its roster. The cross-project dashboard reads local working trees, so it aggregates every repo regardless of tracking.
+
+`ho-status.json` is the feed:
+
+```json
+{
+  "schema": "ho-status/1",
+  "project": "<slug>",
+  "generated_at": null,
+  "source": { "overview": "ho-process/kamae-4-<project>-ho-overview.md", "hos_dir": "ho-process/hos/" },
+  "summary": { "hos": 0, "drafted": 0, "complete": 0, "planned": 0 },
+  "phases": [
+    {
+      "name": "<phase name>", "release": "v0.1", "released": true,
+      "hos": [
+        { "number": "ho-00", "title": "<headline>", "description": "<one sentence>",
+          "state": "complete", "completed": "2026-07-02", "superseded_by": null, "notes": "" }
+      ]
+    }
+  ]
+}
+```
+
+The canonical per-ho field is a single `state` enum — `planned` (named in the overview, no document yet) · `drafted` (document exists, work unfinished) · `complete` · `superseded` · `retired` (dead number, no work lands here) — mapping ho frontmatter `status:` plus the two overview-derived cases (planned/retired). `summary` is the light two-number block the keisaku cache reads; the full roster stays in this file.
+
+`ho-status.md` is the glance: grouped by the overview's phases with release tags in the phase headers, one row per ho — `Ho | Title | What it is | Doc | Done | Completed | Notes`, where `Doc` (is the Kamae-5 document drafted) and `Done` (is the work complete) are ✅/❌/— glyphs derived from `state`. A `GENERATED — do not hand-edit` header names the sources; a footer records the last refresh.
+
+The roster is regenerated at every State Memory write (§2.7), if it needs updating — the same cadence as the state-summary block, since a ho close is a K6 write; the cold record wins on conflict. Its refresh discipline is specified with the write cadence in [[cross-session-continuity|Cross-Session Continuity]] (framework/structure/cross-session-continuity.md).
+
 ---
 
 ### 2.5 Per-Ho Documents (Kamae 5)
@@ -256,6 +287,8 @@ The single-instance Kamae documents live in the project repo under `ho-process/`
 **Per-ho documents** (the Kamae 5 phase) live under `ho-process/hos/` and follow the [[ho-structure|ho filename convention]] (framework/structure/ho-structure.md §3.6): `ho-<number>-<slug>.md`. **Child agent-task specs** live under `ho-process/agent-tasks/` and follow `Ho-<NN>-AT-<NN>.md` (see [[ho-task-decomposition|Ho Task Decomposition]] (framework/structure/ho-task-decomposition.md) §4.2).
 
 **Project-specific layers** also live under `ho-process/` as the project needs them: `notes/` (dated pre-ho findings a later ho cites via `builds-on:`), `learning/` (post-execution learning walkthroughs — see [[artifact-type-registry|Artifact Type Registry]] (framework/structure/artifact-type-registry.md) §4.1), and `ideas.md` (the **idea log** — the forward-only backlog of what the project might do next; convention in [[idea-log|The Idea Log]] (framework/structure/idea-log.md) §2.13). These are optional and project-shaped; not every project carries all three.
+
+**Derived machine state** lives in a **`metadata/` zone at the repo root** — *not* under `ho-process/`, because a repo may keep `ho-process/` private while still publishing a light state cache. It holds `ho-status.json` + `ho-status.md` (the ho-status companion, §2.4) and `keisaku.json` (the cross-project cache). The zone is generated, never hand-edited; its tracking is inherited from the repo's ho-work posture (gitignored when `ho-process/` is private). A cross-project dashboard globs `*/metadata/*.json` across working trees.
 
 The `kamae-N-` prefix exists because these documents are read together as a chain — directory sort order then reflects the conceptual order, and the prefix immediately identifies which Kamae document an arbitrary file is. The README is the only exception, and it is exempted deliberately: it must be discoverable as `README.md` by every tool, host, and reader that touches the repo.
 
