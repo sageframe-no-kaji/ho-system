@@ -3,6 +3,7 @@ private/
 prompts/
 skills/archive/
 ho-process/
+metadata/
 
 # Obsidian vault files
 .obsidian/
