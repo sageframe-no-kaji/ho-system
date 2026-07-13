@@ -75,7 +75,9 @@ For replan checkpoints: **Evaluation** — what was built vs what was planned, w
 Even an orientation ho ends a session — so it closes the same way: flip `status: complete` and
 write the state-summary block to the project's K6
 (`ho-process/kamae-6-<project>-state-memory.md`, §3 of cross-session-continuity). If this ho is
-tracked in K4's build record, append its entry too (§2.4 of kamae-project-framing). The block,
+tracked in K4's build record, append its entry too (§2.4 of kamae-project-framing). Then refresh
+the ho-status roster (`metadata/ho-status.md` + `metadata/ho-status.json`) from frontmatter if the
+ho's `state` changed — the same trigger as the block (§2.4 of kamae-project-framing). The block,
 verbatim labels and order:
 
 **STATE-SUMMARY**
@@ -190,7 +192,9 @@ agent-tasks:
 Closing = fill this Reflect + flip `status: complete` + write the state-summary block to the
 project's K6 (`ho-process/kamae-6-<project>-state-memory.md`, §3 of cross-session-continuity) +
 append a build-record entry to K4 (`ho-process/kamae-4-<project>-ho-overview.md`, §2.4 of
-kamae-project-framing). The block, verbatim labels and order:
+kamae-project-framing) + refresh the ho-status roster (`metadata/ho-status.md` +
+`metadata/ho-status.json`) from frontmatter if the ho's `state` changed (same trigger as the
+block, §2.4 of kamae-project-framing). The block, verbatim labels and order:
 
 **STATE-SUMMARY**
 - **COMPLETED** — <what this ho finished>
@@ -275,7 +279,9 @@ If agent tasks: → `ho-process/agent-tasks/Ho-NN-AT-MM.md`
 Closing = fill Results + flip `status: complete` + write the state-summary block to the
 project's K6 (`ho-process/kamae-6-<project>-state-memory.md`, §3 of cross-session-continuity) +
 append a build-record entry to K4 (`ho-process/kamae-4-<project>-ho-overview.md`, §2.4 of
-kamae-project-framing). The block, verbatim labels and order:
+kamae-project-framing) + refresh the ho-status roster (`metadata/ho-status.md` +
+`metadata/ho-status.json`) from frontmatter if the ho's `state` changed (same trigger as the
+block, §2.4 of kamae-project-framing). The block, verbatim labels and order:
 
 **STATE-SUMMARY**
 - **COMPLETED** — <what this ho finished>
@@ -343,6 +349,8 @@ All shapes share the frontmatter shape. Required fields:
 - `ho` — number, zero-padded for ho-00 (`00`, not `0`)
 - `kamae` — always `5` (per-ho documents are Kamae 5)
 - `shape` — `orientation`, `ha`, `ri`, or `shu`
+- `title` — the ho's headline (the work, not the lesson)
+- `description` — one sentence stating what the ho is; the ho-status roster reads it (see kamae-project-framing)
 - `builds-on` — list of upstream documents this ho depends on
 
 Optional fields:

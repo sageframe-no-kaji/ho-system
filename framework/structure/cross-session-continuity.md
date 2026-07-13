@@ -118,6 +118,14 @@ deliberately kept off this field to avoid that collision:
 - **As the shape of each build-record entry** (§8) — the build record is a chronological run
   of state-summary blocks with prose around them.
 
+Alongside the block, the **ho-status roster** — K4's other companion (the roster to the build
+record's log; [[kamae-project-framing|Kamae Project Framing]] (framework/structure/kamae-project-framing.md)
+§2.4) — is regenerated from ho frontmatter at every block write, *if it needs updating*: a ho
+close changes a ho's `state`, so the same trigger that refreshes the block refreshes the roster.
+It is a derived cache like the block itself — the cold record (git, per-ho Reflect, the build
+record) wins on conflict. Until a project has a generator, the agent regenerates the roster by
+hand from frontmatter; the target is script-generated, so it never drifts.
+
 The block is the universal minimum because it survives everywhere: even a build whose State
 Memory is nothing more than its spine — no working-memory body, no alert channel, a fully
 present human — still benefits from ending each session with *completed / next / blocks /

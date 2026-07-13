@@ -299,6 +299,8 @@ Additional header fields vary by stage:
 
 The `Status` field's terminal values are `complete` and `superseded` — see §5.4 for when a ho flips to each.
 
+**Required frontmatter: `title` and `description`.** Practitioner-track hos — those authored through the Kamae chain, carrying YAML frontmatter — require two machine-read fields: `title`, the ho's headline (the work, not the lesson), and `description`, one sentence stating what the ho is. They are the source the ho-status roster reads for its Title and "What it is" columns (see the ho-status companion in kamae-project-framing). The learner-track templates (shu, ha) express the same pair as the document's H1 title and its one-sentence subtitle; the frontmatter fields are the practitioner-track form of that long-standing convention, made explicit so it can be read by tooling. This is the single convention both template homes follow.
+
 ### 5.2 The Body
 
 Shu: Prerequisites → Parts → Completion Checklist → Understanding Verification → Devlog Ha: Context → Phase 1 (Think) → Phase 2 (Execute) → Phase 3 (Reflect) → Devlog Ri: Problem → Solution → What Changed → Results → Notes

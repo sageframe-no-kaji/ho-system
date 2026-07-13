@@ -31,6 +31,8 @@ project:
 ho: ""
 kamae: 5
 shape: ri            # landings are ri; session-batch wrappers may be ha
+title: <the ho's headline>
+description: <one sentence — what this ho is>
 builds-on:
   - design/basis-of-design.html
   - <the design sessions this ho consumes or produces>

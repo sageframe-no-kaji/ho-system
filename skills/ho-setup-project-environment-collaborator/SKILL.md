@@ -140,8 +140,10 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
    mkdir -p [project-path]/src/[package]/utils \
              [project-path]/tests \
              [project-path]/docs \
-             [project-path]/ho-process/hos
+             [project-path]/ho-process/hos \
+             [project-path]/metadata
    ```
+   `metadata/` at the repo root is the derived-machine-state zone (`framework/structure/kamae-project-framing.md` §2.4, §2.6) — home for the ho-status roster and the keisaku cache. It is generated, never hand-edited.
 2. **`pyproject.toml`** from `~/.claude/templates/pyproject.baseline.toml`. Replace placeholders:
    - `[project-name]` → actual project name
    - `[package-name]` → snake_case package
@@ -159,6 +161,12 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
    > — a public repo gitignores `ho-process/` (and versions it as a nested private repo if the
    > practitioner took that offer); a private repo tracks `ho-process/`, so the gitignore leaves
    > it in.
+   >
+   > The root `metadata/` zone inherits the same posture — a full ho-status roster is at least
+   > as sensitive as the hos it lists (`framework/structure/kamae-project-framing.md` §2.4, §2.6).
+   > Gitignore `metadata/` together with `ho-process/` when the ho work is private; track it
+   > alongside `ho-process/` when the ho work is tracked. The cross-project dashboard reads
+   > working trees, so it aggregates the roster regardless of tracking.
 
 5. **`.env.example`** from `~/.claude/templates/env.example.baseline`. Replace `MYPROJ_` prefix with the project's actual env var prefix (often the package name uppercased).
 6. **`CLAUDE.md`** from `~/.claude/templates/project-CLAUDE.template.md`. Replace placeholders:
@@ -203,9 +211,21 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
    - **PROJECT LIFECYCLE** — kamae.
    ```
    The body grows beneath the block by event-gated accretion only as the build needs it (§4.2) — nothing more is scaffolded now.
-8. **`src/[package]/__init__.py`**—empty file with package docstring.
-9. **`tests/test_smoke.py`**—one trivial passing test so pytest has something to run and the verification stack can prove itself before any real code is written.
-10. **`README.md`**—one-line description plus a "Setup" section showing the practitioner's commands (uv sync, pre-commit install, pytest). The practitioner expands later.
+8. **`metadata/ho-status.md`** and **`metadata/ho-status.json`**—the ho-status roster, seeded empty at init so the fixed path exists from day one (`framework/structure/kamae-project-framing.md` §2.4). The `.md` opens with a `GENERATED — do not hand-edit` header naming its sources (the K4 overview + `ho-process/hos/`) and no rows; the `.json` carries the `ho-status/1` schema envelope with empty `phases` and a zeroed `summary`:
+   ```json
+   {
+     "schema": "ho-status/1",
+     "project": "[project]",
+     "generated_at": null,
+     "source": { "overview": "ho-process/kamae-4-[project]-ho-overview.md", "hos_dir": "ho-process/hos/" },
+     "summary": { "hos": 0, "drafted": 0, "complete": 0, "planned": 0 },
+     "phases": []
+   }
+   ```
+   Both are derived artifacts, regenerated on ho close (there is no generator yet, so early refreshes are by hand). Their tracking follows the `ho-process/` posture chosen in Phase 1 — gitignored together when the ho work is private (step 4).
+9. **`src/[package]/__init__.py`**—empty file with package docstring.
+10. **`tests/test_smoke.py`**—one trivial passing test so pytest has something to run and the verification stack can prove itself before any real code is written.
+11. **`README.md`**—one-line description plus a "Setup" section showing the practitioner's commands (uv sync, pre-commit install, pytest). The practitioner expands later.
 
 For a web static site, the file list shifts:
 

@@ -203,16 +203,19 @@ If no decomposition: the Execute phase is a single agent conversation framed by 
 
 Write the per-ho document at `ho-process/hos/ho-NN-<slug>.md`. Slug is short and descriptive (e.g., `ho-00-orientation.md`, `ho-01-schema-and-parser.md`).
 
+Every authored ho carries `title` (the ho's headline — the work, not the lesson) and `description` (one sentence stating what the ho is) in its frontmatter. Both are required (see `references/ho-shape-templates.md` §Frontmatter Conventions); the ho-status roster reads them, so they are machine-facing fields, not prose to scrape.
+
 If dandori spec children emerged, generate them at `ho-process/agent-tasks/Ho-NN-AT-MM.md`. Each spec is its own file. Run them against the format checklist in `dandori/FORMAT.md` before declaring ready.
 
-**Write the ho-close discipline into the document.** Every per-ho document's close/Reflect section states what closing the ho requires — so the executing session doesn't have to remember it. Closing a ho is four moves, together:
+**Write the ho-close discipline into the document.** Every per-ho document's close/Reflect section states what closing the ho requires — so the executing session doesn't have to remember it. Closing a ho is five moves, together:
 
 1. **Fill the Reflect section** (ha) / **Results** (ri) with the post-execution findings.
 2. **Flip `status:` to `complete`** in the frontmatter.
 3. **Write the state-summary block to the project's K6** — `ho-process/kamae-6-<project>-state-memory.md`, refreshing the block at the top (fixed labels, fixed order: `COMPLETED / NEXT / ACTION ITEMS or BLOCKS / PROJECT LIFECYCLE`). This is the operating discipline's mandatory session-end rule; a ho close is also a session end. See `framework/structure/cross-session-continuity.md` §3, §5.
 4. **Append a build-record entry to K4** — one state-summary-shaped entry on the tail of `ho-process/kamae-4-<project>-ho-overview.md` (`framework/structure/kamae-project-framing.md` §2.4). Cold, append-only.
+5. **Refresh the ho-status roster** — regenerate `metadata/ho-status.md` + `metadata/ho-status.json` from ho frontmatter if the ho's `state` changed. Same trigger as the K6 block (a ho close changes a `state`); the roster is derived, gitignored with `ho-process/` when the ho work is private. Until the project has a generator, refresh it by hand. See `framework/structure/kamae-project-framing.md` §2.4 and `framework/structure/cross-session-continuity.md`.
 
-The shape templates in `references/ho-shape-templates.md` carry this in each shape's close; the framework templates (`framework/templates/{ha,ri,shu}-ho-template.md`) show the block once. Make sure the document you generate states the four moves in its close, not just "fill in Reflect."
+The shape templates in `references/ho-shape-templates.md` carry this in each shape's close; the framework templates (`framework/templates/{ha,ri,shu}-ho-template.md`) show the block once. Make sure the document you generate states the five moves in its close, not just "fill in Reflect."
 
 ### 9. Surface what's still open.
 
@@ -280,4 +283,4 @@ Every per-ho document should be readable end-to-end by a practitioner — or a f
 
 If a per-ho document needs the practitioner to also have the ho-overview open to understand what's happening, it's too sparse. If it tries to reproduce what the ho-overview already says, it's wandering into the wrong territory. The per-ho document frames the bounded scope for one session. Keep it bounded.
 
-And every per-ho document names how it closes. The document opens the session's bounded scope; its close/Reflect section states the four moves that end it — fill Reflect (or Results), flip `status: complete`, write the state-summary block to the project's K6, append the build-record entry to K4 (see step 8, `Generate the document`). A ho whose close says only "fill in Reflect" leaves the continuity work implicit, and implicit continuity work is the work that gets skipped.
+And every per-ho document names how it closes. The document opens the session's bounded scope; its close/Reflect section states the five moves that end it — fill Reflect (or Results), flip `status: complete`, write the state-summary block to the project's K6, append the build-record entry to K4, refresh the ho-status roster (see step 8, `Generate the document`). A ho whose close says only "fill in Reflect" leaves the continuity work implicit, and implicit continuity work is the work that gets skipped.

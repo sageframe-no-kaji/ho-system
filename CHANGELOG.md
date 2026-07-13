@@ -19,6 +19,24 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-07-11 — ho-status companion (ho-12)
+
+### The K4 ho-status roster + required title/description frontmatter — kind: added
+
+A new derived K4 companion — the **ho-status** roster, the counterpart to the build record's log
+(kamae-project-framing 2.1 §2.4). One source (ho frontmatter `title`/`description`/`status` over
+the overview's phase order) renders three ways: a `ho-status.json` feed, an in-repo `ho-status.md`
+glance (one row per ho, Doc×Done from a single `state` enum), and a cross-project HTML dashboard.
+The artifacts live in a repo-root **`metadata/` zone** — shared with the keisaku cache — whose
+tracking is inherited from the repo's ho-work posture (gitignored when `ho-process/` is private).
+`title` + `description` become **required practitioner-track ho frontmatter** (ho-structure §5.1,
+the K5 authoring skill, design template 3.9); the learner-track templates keep the same pair as
+H1 title + subtitle. Refresh discipline folded into cross-session-continuity 2.14 §3 (regenerate
+on every state-summary write; cold record wins). Glossary headword added. Generator + dashboard
+deferred to ho-13; fleet rollout to ho-14. Driver: the practitioner needs a glance-level progress
+roster (hand-built one for sutra); keisaku is coordinated as a co-located cache via handoff, not
+merged.
+
 ## 2026-07-10 — Kamae 2/3 glossary headwords
 
 ### Glossary gains system design (Kamae 2) and README (Kamae 3) — kind: changed

@@ -200,6 +200,16 @@ documents, `hos/`, `agent-tasks/`, and any project-specific layers (`learning/`,
 
 _Plain: The project folder that holds the methodology's working artifacts — the framing documents, the session records, and the task specs._
 
+**ho-status** — The K4 **ho overview**'s companion *roster*: a derived standing snapshot of
+every phase and ho and where each stands — the counterpart to the **build record**'s log.
+Rendered from ho frontmatter (`title`, `description`, `status`) over the overview's phase order
+into three forms — a `ho-status.json` feed, an in-repo `ho-status.md` glance, and a cross-project
+dashboard — living in the repo-root `metadata/` zone and regenerated on every state-summary write.
+Derived, never hand-authored; the cold record wins on conflict.
+_(kamae-project-framing 2.1 §2.4; cross-session-continuity 2.14 §3.)_
+
+_Plain: An auto-generated table showing, at a glance, every step of a project and whether it's drafted, done, or still to come._
+
 **hot / cold** — The two temperatures of a build's memory. **hot** — mutable, non-canonical,
 overwritten every pause: the working-memory handoff file, its live queues and `NEXT:` pointer.
 **cold** — sealed and canonical: git, Reflect, the build record. On conflict the cold record
