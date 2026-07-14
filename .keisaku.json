@@ -29,8 +29,19 @@
       "repo": "git@github-no-kaji:sageframe-no-kaji/ho-system.git",
       "deployment": [
         {
+          "label": "The Ho System",
+          "url": "https://hosystem.sageframe.net",
+          "role": "production"
+        },
+        {
           "label": "Methodology site",
-          "url": "https://atmarcus.net/ho"
+          "url": "https://atmarcus.net/ho",
+          "role": "communication"
+        },
+        {
+          "label": "Ho, Actually edition",
+          "url": "https://star-actually.sageframe.net/ho-actually/",
+          "role": "communication"
         },
         {
           "label": "GitHub repo",
@@ -40,27 +51,27 @@
       "created": "2026-01-01",
       "last_updated": "2026-07-12",
       "conceived": "2025-12-12",
-      "short_description": "Published open methodology for human-AI collaborative software development in which the human practitioner maintains full architectural authority while using AI as an implementation partner. The core unit is a ho — a bounded ~2-hour session producing something real, connecting to the project arc via commit hash, ending with structured reflection. Practitioners progress through Shu-Ha-Ri stages; tiered understanding (Black Box, Functional, Deep) gives an honest frame for tracking what's understood versus delegated.",
+      "short_description": "A published open methodology for human-AI collaborative software development in which the practitioner keeps full architectural authority and uses AI as an implementation partner.",
       "substantive_description": [
-        "The dominant frame for AI-assisted development assumes the model leads. Vibe coding names the position with unembarrassed clarity: the human gestures, the model generates, the human accepts or rejects. The Ho System refuses the position.",
-        "It treats AI as an implementation partner inside a discipline the human owns — architectural authority held, structural decisions made consciously, every session bounded, every artifact reviewed. Eight production systems shipped under it, including a computer vision platform at Harvard and a ZFS backup orchestrator with 278 tests at 99% coverage.",
-        "The deeper claim is about agency in the age of capable models. Capable models tempt the practitioner to delegate the parts of the work that build the practitioner's judgment. The Ho System is the operational answer to that temptation: a methodology that lets you ship without becoming someone who cannot ship alone."
+        "The dominant frame for AI-assisted development assumes the model leads: the human gestures, the model generates, the human accepts or rejects. The Ho System refuses that position. It treats AI as an implementation partner inside a discipline the human owns — architectural authority held, structural decisions made consciously, every session bounded, every artifact reviewed. The working unit is a ho (歩, \"step\"): a bounded, roughly two-hour session that produces something real, connects to the project arc by commit hash, and closes with structured reflection; practitioners progress through Shu-Ha-Ri stages, and a tiered-understanding frame — Black Box, Functional, Deep — keeps an honest account of what is understood versus delegated. The deeper claim is about agency in the age of capable models: those models tempt the practitioner to delegate exactly the work that builds judgment, and the Ho System is the operational answer — a methodology that lets you ship without becoming someone who cannot ship alone. Eight production systems have shipped under it, including a computer-vision platform running at Harvard and a ZFS backup orchestrator with 278 tests at 99% coverage.",
+        "The Ho System is a methodology rather than a codebase: it ships as an open framework of documents, templates, and operating discipline, published under CC BY-NC-ND 4.0, with a methodology site at atmarcus.net/ho and the framework repository on GitHub; it is also taught as a navigable graph through Ho System, Actually, a live instance of the *, Actually engine at star-actually.sageframe.net/ho-actually."
       ],
       "images": {
         "gallery": []
       },
       "state": {
         "stage": "production",
-        "last": "**ho-12 OPENED** (2026-07-11, the ho-status companion). Authored the ho + 5 agent-task specs (private). Design settled with the practitioner: a *derived* progress roster (not a fifth hand-maintained source) — one source (ho frontmatter `title`/`description`/`status` + K4 phase order) → three renders (a `ho-status.json` feed, a `ho-status.md` glance with a single `state` enum → Doc×Done glyphs, and a cross-project HTML dashboard, ho-13). Root `metadata/` zone holds `keisaku.json` + `ho-status.json` + `ho-status.md`; visibility inherited from the repo's ho-process posture (gitignore `metadata/` iff ho work is private); the dashboard reads local working trees. keisaku stays a co-located light cache, coordinated via a handoff prompt (relocate + summary passthrough). **Two framework commits landed** (branch `ho-12-ho-status-companion`): `654d9b2` — `title`/`description` required practitioner-track frontmatter (ho-structure §5.1, design 3.9, K5 skill repo + installed); `249df89` (AT-02) — the ho-status doctrine (kamae-project-framing §2.4 with json schema + `state` enum + md render + visibility posture; `metadata/` zone §2.6; refresh in cross-session-continuity §3; glossary; CHANGELOG). **AT-04 done** (local): keisaku handoff prompt at `ho-process/agent-tasks/keisaku-metadata-handoff.md`. Prior arc cold-banked: ho-10/11 closed, 2.14 shipped, K6 fleet 20/20, keisaku staged.",
-        "next": "Two tasks remain on ho-12: **AT-03** (skill wiring — K5 close gains roster-regen in SKILL.md + the four shape closes; K4 overview notes the companion; scaffolder seeds root `metadata/` + gitignores it when ho-work is private; sync all installed `~/.claude` copies, ho-11 insertion precedent), then **AT-05** (backfill title/description onto the 13 hos + produce ho-system's `metadata/ho-status.{json,md}` + add `metadata/` to `.gitignore`). Then close ho-12, add its K4 entry, PR the branch. ho-13 = generator + dashboard; ho-14 = fleet rollout (Sonnet titles, Haiku generation).",
+        "last": "**ho-12 CLOSED** (2026-07-12, the ho-status companion). All five agent tasks done: `654d9b2` (AT-01) title/description required frontmatter; `249df89` (AT-02) ho-status doctrine in kamae-project-framing §2.4 (json schema + single `state` enum + md render + root `metadata/` zone + inherited visibility); `d632483` (AT-03) skill/scaffolder/template wiring — K5 gains the roster refresh as a **fifth ho-close move**, K4 notes the companion, scaffolder seeds root `metadata/`, all installed `~/.claude` copies synced by insertion; AT-04 (local) the keisaku handoff prompt (`ho-process/agent-tasks/keisaku-metadata-handoff.md`); `be7a3c9` (AT-05) ho-system's own reference roster `metadata/ho-status.{json,md}` + title/description backfill + `metadata/` gitignore. Building the reference instance forced two corrections: **ho-06 closed retrospectively** (work shipped 2026-07-03 but the ho was never closed — Results unfilled, status draft) and **ho-07 added to the roster** (complete + documented but unphased in K4). Roster now **14/14 complete**; the fifth close-move dogfooded itself on ho-12's own close.",
+        "next": "**ho-13** — the generator + cross-project dashboard. Opens on IDEA-013 (the input contract): the generator takes its ho census from a `ho-process/hos/*.md` glob + frontmatter (add a **`phase:` field** so grouping is self-described), using K4 only for phase order + release tags — never parsing K4 prose. Doc-less-but-complete hos (ho-08) need a reconciliation path. Then ho-14 = fleet rollout (Sonnet titles, Haiku generation).",
         "as_of": "2026-07-12"
       },
       "_keisaku": {
-        "generated_at": "2026-07-12T10:36:23",
+        "generated_at": "2026-07-13T10:31:21",
         "generator_version": "1",
         "sources": {
           "readme": "README.md",
-          "contract": "ho-process/kamae-6-ho-system-state-memory.md"
+          "contract": "ho-process/kamae-6-ho-system-state-memory.md",
+          "description": "metadata/description.md"
         },
         "derived_defaults": {
           "id": "ho-system",
@@ -69,7 +80,12 @@
             "software"
           ],
           "status": "shipped",
-          "created": "2026-02-09"
+          "created": "2026-02-09",
+          "short_description": "A published open methodology for human-AI collaborative software development in which the practitioner keeps full architectural authority and uses AI as an implementation partner.",
+          "substantive_description": [
+            "The dominant frame for AI-assisted development assumes the model leads: the human gestures, the model generates, the human accepts or rejects. The Ho System refuses that position. It treats AI as an implementation partner inside a discipline the human owns — architectural authority held, structural decisions made consciously, every session bounded, every artifact reviewed. The working unit is a ho (歩, \"step\"): a bounded, roughly two-hour session that produces something real, connects to the project arc by commit hash, and closes with structured reflection; practitioners progress through Shu-Ha-Ri stages, and a tiered-understanding frame — Black Box, Functional, Deep — keeps an honest account of what is understood versus delegated. The deeper claim is about agency in the age of capable models: those models tempt the practitioner to delegate exactly the work that builds judgment, and the Ho System is the operational answer — a methodology that lets you ship without becoming someone who cannot ship alone. Eight production systems have shipped under it, including a computer-vision platform running at Harvard and a ZFS backup orchestrator with 278 tests at 99% coverage.",
+            "The Ho System is a methodology rather than a codebase: it ships as an open framework of documents, templates, and operating discipline, published under CC BY-NC-ND 4.0, with a methodology site at atmarcus.net/ho and the framework repository on GitHub; it is also taught as a navigable graph through Ho System, Actually, a live instance of the *, Actually engine at star-actually.sageframe.net/ho-actually."
+          ]
         },
         "contract_issues": []
       }
