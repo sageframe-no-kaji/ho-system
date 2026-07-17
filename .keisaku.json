@@ -59,6 +59,8 @@
       "images": {
         "gallery": []
       },
+      "availability": "published",
+      "usage": "others",
       "state": {
         "stage": "production",
         "last": "**ho-12 CLOSED** (2026-07-12, the ho-status companion). All five agent tasks done: `654d9b2` (AT-01) title/description required frontmatter; `249df89` (AT-02) ho-status doctrine in kamae-project-framing §2.4 (json schema + single `state` enum + md render + root `metadata/` zone + inherited visibility); `d632483` (AT-03) skill/scaffolder/template wiring — K5 gains the roster refresh as a **fifth ho-close move**, K4 notes the companion, scaffolder seeds root `metadata/`, all installed `~/.claude` copies synced by insertion; AT-04 (local) the keisaku handoff prompt (`ho-process/agent-tasks/keisaku-metadata-handoff.md`); `be7a3c9` (AT-05) ho-system's own reference roster `metadata/ho-status.{json,md}` + title/description backfill + `metadata/` gitignore. Building the reference instance forced two corrections: **ho-06 closed retrospectively** (work shipped 2026-07-03 but the ho was never closed — Results unfilled, status draft) and **ho-07 added to the roster** (complete + documented but unphased in K4). Roster now **14/14 complete**; the fifth close-move dogfooded itself on ho-12's own close.",
