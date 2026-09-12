@@ -625,8 +625,8 @@ see the arc.]
 ## Close the Session: State-Summary Block
 
 The last prescribed step. Finishing this ho ends a session, and every session ends by stating
-where it leaves the build. Write the state-summary block to the project's State Memory (Kamae 6)
-at `ho-process/kamae-6-<project>-state-memory.md`, replacing the block pinned at its top. Fixed
+where it leaves the build. Write the state-summary block to the project's canonical State Memory
+(Kamae 6) at `<process-root>/kamae-6-<project>-state-memory.md`, replacing the block pinned at its top. Fixed
 labels, fixed order — type them exactly:
 
 \```markdown

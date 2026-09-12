@@ -551,8 +551,8 @@ behavior under load. Only if relevant to this ho.]
 
 **[LEARNER COMPLETES — the last thing this ho does]**
 
-Closing this ho ends a session, so write the state-summary block to the project's State Memory
-(Kamae 6) at `ho-process/kamae-6-<project>-state-memory.md`, refreshing the block pinned at its
+Closing this ho ends a session, so write the state-summary block to the project's canonical State
+Memory (Kamae 6) at `<process-root>/kamae-6-<project>-state-memory.md`, refreshing the block pinned at its
 top. Fixed labels, fixed order:
 
 **STATE-SUMMARY**

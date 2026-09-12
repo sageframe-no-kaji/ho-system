@@ -159,8 +159,8 @@ Observed behavior. Performance notes if applicable.]
 ```markdown
 ## State-Summary Block
 
-Closing the ho ends a session — write the block to the project's State Memory (Kamae 6),
-`ho-process/kamae-6-<project>-state-memory.md`, refreshing the block at its top. Fixed labels,
+Closing the ho ends a session — write the block to the project's canonical State Memory (Kamae 6),
+`<process-root>/kamae-6-<project>-state-memory.md`, refreshing the block at its top. Fixed labels,
 fixed order:
 
 **STATE-SUMMARY**

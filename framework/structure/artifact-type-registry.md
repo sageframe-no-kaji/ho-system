@@ -307,8 +307,9 @@ memory]] (framework/structure/cross-session-continuity.md) is *living* in form �
 place, continuously — but unlike the living Kamae documents it is **non-canonical**: a HOT
 cache subordinate to the cold record, exempt from forward-only precisely because it is not the
 record (the cold record wins on conflict, 2.14 §6). One per project, `type: state-memory`,
-`status: living`, at the fixed path `ho-process/kamae-6-<project>-state-memory.md`, private by
-default. The sealed decisions it carries are *caches* of rulings banked cold at the moment of
+`status: living`, at the fixed path `<process-root>/kamae-6-<project>-state-memory.md`, private by
+default. The canonical root is `ho-process/` ordinarily and `ho-process-private/` under a
+public project's nested-private posture (2.15). The sealed decisions it carries are *caches* of rulings banked cold at the moment of
 sealing — the container's temperature does not touch the decision's gravity.
 
 **Seed note (decided — merge-decisions D4).** The seed is a **living parti**, revised in

@@ -19,6 +19,18 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-09-12 — process publication boundary
+
+### Add the dual-record private/public process contract (2.15) — kind: added
+
+Public projects can now publish their Ho history without weakening the exact record their agents
+need to resume work. New structure document 2.15 makes `ho-process-private/` the canonical nested
+private repository and `ho-process/` its generated public derivative, then specifies the
+source-revision manifest, explicit redaction policy, public privacy check, and private pre-push
+gate that keep the two synchronized in one direction. Cross-session continuity and Kamae framing
+now distinguish the canonical process root from a public exhibit, and the project scaffolder
+offers the dual-record posture only when the practitioner elects a public process showcase.
+
 ## 2026-07-11 — ho-status companion (ho-12)
 
 ### The K4 ho-status roster + required title/description frontmatter — kind: added

@@ -452,13 +452,14 @@ FORMAT.md.)_
 _Plain: A self-contained agent task that belongs to no larger session — maintenance, a surgical fix, or early exploration._
 
 **state memory (Kamae 6)** — The project's living cross-session memory: the sixth Kamae link, a
-single always-present file (`ho-process/kamae-6-<project>-state-memory.md`) that a returning
+single always-present file (`<process-root>/kamae-6-<project>-state-memory.md`) that a returning
 session reads first to get back into stance. Carries the **state-summary block** at its top
 (always) and the **working-memory handoff** body beneath, grown by event-gated accretion —
 sections switch on as the build first needs them. Private by default, published only by
 closeout election; hot and non-canonical; kept honest by the freshness and **hot / cold**
-rules and by graduated compaction.
-_(kamae-project-framing 2.1 §2.7; cross-session-continuity 2.14 §4.)_
+rules and by graduated compaction. The canonical process root is `ho-process/` ordinarily and
+`ho-process-private/` under a public project's nested-private posture.
+_(kamae-project-framing 2.1 §2.7; cross-session-continuity 2.14 §4; process-publication-boundary 2.15.)_
 
 _Plain: One always-present file per project holding where the build is, so any new session can pick it up._
 

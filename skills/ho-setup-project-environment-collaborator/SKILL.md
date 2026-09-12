@@ -98,12 +98,13 @@ Ask three or four questions to lock the shape:
 2. **Project type.** Service, desktop, library, static-site, app frontend.
 3. **Language stack.** Python? Web? Both? (Cross-reference with project type—a service is usually Python or Rust; a static site is web; an app frontend is both Python and web; etc.)
 4. **GitHub account.** Which one? (Look at `~/.claude/modules/infrastructure.md` for the practitioner's accounts. If they have only one, skip the question. If they have multiple, ask.)
-5. **State Memory (K6) versioning posture.** One question, keyed to repo visibility. Every project gets a Kamae 6 State Memory (`ho-process/kamae-6-<project>-state-memory.md`) — always present, private by default. What varies is whether its hot history is versioned (`framework/structure/cross-session-continuity.md` §10, three postures):
-   - **Private repo** → track K6 with the rest of `ho-process/`. Versioned, private, zero extra machinery.
-   - **Public repo** → gitignore `ho-process/` (so the raw K6 never ships) and offer to version it as a **nested private repo** — `git init` inside the ignored directory (posture 2, **recommended**). The public repo carries the cold public record; the nested repo carries the hot history.
-   - **Floor** → leave `ho-process/` unversioned. Legitimate; loses hot *history*, never a lesson.
+5. **Process-record posture.** One question, keyed first to repo visibility and then to publication intent. Every project gets a Kamae 6 State Memory inside its canonical process root — always present, private by default (`framework/structure/cross-session-continuity.md` §10; `framework/structure/process-publication-boundary.md`):
+   - **Private project repo** → track canonical `ho-process/` with the project. Versioned, private, zero extra machinery.
+   - **Public repo, private process** → ignore canonical `ho-process-private/` in the parent and version it as a **nested private repo**. Publish no process tree. This is the recommended public-repo baseline.
+   - **Public repo, public process showcase** → canonical nested-private `ho-process-private/` plus generated tracked `ho-process/`. Scaffold the exporter, source-revision manifest, public checker, and private pre-push gate required by 2.15.
+   - **Floor** → leave the canonical process root unversioned. Legitimate; loses process history and weakens recovery.
 
-   Default to tracked for a private repo and to the nested-private-repo offer for a public one. The path is fixed regardless of posture.
+   Default to tracked `ho-process/` for a private project and nested-private `ho-process-private/` for a public project. Add the generated public tree only when the practitioner explicitly elects a public process showcase.
 
 Compute defaults from the answers:
 
@@ -135,12 +136,12 @@ Wait for confirmation before proceeding. The practitioner may want to adjust sco
 
 Once confirmed, instantiate the templates with the project's specifics. For a Python service:
 
-1. **Create the project directory.**
+1. **Create the project directory.** Set `[process-root]` from the chosen posture: `ho-process` for a private project repository, otherwise `ho-process-private`.
    ```bash
    mkdir -p [project-path]/src/[package]/utils \
              [project-path]/tests \
              [project-path]/docs \
-             [project-path]/ho-process/hos \
+             [project-path]/[process-root]/hos \
              [project-path]/metadata
    ```
    `metadata/` at the repo root is the derived-machine-state zone (`framework/structure/kamae-project-framing.md` §2.4, §2.6) — home for the ho-status roster and the keisaku cache. It is generated, never hand-edited.
@@ -152,21 +153,18 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
 3. **`.pre-commit-config.yaml`** from `~/.claude/templates/pre-commit.baseline.yaml`. Verbatim; no placeholders.
 4. **`.gitignore`** from `~/.claude/templates/gitignore.baseline` (Python) or `gitignore.web.baseline` (web project). Verbatim plus any project-specific exclusions the practitioner names.
 
-   > `ho-process/` is gitignored by default. The build record (kamae documents, hos) is
-   > private practitioner work and does not belong in the project's git history. Kamae
-   > documents go inside `ho-process/` — not at the project root.
-   >
-   > This is also what keeps the K6 State Memory private (§10, private-by-default): its raw
-   > register never ships in a public repo. Wire the gitignore to the posture chosen in Phase 1
-   > — a public repo gitignores `ho-process/` (and versions it as a nested private repo if the
-   > practitioner took that offer); a private repo tracks `ho-process/`, so the gitignore leaves
-   > it in.
+   > The canonical process record is private by default. A private project repository tracks
+   > `ho-process/`; a public project ignores `ho-process-private/` in the parent and versions
+   > that directory as a nested private repository when the practitioner takes the recommended
+   > posture. A public showcase tracks only the generated `ho-process/` derivative and must
+   > never weaken the private source boundary.
    >
    > The root `metadata/` zone inherits the same posture — a full ho-status roster is at least
    > as sensitive as the hos it lists (`framework/structure/kamae-project-framing.md` §2.4, §2.6).
-   > Gitignore `metadata/` together with `ho-process/` when the ho work is private; track it
-   > alongside `ho-process/` when the ho work is tracked. The cross-project dashboard reads
-   > working trees, so it aggregates the roster regardless of tracking.
+   > Gitignore `metadata/` with the canonical private process when it contains exact project
+   > state. A public showcase may export a separately sanitized metadata derivative, but must
+   > not copy the private roster by implication. The cross-project dashboard reads working
+   > trees, so it aggregates the roster regardless of parent-repo tracking.
 
 5. **`.env.example`** from `~/.claude/templates/env.example.baseline`. Replace `MYPROJ_` prefix with the project's actual env var prefix (often the package name uppercased).
 6. **`CLAUDE.md`** from `~/.claude/templates/project-CLAUDE.template.md`. Replace placeholders:
@@ -178,16 +176,16 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
      ```
      ## Ho process
 
-     Ho documents for this project live in `ho-process/` and follow the canonical Kamae filename convention (see `framework/structure/kamae-project-framing.md` §2.5):
-     - `ho-process/kamae-1-[project]-seed.md` — Kamae 1
-     - `ho-process/kamae-2-[project]-system-design.md` — Kamae 2
+     Canonical Ho documents for this project live in `[process-root]/` and follow the canonical Kamae filename convention (see `framework/structure/kamae-project-framing.md` §2.5):
+     - `[process-root]/kamae-1-[project]-seed.md` — Kamae 1
+     - `[process-root]/kamae-2-[project]-system-design.md` — Kamae 2
      - `README.md` (repo root) — Kamae 3
-     - `ho-process/kamae-4-[project]-ho-overview.md` — Kamae 4
-     - `ho-process/hos/` — per-ho documents (Kamae 5)
-     - `ho-process/kamae-6-[project]-state-memory.md` — Kamae 6 (State Memory)
-     - `ho-process/agent-tasks/` — child agent task specs
+     - `[process-root]/kamae-4-[project]-ho-overview.md` — Kamae 4
+     - `[process-root]/hos/` — per-ho documents (Kamae 5)
+     - `[process-root]/kamae-6-[project]-state-memory.md` — Kamae 6 (State Memory)
+     - `[process-root]/agent-tasks/` — child agent task specs
      ```
-7. **`ho-process/kamae-6-[project]-state-memory.md`**—the project's State Memory (Kamae 6), created at init so the fixed path exists from day one (`framework/structure/cross-session-continuity.md` §4, §10). Frontmatter: `created` (today), `type: state-memory`, `project` (slug), `kamae: 6`, `status: living`. Body is a fresh state-summary block — verbatim labels, fixed order — that reflects a just-scaffolded project:
+7. **`[process-root]/kamae-6-[project]-state-memory.md`**—the project's State Memory (Kamae 6), created at init so the fixed canonical path exists from day one (`framework/structure/cross-session-continuity.md` §4, §10). Frontmatter: `created` (today), `type: state-memory`, `project` (slug), `kamae: 6`, `status: living`. Body is a fresh state-summary block — verbatim labels, fixed order — that reflects a just-scaffolded project:
    ```markdown
    ---
    created: [today]
@@ -211,18 +209,18 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
    - **PROJECT LIFECYCLE** — kamae.
    ```
    The body grows beneath the block by event-gated accretion only as the build needs it (§4.2) — nothing more is scaffolded now.
-8. **`metadata/ho-status.md`** and **`metadata/ho-status.json`**—the ho-status roster, seeded empty at init so the fixed path exists from day one (`framework/structure/kamae-project-framing.md` §2.4). The `.md` opens with a `GENERATED — do not hand-edit` header naming its sources (the K4 overview + `ho-process/hos/`) and no rows; the `.json` carries the `ho-status/1` schema envelope with empty `phases` and a zeroed `summary`:
+8. **`metadata/ho-status.md`** and **`metadata/ho-status.json`**—the ho-status roster, seeded empty at init so the fixed path exists from day one (`framework/structure/kamae-project-framing.md` §2.4). The `.md` opens with a `GENERATED — do not hand-edit` header naming its sources (the K4 overview + `[process-root]/hos/`) and no rows; the `.json` carries the `ho-status/1` schema envelope with empty `phases` and a zeroed `summary`:
    ```json
    {
      "schema": "ho-status/1",
      "project": "[project]",
      "generated_at": null,
-     "source": { "overview": "ho-process/kamae-4-[project]-ho-overview.md", "hos_dir": "ho-process/hos/" },
+     "source": { "overview": "[process-root]/kamae-4-[project]-ho-overview.md", "hos_dir": "[process-root]/hos/" },
      "summary": { "hos": 0, "drafted": 0, "complete": 0, "planned": 0 },
      "phases": []
    }
    ```
-   Both are derived artifacts, regenerated on ho close (there is no generator yet, so early refreshes are by hand). Their tracking follows the `ho-process/` posture chosen in Phase 1 — gitignored together when the ho work is private (step 4).
+   Both are derived artifacts, regenerated on ho close (there is no generator yet, so early refreshes are by hand). Their tracking follows the process-record posture chosen in Phase 1; a public showcase needs an explicit sanitized metadata export rather than inheriting publication from `ho-process/`.
 9. **`src/[package]/__init__.py`**—empty file with package docstring.
 10. **`tests/test_smoke.py`**—one trivial passing test so pytest has something to run and the verification stack can prove itself before any real code is written.
 11. **`README.md`**—one-line description plus a "Setup" section showing the practitioner's commands (uv sync, pre-commit install, pytest). The practitioner expands later.
@@ -259,15 +257,17 @@ Show the practitioner the list. Confirm. Then:
 git commit -m "Initial scaffold via ho-setup-project-environment-collaborator"
 ```
 
-If the practitioner chose the nested-private-repo posture (public repo, Phase 1 question 5), `ho-process/` is gitignored above and gets its own git repo so its hot history is versioned separately from the public repo:
+If the practitioner chose either nested-private posture (public repo, Phase 1 question 5), `ho-process-private/` is ignored by the parent and gets its own Git repository so the complete process history is versioned separately from the public project:
 
 ```bash
-git -C [project-path]/ho-process init -b main
-git -C [project-path]/ho-process add -A
-git -C [project-path]/ho-process commit -m "Initial ho-process scaffold (State Memory, ho dirs)"
+git -C [project-path]/ho-process-private init -b main
+git -C [project-path]/ho-process-private add -A
+git -C [project-path]/ho-process-private commit -m "Initial canonical Ho process"
 ```
 
-The K6 State Memory and ho documents now live in the nested repo, tracked and private; the public repo carries the cold public record only. No remote yet — the practitioner adds a private remote when ready.
+The K6 State Memory and the cold process record now live together in the nested repository, tracked and private. No remote exists yet; the practitioner adds a private remote when ready.
+
+If the practitioner elected the public process showcase, complete the 2.15 boundary before the parent repository's first push: add the explicit redaction policy and deterministic exporter to the private repository; add the public checker to the parent pre-commit and CI gates; generate `ho-process/` with its source-revision manifest; install the private pre-push hook; and prove that a stale or privacy-bearing export is refused. The generated public tree is the only process material the parent tracks.
 
 Don't push. The practitioner connects to GitHub themselves (or you can offer to do it explicitly):
 
@@ -277,6 +277,8 @@ git push -u origin main
 ```
 
 Ask before the gh repo create. This is an explicit-permission action; it makes the project visible (or pre-created in your private space) on GitHub.
+
+For a nested process repository, create and push a separate private remote such as `[project-name]-ho-process`. In the dual-record posture, push the public parent first and the private source second because the installed private pre-push hook verifies that publication order.
 
 ### Phase 5: Install Dependencies and Verify
 
@@ -396,7 +398,7 @@ A scaffolded project directory with:
 
 - All baseline files instantiated from `~/.claude/templates/`
 - `src/[package]/`, `tests/`, `docs/` directory structure (Python projects)
-- A Kamae 6 State Memory at `ho-process/kamae-6-[project]-state-memory.md`, seeded with a fresh state-summary block, versioned per the chosen posture
+- A Kamae 6 State Memory at `[process-root]/kamae-6-[project]-state-memory.md`, seeded with a fresh state-summary block, versioned per the chosen posture
 - Verification stack installed and passing
 - First commit on `main`
 - A practitioner who can describe what each file is and why it's there

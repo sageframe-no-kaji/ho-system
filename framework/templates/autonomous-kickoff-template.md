@@ -63,8 +63,8 @@ what you explicitly do NOT want.>
   improvise. Never silently decide what the documents don't decide.
 
 ## Continuity (2.14 — non-negotiable)
-- Scaffold with `ho-setup-project-environment-collaborator`. K6
-  (`ho-process/kamae-6-<slug>-state-memory.md`) runs at **full body from day
+- Scaffold with `ho-setup-project-environment-collaborator`. Use the canonical process root it
+  declares; K6 (`<process-root>/kamae-6-<slug>-state-memory.md`) runs at **full body from day
   one**: sealed decisions, per-ho log (commit hash, test count, coverage, CI
   status, my verbatim reactions, a NEXT pointer), do-not-rediscover traps,
   queues, my voice quoted exactly. Raw register — it is private.
@@ -93,8 +93,9 @@ what you explicitly do NOT want.>
   Reach for me via heartbeat and park the queue in K6; never wait silently.
 
 ## Start
-1. Scaffold the repo; K6 posture per visibility (<private → tracked | public
-   → gitignored + nested private ho-process repo>).
+1. Scaffold the repo; process posture per visibility (<private → tracked
+   `ho-process/` | public → ignored nested-private `ho-process-private/` |
+   public showcase → nested-private source + generated `ho-process/`>).
 2. Author K1 and K2; heartbeat me for ratification. On my go: K3, K4, ho-00,
    and onward.
 ```

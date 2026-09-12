@@ -360,34 +360,39 @@ build has the human already watching and needs no heartbeat.
 The location *is* the rule. A universal block needs one fixed, findable home — not a directory
 to search, not a per-project negotiation, not an optional file.
 
-- **The State Memory is the Kamae 6 document at a fixed path:
-  `ho-process/kamae-6-<project>-state-memory.md`** ([[kamae-project-framing|Kamae: Project
-  Framing]] (framework/structure/kamae-project-framing.md) §2.6–2.7). It always exists there;
-  the next session — and any hook — knows exactly where to look without being told.
-- **It is private by default.** Gitignored, at the fixed path. The body is written *raw*, in
+- **The State Memory is the Kamae 6 document at a fixed path inside the canonical
+  process root.** That root is `ho-process/` for an ordinary private record and
+  `ho-process-private/` for a public project's nested-private posture
+  ([[process-publication-boundary|Process Publication Boundary]]
+  (framework/structure/process-publication-boundary.md)). Project instructions name the root,
+  and the filename remains `kamae-6-<project>-state-memory.md`, so a returning session and any
+  hook know exactly where to look.
+- **It is private by default.** A private project tracks it in its private repository; a public
+  project keeps its canonical root ignored by the public parent and tracks it in the nested
+  private repository when that versioning posture is selected. The body is written *raw*, in
   the practitioner's actual voice — verbatim rulings, unvarnished incidents, the real register
   of the collaboration — and never for an audience. The file's value depends on that register:
-  a K6 written politely is a K6 that has stopped carrying intent. Publication is a **closeout
-  election**, made deliberately when the practitioner is ready: stay private, publish as-is, or
-  publish a sanitized copy. It is never a posture during the build.
+  a K6 written politely is a K6 that has stopped carrying intent. Publication is an explicit
+  election: stay private, publish as-is, or maintain a sanitized public derivative. A sanitized
+  derivative never becomes the file a working session reads.
 - **Versioning — three postures.** Private-by-default and versioned are compatible; they just
   don't live in the same repo when the repo is public:
   1. **Private repo → track it.** Versioned, private, zero extra machinery.
-  2. **Public repo → gitignore `ho-process/` and version it as a nested private repo** —
-     `git init` inside the ignored directory, optionally pushed to a private remote. The fixed
-     path is unchanged; the public repo carries the cold public record, the private process
-     repo carries the hot history. **Recommended.** The hot history is the timeline of what
-     the build *believed* at every pause — forward-only's value extended to the tier that is
-     allowed to be overwritten. It makes compaction lossless in principle (§7), and it is what
-     a publish-the-history closeout election publishes. This framework's own repo dogfoods
-     this posture.
+  2. **Public repo → ignore `ho-process-private/` and version it as a nested private repo.**
+     This is the recommended baseline. If the process remains private, no public process tree
+     exists. If the practitioner elects a public showcase, a deterministic exporter writes a
+     sanitized derivative to tracked `ho-process/`, records the private source revision, and
+     refuses drift before private push. The complete contract is 2.15.
   3. **Unversioned.** The legitimate floor. What it loses is hot *history*, never a lesson —
      the compaction invariant (§7) guarantees nothing durable lives only hot.
-- **The cold record is always in-repo and tracked.** The build record lives on the K4 overview;
-  the Reflect lives in each ho document. These carry forward-only and are non-negotiable. This
-  is also what keeps documentation-as-bootstrap intact under a private K6: a collaborator's
-  fresh clone still reads a complete public chain; K6 is an accelerator on top of it, never
-  the sole memory.
+- **The cold record is tracked in every versioned posture.** The build record lives on the K4
+  overview; the Reflect lives in each ho document. These carry forward-only and are
+  non-negotiable. In a private or nested-private clone, the collaborator reads the complete
+  canonical chain; in a public showcase clone, the collaborator reads its sanitized derivative.
+  K6 remains an accelerator on top of the cold record, never the sole memory.
+- **A public derivative is evidence, not operational memory.** It may carry the cold process
+  record and a sanitized K6 for readers, but agents resume from the canonical private tree.
+  Public edits flow only from the exporter, never back into the source.
 - **The alert channel's configuration** (a topic, a token) is secret-adjacent and stays
   gitignored regardless (e.g. `prompts/ntfy-topic.txt`).
 
@@ -445,6 +450,7 @@ the memory, plus the disciplines that keep such a document from lying.
 - [[devlog|The Devlog]] (framework/structure/devlog.md) — the Reflect phase, the cold home a hot finding graduates into.
 - [[idea-log|The Idea Log]] (framework/structure/idea-log.md) — `ideas.md` (intentions ahead), the neighbour a findings/traps doc is distinct from.
 - [[artifact-type-registry|Artifact Type Registry]] (framework/structure/artifact-type-registry.md) §6 — the living / frozen / sealed mutability regimes.
+- [[process-publication-boundary|Process Publication Boundary]] (framework/structure/process-publication-boundary.md) — the dual-record source, export, manifest, and synchronization gates for a public process showcase.
 
 ---
 

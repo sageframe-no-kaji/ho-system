@@ -205,7 +205,7 @@ The Ho Overview welcomes the System Design's first-pass ho sequence and deferred
 
 **The ho-status companion (the roster).** Where the build record is a *log* — what happened, in order — the ho-status companion is a *roster*: a standing snapshot of every phase and ho, showing where each one stands right now. Log answers "what happened when"; roster answers "where does everything stand." It is **derived, not authored** — a render of ho frontmatter (`title`, `description`, `status`, `closed`) over the overview's phase order, never a hand-maintained second source, since a hand-kept table drifts from the frontmatter it duplicates. One source, three renders: a machine `ho-status.json` feed, an in-repo `ho-status.md` glance, and a cross-project HTML dashboard.
 
-The artifacts live in a per-repo **`metadata/` zone at the repo root** — the home for derived machine state, shared with the keisaku cache. Its **visibility is inherited**: a repo that keeps its ho work private (gitignores `ho-process/`) gitignores `metadata/` too — a full roster of ho titles is at least as sensitive as the hos — while a repo that tracks its ho work tracks its roster. The cross-project dashboard reads local working trees, so it aggregates every repo regardless of tracking.
+The artifacts live in a per-repo **`metadata/` zone at the repo root** — the home for derived machine state, shared with the keisaku cache. Its **visibility is explicit**: private process work keeps exact metadata private too, because a full roster of ho titles is at least as sensitive as the hos; a public process showcase publishes metadata only through its own sanitized export policy. The cross-project dashboard reads local working trees, so it aggregates every repo regardless of parent-repo tracking.
 
 `ho-status.json` is the feed:
 
@@ -270,25 +270,25 @@ A per-ho document should define:
 
 ### 2.6 Filenames and Location
 
-The single-instance Kamae documents live in the project repo under `ho-process/`, with the README at the repo root.
+The single-instance Kamae documents live under the project's canonical process root, with the README at the repo root. The canonical root is `ho-process/` for an ordinary private record and `ho-process-private/` for a public project's nested-private posture; when that project also publishes a process showcase, tracked `ho-process/` is generated public output and never the working source (see [[process-publication-boundary|Process Publication Boundary]] (framework/structure/process-publication-boundary.md)).
 
 **Pattern:** `kamae-<N>-<project>-<doctype>.md` for documents 1, 2, 4, and 6. The README (Kamae 3) is the canonical repo-root `README.md` and does *not* take a `kamae-3-` prefix — it ships as the public face of the repository under its standard name.
 
 | Kamae | Document | Path |
 |---|---|---|
-| 1 | Seed | `ho-process/kamae-1-<project>-seed.md` |
-| 2 | System Design | `ho-process/kamae-2-<project>-system-design.md` |
+| 1 | Seed | `<process-root>/kamae-1-<project>-seed.md` |
+| 2 | System Design | `<process-root>/kamae-2-<project>-system-design.md` |
 | 3 | README | `README.md` (repo root) |
-| 4 | Ho Overview | `ho-process/kamae-4-<project>-ho-overview.md` |
-| 6 | State Memory | `ho-process/kamae-6-<project>-state-memory.md` (§2.7) |
+| 4 | Ho Overview | `<process-root>/kamae-4-<project>-ho-overview.md` |
+| 6 | State Memory | `<process-root>/kamae-6-<project>-state-memory.md` (§2.7) |
 
 `<project>` is the project's short slug in kebab-case (e.g., `shodo`, `hozo`, `kanyo`). It matches the slug used elsewhere in the project (repo name, package name) so the filenames are predictable from any one of them.
 
-**Per-ho documents** (the Kamae 5 phase) live under `ho-process/hos/` and follow the [[ho-structure|ho filename convention]] (framework/structure/ho-structure.md §3.6): `ho-<number>-<slug>.md`. **Child agent-task specs** live under `ho-process/agent-tasks/` and follow `Ho-<NN>-AT-<NN>.md` (see [[ho-task-decomposition|Ho Task Decomposition]] (framework/structure/ho-task-decomposition.md) §4.2).
+**Per-ho documents** (the Kamae 5 phase) live under `<process-root>/hos/` and follow the [[ho-structure|ho filename convention]] (framework/structure/ho-structure.md §3.6): `ho-<number>-<slug>.md`. **Child agent-task specs** live under `<process-root>/agent-tasks/` and follow `Ho-<NN>-AT-<NN>.md` (see [[ho-task-decomposition|Ho Task Decomposition]] (framework/structure/ho-task-decomposition.md) §4.2).
 
-**Project-specific layers** also live under `ho-process/` as the project needs them: `notes/` (dated pre-ho findings a later ho cites via `builds-on:`), `learning/` (post-execution learning walkthroughs — see [[artifact-type-registry|Artifact Type Registry]] (framework/structure/artifact-type-registry.md) §4.1), and `ideas.md` (the **idea log** — the forward-only backlog of what the project might do next; convention in [[idea-log|The Idea Log]] (framework/structure/idea-log.md) §2.13). These are optional and project-shaped; not every project carries all three.
+**Project-specific layers** also live under the canonical process root as the project needs them: `notes/` (dated pre-ho findings a later ho cites via `builds-on:`), `learning/` (post-execution learning walkthroughs — see [[artifact-type-registry|Artifact Type Registry]] (framework/structure/artifact-type-registry.md) §4.1), and `ideas.md` (the **idea log** — the forward-only backlog of what the project might do next; convention in [[idea-log|The Idea Log]] (framework/structure/idea-log.md) §2.13). These are optional and project-shaped; not every project carries all three.
 
-**Derived machine state** lives in a **`metadata/` zone at the repo root** — *not* under `ho-process/`, because a repo may keep `ho-process/` private while still publishing a light state cache. It holds `ho-status.json` + `ho-status.md` (the ho-status companion, §2.4) and `keisaku.json` (the cross-project cache). The zone is generated, never hand-edited; its tracking is inherited from the repo's ho-work posture (gitignored when `ho-process/` is private). A cross-project dashboard globs `*/metadata/*.json` across working trees.
+**Derived machine state** lives in a **`metadata/` zone at the repo root** — *not* under the canonical process root, because a project may keep its process private while still publishing a light state cache. It holds `ho-status.json` + `ho-status.md` (the ho-status companion, §2.4) and `keisaku.json` (the cross-project cache). The zone is generated, never hand-edited; exact metadata follows the private process boundary, and any public metadata is a separately sanitized derivative rather than an inherited side effect. A cross-project dashboard globs `*/metadata/*.json` across working trees.
 
 The `kamae-N-` prefix exists because these documents are read together as a chain — directory sort order then reflects the conceptual order, and the prefix immediately identifies which Kamae document an arbitrary file is. The README is the only exception, and it is exempted deliberately: it must be discoverable as `README.md` by every tool, host, and reader that touches the repo.
 
@@ -316,7 +316,7 @@ Fixed labels, fixed order — human-glanceable and machine-parseable (a hook sur
 
 **Authority and upkeep.** The State Memory is HOT — mutable, non-canonical, subordinate to the cold record (git, per-ho Reflect, the K4 build record); the cold record wins on conflict. It holds no original authority: a sealed decision is banked in a cold canonical home at the moment of sealing (a Kamae addendum, a dated seed revision, a new ho, or a build-record entry), and the K6 copy is the cache of that record. It is kept honest by the freshness rule (update at every real pause — a stale memory misleads *confidently*), and kept from bloating by **graduated-and-preserving compaction**: the active ho untouched, recent closed hos lightly trimmed, closed phases collapsed to a phase state-summary at phase close — but sealed decisions, the do-not-rediscover traps, and the current block are *never* pruned, and no lesson is deleted until it is verified banked in a cold canonical home. The full specification — including the accretion ladder, the compaction cadence and size tripwire, and the publication election — lives in [[cross-session-continuity|Cross-Session Continuity]] (framework/structure/cross-session-continuity.md).
 
-**Location and privacy:** `ho-process/kamae-6-<project>-state-memory.md` — the *path is fixed* so the next session, and any hook, always knows exactly where to look. The file is **private by default** (gitignored): its body is written raw, in the practitioner's actual voice, never for an audience, and publication is a deliberate closeout election. Versioning follows the repo: a private repo tracks it; a public repo versions the gitignored `ho-process/` as a nested private repo; running it unversioned is the legitimate floor (see Cross-Session Continuity §10).
+**Location and privacy:** `<process-root>/kamae-6-<project>-state-memory.md` — the path is fixed inside the root declared by project instructions, so the next session and any hook know where to look. The file is **private by default**: its body is written raw, in the practitioner's actual voice, never for an audience. A private project tracks `ho-process/`; a public project versions ignored `ho-process-private/` as a nested private repository; a public showcase generates sanitized `ho-process/` from that source under the 2.15 publication contract; running the private tree unversioned is the legitimate floor (see Cross-Session Continuity §10).
 
 ---
 

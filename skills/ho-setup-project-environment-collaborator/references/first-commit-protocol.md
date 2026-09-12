@@ -33,7 +33,7 @@ The first commit does NOT include:
 - **IDE files.** `.vscode/`, `.idea/`, `.claude/`—gitignored.
 - **Operating system noise.** `.DS_Store`, `Thumbs.db`—gitignored.
 - **The practitioner's prompts.** `prompts/` and similar—gitignored per the practitioner's infrastructure conventions.
-- **`ho-process/`.** The project's build record (kamae documents, hos) lives here and is gitignored by default. The first commit tracks the code baseline; build-record files are private practitioner work. Kamae documents go inside `ho-process/`—not at the project root.
+- **The canonical private process tree in a public parent.** The parent ignores `ho-process-private/`, which is initialized and committed as its own private repository. If the practitioner elected a public process showcase, the parent may track only the generated `ho-process/` derivative after its privacy and synchronization gates pass. A private project repository tracks canonical `ho-process/` normally.
 
 ## Commit Message
 
