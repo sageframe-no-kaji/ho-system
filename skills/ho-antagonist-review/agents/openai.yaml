@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ho Antagonist Review"
+  short_description: "Bounded ho reviews and independent codebase analysis"
+  default_prompt: "Use $ho-antagonist-review to review this ho or completed codebase with the applicable brief and a declared two- or three-pass limit."
