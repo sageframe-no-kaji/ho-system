@@ -31,17 +31,17 @@
         {
           "label": "The Ho System",
           "url": "https://hosystem.sageframe.net",
-          "role": "production"
+          "role": "live"
         },
         {
           "label": "Methodology site",
           "url": "https://atmarcus.net/ho",
-          "role": "communication"
+          "role": "informational"
         },
         {
           "label": "Ho, Actually edition",
           "url": "https://star-actually.sageframe.net/ho-actually/",
-          "role": "communication"
+          "role": "informational"
         },
         {
           "label": "GitHub repo",
@@ -49,7 +49,7 @@
         }
       ],
       "created": "2026-01-01",
-      "last_updated": "2026-07-12",
+      "last_updated": "2026-11-18",
       "conceived": "2025-12-12",
       "short_description": "A published open methodology for human-AI collaborative software development in which the practitioner keeps full architectural authority and uses AI as an implementation partner.",
       "substantive_description": [
@@ -62,7 +62,7 @@
       "availability": "published",
       "usage": "others",
       "_keisaku": {
-        "generated_at": "2026-11-17T15:26:25",
+        "generated_at": "2026-11-19T17:23:04",
         "generator_version": "1",
         "sources": {
           "readme": "README.md",
