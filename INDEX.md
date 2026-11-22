@@ -88,6 +88,7 @@ Conceptual specifications. Ordered to follow the practitioner's actual experienc
 | 2.12 | [External-Project Contribution](framework/structure/external-contribution.md) | Running Ho against someone else's codebase |
 | 2.13 | [The Idea Log](framework/structure/idea-log.md) | The forward-only idea/feature backlog, reviewed at every ho boundary |
 | 2.14 | [Cross-Session Continuity](framework/structure/cross-session-continuity.md) | Carrying the build's thread across sessions — the universal state-summary block and the State Memory (Kamae 6) that holds it, with their freshness, hot/cold, and compaction disciplines |
+| 2.15 | [Process Publication Boundary](framework/structure/process-publication-boundary.md) | Keeping an exact private Ho record and a synchronized, sanitized public derivative without creating two sources of truth |
 
 ---
 
