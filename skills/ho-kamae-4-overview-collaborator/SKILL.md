@@ -29,6 +29,12 @@ The ho overview is **not** a per-ho document. Each ho gets its own document at a
 
 You are working with material the practitioner has already developed; you are sequencing it for execution.
 
+## Antagonist review in the sequence
+
+Place a bounded antagonist review after each build ho, plus an independent full-codebase review at completed-system acceptance. Preserve the project's review numbering and record a two-pass default or a practitioner-selected three-pass ceiling. The review result and the practitioner's acceptance are separate records; exhausting the budget stops for a ruling rather than starting another review automatically.
+
+Use the Ho System's `ho-antagonist-review` documents when preparing the review plan. Its [Ho integration reference](../ho-antagonist-review/references/ho-integration.md) describes the packet, report, and continuity records. This authoring step schedules the work and supplies its requirements; it does not dispatch a reviewer or authorize repairs. When updating an existing project, preserve closed review records and apply the current plan to future work.
+
 ## Two Entry Points
 
 ### Entry Point 1: Init Mode (no existing overview)

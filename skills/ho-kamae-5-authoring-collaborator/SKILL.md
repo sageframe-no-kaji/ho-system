@@ -31,6 +31,14 @@ A per-ho document is **not** an agent task. Agent tasks are children of hos when
 
 Your job is to produce the per-ho document collaboratively with the practitioner. Inputs: the upstream Kamae chain (seed, system design, README, ho-overview), the project's CLAUDE.md, and the ho-overview's specific entry for the ho being authored. Output: the per-ho document at `ho-process/hos/ho-NN-<slug>.md`, plus any dandori spec children at `ho-process/agent-tasks/Ho-NN-AT-MM.md`.
 
+## Antagonist review and acceptance
+
+For each build ho, carry the overview's antagonist review into its acceptance conditions. Separate implementation completion from review acceptance: if review is required, the close remains pending until the reviewer passes or the practitioner explicitly accepts named limitations or a correction without re-review. Preserve the reviewer's actual assessment in either case.
+
+Prepare the review packet from the completed ho's specification, actual opening and closing revisions, verification commands, and owner rulings. Use `ho-antagonist-review` and its [Ho integration reference](../ho-antagonist-review/references/ho-integration.md); for a review-only `ho-NNx` document, fill that packet rather than inventing a build task or a new Think phase. The review's existing counter carries across fix hos and sessions, with two passes by default and at most three within the normal cycle. The completed-system review uses its separate final-review mode and budget.
+
+Do not copy the maintained review rules into every per-ho specification. Reference the installed skill or supply its portable documents to the reviewer, and retain the project's existing paths and frontmatter. Authoring the packet does not authorize starting another agent, making repairs, or waiving a requirement.
+
 ## Two Entry Points
 
 ### Entry Point 1: Init Mode (new ho)

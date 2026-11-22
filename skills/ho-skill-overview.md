@@ -153,6 +153,17 @@ Per-ho documents are read by both the practitioner returning to the project and 
 
 Skills that aren't part of the Kamae chain but support the practice.
 
+### ho-antagonist-review
+
+**Status:** Built
+**Surface:** IDE-primary; review-packet preparation also works in chat
+**Produces:** Bounded ho review reports and independent final codebase analyses, with evidence, finding dispositions, owner rulings, and a recorded two- or three-pass ceiling
+**When to run:** After each build ho, and separately when the completed system is ready for final acceptance. Also use to prepare a project's review packet or reconcile a review's findings and owner decisions.
+
+The [skill](ho-antagonist-review/SKILL.md) bundles separate ho-level and full-codebase briefs, shared evidence standards, cycle rules, and context/report templates. The first pass covers the whole declared scope; later passes examine repairs, unresolved causes, and affected behavior. It can recommend reopening a decision, but does not implement repairs, reset the review budget, or reopen work itself. Reviewer Pass and practitioner acceptance remain distinct.
+
+Kamae 4 places the review points in the overview; Kamae 5 supplies their project-specific packets and acceptance conditions. The [integration reference](ho-antagonist-review/references/ho-integration.md) explains those handoffs and how results enter the existing build record, State Memory, and roster. The same portable folder works in Claude Code and Codex; project-specific case studies are not part of its instructions.
+
 ### di (Destructive Interference audit)
 
 **Status:** Built
@@ -185,7 +196,8 @@ For a practitioner new to the methodology, the natural order is:
    - Run **ho-kamae-3-readme-collaborator** in chat — Kamae 3.
    - Run **ho-kamae-4-overview-collaborator** in chat — Kamae 4.
    - Run **ho-setup-project-environment-collaborator** in IDE to scaffold the repo.
-   - For each ho in the overview: run **ho-kamae-5-authoring-collaborator** in chat to author the per-ho document and any agent tasks (Kamae 5), then execute in IDE against the agent task specs.
+   - For each ho in the overview: run **ho-kamae-5-authoring-collaborator** in chat to author the per-ho document and any agent tasks (Kamae 5), then execute in IDE against the agent task specs and review the completed build with **ho-antagonist-review**.
+   - At completed-system acceptance, run **ho-antagonist-review** in final mode for an independent whole-codebase analysis.
 4. **Run di on substantial writing artifacts** before publication.
 
 For an experienced practitioner who already has an environment configured and is starting a new project, only steps 3 and 4 apply.
@@ -219,10 +231,11 @@ The same is true across surfaces. A chat-primary skill running in IDE (or vice v
 | ho-kamae-4-overview-collaborator    | Project       | Built                       | Chat              | 4       |
 | ho-setup-project-environment-collaborator | Project | Built                     | IDE               | —       |
 | ho-kamae-5-authoring-collaborator   | Project       | Built                       | Chat (IDE escape) | 5       |
+| ho-antagonist-review                | Project       | Built                       | IDE (chat intake) | —       |
 | di                                  | Cross-cutting | Built                       | Chat              | —       |
 | ho-tool-index-maintenance           | Housekeeping  | Built                       | IDE               | —       |
 
-Built: 9 skills (5 Kamae chain + DI + index maintenance + env-setup at practitioner scope + project-setup at project scope). Deferred: 2 skills (separate-project Palana and conditional stack-selection).
+Built: 10 skills (5 Kamae chain + antagonist review + DI + index maintenance + env-setup at practitioner scope + project-setup at project scope). Deferred: 2 skills (separate-project Palana and conditional stack-selection).
 
 ---
 

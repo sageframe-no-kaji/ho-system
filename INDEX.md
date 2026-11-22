@@ -201,4 +201,4 @@ not indexed row-by-row.
 
 | ID | Document | Description |
 |----|----------|-------------|
-| 9.1 | [Ho System Skills — Overview](skills/ho-skill-overview.md) | The skill catalog — what exists, what each one does, and where it sits |
+| 9.1 | [Ho System Skills — Overview](skills/ho-skill-overview.md) | The skill catalog — setup, Kamae authoring, bounded ho reviews, and independent final codebase analysis |
