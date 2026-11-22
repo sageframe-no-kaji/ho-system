@@ -61,7 +61,7 @@ The [handoff guide](references/handoffs.md) separates the cycle-specific handoff
 
 For direct exchanges, use [the agent transport guide](references/agent-transport.md). Herdr connects the agents through `hc`; tuios offers agent mail. After owner authorization and endpoint setup, the coordinator sends the handoff pointer, the reviewer returns its report pointer, and the builder prepares the next authorized repair review without a human relay. Host permissions still apply, and a prepared connection is not a completed live test.
 
-Repairs can use a separate Git worktree when isolation is useful. The guide covers uncommitted starting content, shared records, immutable review endpoints, and integration permissions. Every report states what should happen next and whether that handoff was prepared or actually dispatched.
+Every repair is committed before it is reviewed again. Final-review repairs always use a separate Git worktree; ho-review repairs use one when the checkout is shared. The guide covers uncommitted starting content, shared records, immutable review endpoints, and integration permissions. Every report states what should happen next and whether that handoff was prepared or actually dispatched.
 
 ## Bound the cycle
 
