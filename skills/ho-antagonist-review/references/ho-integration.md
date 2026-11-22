@@ -16,7 +16,7 @@ For a review-only `ho-NNx` document, use the context packet and report contract;
 
 ## Project records
 
-Use existing project destinations. For a project without review conventions, these are suggested paths rather than mandatory schema changes:
+Use existing project destinations. For a project without review conventions, these are suggested paths rather than mandatory schema changes. They take effect when the owner designates them in the review context; until then the default destination outside the repository applies:
 
 | Record | Suggested location |
 |---|---|
@@ -33,6 +33,10 @@ Keep the original opening revision and record the previous reviewed endpoint for
 Record build completion and review acceptance separately until both conditions required by the project are satisfied. Preserve the reviewer assessment as issued; if the practitioner accepts a later correction without another review, say so rather than replacing Return with a claimed reviewer Pass. At the pass ceiling, unresolved work remains visible and the reviewer stops for the practitioner.
 
 The coordinator records the result in the existing build record and refreshes the project's State Memory and status roster according to its normal close discipline. The report-only antagonist does not acquire permission to edit those files merely because they exist. Where review is required for acceptance, per-ho authoring must not mark the ho accepted solely because its implementation finished.
+
+## Changes after acceptance
+
+Material behavior added after an accepted endpoint needs its own bounded change-set review when review is part of project acceptance. Place that review before integration or release unless the owner explicitly selects deferred review; preserve that decision and outstanding status. Judge the scope by affected behavior and callers, not line count, and do not turn a small change review into a fresh whole-repository audit. Earlier Pass records remain tied to their original endpoints. An explicit owner waiver of re-review is also a valid acceptance decision; record the added range, focused verification, and remaining limits without describing the later endpoint as reviewer-passed or leaving a waived review falsely pending. A small change can require checking its actual dispatch boundary while still needing no new broad test campaign.
 
 ## Cycle handoffs
 

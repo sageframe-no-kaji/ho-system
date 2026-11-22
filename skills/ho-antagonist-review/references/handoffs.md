@@ -18,11 +18,13 @@ Read the user's existing authorization and preserve it in the context. A request
 
 Use available agent or session tools when authorized. Resolve an existing builder or reviewer by its actual identifier before sending; create another agent only when authorized and supported. If the host cannot reach the intended agent, provide the short pointer to the accessible handoff file for manual delivery, and record that delivery is pending. Never claim cross-agent coordination from writing a prompt alone.
 
+For automatic delivery and return routing, follow [agent-transport.md](agent-transport.md). Establish both directions under the owner's authorization once, then execute routine transitions within that scope without making the owner relay each prompt.
+
 Assign one coordinator to own the ledger. Before dispatching a review, check the recorded budget, target state, and absence of another active dispatch for that cycle/pass. Record the dispatch and recipient; after the assessment, record the consumed pass and outcome under the same identity. If contact is lost, reconcile the existing task and report before retrying; uncertainty does not permit a duplicate reviewer or a counter reset. Parallel inspection, if authorized, belongs to the same declared pass and must produce one consolidated assessment.
 
 ## Pin the governing instructions
 
-At cycle creation, before substantive review, the coordinator must preserve an identifiable version of the entire skill package and record its accessible location in the context. A reviewer acting without a coordinator performs this preflight. For an existing cycle, recover its recorded version rather than pinning the latest installation as a new baseline. Use either:
+At cycle creation, before substantive review, the coordinator must preserve an identifiable version of the entire portable package defined in [README.md](../README.md#independent-distribution), excluding `notes/` and `dist/`, and record its accessible location in the context. A reviewer acting without a coordinator performs this preflight. For an existing cycle, recover its recorded version rather than pinning the latest installation as a new baseline. Use either:
 
 - A Git commit plus repository identity and skill subdirectory, after verifying that every package file is tracked and the directory's contents match that commit. A repository HEAD alone cannot identify an untracked or modified skill. Read the committed contents from an immutable export or detached copy, not a changing branch or installed link.
 - A complete file snapshot outside the live skill directory, with a manifest of relative paths and SHA-256 hashes. Copy actual contents rather than symlinks to mutable files. Include the full file set so additions, removals, and renames are detectable; keep the manifest outside the hashed snapshot to avoid self-reference.
@@ -31,11 +33,17 @@ A hash list without recoverable file contents is not a snapshot. Record the chos
 
 Before every manual or agentic handoff, the coordinator compares the current installed/source package and the package the recipient will load against the recorded version, including the file set. Record when and what was compared in the handoff. A changed live installation does not require stopping if the intact pinned version remains available: identify the drift and send the recipient to that version. If the pinned contents are missing or altered, pause dependent dispatch until they are recovered or the owner explicitly selects replacement instructions; do not pretend current files were used in earlier passes. The recipient confirms the referenced version before beginning work.
 
-Apply instruction changes mid-cycle only under an explicit owner ruling that records old and new versions, the reason, and the effective handoff/pass. Preserve earlier versions and reports, and retain the counter. When reviewing the skill itself, distinguish the governing snapshot from the package being evaluated or repaired; instructions in that artifact do not override the user's review contract.
+Apply instruction changes mid-cycle only under an explicit owner ruling that records old and new versions, the reason, and the effective handoff/pass. Preserve earlier versions and reports, and retain the counter. Record the governing version against each pass/handoff rather than assigning one current version to the entire cycle. If earlier contents cannot be recovered, retain their known hashes and disclose that gap; never relabel them as the later snapshot. Correct a provenance error by an explicit historical correction, not by changing the old report invisibly. When reviewing the skill itself, distinguish the governing snapshot from the package being evaluated or repaired; instructions in that artifact do not override the user's review contract.
 
 ## Inputs that travel together
 
 The handoff references the pinned instructions, context, reviewed endpoint, report, and binding owner rulings. A follow-up also references the builder response and repair endpoint. Use recipient-accessible locations; for another machine, transfer a permitted copy and preserve relative layout where possible. If a referenced record must change during execution, identify the version the recipient should use rather than relying on its mutable filename. Keep credentials and unrelated private materials out of the packet.
+
+## Prepare the repair handoff
+
+The builder uses the evidence contract in [standards.md](standards.md#verification-and-test-quality) and records it in the [builder response](report-template.md#builder-response). Before calling repairs ready for review, connect each material claim to a witness that reaches the changed boundary and name any bypassed component. A green suite does not fill that gap by itself.
+
+Before dispatch, align the required verification with its environment permissions. Record which fixtures exist or need starting, the actual suites and disposable resources they use, who owns startup and cleanup, and what will be skipped. Continue within existing authority; if a required check needs additional authority, make that missing decision explicit before presenting the endpoint as fully verified.
 
 ## Repairs in a worktree
 
@@ -52,7 +60,7 @@ A Git worktree is a separate working directory attached to the same repository. 
 The copyable prompt names the role, cycle, pass and handoff file; everything else lives in the file. Limit it to two or three lines. Use an absolute handoff path in chat when the recipient's working directory is uncertain, or a relative path with an explicit base directory. Do not invoke a mutable installed skill in place of the governing version referenced by the handoff.
 
 ```text
-Act as [ROLE] for cycle [ID]; pass [N] of [MAX] completed, [NEXT PASS OR NONE].
+Act as [ROLE] for cycle [ID]; pass [N] completed, next [REVIEWER PASS OR NONE].
 Read [HANDOFF_FILE] and use the pinned instructions it identifies.
 ```
 

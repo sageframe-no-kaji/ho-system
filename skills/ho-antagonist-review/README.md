@@ -17,7 +17,7 @@ The final review examines the current system directly. Earlier ho reports help r
 
 ## Install
 
-Download and extract the skill archive, or obtain the complete folder from its source repository. Keep `SKILL.md`, `references/`, `assets/`, and `agents/` together. Install the folder as follows:
+Obtain the complete folder from its source repository, [sageframe-no-kaji/ho-system](https://github.com/sageframe-no-kaji/ho-system/tree/main/skills/ho-antagonist-review), or extract a skill archive you were given. Keep `SKILL.md`, `references/`, and `assets/` together; `agents/` is optional. Install the folder as follows:
 
 | Agent | User installation | Invocation |
 |---|---|---|
@@ -55,9 +55,11 @@ Replace the uppercase paths with actual locations. The reviewer reports findings
 
 ## Hand the report to the builder
 
-A Return report links to a separate `pass-N-handoff.md` beside it. That file carries the cycle-specific inputs and references the pinned skill version; give the main agent a two- or three-line prompt pointing to the handoff. The builder assesses each finding, repairs supported defects within authorization, and supplies a finding-to-change response and pinned repair endpoint. A follow-up reviewer receives those artifacts under the same cycle and counter.
+A Return report links to a separate `pass-N-handoff.md` beside it. That file carries the cycle-specific inputs and references the pinned skill version; give the main agent a two- or three-line prompt pointing to the handoff. The builder assesses each finding, repairs supported defects within authorization, and supplies a finding-to-change response and pinned repair endpoint. Each material completion claim names its observable witness, the boundary actually exercised, and the remaining limit. A follow-up reviewer receives those artifacts under the same cycle and counter.
 
 The [handoff guide](references/handoffs.md) separates the cycle-specific handoff file from the short dispatch prompt, with a [handoff template](assets/handoff.md) for the file. The coordinator compares governing instructions against the recorded version before every handoff; recipients use the pinned package even if the live installation changes. It supports manual handoffs and authorized agent-to-agent dispatch. Select coordinator role when asking an agent to manage the cycle, or builder role when asking it to repair findings; a review request alone selects reviewer role.
+
+For direct exchanges, use [the agent transport guide](references/agent-transport.md). Herdr connects the agents through `hc`; tuios offers agent mail. After owner authorization and endpoint setup, the coordinator sends the handoff pointer, the reviewer returns its report pointer, and the builder prepares the next authorized repair review without a human relay. Host permissions still apply, and a prepared connection is not a completed live test.
 
 Repairs can use a separate Git worktree when isolation is useful. The guide covers uncommitted starting content, shared records, immutable review endpoints, and integration permissions. Every report states what should happen next and whether that handoff was prepared or actually dispatched.
 
@@ -67,7 +69,7 @@ Pass 1 covers the declared scope. Pass 2 examines authorized repairs, unresolved
 
 The reviewer issues one of three assessments: Pass, Return, or Incomplete. At the ceiling it stops, retaining unresolved items for the owner's decision. Owner acceptance is recorded separately, so an accepted limitation or correction without re-review never becomes a fabricated reviewer Pass.
 
-The ceiling is an instruction supported by a persistent record, not a software execution guard. Any automated coordinator must enforce the counter before starting another review. This package supplies coordination and repair-handoff instructions, but no executable orchestration service or recurring task.
+An owner may change the budget; record the instruction, its scope, and its stopping condition without resetting the count. The ceiling is an instruction supported by a persistent record, not a software execution guard. Any automated coordinator must enforce the counter before starting another review. This package supplies coordination and repair-handoff instructions, but no executable orchestration service or recurring task.
 
 ## Relationship to Kamae
 
@@ -82,6 +84,7 @@ Antagonist review sits alongside the Kamae document chain as a recurring verific
 | [Ho review](references/ho-review.md) | Review of a bounded implementation unit |
 | [Final review](references/final-review.md) | Independent assessment of the completed system |
 | [Handoff guide](references/handoffs.md) | Version checks, file-and-pointer handoffs, agent coordination, and worktrees |
+| [Agent transport](references/agent-transport.md) | Direct Herdr/hc and tuios exchanges, return routing, authorization, and recovery |
 | [Handoff template](assets/handoff.md) | Cycle-specific inputs, rulings, endpoints, and output location |
 | [Cycle rules](references/cycle.md) | Pass counting, finding dispositions, stopping, and owner decisions |
 | [Report templates](references/report-template.md) | Reviewer report, builder response, and owner decision |
@@ -92,10 +95,18 @@ The reference documents carry the operating rules; this README introduces their 
 
 ## Independent distribution
 
-This directory is a self-contained distribution unit. To publish it as a separate repository, place its contents at that repository's root, keeping this README, the license, and all relative paths intact. For a skill archive, package the directory as `ho-antagonist-review/`, with `SKILL.md` immediately inside it.
+The portable package consists of `SKILL.md`, `README.md`, `LICENSE`, and the complete `references/`, `assets/`, and `agents/` directories. Include every file under those paths for both publication and cycle snapshots. Development records in `notes/` and generated archives in `dist/` are outside this boundary; they are not governing instructions and need not travel to a reviewer.
 
-Maintain changes in one source and regenerate distributed copies from it. Track the entire skill directory in Git so a commit and subdirectory can identify a clean version; uncommitted or untracked contents still require a snapshot for an active cycle. The broader Ho System and the development case study are not installation dependencies. Structural and link checks have been performed; independent agent behavior across hosts has not yet been validated.
+Publish those package paths at the root of an independent repository, or use `dist/ho-antagonist-review.zip`, whose top-level folder is `ho-antagonist-review/`. Keep all relative paths intact. Do not copy the whole development directory as a public distribution: the local notes include project-specific transcripts and evidence.
+
+Maintain the package in Git and regenerate distributed copies from it. A commit and subdirectory identify a clean portable version only when every included file matches; modified or untracked package files require a snapshot. Notes and archive changes do not change the governing package version. The broader Ho System and development case studies are not installation dependencies.
+
+## Development records
+
+The maintained analyses, evidence, and revision notes live under `notes/` beside this skill. Start with `notes/README.md` when working in the Ho System checkout; this local index is intentionally absent from portable distributions. Normal reviews load the instructions for their selected role and mode, not the development archive. Structural checks and observed use are documented separately from unperformed behavioral validation.
 
 ## Author and license
 
 Created by Andrew Todd Marcus as part of the Ho System. Distributed under the Ho System's existing [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International license](LICENSE). See the license for its terms and commercial-use contact.
+
+Using the skill to review your own project is permitted, commercial or not, and so is filling in its templates and keeping them in that project's records. The license terms govern redistribution of the skill itself.

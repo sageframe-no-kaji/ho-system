@@ -8,7 +8,7 @@ Use the applicable sections below, keeping a follow-up report focused on what ch
 Assessment: Pass / Return / Incomplete
 Reason: the decisive finding or acceptance limitation in plain language.
 
-Cycle: ID; mode; pass NUMBER of MAXIMUM; passes remaining
+Cycle: ID; mode; cumulative pass NUMBER; normal ceiling or owner exception; remaining budget/stopping condition
 Reviewed state: exact revision or immutable snapshot
 Governing instructions: pinned commit/subdirectory or snapshot/manifest
 Original scope: opening-to-current range for a ho; inventory for a final review
@@ -70,8 +70,15 @@ the handoff addresses the owner rather than requesting another review.
 
 ## Builder response
 
-For each finding being addressed, supply its ID, whether accepted or disputed, the causal change, the affected files/revision, and the evidence establishing the result. State what remains untested and any requirement conflict encountered. A claim that a test would fail on old code must say whether that was actually executed or is a static argument. Include the repair directory, original and repaired content identities, and integration state. Finish with the next authorized handoff using [handoffs.md](handoffs.md); write the cycle-specific handoff beside the latest report and supply only its short pointer for delivery. Preserve earlier dispatched handoffs using the naming rules in that guide.
+For each finding being addressed, supply its ID, whether accepted or disputed, the causal change, and affected files/revision. Record the evidence in a compact row or equivalent prose:
+
+| Finding / claimed outcome | Observable witness and result | Actual boundary exercised; substituted or bypassed component | Remaining limit or owner decision |
+|---|---|---|---|
+
+When the same finding survives two repair attempts, include the compact invariant/transition map required by [cycle.md](cycle.md#new-evidence-and-reopened-decisions), with any untested routes identified. Distinguish production failures from probe/build failures and label probes that assert the old defect rather than the corrected outcome.
+
+The witness must distinguish the claimed behavior from a plausible incorrect implementation; otherwise narrow the claim or record the gap. Do not repeat suite logs or manufacture a new test for a claim already established by appropriate evidence. A claim that a test would fail on old code must say whether that was actually executed or is a static argument. Include the repair directory, original and repaired content identities, and integration state. Finish with the next authorized handoff using [handoffs.md](handoffs.md); write the cycle-specific handoff beside the latest report and supply only its short pointer for delivery. Preserve earlier dispatched handoffs using the naming rules in that guide.
 
 ## Owner decision entry
 
-Record the date, finding ID, decision, rationale, changed requirement or accepted risk, affected scope, and the evidence being relied on. If the decision closes work without re-review, say so explicitly and retain the reviewer's assessment. If it authorizes a new pass or an exception to the cap, record the revised budget before execution.
+Record the date, finding ID, decision, rationale, changed requirement or accepted risk, affected scope, and the evidence being relied on. If the decision closes work without re-review, say so explicitly and retain the reviewer's assessment. If it authorizes a new pass or an exception to the cap, record the instruction, affected cycle or broader authorized scope, and revised limit or stopping condition before execution.

@@ -14,6 +14,7 @@ Read [ho-integration.md](references/ho-integration.md) when preparing a project 
 ## Select the task
 
 - Select the role as well as the mode: reviewer by default, coordinator when asked to manage the cycle, or builder when asked to assess and repair findings. Read [handoffs.md](references/handoffs.md) for coordinator or builder work and for the separate handoff file linked from each report and its short dispatch prompt. Existing authorization carries forward; do not ask again for steps already within it.
+- For direct agent-to-agent handoffs, also read [agent-transport.md](references/agent-transport.md); it covers Herdr/hc, tuios, return routing, and dispatch recovery.
 - For one ho or change set, read [standards.md](references/standards.md), [ho-review.md](references/ho-review.md), and [cycle.md](references/cycle.md).
 - For an independent final codebase analysis, read [standards.md](references/standards.md), [final-review.md](references/final-review.md), and [cycle.md](references/cycle.md).
 - To prepare a review rather than execute one, read the applicable mode and complete [review-context.md](assets/review-context.md) from available project evidence. Do not start the review implicitly.
@@ -23,7 +24,7 @@ Resolve these paths relative to this skill's directory. Load only the selected m
 
 ## Establish the boundary
 
-Before substantive review, pin the complete skill package to a verified Git commit and subdirectory or a recoverable snapshot with a file-hash manifest. Record that version in the context. Follow [handoffs.md](references/handoffs.md) to compare instructions before every handoff and direct recipients to the pinned version; an installed link is not a version record.
+Before substantive review, pin the complete portable skill package defined in [README.md](README.md#independent-distribution) to a verified Git commit and subdirectory or a recoverable snapshot with a file-hash manifest. Development notes and generated archives are excluded. Record that version in the context. Follow [handoffs.md](references/handoffs.md) to compare instructions before every handoff and direct recipients to the pinned version; an installed link is not a version record.
 
 Read the user's instructions and applicable repository instructions, then find or complete the review context from the repository, specification, and previous review record. Confirm the reviewed revision, mode, requirements, pass number and ceiling, permitted verification, report destination, and existing rulings before assessing the code. Ask only for missing information that prevents a trustworthy assessment or authorized verification; continue independent read-only investigation while that question is pending.
 
@@ -31,7 +32,7 @@ The default ceiling is two reviewer passes, with a third available when explicit
 
 ## Preserve independence and evidence
 
-Use a fresh reviewer context where the host supports one. If you wrote the reviewed implementation or share its deliberations, disclose that limit instead of claiming independence; do not silently create another agent. Read requirements and implementation before earlier reviewer conclusions, while knowing binding owner decisions from the start.
+Use a fresh reviewer context where the host supports one. If you wrote the reviewed implementation or share its deliberations, disclose that limit instead of claiming independence; do not silently create another agent. For an initial review, read requirements and implementation before earlier reviewer conclusions, while knowing binding owner decisions from the start. For a repair review, start with the prior ledger, builder response, and rulings, then independently check their claims against the changed implementation.
 
 Place reports outside the reviewed repository by default unless the user designates an in-repository destination. In reviewer role, change no repository file except an explicitly designated report or review record. In builder or coordinator role, keep changes within the recorded repair and recordkeeping permissions. Do not commit unless authorized. Verification may create approved temporary outputs in the declared environment; preserve existing changes and record any unexpected mutation. Suggestions to change architecture or reopen work are permitted; carrying them out requires authorization beyond an ordinary repair request.
 
