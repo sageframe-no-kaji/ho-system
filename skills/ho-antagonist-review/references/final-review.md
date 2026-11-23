@@ -2,7 +2,7 @@
 
 The final review examines the completed system as a whole, including interactions and accumulated decisions that individual ho reviews could not establish. Earlier Pass reports are evidence about earlier units, not proof of current system correctness. The reviewer starts from the system's intended behavior and the actual repository at a pinned revision, then uses earlier reports to reconcile unresolved risks and avoid losing accepted decisions.
 
-Use the [shared standards](standards.md), [cycle rules](cycle.md), and completed [review context](../assets/review-context.md). This is a separate cycle with its own two-pass default and three-pass ceiling. It may recommend reopening a ho or architectural decision but cannot implement that recommendation or silently start another ho review.
+Use the [shared standards](standards.md), [cycle rules](cycle.md), and completed [review context](../assets/review-context.md). A final review is a separate cycle with its own budget under those rules. It may recommend reopening a ho or architectural decision, and never starts a ho review itself.
 
 ## Establish what comprehensive means
 
@@ -47,6 +47,6 @@ Prioritize the smallest useful corrective outcome and explain behavior changes. 
 
 ## Follow-up and closure
 
-Pass 1 is the independent full review. Pass 2 verifies the approved fixes and the affected system flows; an optional third pass handles remaining items and regressions within the same ceiling. Keep the scope map visible so the narrowed follow-up does not erase the record of what was or was not covered initially.
+Pass 1 is the independent full review. Later passes follow the [normal sequence](cycle.md#the-normal-sequence), checking the approved fixes against the affected system flows. Keep the scope map visible so the narrowed follow-up does not erase the record of what was or was not covered initially.
 
 Report system acceptance separately from release or deployment authorization. A source review can pass within its declared scope while an unrequested deployment remains undone; a final release-acceptance review cannot pass if its required installed-artifact evidence is absent. Identify that distinction in the review context before starting.

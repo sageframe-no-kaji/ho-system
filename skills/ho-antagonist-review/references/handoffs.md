@@ -10,7 +10,7 @@ Use paths relative to the handoff's directory where possible. The report links t
 
 Use a cycle-specific report directory to avoid filename collisions. Before the first report, `pass-0-handoff.md` may live in that planned directory. For a later, distinct transition following the same report, use a descriptive suffix such as `pass-1-builder-response-handoff.md`. Preserve dispatched handoffs; a correction gets a new filename and a supersedes entry in the ledger rather than silently changing instructions already sent.
 
-On Return, hand off to the builder for assessment of the findings. On Incomplete, identify the missing evidence or decision. On Pass, give the closure action; at the ceiling, hand off to the owner. Record recipient and delivery status in the ledger, distinguishing prepared, dispatched, and completed. Tell the owner about completion, required decisions, or material blockers without repeating the handoff contents.
+The recipient follows from the outcome under the [cycle rules](cycle.md#the-normal-sequence): the builder on Return, whoever holds the missing evidence or decision on Incomplete, the closure action on Pass, and the owner at the ceiling. Record recipient and delivery status in the ledger, distinguishing prepared, dispatched, and completed. Tell the owner about completion, required decisions, or material blockers without repeating the handoff contents.
 
 ## Authorization and transport
 
@@ -57,13 +57,11 @@ A Git worktree is a separate working directory attached to the same repository. 
 
 ## Copyable pointer
 
-The copyable prompt names the role, cycle, pass and handoff file; everything else lives in the file. Limit it to two or three lines. Use an absolute handoff path in chat when the recipient's working directory is uncertain, or a relative path with an explicit base directory. Do not invoke a mutable installed skill in place of the governing version referenced by the handoff.
+Use an absolute handoff path in chat when the recipient's working directory is uncertain, or a relative path with an explicit base directory. Do not invoke a mutable installed skill in place of the governing version referenced by the handoff.
 
 ```text
 Act as [ROLE] for cycle [ID]; pass [N] completed, next [REVIEWER PASS OR NONE].
 Read [HANDOFF_FILE] and use the pinned instructions it identifies.
 ```
 
-Fill the fields before delivery. The same pointer works for manual transfer and authorized agent dispatch; role-specific operating rules stay in the skill. Report closure contains a link to the handoff, not another copy of this prompt or its contents.
-
-For Incomplete before the ceiling, the handoff requests the missing evidence or decision when no defect has been established. Resume review only after that input is resolved and a pass remains. A Pass ends the normal cycle early; an unused pass is not work to be performed.
+Fill the fields before delivery. The same pointer works for manual transfer and authorized agent dispatch; role-specific operating rules stay in the skill.
