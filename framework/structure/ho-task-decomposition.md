@@ -259,7 +259,7 @@ record; new projects conform to the `Standalone-AT-` form.
 
 The full format — required sections (frontmatter, Goal, Files, Required Changes,
 Acceptance, Verification, Commit) and optional sections (Context, Problem, Do Not,
-Stop Condition) — lives in the dandori FORMAT reference embedded in the kamae-5 skill.
+Stop Condition) — lives in Dandori’s `FORMAT.md`. Its `HO.md` rider supplies the Ho conventions.
 The structural rules this document owns: acceptance criteria verify by command,
 verification commands match acceptance one-to-one, and optional sections appear only
 when warranted.
@@ -339,12 +339,10 @@ suggests the ho should split).
 ## 8. The Dandori Bridge
 
 The translation from a ho's Think phase to executable specs is a craft move with a
-name: **dandori** (段取り — preparation, staging). It is operationalized twice:
-
-- **Embedded in the kamae-5 skill** (`dandori/` toolkit: DANDORI.md, FORMAT.md,
-  KOKOROE.md, examples) — the Ho System-scoped variant that authors constitutive
-  children during per-ho authoring.
-- **As a standalone skill** — the lean variant for tasks outside any ho.
+name: **dandori** (段取り — preparation, staging). Kamae-5 decides with the practitioner whether to decompose a ho.
+Once they agree on child tasks, Kamae-5 uses the [Dandori skill](https://github.com/sageframe-no-kaji/dandori)
+with its `HO.md` rider to write them. A practitioner authoring a standalone task in a Ho
+project uses Dandori and the same rider directly.
 
 The five translation moves (decisions → interface specifications; architectural
 commitments → file boundaries; out-of-scope items → Do Not entries; deferred

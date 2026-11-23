@@ -82,8 +82,8 @@ the `status:` field — see ho-structure §5.4 (merge-decisions D2).
 **Purpose:** the executable register — a surgical, command-verifiable spec an
 autonomous coding agent reads to execute one bounded unit of work. No architectural
 thinking inside; all decisions were extracted to the parent ho's Think phase.
-**Authored by:** the kamae-5 skill's embedded dandori toolkit (child tasks) or the
-practitioner directly via the standalone dandori skill (standalone tasks).
+**Authored by:** Kamae-5 uses Dandori for child tasks. The practitioner uses Dandori
+directly for standalone tasks. Both use its Ho rider.
 **Operational properties (the four that define the type):**
 
 1. **Procedural.** The AT contains no undecided architecture. If specification
@@ -104,7 +104,7 @@ practitioner directly via the standalone dandori skill (standalone tasks).
 
 **Lifecycle:** `ready` → `in-progress` → `complete` | `blocked`.
 **Location:** `ho-process/agent-tasks/Ho-<NN>-AT-<MM>.md` (child; the canonical
-sibling-of-`hos/` placement per kamae-project-framing §2.6 and dandori FORMAT.md).
+sibling-of-`hos/` placement per kamae-project-framing §2.6 and Dandori’s HO.md).
 Standalone tasks share the directory as `Standalone-AT-YYYY-MM-DD-slug.md`
 (merge-decisions D3; see ho-task-decomposition §4.2).
 **Frontmatter:** `created`, `type: agent-task` (child) or `type:

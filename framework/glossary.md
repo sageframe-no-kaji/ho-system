@@ -99,10 +99,9 @@ _Plain: Keeping track of where a build is between work sessions, especially when
 
 **dandori (段取り)** — Preparation; staging; the carpenter's setup, the chef's mise en
 place. Operationally: the discipline and format for translating a ho's resolved Think phase
-into executable agent-task specs. Exists as a standalone skill (lean, no Ho System
-assumptions) and embedded in the kamae-5 skill (Ho-scoped naming, paths, commit format).
-The load-bearing bridge of the operating layer. _(ho-task-decomposition 2.8 §8; DANDORI.md;
-FORMAT.md.)_
+into executable agent-task specs. Kamae-5 uses the Dandori skill with its Ho rider for child
+tasks. The same rider applies when a practitioner uses Dandori directly for a standalone
+task in a Ho project. _(ho-task-decomposition 2.8 §8.)_
 
 _Plain: The preparation that turns a resolved plan into exact, runnable instructions before any building starts._
 
