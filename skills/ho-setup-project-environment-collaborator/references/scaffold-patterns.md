@@ -230,6 +230,119 @@ Plus a minimal `src/_includes/base.njk`:
 
 The practitioner customizes from here.
 
+## Swift: `Sources/[PackageName]Core/[PackageName]Core.swift`
+
+```swift
+// [PackageName]Core: [one-line project description].
+
+public enum [PackageName]Core {
+    public static let version = "0.1.0"
+}
+```
+
+The library target needs at least one file; the enum gives the namespace something to live under and a conventional version constant.
+
+## Swift: `Tests/[PackageName]CoreTests/[PackageName]CoreTests.swift`
+
+```swift
+import Testing
+@testable import [PackageName]Core
+
+@Suite("Smoke")
+struct SmokeTests {
+    @Test("Module is importable and version is set")
+    func versionIsSet() {
+        #expect(![PackageName]Core.version.isEmpty)
+    }
+
+    @Test("Truth is truth")
+    func truth() {
+        #expect(true)
+    }
+}
+```
+
+Uses swift-testing (`@Test`, `#expect`). The smoke suite exists so:
+
+1. `swift test` has something to run; the practitioner can prove the verification stack works before any real code.
+2. The coverage measurement has a baseline; once real code is added, real tests replace this.
+3. swift-testing is the default for new test code per the practitioner's Swift language module (`languages-swift.md`); XCTest stays available alongside for XCUITest UI testing.
+
+## README.md (Swift project)
+
+````markdown
+# [project-name]
+
+[one-line description]
+
+## Setup
+
+Requires the Swift 6.0+ toolchain (Xcode 16+ on macOS, or `swiftly` on Linux).
+
+```bash
+swift build
+```
+
+## Verify
+
+```bash
+swift-format lint --recursive --strict Sources Tests
+swiftlint lint --strict
+swift build
+swift test
+```
+
+## Run
+
+[how to run the project — `swift run [executable-name]` once an executable target exists]
+````
+
+## Swift app target: `Sources/[PackageName]App/App.swift` (when the project has a SwiftUI app)
+
+```swift
+import SwiftUI
+
+@main
+struct [PackageName]App: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        Text("[project-name]")
+            .frame(minWidth: 480, minHeight: 320)
+    }
+}
+```
+
+For non-trivial apps an `.xcodeproj` typically lives at `xcode/[PackageName].xcodeproj/` and references the Swift package via Local Package Reference — Xcode owns asset catalogs, Info.plist beyond what SwiftPM handles, and the notarization workflow.
+
+## Swift CLI target: `Sources/[PackageName]CLI/main.swift` (when the project has a CLI)
+
+```swift
+import ArgumentParser
+
+@main
+struct [PackageNameLower]: AsyncParsableCommand {
+    static let configuration = CommandConfiguration(
+        commandName: "[package-cli-name]",
+        abstract: "[one-line CLI description]",
+        subcommands: [],
+        defaultSubcommand: nil
+    )
+
+    func run() async throws {
+        print("[project-name] CLI")
+    }
+}
+```
+
+Subcommands compose as nested `ParsableCommand` types referenced in the `subcommands:` array.
+
 ## When Scaffolding Crosses Languages
 
 For app frontends (Python + web), generate both the Python source layout AND the package.json/tailwind.config.js. The project instructions load both language modules. The verification stack covers the Python side; the web side runs through whatever toolchain the practitioner uses.

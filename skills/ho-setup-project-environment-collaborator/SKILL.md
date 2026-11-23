@@ -82,7 +82,7 @@ Ask three or four questions to lock the shape:
 
 1. **Project name.** What's the working name? (Becomes the repo name and the package name, often.)
 2. **Project type.** Service, desktop, library, static-site, app frontend.
-3. **Language stack.** Python? Web? Both? (Cross-reference with project type—a service is usually Python or Rust; a static site is web; an app frontend is both Python and web; etc.)
+3. **Language stack.** Python? Web? Rust? Swift? Combination? (Cross-reference with project type—a service is usually Python or Rust; a static site is web; an app frontend is both Python and web; a macOS-native desktop app is typically Swift; etc.)
 4. **GitHub account.** Which one? (Look at `modules/infrastructure.md` for the practitioner's accounts. If they have only one, skip the question. If they have multiple, ask.)
 5. **Process-record posture.** One question, keyed first to repo visibility and then to publication intent. Every project gets a Kamae 6 State Memory inside its canonical process root — always present, private by default (`framework/structure/cross-session-continuity.md` §10; `framework/structure/process-publication-boundary.md`):
    - **Private project repo** → track canonical `ho-process/` with the project. Versioned, private, zero extra machinery.
@@ -226,6 +226,29 @@ For an app frontend (Python backend serving HTMX/Jinja2/Tailwind), the file list
 - `tailwind.config.js` and `package.json` for the build pipeline
 - Project instructions loading both the Python and web modules
 
+For a Swift desktop app (macOS-native, optional cross-platform CLI sibling), the file list is:
+
+1. **`Package.swift`** from `templates/Package.swift.baseline`. Replace placeholders:
+   - `[PackageName]` → PascalCase package name
+   - `[package-cli-name]` → kebab-case CLI binary name
+   - Uncomment executable products for the targets the project needs (GUI, CLI, both)
+   - Uncomment `swift-argument-parser` and `swift-log` dependencies if the CLI target is in use
+2. **`.swift-format`** from `templates/swift-format.baseline.json`. Verbatim; no placeholders.
+3. **`.swiftlint.yml`** from `templates/swiftlint.baseline.yml`. Verbatim; tighten `warning_threshold` to 0 once the codebase is clean.
+4. **`.pre-commit-config.yaml`** from `templates/pre-commit.swift.baseline.yaml`. Verbatim.
+5. **`.gitignore`** from `templates/gitignore.swift.baseline`. Verbatim plus any project-specific exclusions.
+6. **`.env.example`** from `templates/env.example.baseline` if the project reads environment variables.
+7. **Project instructions** from the practitioner's active template, loading the Swift language module (`languages-swift.md`).
+8. **`Sources/[PackageName]Core/[PackageName]Core.swift`** — the library target's seed file (see `references/scaffold-patterns.md`).
+9. **`Tests/[PackageName]CoreTests/[PackageName]CoreTests.swift`** — swift-testing smoke suite (see `references/scaffold-patterns.md`).
+10. **Optional `Sources/[PackageName]App/App.swift`** — SwiftUI app entry point if the project has a GUI target.
+11. **Optional `Sources/[PackageName]CLI/main.swift`** — swift-argument-parser CLI entry if the project has a CLI target.
+12. **`README.md`** — Swift variant from `references/scaffold-patterns.md` (`swift build`, `swift test`, lint pipeline).
+
+The process record, State Memory, and roster files are scaffolded as in the Python list above; only the language-specific files differ. If the practitioner's templates directory lacks the Swift baselines, say so and stop before writing placeholders by hand.
+
+The Xcode project (`xcode/[PackageName].xcodeproj`) is deferred — generate at the ho that touches the Mac app shell (typically the SwiftUI shell ho), not at scaffold time. CLI-only Swift projects don't need an Xcode project at all.
+
 ### Phase 4: Initialize Git
 
 After files are placed:
@@ -278,6 +301,17 @@ pytest                                                 # confirm smoke test pass
 Watch the output. If `pytest` fails, fix before declaring success—the smoke test should pass; if it doesn't, something's broken.
 
 For web projects: `npm install`; for the app frontend: both.
+
+For Swift projects:
+
+```bash
+swift build                                            # resolve deps + compile
+swift test                                             # confirm smoke suite passes
+pre-commit install                                     # install hooks
+swift-format --version && swiftlint version            # confirm both lint tools resolve
+```
+
+If `swift build` can't find `swift-format` or `swiftlint`, install via `brew install swift-format swiftlint` (macOS) or the equivalent on Linux. If the smoke suite fails, fix before declaring success.
 
 ### Phase 6: Confirm and Hand Off
 
