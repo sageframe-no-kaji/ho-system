@@ -21,7 +21,7 @@ The rules I follow in every session. The philosophy grounding these rules lives 
 
 ### The verification stack
 
-A Ho System project runs a verification stack at every commit. The stack catches different categories of error at different layers. Each layer is non-negotiable, and each catches things the others can't.
+A Ho System project runs a verification stack: three layers at every commit, and a fourth at the close of every build ho. The stack catches different categories of error at different layers. Each layer is non-negotiable, and each catches things the others can't.
 
 **Linting.** Catches style violations, unused imports, formatting drift, common syntactic mistakes. In Python projects, this is `ruff` or `flake8 + black`. The choice between them is local—`ruff` is faster and consolidates more checks into a single tool; `flake8 + black` is more conservative and widely deployed. Either works. What is not negotiable is that linting runs before commit and the commit does not happen if linting fails.
 
@@ -29,9 +29,9 @@ A Ho System project runs a verification stack at every commit. The stack catches
 
 **Testing.** Catches behavioral errors—the system not doing what it's supposed to do. Unit tests verify components in isolation. Integration tests verify components together. End-to-end tests verify the system as a user encounters it. The practitioner writes tests as specifications of behavior, not as quality-assurance tasks. Coverage is measured. The target is high—typically above 90% line coverage, with the uncovered lines documented as deliberately untested (the `__main__` guard, the dead inner function). 100% is achievable for most projects; below 90% is a smell.
 
-**Cross-model verification, optional.** A separate model—typically a more powerful or differently-specialized one than the agent doing the work—reviews significant changes. This catches errors that the test suite missed because the test suite was also written by the same agent. Cross-model verification is not always necessary; it is most useful for high-stakes work and architectural decisions. The practice is more important than the tool: the principle is that verification should not all come from the same source.
+**Independent review.** A separate reviewer—a fresh agent context, ideally a different model from the one that did the work—reviews each build ho once it is built, and the completed system once more as a whole. This catches errors that the test suite missed because the test suite was also written by the same agent. It is the standard. The practitioner may override it for a given ho, and the override is recorded, never silent. The `ho-antagonist-review` skill carries the procedure and its bounded pass count. The practice is more important than the tool: the principle is that verification should not all come from the same source.
 
-The four layers are non-negotiable as principles. The specific tools are calibrated to language and project. The cycle is: code → lint → type-check → test → commit. No commit happens unless all four are green. This is enforced by pre-commit hooks where possible, and by practitioner discipline always.
+The four layers are non-negotiable as principles. The specific tools are calibrated to language and project. The commit cycle is: code → lint → type-check → test → commit. No commit happens unless those three are green. This is enforced by pre-commit hooks where possible, and by practitioner discipline always. The ho cycle adds the fourth: build → independent review → accept. A build ho is not accepted on its implementation alone.
 
 ### The type error discipline
 

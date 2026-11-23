@@ -19,6 +19,18 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-11-23 — independent review is the standard
+
+### Make the fourth verification layer standard — kind: changed
+
+The operating discipline called all four verification layers non-negotiable while labelling
+the fourth "optional", and required all four before a commit although review happens after a
+build, not before each commit. The fourth layer is now **independent review**: the standard at
+the close of every build ho and once more for the completed system, with a recorded
+practitioner override. Lint, type-check, and test gate every commit; review gates acceptance of
+the ho. This matches what Kamae 4 and Kamae 5 already schedule and what the
+`ho-antagonist-review` skill carries out. Practitioner ruling, 2026-11-23.
+
 ## 2026-11-22 — Dandori and Kamae-5
 
 ### Move the Ho task conventions to Dandori — kind: changed
