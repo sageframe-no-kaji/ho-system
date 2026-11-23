@@ -2,7 +2,7 @@
 
 Conventions for web work—HTML, CSS, JavaScript, and the static-site or app-frontend tooling around them. Two sections: universal Ho System web conventions (light) and my specifics (overlay).
 
-This module is imported by project-level CLAUDE.md files when the project includes web work. It is not loaded globally.
+This module is loaded through project instructions when the project includes web work. It is not loaded globally.
 
 ---
 
@@ -90,7 +90,7 @@ App frontends (served by Python):
 
 ## Templates
 
-Concrete starting files for new web projects live in `~/.claude/templates/`:
+Concrete starting files for new web projects live in the practitioner’s templates directory:
 
 - `gitignore.web.baseline`—`node_modules/`, `dist/`, `build/`, `.env`, etc.
 

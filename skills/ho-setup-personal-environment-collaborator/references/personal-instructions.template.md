@@ -1,6 +1,6 @@
 # <Practitioner name> — Working Discipline
 
-Auto-loaded by Claude Code at every session. Pulls in the operating discipline (universal Ho System), practitioner profile (yours), and infrastructure context (yours). Language-specific conventions live in `~/.claude/modules/` and are imported by per-project CLAUDE.md files when relevant.
+<Place this in the personal instruction source the agent loads. Replace the module slots below with native imports or explicit instructions to read the resolved files at session start.>
 
 ---
 
@@ -10,7 +10,7 @@ Auto-loaded by Claude Code at every session. Pulls in the operating discipline (
 - Verification rhythm: LINT. PRODUCE TESTS. EVALUATE TESTS. LINT. COMMIT. Run it after every implementation.
 - Coverage floor is 90%. Pre-commit hooks enforce. Don't bypass.
 - Type errors get explanatory comments. Silent `# type: ignore` is debt.
-- Ask before anything outside the allow list in `settings.json`.
+- Ask before anything outside the permissions granted in this environment.
 
 <Practitioners may add 1–2 of their own recurring rules here. Common additions: language-specific gotchas, project-class-specific conventions, repeated mistakes the practitioner wants flagged.>
 
@@ -18,25 +18,25 @@ Auto-loaded by Claude Code at every session. Pulls in the operating discipline (
 
 ## Operating discipline (Ho System, universal)
 
-@modules/operating-discipline.md
+<load the resolved modules/operating-discipline.md>
 
 ## Practitioner profile
 
-@modules/practitioner.md
+<load the resolved modules/practitioner.md>
 
 ## Infrastructure
 
-@modules/infrastructure.md
+<load the resolved modules/infrastructure.md>
 
 ---
 
 ## Language conventions (loaded per-project, not here)
 
-Language-specific conventions live in `~/.claude/modules/`:
+Language-specific conventions live alongside the personal modules:
 
 - `languages-python.md`—Python projects
 - `languages-web.md`—web projects
 - `languages-rust.md`—Rust (placeholder; filled in when first Rust project starts)
 - `languages-swift.md`—Swift (placeholder; filled in when first Swift project starts)
 
-Per-project `CLAUDE.md` files import the relevant ones. If working in a directory without a project `CLAUDE.md`, ask before applying language-specific conventions.
+Project instructions load the relevant ones. If working in a directory without project instructions, ask before applying language-specific conventions.

@@ -4,12 +4,7 @@
 
 ## Languages
 
-Uncomment the module imports that match this project's stack:
-
-@~/.claude/modules/languages-python.md
-<!-- @~/.claude/modules/languages-web.md -->
-<!-- @~/.claude/modules/languages-rust.md -->
-<!-- @~/.claude/modules/languages-swift.md -->
+<Identify the active language modules by name. Use the host’s supported include syntax, or tell the agent to read those modules from the location named in its personal instructions before working in this project.>
 
 ## Project-specific rules
 

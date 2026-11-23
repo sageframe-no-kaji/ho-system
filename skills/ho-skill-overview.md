@@ -120,7 +120,7 @@ The ho overview is the build's directional plan. It identifies phases first (clu
 
 **Status:** Built
 **Surface:** IDE-primary
-**Produces:** A repo scaffold ready for ho-00 — `pyproject.toml`, smoke tests, project-level `CLAUDE.md`, `ho-process/hos/` and `ho-process/agent-tasks/` directory structure, lint stack configured, pre-commit hooks installed, initial commit.
+**Produces:** A repo scaffold ready for ho-00 — `pyproject.toml`, smoke tests, project instructions for the active agent, `ho-process/hos/` and `ho-process/agent-tasks/` directory structure, lint stack configured, pre-commit hooks installed, initial commit.
 **When to run:** At project start, before authoring any per-ho document. Update mode handles scaffold adjustments.
 
 The companion to `ho-kamae-5-authoring-collaborator`. `ho-kamae-5-authoring-collaborator` does chat-side authoring of ho-00 (concept primers, shape decisions); `ho-setup-project-environment-collaborator` does the IDE-side scaffolding work. They run in sequence — setup first, design against the scaffold it produces.
@@ -208,7 +208,7 @@ For a practitioner who has internalized the methodology to the point of Ri-stage
 
 ## How Skills Compose
 
-Skills are deliberately separated by scope, by document, and by surface. They do not depend on each other at runtime — each skill is self-contained and can be used independently. They depend on each other through their _outputs_. The system design collaborator reads the seed; the README collaborator reads the seed and the system design; the ho overview collaborator reads all three; the design collaborator reads all four plus the project's `CLAUDE.md`.
+Skills are deliberately separated by scope, by document, and by surface. The Kamae skills hand work forward through their _outputs_. Kamae-5 also loads Dandori when it authors child tasks. The system design collaborator reads the seed; the README collaborator reads the seed and the system design; the ho overview collaborator reads all three; the design collaborator reads all four plus the project's agent instructions.
 
 This composition through outputs (rather than through tool chaining) matches the operating discipline's principle of encoded environment. The artifacts are the persistent layer. The skills produce and maintain artifacts. The agent (and the practitioner) read artifacts and act accordingly. The skills don't need to know about each other; they only need to know about the artifacts they consume and produce.
 

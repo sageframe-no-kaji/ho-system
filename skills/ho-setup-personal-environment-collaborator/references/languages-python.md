@@ -2,7 +2,7 @@
 
 Conventions for Python work. Two sections: universal Ho System Python conventions (apply to any practitioner using Ho) and my specifics (overlay).
 
-This module is imported by project-level CLAUDE.md files when the project uses Python. It is not loaded globally. Projects that don't touch Python don't pay this context cost.
+This module is loaded through project instructions when the project uses Python. It is not loaded globally. Projects that don't touch Python don't pay this context cost.
 
 ---
 
@@ -182,7 +182,7 @@ Deployment infrastructure detail in `@modules/infrastructure.md`.
 
 ## Templates
 
-Concrete starting files for new Python projects live in `~/.claude/templates/`:
+Concrete starting files for new Python projects live in the practitioner’s templates directory:
 
 - `pyproject.baseline.toml`—drop in, fill placeholders
 - `pre-commit.baseline.yaml`—ruff + mypy + pytest stack

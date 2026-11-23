@@ -349,7 +349,7 @@ commitments → file boundaries; out-of-scope items → Do Not entries; deferred
 discoveries → Stop Conditions; verification dependencies → ordering) live in
 FORMAT.md. The five kokoroe guidelines the *executing* agent operates under
 (context-first, spec as authorization, verify by command, halt and surface, honor the
-boundary) live in KOKOROE.md and install at the project level via CLAUDE.md.
+boundary) live in KOKOROE.md and install at the project level through the executor’s project instructions.
 
 Dandori is not a utility skill. It is the load-bearing bridge of the operating layer —
 the mechanism by which the two registers stay separated in practice. The skill catalog

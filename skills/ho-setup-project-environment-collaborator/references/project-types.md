@@ -28,7 +28,7 @@ configs/                      # configuration templates
 
 **Distribution:** not applicable (services are deployed, not distributed).
 
-**CLAUDE.md imports:** `@~/.claude/modules/languages-python.md` (or rust); plus the practitioner's infrastructure module is already loaded globally.
+**Project language modules:** `languages-python.md` (or rust); plus the practitioner's infrastructure module is already loaded globally.
 
 ## Desktop App
 
@@ -56,7 +56,7 @@ build.spec                    # PyInstaller spec
 
 **Distribution:** signed/notarized macOS `.app`, Windows installer (Inno Setup), Linux AppImage if applicable. Released via GitHub Releases.
 
-**CLAUDE.md imports:** `@~/.claude/modules/languages-python.md` (or swift); often plus a Dockerfile reference if the app has a server component.
+**Project language modules:** `languages-python.md` (or swift); often plus a Dockerfile reference if the app has a server component.
 
 ## Library or CLI
 
@@ -78,7 +78,7 @@ docs/
 
 **Distribution:** PyPI when public; GitHub Releases when private. The `[project.scripts]` block in `pyproject.toml` defines CLI entry points.
 
-**CLAUDE.md imports:** `@~/.claude/modules/languages-python.md`.
+**Project language modules:** `languages-python.md`.
 
 ## Static Site
 
@@ -105,7 +105,7 @@ _site/                        # build output (gitignored)
 
 **Distribution:** not applicable (sites are deployed).
 
-**CLAUDE.md imports:** `@~/.claude/modules/languages-web.md`.
+**Project language modules:** `languages-web.md`.
 
 ## App Frontend
 
@@ -134,7 +134,7 @@ tailwind.config.js
 
 **Deployment:** typically alongside the Python backend—Docker via docker-deploy pattern, or Cloudflare Workers if the backend is small enough.
 
-**CLAUDE.md imports:** `@~/.claude/modules/languages-python.md` AND `@~/.claude/modules/languages-web.md`.
+**Project language modules:** `languages-python.md` AND `languages-web.md`.
 
 ## Full-stack JS/TS App
 
@@ -172,7 +172,7 @@ tests/                    # Vitest unit tests
 
 **Distribution:** not applicable (apps are deployed).
 
-**CLAUDE.md imports:** `@~/.claude/modules/languages-web.md`.
+**Project language modules:** `languages-web.md`.
 
 **Reference project:** `edelmore-diary` (SvelteKit 2 + Svelte 5 + SQLite + Tailwind v4 + Docker homelab).
 

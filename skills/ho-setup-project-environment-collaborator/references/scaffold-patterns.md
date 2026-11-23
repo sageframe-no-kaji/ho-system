@@ -1,6 +1,6 @@
 # Scaffold Patterns
 
-Concrete file content for the boilerplate this skill creates. These are not the templates the practitioner has at `~/.claude/templates/`—those handle pyproject.toml, pre-commit, gitignore, env.example, project-CLAUDE. These are the additional files the skill writes when scaffolding (smoke test, package init, README stub).
+Concrete file content for the boilerplate this skill creates. These are not the templates the practitioner has in their practitioner templates directory—those handle pyproject.toml, pre-commit, gitignore, env.example, project instructions. These are the additional files the skill writes when scaffolding (smoke test, package init, README stub).
 
 ## Python: `src/[package]/__init__.py`
 
@@ -232,6 +232,6 @@ The practitioner customizes from here.
 
 ## When Scaffolding Crosses Languages
 
-For app frontends (Python + web), generate both the Python source layout AND the package.json/tailwind.config.js. The CLAUDE.md @imports both language modules. The verification stack covers the Python side; the web side runs through whatever toolchain the practitioner uses.
+For app frontends (Python + web), generate both the Python source layout AND the package.json/tailwind.config.js. The project instructions load both language modules. The verification stack covers the Python side; the web side runs through whatever toolchain the practitioner uses.
 
 For Python services with optional web admin UIs: scaffold Python first; offer web later when it becomes relevant. Don't pre-scaffold infrastructure the project doesn't yet need.

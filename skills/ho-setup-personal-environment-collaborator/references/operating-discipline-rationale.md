@@ -6,11 +6,11 @@ _The philosophy and argument grounding the rules in `operating-discipline.md`._
 
 ## What this file is and how to load it
 
-This is the rationale — the philosophy, argument, and framing — behind the operating discipline. The rules themselves live in `~/.claude/modules/operating-discipline.md` and auto-load into every session via the practitioner's global `CLAUDE.md`.
+This is the rationale — the philosophy, argument, and framing — behind the operating discipline. The rules themselves live in the companion `operating-discipline.md` and are loaded through the practitioner's personal instructions.
 
-This file does NOT auto-load. Load it explicitly with `@~/.claude/modules/operating-discipline-rationale.md` when:
+This file does NOT auto-load. Read this module when:
 
-- Working on the Ho System framework itself (or when the framework repo's `CLAUDE.md` imports it directly)
+- Working on the Ho System framework itself (or when the project instructions call for it)
 - An edge case in normal work requires reasoning from first principles about what a rule is for
 - Explaining the discipline to another practitioner
 - Reviewing the discipline for revision

@@ -3,7 +3,7 @@
 # Ho System Python project baseline. Drop into a new project; replace placeholders.
 # Placeholders to fill: <project-name>, <package-name>, <description>, <author>, <author-email>
 #
-# Conventions encoded here match ~/.claude/modules/languages-python.md:
+# Conventions encoded here match the practitioner’s languages-python.md module:
 #   - ruff for lint + format (replaces flake8 + black + isort)
 #   - mypy strict
 #   - pytest with --cov-fail-under=90

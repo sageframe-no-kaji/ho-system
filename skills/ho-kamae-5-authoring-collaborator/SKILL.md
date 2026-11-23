@@ -26,7 +26,7 @@ A per-ho document is **not** a re-statement of the ho-overview's entry for this 
 
 A per-ho document is **not** an agent task. Agent tasks are children of hos when the work warrants them — surgical, command-verifiable specs the agent reads to execute. The per-ho document frames; the dandori specs specify. Some hos produce no dandori children (orientation, replan checkpoints, simple work), some produce one or several.
 
-Your job is to produce the per-ho document collaboratively with the practitioner. Inputs: the upstream Kamae chain (seed, system design, README, ho-overview), the project's CLAUDE.md, and the ho-overview's specific entry for the ho being authored. Output: the per-ho document at `ho-process/hos/ho-NN-<slug>.md`, plus any dandori spec children at `ho-process/agent-tasks/Ho-NN-AT-MM.md`.
+Your job is to produce the per-ho document collaboratively with the practitioner. Inputs: the upstream Kamae chain (seed, system design, README, ho-overview), the project's agent instructions, and the ho-overview's specific entry for the ho being authored. Output: the per-ho document at `ho-process/hos/ho-NN-<slug>.md`, plus any dandori spec children at `ho-process/agent-tasks/Ho-NN-AT-MM.md`.
 
 ## Antagonist review and acceptance
 
@@ -54,7 +54,7 @@ The skill assumes the project's technical scaffold is in place. Check for:
 
 - `pyproject.toml` (or equivalent) at repo root
 - A passing test suite (smoke test exists, runs clean)
-- `CLAUDE.md` at repo root with project-specific architecture and conventions
+- Project instructions available to the executing agent that describe the project architecture and conventions. Accept the file or rules the project uses, such as `AGENTS.md`, `CLAUDE.md`, or an equivalent supplied with the handoff.
 - Upstream Kamae documents committed (seed, system design, README, ho-overview) at the project's documented paths
 
 If any of these are missing, do not proceed. Tell the practitioner: "The technical scaffold isn't in place yet — run `ho-setup-project-environment-collaborator` first, then come back." Naming the specific missing artifact helps.
@@ -63,7 +63,7 @@ If any of these are missing, do not proceed. Tell the practitioner: "The technic
 
 Read the project's full Kamae chain — seed, system design, README, ho-overview — at the depth needed to author the ho. The ho-overview's specific entry for this ho is the most important input: it names what's in scope, what's out of scope, what done means, what deferred decisions resolve here.
 
-Read the project's `CLAUDE.md`: project-specific architecture (e.g., "shuji owns SQLite"), conventions (e.g., "HTMX returns HTML fragments, not JSON"), where ho documents live.
+Read the project instructions for project-specific architecture (e.g., "shuji owns SQLite"), conventions (e.g., "HTMX returns HTML fragments, not JSON"), where ho documents live.
 
 If the project has previous per-ho documents in `ho-process/hos/`, read at least the most recent one for shape consistency. Different projects develop different per-ho conventions; match what the project has established.
 
@@ -161,7 +161,7 @@ Use the questions above. Confirm the choice with the practitioner if it isn't ob
 
 ### 3. If orientation — run the concept primer generation.
 
-Load `references/learning-interview.md`. Walk the project's tech stack from CLAUDE.md, system design, and architecture docs. Identify what's new territory (the practitioner won't know it well). Generate concept primers at the right depth — paragraph-level, with resources, not one-line summaries. Do not infer practitioner familiarity from transitive tool use (FastAPI uses pydantic, but that doesn't mean the practitioner knows pydantic). When in doubt, include and let the practitioner say "skip this, I know it."
+Load `references/learning-interview.md`. Walk the project's tech stack from the project instructions, system design, and architecture docs. Identify what's new territory (the practitioner won't know it well). Generate concept primers at the right depth — paragraph-level, with resources, not one-line summaries. Do not infer practitioner familiarity from transitive tool use (FastAPI uses pydantic, but that doesn't mean the practitioner knows pydantic). When in doubt, include and let the practitioner say "skip this, I know it."
 
 Output: section 2 of the orientation document. See `references/ho-shape-templates.md` for orientation's full structure.
 

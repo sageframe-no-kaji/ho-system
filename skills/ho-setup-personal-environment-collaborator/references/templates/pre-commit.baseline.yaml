@@ -1,7 +1,7 @@
 # .pre-commit-config.yaml
 #
 # Ho System pre-commit baseline. Drop into a new project.
-# Conventions match ~/.claude/modules/languages-python.md.
+# Conventions match the practitioner’s languages-python.md module.
 #
 # Install hooks: `pre-commit install`
 # Run manually:  `pre-commit run --all-files`

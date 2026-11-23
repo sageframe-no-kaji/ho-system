@@ -26,7 +26,7 @@ Notable machines (not exhaustive):
 - **<hostname-2>**—<purpose>
 - **<hostname-3>**—<purpose>
 
-For details about specific hosts when working on a project that involves them, the project's CLAUDE.md will specify the host explicitly.
+For details about specific hosts when working on a project that involves them, the project instructions will specify the host explicitly.
 
 ## Vault structure
 
@@ -39,7 +39,7 @@ Local <organization name> materials live under `~/<vault-root>/`. The structure 
 
 <If the practitioner has the Ho System framework cloned locally, name where:>
 
-The Ho System framework lives at `~/<path-to-framework>/`. The operating discipline that `~/.claude/CLAUDE.md` imports is at `~/<path-to-framework>/practitioner/operating-discipline.md`.
+The Ho System framework lives at `~/<path-to-framework>/`. The operating discipline referenced by the practitioner instructions is at `~/<path-to-framework>/practitioner/operating-discipline.md`.
 
 ## Deployment patterns
 

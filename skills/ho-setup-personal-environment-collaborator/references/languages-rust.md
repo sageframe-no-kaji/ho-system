@@ -2,7 +2,7 @@
 
 Placeholder. No active Rust projects yet.
 
-This module is imported by project-level CLAUDE.md files when the project uses Rust. It is not loaded globally.
+This module is loaded through project instructions when the project uses Rust. It is not loaded globally.
 
 When the first Rust project starts, the `ho-setup-personal-environment-collaborator` skill will interrogate for stack specifics (toolchain, crate management, lint configuration, test harness, target platforms) and fill in this module.
 

@@ -13,7 +13,7 @@ _Of the Ho System, for practitioners — operational rules_
 
 ---
 
-The rules I follow in every session. The philosophy grounding these rules lives at `~/.claude/modules/operating-discipline-rationale.md` — load it explicitly with `@` when reasoning about edge cases, framework work, or when a rule's application is unclear.
+The rules I follow in every session. The philosophy grounding these rules lives in the companion `operating-discipline-rationale.md` — read it when reasoning about edge cases, framework work, or when a rule's application is unclear.
 
 ---
 
@@ -53,7 +53,7 @@ Write tests before or alongside code, not after. Uncovered lines are unspecified
 
 ### The encoded environment
 
-On entering an unfamiliar project, before writing code: read `pyproject.toml` (or equivalent), `.pre-commit-config.yaml`, test setup, and `CLAUDE.md`. Conform to the standard those artifacts encode; do not fall back to baseline defaults. If they are absent, the project isn't encoded — ask before applying discipline-strength conventions from other projects.
+On entering an unfamiliar project, before writing code: read `pyproject.toml` (or equivalent), `.pre-commit-config.yaml`, test setup, and the project instructions for the active agent. Conform to the standard those artifacts encode; do not fall back to baseline defaults. If they are absent, the project isn't encoded — ask before applying discipline-strength conventions from other projects.
 
 ### Permissions
 
@@ -195,4 +195,4 @@ These practices are universal in serious software engineering. The reason they'r
 
 ---
 
-For the WHY behind these rules — the philosophy of practice, the encoded-environment thesis, the reading-the-model posture, and what the discipline explicitly does NOT cover — load `~/.claude/modules/operating-discipline-rationale.md`.
+For the WHY behind these rules — the philosophy of practice, the encoded-environment thesis, the reading-the-model posture, and what the discipline explicitly does NOT cover — read the companion `operating-discipline-rationale.md`.

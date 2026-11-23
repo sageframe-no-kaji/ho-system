@@ -11,7 +11,7 @@ The first commit contains everything the project needs to verify itself:
 - `.gitignore`
 - `.env.example`
 - `README.md` (stub)
-- `CLAUDE.md` (project-level, importing the right modules)
+- Project instructions in the active host’s format, loading the relevant modules
 - `src/[package]/__init__.py` (Python projects)
 - `tests/test_smoke.py` (Python projects)
 - `docs/` (empty directory; commit a `.gitkeep` if the SCM doesn't preserve empty dirs)
@@ -30,7 +30,7 @@ The first commit does NOT include:
 - **`.venv/`, `node_modules/`, build outputs.** Always gitignored.
 - **`.env` (with real values).** The `.env.example` template is committed; the actual `.env` is gitignored.
 - **Project-specific configuration files with real values.** `configs/config.template.yaml` is committed; `configs/config.yaml` is gitignored.
-- **IDE files.** `.vscode/`, `.idea/`, `.claude/`—gitignored.
+- **Personal editor and agent state.** Exclude local settings and session data. Keep project instructions and any skills the project distributes under version control.
 - **Operating system noise.** `.DS_Store`, `Thumbs.db`—gitignored.
 - **The practitioner's prompts.** `prompts/` and similar—gitignored per the practitioner's infrastructure conventions.
 - **The canonical private process tree in a public parent.** The parent ignores `ho-process-private/`, which is initialized and committed as its own private repository. If the practitioner elected a public process showcase, the parent may track only the generated `ho-process/` derivative after its privacy and synchronization gates pass. A private project repository tracks canonical `ho-process/` normally.
@@ -46,7 +46,7 @@ Project type:    [type]
 Stack:           [languages]
 Verification:    ruff, mypy, pytest with --cov-fail-under=90
 Pre-commit:      installed and verified
-Modules:         [which language modules the project's CLAUDE.md imports]
+Modules:         [language modules named in the project instructions]
 
 Scaffolded via ho-setup-project-environment-collaborator.
 ```
