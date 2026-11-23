@@ -7,33 +7,32 @@ description: Review a bounded ho or independently analyze a completed codebase w
 
 Review independently of the builder, establish what the evidence supports, and stop within the declared review budget. A ho is a bounded unit of work with its own requirements and acceptance criteria; the same procedure applies to a milestone, change set, or pull request in a project that does not use Ho terminology.
 
-## Place in the Ho process
+## Select the role and mode
 
-Read [ho-integration.md](references/ho-integration.md) when preparing a project review packet, connecting reviews to Kamae planning and authoring, or recording a review outcome in the project. The canonical source is this directory in the Ho System repository; installed copies or folder links expose the same documents to Claude Code, Codex, and other skill-capable agents.
+State the active role: reviewer by default, coordinator when asked to manage the cycle, builder when asked to assess and repair findings. An agent that repairs the work cannot claim to be its independent reviewer. Then read what the work needs:
 
-## Select the task
+| Work | Read |
+|---|---|
+| Review one ho or change set | [standards.md](references/standards.md), [ho-review.md](references/ho-review.md), [cycle.md](references/cycle.md) |
+| Independent final codebase analysis | [standards.md](references/standards.md), [final-review.md](references/final-review.md), [cycle.md](references/cycle.md) |
+| Coordinate a cycle, or repair findings as builder | [handoffs.md](references/handoffs.md), with the documents for the cycle's mode |
+| Exchange handoffs directly between agents | [agent-transport.md](references/agent-transport.md) as well |
+| Prepare a review without running it | The applicable mode; complete [review-context.md](assets/review-context.md) from project evidence. For a Ho project packet, follow [ho-integration.md](references/ho-integration.md#kamae-5-prepare-the-review-packet). Do not start the review implicitly. |
+| Write the report | [report-template.md](references/report-template.md). Its conditional sections are not a requirement to manufacture content. |
+| Connect reviews to Kamae planning, authoring, or project records | [ho-integration.md](references/ho-integration.md) |
 
-- Select the role as well as the mode: reviewer by default, coordinator when asked to manage the cycle, or builder when asked to assess and repair findings. Read [handoffs.md](references/handoffs.md) for coordinator or builder work and for the separate handoff file linked from each report and its short dispatch prompt. Existing authorization carries forward; do not ask again for steps already within it.
-- For direct agent-to-agent handoffs, also read [agent-transport.md](references/agent-transport.md); it covers Herdr/hc, tuios, return routing, and dispatch recovery.
-- For one ho or change set, read [standards.md](references/standards.md), [ho-review.md](references/ho-review.md), and [cycle.md](references/cycle.md).
-- For an independent final codebase analysis, read [standards.md](references/standards.md), [final-review.md](references/final-review.md), and [cycle.md](references/cycle.md).
-- To prepare a review rather than execute one, read the applicable mode and complete [review-context.md](assets/review-context.md) from available project evidence. Do not start the review implicitly.
-- Use [report-template.md](references/report-template.md) for findings, evidence, scope coverage, and closure. Its conditional sections are not a requirement to manufacture content.
-
-Resolve these paths relative to this skill's directory. Load only the selected mode; the two modes share standards and cycle rules. No service, model vendor, language, build system, repository layout, or other skill is required.
+Resolve these paths relative to this skill's directory. Load only the selected mode; the two modes share standards and cycle rules. No service, model vendor, language, build system, repository layout, or other skill is required. The canonical source is this directory in the Ho System repository; installed copies or folder links expose the same documents to Claude Code, Codex, and other skill-capable agents.
 
 ## Establish the boundary
 
-Before substantive review, pin the complete portable skill package defined in [README.md](README.md#independent-distribution) to a verified Git commit and subdirectory or a recoverable snapshot with a file-hash manifest. Development notes and generated archives are excluded. Record that version in the context. Follow [handoffs.md](references/handoffs.md) to compare instructions before every handoff and direct recipients to the pinned version; an installed link is not a version record.
+Before substantive review, pin the governing instructions as [handoffs.md](references/handoffs.md#pin-the-governing-instructions) requires and record that version in the context. An installed link is not a version record.
 
 Read the user's instructions and applicable repository instructions, then find or complete the review context from the repository, specification, and previous review record. Confirm the reviewed revision, mode, requirements, pass number and ceiling, permitted verification, report destination, and existing rulings before assessing the code. Ask only for missing information that prevents a trustworthy assessment or authorized verification; continue independent read-only investigation while that question is pending.
 
-The default ceiling is two reviewer passes, with a third available when explicitly selected in the review context or subsequently authorized by the owner. Never start another pass, reset the counter, reopen a ho, dispatch a builder, or change source code merely because a report recommends it. A user-authorized coordinator may arrange repairs and subsequent reviews under the same recorded ceiling, and a builder may implement authorized repairs. State the active role; an agent that repairs the work cannot claim to be its independent reviewer.
+## Limits in every role
 
-## Preserve independence and evidence
-
-Use a fresh reviewer context where the host supports one. If you wrote the reviewed implementation or share its deliberations, disclose that limit instead of claiming independence; do not silently create another agent. For an initial review, read requirements and implementation before earlier reviewer conclusions, while knowing binding owner decisions from the start. For a repair review, start with the prior ledger, builder response, and rulings, then independently check their claims against the changed implementation.
-
-Place reports outside the reviewed repository by default unless the user designates an in-repository destination. In reviewer role, change no repository file except an explicitly designated report or review record. In builder or coordinator role, keep changes within the recorded repair and recordkeeping permissions. Do not commit unless authorized. Verification may create approved temporary outputs in the declared environment; preserve existing changes and record any unexpected mutation. Suggestions to change architecture or reopen work are permitted; carrying them out requires authorization beyond an ordinary repair request.
-
-Report genuine defects, verification gaps, requirement conflicts, and maintainability concerns distinctly. Zero findings is a valid result. At the final allowed pass, issue the report with unresolved items and stop; owner acceptance and reviewer Pass remain separate records.
+- **Budget.** [cycle.md](references/cycle.md) defines the pass ceiling, who may change it, and what a finding or recommendation authorizes. At the final allowed pass, issue the report with unresolved items and stop.
+- **Authorization.** A review request authorizes the reviewer role only. Coordination and repairs need the authorization described in [handoffs.md](references/handoffs.md#authorization-and-transport); once given it carries forward, so do not ask again for steps already within it.
+- **Independence.** Use a fresh reviewer context where the host supports one. If you wrote the reviewed implementation or share its deliberations, disclose that limit instead of claiming independence; do not silently create another agent. For an initial review, read requirements and implementation before earlier reviewer conclusions, while knowing binding owner decisions from the start. For a repair review, start with the prior ledger, builder response, and rulings, then independently check their claims against the changed implementation.
+- **Files.** Place reports outside the reviewed repository by default unless the user designates an in-repository destination. In reviewer role, change no repository file except an explicitly designated report or review record. In builder or coordinator role, keep changes within the recorded repair and recordkeeping permissions. Verification may create approved temporary outputs in the declared environment; preserve existing changes and record any unexpected mutation. Do not commit unless authorized.
+- **Reporting.** Report genuine defects, verification gaps, requirement conflicts, and maintainability concerns distinctly. Zero findings is a valid result.

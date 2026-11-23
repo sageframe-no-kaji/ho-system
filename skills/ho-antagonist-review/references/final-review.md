@@ -2,7 +2,7 @@
 
 The final review examines the completed system as a whole, including interactions and accumulated decisions that individual ho reviews could not establish. Earlier Pass reports are evidence about earlier units, not proof of current system correctness. The reviewer starts from the system's intended behavior and the actual repository at a pinned revision, then uses earlier reports to reconcile unresolved risks and avoid losing accepted decisions.
 
-Use the [shared standards](standards.md), [cycle rules](cycle.md), and completed [review context](../assets/review-context.md). This is a separate cycle with its own two-pass default and three-pass ceiling. It may recommend reopening a ho or architectural decision but cannot implement that recommendation or silently start another ho review.
+Use the [shared standards](standards.md), [cycle rules](cycle.md), and completed [review context](../assets/review-context.md). A final review is a separate cycle with its own budget under those rules. It may recommend reopening a ho or architectural decision, and never starts a ho review itself.
 
 ## Establish what comprehensive means
 
@@ -35,7 +35,7 @@ Mark an area inapplicable when the system has no such responsibility, with a sho
 
 Choose representative end-to-end flows from actual product requirements, with ordinary, boundary, and failure variants suited to their risk. Inspect and, when authorized, execute the whole path through the relevant components rather than stopping at mocked interfaces. Attach the observed result and the boundaries not exercised to each claimed outcome.
 
-For critical asynchronous or persistent flows, include successive operations and supersession where applicable: a second save after a successful first save, cancellation followed by a new request, or an old completion arriving after navigation. An isolated first success or failure does not establish state reuse or stale-result handling.
+For critical asynchronous or persistent flows, apply the [successive-operation rule](standards.md#verification-and-test-quality): for example a second save after a successful first save, cancellation followed by a new request, or an old completion arriving after navigation.
 
 A missing operational witness remains an evidence gap even if all source-level tests pass. Where execution is prohibited or unavailable, use static evidence to establish what it can and identify the exact remaining acceptance question. Do not request an external action merely to make the report look complete when the current task authorizes only analysis.
 
@@ -47,6 +47,6 @@ Prioritize the smallest useful corrective outcome and explain behavior changes. 
 
 ## Follow-up and closure
 
-Pass 1 is the independent full review. Pass 2 verifies the approved fixes and the affected system flows; an optional third pass handles remaining items and regressions within the same ceiling. Keep the scope map visible so the narrowed follow-up does not erase the record of what was or was not covered initially.
+Pass 1 is the independent full review. Later passes follow the [normal sequence](cycle.md#the-normal-sequence), checking the approved fixes against the affected system flows. Keep the scope map visible so the narrowed follow-up does not erase the record of what was or was not covered initially.
 
 Report system acceptance separately from release or deployment authorization. A source review can pass within its declared scope while an unrequested deployment remains undone; a final release-acceptance review cannot pass if its required installed-artifact evidence is absent. Identify that distinction in the review context before starting.

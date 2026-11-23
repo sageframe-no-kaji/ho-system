@@ -22,7 +22,7 @@ Inspect the following where the unit touches them:
 
 Inspect related mechanisms together so the first report captures the failure class rather than a single example. For concurrency, follow the state transitions around suspension and delivery; for parsers, vary input partitioning and boundary interactions; for data changes, inspect failure and recovery paths. These are examples of analysis suited to the system, not a mandatory technology checklist.
 
-For affected asynchronous or persistent workflows, examine a second operation and an operation superseded while still in flight, as applicable. Successive saves, eviction of unsent changes, and an old response arriving after navigation are examples; choose witnesses from the actual lifecycle rather than imposing every example on every project.
+For affected asynchronous or persistent workflows, apply the [successive-operation rule](standards.md#verification-and-test-quality). Successive saves, eviction of unsent changes, and an old response arriving after navigation are examples.
 
 Run the declared verification and investigate material failures within the budget. Submit one consolidated report, merging manifestations of a shared cause and separating independent causes. Classify incomplete verification honestly even when the static review found no defect.
 
@@ -32,13 +32,13 @@ Read the prior finding ledger and owner rulings, then inspect the repair range f
 
 Inspect direct callers, affected invariants, and new behavior introduced by those repairs. Keep the original opening-to-current range available as context, but do not restart a full-file sweep for unrelated style concerns. A claimed move or behavior-preserving refactor still warrants comparison against the pre-repair code.
 
-New findings must identify their origin: introduced by the repair, part of an unresolved original cause, newly reachable because of the repair, or a missed pre-existing issue. An incidental pre-existing concern is recorded without automatically extending the repair scope. A newly discovered consequential defect or mandatory acceptance failure cannot be hidden to preserve a pass count; record it and apply the stopping rule instead of starting another cycle.
+New findings must identify their origin: introduced by the repair, part of an unresolved original cause, newly reachable because of the repair, or a missed pre-existing issue. An incidental pre-existing concern is recorded without automatically extending the repair scope. A consequential defect found late is handled under [cycle.md](cycle.md#new-evidence-and-reopened-decisions).
 
 ## Optional pass 3: decide the remaining items
 
-Use this pass only within a declared three-pass budget or explicit owner authorization to extend two passes to three. Review remaining findings, their repairs, and direct regressions. Do not spend the last pass generating new polish work or recopying unchanged answers from the first report.
+Use this pass only when the [cycle rules](cycle.md) make a third pass available. Review remaining findings, their repairs, and direct regressions. Do not spend the last pass generating new polish work or recopying unchanged answers from the first report.
 
-After its report, stop regardless of result. If a requirement conflict, recurring failure, or incomplete fix remains, state the unresolved consequence and recommend the next owner decision. A recommendation to reopen a ho or revise architecture does not authorize that work.
+After its report, stop regardless of result. If a requirement conflict, recurring failure, or incomplete fix remains, state the unresolved consequence and recommend the next owner decision.
 
 ## Architecture and scope disputes
 
@@ -48,4 +48,4 @@ Do not make harmless formatting, a supporting comment correction, or an addition
 
 ## Acceptance
 
-Use the assessment and workflow states defined in [cycle.md](cycle.md). A reviewer Pass means the declared unit was reviewed, required evidence is adequate, no unresolved Must-fix remains, and no unresolved decision prevents assessing acceptance. It does not mean zero limitations, complete test coverage, or proof that the entire repository is correct.
+Use the assessments and workflow states defined in [cycle.md](cycle.md#assessment-and-workflow-state). For a ho, a Pass covers the declared unit only: it does not mean zero limitations, complete test coverage, or proof that the entire repository is correct.

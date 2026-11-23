@@ -6,7 +6,7 @@ Antagonist review follows each build ho and a separate final review examines the
 
 Place a bounded antagonist review after each build ho in the overview, and place an independent whole-codebase review at the completed-system acceptance point. Where a project already uses `ho-NNx` review labels, preserve that convention; otherwise identify the review alongside its parent ho without inventing a new numbering system. Orientation or research hos are reviewed against their claims and deliverables when their acceptance requires review, rather than being given fictitious code or test requirements.
 
-State the project default of two reviewer passes, or three if the practitioner selects it, and identify who can rule on a Return or incomplete evidence. A final review has its own declared budget and cannot be substituted for an exhausted ho review. Reviews produce reports; they do not authorize publication, deployment, or automatic reopening of closed work.
+State the pass ceiling the project uses and identify who can rule on a Return or incomplete evidence. The [cycle rules](cycle.md) define the default ceiling and its options, the separate final-review cycle, and what a report authorizes.
 
 ## Kamae 5: prepare the review packet
 
@@ -26,11 +26,11 @@ Use existing project destinations. For a project without review conventions, the
 | Authorized repair specification, when needed | An ordinary fix ho under `ho-process/hos/`, following the project's numbering |
 | Owner ruling | The cycle ledger or a linked fix-ho decision, with its date and scope |
 
-Keep the original opening revision and record the previous reviewed endpoint for every follow-up. A new fix-ho number, report filename, session, or model does not reset the cycle counter. A wording-only ruling generally needs one decision entry, not a new implementation ho; existing project record requirements still apply.
+Keep the original opening revision and record the previous reviewed endpoint for every follow-up. A new fix-ho number is a label like any other under the [cycle rules](cycle.md); it does not reset the counter. A wording-only ruling generally needs one decision entry, not a new implementation ho; existing project record requirements still apply.
 
 ## Acceptance and continuity
 
-Record build completion and review acceptance separately until both conditions required by the project are satisfied. Preserve the reviewer assessment as issued; if the practitioner accepts a later correction without another review, say so rather than replacing Return with a claimed reviewer Pass. At the pass ceiling, unresolved work remains visible and the reviewer stops for the practitioner.
+Record build completion and review acceptance separately until both conditions required by the project are satisfied. The reviewer's assessment and the practitioner's acceptance stay distinct entries, as [cycle.md](cycle.md#assessment-and-workflow-state) defines.
 
 The coordinator records the result in the existing build record and refreshes the project's State Memory and status roster according to its normal close discipline. The report-only antagonist does not acquire permission to edit those files merely because they exist. Where review is required for acceptance, per-ho authoring must not mark the ho accepted solely because its implementation finished.
 
@@ -40,10 +40,8 @@ Material behavior added after an accepted endpoint needs its own bounded change-
 
 ## Cycle handoffs
 
-Give the builder the review rules and report together. Use the [handoff guide](handoffs.md) to write a cycle-specific file beside the report and deliver only its short pointer, manually or through authorized agent coordination. Pin the skill version at cycle creation and compare it before each handoff, retaining the same counter and owner rulings. A worktree may isolate repairs; record its actual starting content, repair endpoint, and integration permissions so the next review examines the repaired state.
+Handoffs between reviewer, builder, and coordinator, instruction pinning, and repair worktrees follow the [handoff guide](handoffs.md). Nothing about them is specific to a Ho project.
 
 ## Cross-agent use
 
-The skill uses ordinary Markdown, relative references, and a `SKILL.md` with name and description. In Claude Code, invoke `/ho-antagonist-review`; in Codex, invoke `$ho-antagonist-review`. Give the reviewer the project context, mode, pass number, and report destination, and preserve a fresh reviewer context when the host supports one.
-
-Install or link the whole directory into each agent's supported skill location; copying only the entry point omits the review documents. Local installations do not install the skill in a cloud account; use the portable ZIP through that account's skill-upload mechanism when needed. Optional `agents/openai.yaml` supplies Codex display metadata and is not part of the review logic.
+Installation and invocation in Claude Code, Codex, and other agents are described in the [README](../README.md#install).
