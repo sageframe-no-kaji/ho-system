@@ -163,7 +163,7 @@ two projects in, with the second adapting freely, building now risks freezing th
 pattern before ri has had its say — its shape will be legible once a third project
 runs design tuning.
 
-Until it exists, **this doctrine document plus the `~/.claude/modules/design-work.md`
+Until it exists, **this doctrine document plus the practitioner’s `design-work.md`
 module are the interim reference — a clear, usable stand-in for the skill, not a
 placeholder.** The method runs by hand from them: the pre-written session prompts and
 the Basis-of-Design discipline are cheap to execute directly. The skill, when built, will
@@ -181,7 +181,7 @@ descriptions), parked items, the landing record (landings only), and any
 propagations to the Basis of Design. The skeleton is complete; section prose fills in
 per project.
 
-## 8. The `~/.claude/modules/design-work.md` module
+## 8. The practitioner’s `design-work.md` module
 
 A small `design-work.md` module — imported per-project like the language modules —
 carries the session-behavior rules an agent needs *while implementing*: the eight steps
@@ -189,7 +189,7 @@ in compressed form, the propagation rule (never silent), the
 never-hard-code-a-value-before-it-moves rule, and the A/B-not-replacement rule. These
 are steps 6–8, which happen in the IDE; the doctrine above is reference, not always-on
 context, so it stays out of the module. The module is practitioner-scope and lives
-outside any single project's repo (`~/.claude/modules/`).
+in the practitioner's module directory outside the project repository.
 
 ---
 

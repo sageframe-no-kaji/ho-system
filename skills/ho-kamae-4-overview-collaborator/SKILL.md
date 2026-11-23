@@ -388,7 +388,7 @@ These are non-negotiable. The skill does not produce them regardless of what the
 
 ## What's Out of Scope for This Skill
 
-- **Per-ho dandori spec authoring.** That's the `ho-kamae-5-authoring-collaborator`, which operates under dandori discipline. The dandori toolkit lives embedded inside that skill at `ho-kamae-5-authoring-collaborator/dandori/` (DANDORI.md, FORMAT.md, KOKOROE.md, examples/), scoped to Ho System conventions. The overview is the map; per-ho dandori specs are the territory.
+- **Per-ho authoring.** Kamae-5 frames each ho. When the work warrants child tasks, Kamae-5 uses Dandori and its Ho rider to author their specs.
 - **System design revision.** If the overview reveals a gap in the architecture, the skill flags this; it does not edit the system design.
 - **README revision.** Same — flag if needed; don't edit.
 - **Project type variant detection.** The ho-overview shape is roughly the same across project types (Foundation → ... → Acceptance). Variant differences live in the README skill, not here.

@@ -24,7 +24,7 @@ The output also classifies each new concept by depth-of-engagement:
 
 ### 1. Walk the stack
 
-Read the project's `CLAUDE.md`, system design, and architecture document (or equivalent). Extract every named dependency, library, protocol, format, model, and standard. Be inclusive — the goal is a complete list before triage. Examples of what counts:
+Read the project's agent instructions, system design, and architecture document (or equivalent). Extract every named dependency, library, protocol, format, model, and standard. Be inclusive — the goal is a complete list before triage. Examples of what counts:
 
 - Language frameworks and libraries (FastAPI, Pydantic, SQLAlchemy, Click, HTMX)
 - Storage backends (SQLite, sqlite-vec, FTS5)

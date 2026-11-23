@@ -120,7 +120,7 @@ The ho overview is the build's directional plan. It identifies phases first (clu
 
 **Status:** Built
 **Surface:** IDE-primary
-**Produces:** A repo scaffold ready for ho-00 — `pyproject.toml`, smoke tests, project-level `CLAUDE.md`, `ho-process/hos/` and `ho-process/agent-tasks/` directory structure, lint stack configured, pre-commit hooks installed, initial commit.
+**Produces:** A repo scaffold ready for ho-00 — `pyproject.toml`, smoke tests, project instructions for the active agent, `ho-process/hos/` and `ho-process/agent-tasks/` directory structure, lint stack configured, pre-commit hooks installed, initial commit.
 **When to run:** At project start, before authoring any per-ho document. Update mode handles scaffold adjustments.
 
 The companion to `ho-kamae-5-authoring-collaborator`. `ho-kamae-5-authoring-collaborator` does chat-side authoring of ho-00 (concept primers, shape decisions); `ho-setup-project-environment-collaborator` does the IDE-side scaffolding work. They run in sequence — setup first, design against the scaffold it produces.
@@ -131,7 +131,7 @@ The companion to `ho-kamae-5-authoring-collaborator`. `ho-kamae-5-authoring-coll
 
 **Status:** Built
 **Surface:** Chat-primary, with IDE escape hatch
-**Produces:** Per-ho documents (orientation, ha, ri, or rarely shu shape) — the bounded scope for an individual working session. Optionally produces sibling **dandori specs** (`Ho-NN-AT-MM.md`) for hos whose work decomposes into bounded executable units. Dandori specs are authored using the embedded `dandori/` toolkit (FORMAT.md, KOKOROE.md, examples/) inside the kamae-5 skill.
+**Produces:** Per-ho documents (orientation, ha, ri, or rarely shu shape) — the bounded scope for an individual working session. Optionally produces sibling **dandori specs** (`Ho-NN-AT-MM.md`) for hos whose work decomposes into bounded executable units. Authoring those child specs requires [Dandori](https://github.com/sageframe-no-kaji/dandori#install) with its Ho rider.
 **When to run:** At the start of each new ho's session, against that ho's slot in the ho-overview. Update mode: when scope creeps mid-execution and the ho should split, when the Reflect phase needs filling in post-execution, or when new dandori specs emerge.
 
 The per-ho document is what the practitioner and agent work against in a single session. It takes a position from the ho-overview and turns it into something concrete — narrative, dependencies, in-scope, out-of-scope, what done means, decisions to resolve, verification gates.
@@ -143,7 +143,7 @@ The skill selects among four document shapes:
 - **Ri** — for surgical fixes and well-defined work. Problem → Solution → Changes → Results.
 - **Shu** — rare, for handing the framework to a learner. Author-prescribed parts walked through.
 
-The skill loads conditional references based on shape: `learning-interview.md` for orientation work, the embedded `dandori/` toolkit (DANDORI.md, FORMAT.md, KOKOROE.md, examples/) when the Think phase decomposes into bounded tasks, and `ho-shape-templates.md` for every authoring. The embedded dandori is the Ho System–scoped variant of the standalone `dandori` skill (at `~/Vaults/sageframe-no-kaji-dev/dandori/`) — same five kokoroe guidelines, same format spine, but with Ho System–specific naming (`Ho-NN-AT-MM`), location (`ho-process/agent-tasks/`), frontmatter, commit format, and translation moves from a ho's Think phase.
+Kamae-5 uses `ho-shape-templates.md` for every ho and `learning-interview.md` for orientation work. It loads Dandori only when the practitioner’s decisions yield work that warrants a separate task spec.
 
 Per-ho documents are read by both the practitioner returning to the project and the agent arriving fresh into a session.
 
@@ -208,7 +208,7 @@ For a practitioner who has internalized the methodology to the point of Ri-stage
 
 ## How Skills Compose
 
-Skills are deliberately separated by scope, by document, and by surface. They do not depend on each other at runtime — each skill is self-contained and can be used independently. They depend on each other through their _outputs_. The system design collaborator reads the seed; the README collaborator reads the seed and the system design; the ho overview collaborator reads all three; the design collaborator reads all four plus the project's `CLAUDE.md`.
+Skills are deliberately separated by scope, by document, and by surface. The Kamae skills hand work forward through their _outputs_. Kamae-5 also loads Dandori when it authors child tasks. The system design collaborator reads the seed; the README collaborator reads the seed and the system design; the ho overview collaborator reads all three; the design collaborator reads all four plus the project's agent instructions.
 
 This composition through outputs (rather than through tool chaining) matches the operating discipline's principle of encoded environment. The artifacts are the persistent layer. The skills produce and maintain artifacts. The agent (and the practitioner) read artifacts and act accordingly. The skills don't need to know about each other; they only need to know about the artifacts they consume and produce.
 
@@ -249,10 +249,10 @@ Built: 10 skills (5 Kamae chain + antagonist review + DI + index maintenance + e
 
 ## Related Framework Documents
 
-- [[design-seed-v1|Design Seed]](practitioner/archive/design-seed-v1.md) — The Ho System's founding design document (archived)
-- [[kamae-project-framing|Kamae: Project Framing]](framework/structure/kamae-project-framing.md) — The Kamae chain explained
-- [[the-operating-discipline|The Operating Discipline]](practitioner/operating-discipline.md) — The practitioner-scope canonical document
-- [[shu-ha-ri|Shu-Ha-Ri Progression]](framework/structure/shu-ha-ri.md) — How practitioner stage shapes engagement with the methodology
+- [Design Seed](../practitioner/archive/design-seed-v1.md) — The Ho System's founding design document (archived)
+- [Kamae: Project Framing](../framework/structure/kamae-project-framing.md) — The Kamae chain explained
+- [The Operating Discipline](../practitioner/operating-discipline.md) — The practitioner-scope canonical document
+- [Shu-Ha-Ri Progression](../framework/structure/shu-ha-ri.md) — How practitioner stage shapes engagement with the methodology
 
 ---
 

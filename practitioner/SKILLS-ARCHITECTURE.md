@@ -15,6 +15,8 @@ This document describes the environment a Ho System practitioner runs under, the
 
 ---
 
+The paths and settings below illustrate the Claude Code implementation. The four scopes also apply to other hosts. Resolve personal instructions, project instructions, and skill discovery independently for the chosen agent. Reuse the practitioner’s Ho modules and baselines across hosts, and use the host’s native controls for permissions.
+
 ## The four locations
 
 The Ho System practitioner's setup spans four locations on disk. Each holds different content with different update cadences and different consumers.

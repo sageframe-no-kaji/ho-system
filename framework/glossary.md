@@ -99,10 +99,9 @@ _Plain: Keeping track of where a build is between work sessions, especially when
 
 **dandori (段取り)** — Preparation; staging; the carpenter's setup, the chef's mise en
 place. Operationally: the discipline and format for translating a ho's resolved Think phase
-into executable agent-task specs. Exists as a standalone skill (lean, no Ho System
-assumptions) and embedded in the kamae-5 skill (Ho-scoped naming, paths, commit format).
-The load-bearing bridge of the operating layer. _(ho-task-decomposition 2.8 §8; DANDORI.md;
-FORMAT.md.)_
+into executable agent-task specs. Kamae-5 uses the Dandori skill with its Ho rider for child
+tasks. The same rider applies when a practitioner uses Dandori directly for a standalone
+task in a Ho project. _(ho-task-decomposition 2.8 §8.)_
 
 _Plain: The preparation that turns a resolved plan into exact, runnable instructions before any building starts._
 
@@ -252,7 +251,7 @@ _Plain: The felt-right amount for a value — its correct degree, found by feel 
 
 **kokoroe (心得)** — The internalized discipline of care the executing agent operates under:
 context-first, spec as authorization, verify by command, halt and surface, honor the
-boundary. Installed at project level via CLAUDE.md so specs can stay tight. _(KOKOROE.md.)_
+boundary. Installed at project level through the executor’s project instructions so specs can stay tight. _(KOKOROE.md.)_
 
 _Plain: The built-in care an executing agent works under — read the context first, treat the spec as its authority, check by command, and stop and surface on surprise._
 

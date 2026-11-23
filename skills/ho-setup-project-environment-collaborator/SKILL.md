@@ -1,14 +1,9 @@
 ---
 name: ho-setup-project-environment-collaborator
 description: >
-   A scaffolding collaborator for starting new Ho System projects. Use when a practitioner asks
-   to set up a new project or repo, initialize a codebase, create boilerplate, or configure the
-   verification stack. It determines project type and language stack, instantiates project
-   baselines from `~/.claude/templates/`, scaffolds source layout, configures lint/type-check/
-   tests/pre-commit, creates a project-level CLAUDE.md with the right language imports, and
-   prepares the first commit. This is the project-scope companion to
-   `ho-setup-personal-environment-collaborator` (which sets up practitioner-scope `~/.claude/`).
-   If that environment is missing, redirect there first.
+  Scaffold a new Ho project or adopt an existing repository. Resolve the
+  practitioner's project baselines and the instructions their agent reads,
+  configure the verification stack and source layout, and prepare the first commit.
 ---
 
 # Ho Project Setup Collaborator
@@ -20,39 +15,31 @@ You are scaffolding a new project for a Ho System practitioner. The result is a 
 - The verification stack configured (ruff, mypy, pytest with coverage floor for Python; analogous for other languages)
 - Pre-commit hooks installed
 - Source layout in place (`src/[package]/`, `tests/`, `docs/`)
-- A project-level `CLAUDE.md` that imports the relevant language modules from `~/.claude/modules/`
+- Project instructions that load the relevant language modules
 - Configuration discipline files committed (`.env.example`) and gitignored (`.env`, build artifacts, virtual environments, prompt-privacy patterns)
 - A first commit on `main` with the scaffolding in place
 - A README.md stub the practitioner fills in
 
-This skill is the **project-scope** companion to `ho-setup-personal-environment-collaborator`. The environment-setup skill places the practitioner's baselines at `~/.claude/templates/`. This skill instantiates those templates for each new project. The two skills together implement the Ho System's separation between practitioner-scope and project-scope configuration.
+This skill is the **project-scope** companion to `ho-setup-personal-environment-collaborator`. The environment-setup skill places the practitioner's baselines at `templates/`. This skill instantiates those templates for each new project. The two skills together implement the Ho System's separation between practitioner-scope and project-scope configuration.
 
 ## Prerequisites
 
-This skill assumes `~/.claude/` is configured for Ho System work. Before doing anything, confirm:
+Read the effective personal and project instructions for the target agent. Locate the practitioner’s Ho modules and project baselines from those instructions or the handoff from personal setup. In the steps below, `modules/` and `templates/` refer to that practitioner directory, wherever it lives. Check the inputs needed for the chosen stack. If one is missing, name it and use personal setup to supply it.
 
-```bash
-ls ~/.claude/CLAUDE.md
-ls ~/.claude/modules/operating-discipline.md
-ls ~/.claude/templates/pyproject.baseline.toml
-```
-
-If these don't exist, redirect: "It looks like your Claude Code environment isn't configured for Ho System yet. Run the `ho-setup-personal-environment-collaborator` skill first—it sets up `~/.claude/` with the operating discipline, language modules, and the per-project templates this skill uses. Once that's done, come back here and we'll scaffold the project."
-
-Don't proceed without the environment. The templates this skill instantiates live there; without them, this skill has nothing to instantiate.
+Use the project instruction source the executor actually reads. On a new project shared by agents that read `AGENTS.md`, put common rules there. A Claude Code project can use `CLAUDE.md`; if that file needs to load shared rules, it can import `@AGENTS.md`. Preserve existing host-specific instructions and their precedence. For another host, follow its instruction mechanism or provide the project instructions with the session handoff.
 
 ## Voice
 
-Match the practitioner's register from `~/.claude/modules/practitioner.md` if available. Direct, observational, no DI patterns. Em-dashes Chicago style.
+Match the practitioner's register from `modules/practitioner.md` if available. Direct, observational, no DI patterns. Em-dashes Chicago style.
 
-This skill is opinionated about scaffolding because the practitioner's `~/.claude/` already encodes the opinions. You're applying them, not negotiating them. When the practitioner asks "should I use src/ layout?" the answer is "yes—it's in your Python module." When they ask "should I add pre-commit?" the answer is "yes—the verification rhythm runs on commit." Don't pretend choices are open when they're decided.
+This skill is opinionated about scaffolding because the practitioner's Ho environment already encodes the opinions. You're applying them, not negotiating them. When the practitioner asks "should I use src/ layout?" the answer is "yes—it's in your Python module." When they ask "should I add pre-commit?" the answer is "yes—the verification rhythm runs on commit." Don't pretend choices are open when they're decided.
 
 ## Before Starting
 
-Read these files in the practitioner's `~/.claude/`:
+Read these files in the practitioner's Ho environment:
 
-- **`~/.claude/modules/practitioner.md`**—register, communication preferences, what they build
-- **`~/.claude/modules/infrastructure.md`**—GitHub accounts, deployment patterns, vault structure, conventions for prompts/, .env, etc.
+- **`modules/practitioner.md`**—register, communication preferences, what they build
+- **`modules/infrastructure.md`**—GitHub accounts, deployment patterns, vault structure, conventions for prompts/, .env, etc.
 - **The relevant language modules**, depending on the stack you're about to use
 
 Read these in the skill itself:
@@ -68,7 +55,7 @@ Read these in the skill itself:
 The first question is project type. The answer determines:
 
 - Which templates to instantiate (a service uses pyproject + Docker; a static site uses package.json + Eleventy)
-- What language modules the project's CLAUDE.md should import
+- What language modules the project instructions should load
 - What the source layout looks like
 - What deployment pattern the README references
 - Which GitHub account the repo lives in (when the practitioner has multiple)
@@ -83,9 +70,8 @@ If they don't know yet, that's a signal to step back—they may need to run the 
 Identify the entry point before doing anything else:
 
 1. **No git repo in current directory** → Fresh scaffold
-2. **Git repo exists, no CLAUDE.md, no pyproject.toml** → Adopt into Ho
-3. **Git repo exists, CLAUDE.md present with Ho @imports** → Already scaffolded;
-   redirect to ho-kamae-5-authoring-collaborator
+2. **Existing repository with Ho project instructions, process record, and verification stack** → Already scaffolded. For per-ho authoring, continue with Kamae-5. For an update, inspect the requested part of the scaffold.
+3. **Existing repository with missing Ho setup** → Adopt it in place, retaining working instructions and tooling.
 ---
 
 ### Entry Point 1: Fresh Install
@@ -97,7 +83,7 @@ Ask three or four questions to lock the shape:
 1. **Project name.** What's the working name? (Becomes the repo name and the package name, often.)
 2. **Project type.** Service, desktop, library, static-site, app frontend.
 3. **Language stack.** Python? Web? Both? (Cross-reference with project type—a service is usually Python or Rust; a static site is web; an app frontend is both Python and web; etc.)
-4. **GitHub account.** Which one? (Look at `~/.claude/modules/infrastructure.md` for the practitioner's accounts. If they have only one, skip the question. If they have multiple, ask.)
+4. **GitHub account.** Which one? (Look at `modules/infrastructure.md` for the practitioner's accounts. If they have only one, skip the question. If they have multiple, ask.)
 5. **Process-record posture.** One question, keyed first to repo visibility and then to publication intent. Every project gets a Kamae 6 State Memory inside its canonical process root — always present, private by default (`framework/structure/cross-session-continuity.md` §10; `framework/structure/process-publication-boundary.md`):
    - **Private project repo** → track canonical `ho-process/` with the project. Versioned, private, zero extra machinery.
    - **Public repo, private process** → ignore canonical `ho-process-private/` in the parent and version it as a **nested private repo**. Publish no process tree. This is the recommended public-repo baseline.
@@ -124,9 +110,9 @@ GitHub:   sageframe-no-kaji
 Type:     [type]
 Stack:    Python (uv-managed)
 Files:    pyproject.toml, .pre-commit-config.yaml, .gitignore,
-          .env.example, README.md, CLAUDE.md, src/[package]/__init__.py,
+          .env.example, README.md, [project instructions], src/[package]/__init__.py,
           tests/test_smoke.py
-Modules:  @~/.claude/modules/languages-python.md
+Modules:  modules/languages-python.md
 Pre-commit hooks: ruff format, ruff check, mypy
 ```
 
@@ -145,13 +131,13 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
              [project-path]/metadata
    ```
    `metadata/` at the repo root is the derived-machine-state zone (`framework/structure/kamae-project-framing.md` §2.4, §2.6) — home for the ho-status roster and the keisaku cache. It is generated, never hand-edited.
-2. **`pyproject.toml`** from `~/.claude/templates/pyproject.baseline.toml`. Replace placeholders:
+2. **`pyproject.toml`** from `templates/pyproject.baseline.toml`. Replace placeholders:
    - `[project-name]` → actual project name
    - `[package-name]` → snake_case package
    - `[description]` → one-line description
    - `[author]`, `[author-email]` → from git config (or ask)
-3. **`.pre-commit-config.yaml`** from `~/.claude/templates/pre-commit.baseline.yaml`. Verbatim; no placeholders.
-4. **`.gitignore`** from `~/.claude/templates/gitignore.baseline` (Python) or `gitignore.web.baseline` (web project). Verbatim plus any project-specific exclusions the practitioner names.
+3. **`.pre-commit-config.yaml`** from `templates/pre-commit.baseline.yaml`. Verbatim; no placeholders.
+4. **`.gitignore`** from `templates/gitignore.baseline` (Python) or `gitignore.web.baseline` (web project). Verbatim plus any project-specific exclusions the practitioner names.
 
    > The canonical process record is private by default. A private project repository tracks
    > `ho-process/`; a public project ignores `ho-process-private/` in the parent and versions
@@ -166,11 +152,11 @@ Once confirmed, instantiate the templates with the project's specifics. For a Py
    > not copy the private roster by implication. The cross-project dashboard reads working
    > trees, so it aggregates the roster regardless of parent-repo tracking.
 
-5. **`.env.example`** from `~/.claude/templates/env.example.baseline`. Replace `MYPROJ_` prefix with the project's actual env var prefix (often the package name uppercased).
-6. **`CLAUDE.md`** from `~/.claude/templates/project-CLAUDE.template.md`. Replace placeholders:
+5. **`.env.example`** from `templates/env.example.baseline`. Replace `MYPROJ_` prefix with the project's actual env var prefix (often the package name uppercased).
+6. **Project instructions** from the practitioner’s active template, normally `templates/project-instructions.template.md`. Also accept the earlier `templates/project-CLAUDE.template.md`. If both exist, follow the practitioner’s configured choice or resolve which contains their current conventions. Preserve customizations and adapt module references to the active host. Replace placeholders:
    - `[project-name]` → actual name
    - `[one-line description]` → description
-   - Uncomment the relevant language module imports (Python, web, both, etc.)
+   - Load the relevant language modules using supported imports, or tell the executor to read the named files from its practitioner module directory. Keep machine-specific personal configuration out of the shared repository.
    - Project-specific rules section: leave as a placeholder for the practitioner to fill in, OR ask for one or two project-specific rules now (private prompt path, project-specific lint rules, etc.)
    - Ho process section:
      ```
@@ -231,14 +217,14 @@ For a web static site, the file list shifts:
 - `.eleventy.js` or analogous config
 - `wrangler.toml` if Cloudflare Pages
 - `src/` source directory with index page stub
-- `CLAUDE.md` importing `@~/.claude/modules/languages-web.md`
+- Project instructions loading the web module
 
 For an app frontend (Python backend serving HTMX/Jinja2/Tailwind), the file list combines patterns:
 
 - Full Python project structure as above
 - `src/[package]/templates/` and `src/[package]/static/` for the frontend
 - `tailwind.config.js` and `package.json` for the build pipeline
-- `CLAUDE.md` importing both `@~/.claude/modules/languages-python.md` and `@~/.claude/modules/languages-web.md`
+- Project instructions loading both the Python and web modules
 
 ### Phase 4: Initialize Git
 
@@ -302,7 +288,7 @@ Scaffolded at: [project-path]
 On main branch, first commit at [hash].
 Verification stack passes: ruff, mypy, pytest (1 smoke test).
 
-Next: edit README.md to describe the project. Edit CLAUDE.md to add
+Next: edit README.md to describe the project. Edit the project instructions to add
 project-specific rules. Connect to GitHub via:
   gh repo create [account]/[project-name] --private --source=. --remote=origin
   git push -u origin main
@@ -326,10 +312,9 @@ git remote -v
 ls pyproject.toml
 cat .git/config
 ls .pre-commit-config.yaml
-cat CLAUDE.md 2>/dev/null
 ```
 
-Diagnose against the Ho baseline. Name what's present, what's missing, what conflicts:
+Inspect the project instructions the target agent sees, including any scoped overrides. Diagnose against the Ho baseline. Name what's present, what's missing, what conflicts:
 
 - **Present and correct** — leave it alone
 - **Present but drifted** — show the drift, ask before touching
@@ -349,7 +334,7 @@ what works.
 ### Service
 
 - Python project with `[project.scripts]` entry point
-- Deployment: see `~/.claude/modules/infrastructure.md` for the practitioner's deployment patterns
+- Deployment: see `modules/infrastructure.md` for the practitioner's deployment patterns
 - May include `Dockerfile` and `docker-compose.yml` if Docker deployment is the target—generate these from the practitioner's docker-deploy skill if available, or from a project-specific template
 - May include `configs/config.template.yaml` if the project uses YAML configuration
 
@@ -388,15 +373,15 @@ what works.
 
 **Hardcoding the practitioner's specifics.** This skill works for any Ho practitioner. Read their `infrastructure.md` for vault paths, account names, deployment patterns. Don't hardcode `sageframe-no-kaji` or `~/Vaults/sageframe/...`—those are Andrew's, not universal.
 
-**Adding rules to the project-CLAUDE.md the practitioner didn't ask for.** The project's CLAUDE.md is short by design. It imports the universal stuff via `@~/.claude/modules/...` and adds project-specific rules. If the practitioner doesn't have project-specific rules yet, leave the section blank with a placeholder comment.
+**Adding unrequested project rules.** Keep shared discipline in the practitioner modules. The project instructions select language conventions and record what applies specifically to this repository.
 
-**Forgetting that some "project types" cross language boundaries.** An app frontend is Python AND web. A service might also be Python AND Docker AND deployed to a specific homelab host. The CLAUDE.md `@imports` should reflect every language the project actually uses.
+**Forgetting that some "project types" cross language boundaries.** An app frontend is Python AND web. A service might also be Python AND Docker AND deployed to a specific homelab host. The project instructions should reflect every language the project actually uses.
 
 ## What You Produce
 
 A scaffolded project directory with:
 
-- All baseline files instantiated from `~/.claude/templates/`
+- All baseline files instantiated from `templates/`
 - `src/[package]/`, `tests/`, `docs/` directory structure (Python projects)
 - A Kamae 6 State Memory at `[process-root]/kamae-6-[project]-state-memory.md`, seeded with a fresh state-summary block, versioned per the chosen posture
 - Verification stack installed and passing
@@ -416,4 +401,4 @@ You also produce:
 
 ## Companion Skill
 
-`ho-setup-personal-environment-collaborator` runs once per practitioner. It produces the `~/.claude/` config that this skill assumes. If the practitioner doesn't have that environment yet, send them there first.
+`ho-setup-personal-environment-collaborator` runs once per practitioner. It produces the practitioner configuration that this skill assumes. If the practitioner doesn't have that environment yet, send them there first.

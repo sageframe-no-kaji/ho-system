@@ -2,7 +2,7 @@
 
 Placeholder. Sutra is the first Swift project on the horizon (macOS writing environment).
 
-This module is imported by project-level CLAUDE.md files when the project uses Swift. It is not loaded globally.
+This module is loaded through project instructions when the project uses Swift. It is not loaded globally.
 
 When Sutra's implementation begins, the `ho-setup-personal-environment-collaborator` skill will interrogate for stack specifics (Xcode vs SwiftPM, lint configuration, test harness, target macOS versions, signing/notarization) and fill in this module.
 

@@ -7,6 +7,8 @@ status: stable
 tags: [ho-system, practitioner, environment, modules]
 ---
 
+This worked layout uses Claude Code. For another host, use its instruction file and loading mechanism with the same practitioner modules and project baselines. The setup skills resolve those locations for the active environment.
+
 ~/.claude/
 │
 ├── CLAUDE.md [MASTER, ~40-60 lines]
@@ -27,7 +29,7 @@ tags: [ho-system, practitioner, environment, modules]
 │ ├── gitignore.baseline [HO + PERSONAL, Python flavor, ~50-80 lines]
 │ ├── gitignore.web.baseline [UNIVERSAL HO, web flavor, ~30-50 lines]
 │ ├── env.example.baseline [UNIVERSAL HO, ~20-30 lines]
-│ └── project-CLAUDE.template.md [UNIVERSAL HO, ~20-40 lines]
+│ └── project-instructions.template.md [UNIVERSAL HO, ~20-40 lines]
 │
 └── skills/ [EXISTING + ADDITIONS]
 ├── sageframe-cartographer.skill [already there]
@@ -60,4 +62,4 @@ pre-commit.baseline.yaml — Concrete pre-commit config. ruff format, ruff check
 gitignore.baseline (Python flavor) — Python defaults plus your conventions: .env, .venv, **pycache**, _.pyc, .coverage, htmlcov/, .mypy_cache, .pytest_cache, .ruff_cache, prompts/, /Agent-Tasks/, .obsidian/, .DS_Store. The kanyō-style media exclusions (_.mp4, clips/, etc.) are project-specific and stay out of the baseline.
 gitignore.web.baseline — node_modules/, dist/, build/, .next/, .nuxt/, \_site/, .cache/, .env, .DS_Store. Plus the prompts privacy pattern.
 env.example.baseline — Pattern showing your .env.example structure: section dividers (──────), comments explaining each section, REQUIRED markers, no actual secret values.
-project-CLAUDE.template.md — Based on glassroom's shape. Project name, one-line what-it-is, project-specific rules section (with placeholders for the practitioner to fill in: lint commands, project-specific gotchas, references to project's spec), project-specific section for any framework or library quirks. Short by design — does NOT restate the universal discipline because the global CLAUDE.md already loaded that.
+project-instructions.template.md — Based on glassroom's shape. Project name, one-line what-it-is, project-specific rules section (with placeholders for the practitioner to fill in: lint commands, project-specific gotchas, references to project's spec), project-specific section for any framework or library quirks. Short by design — does NOT restate the universal discipline because the global CLAUDE.md already loaded that.

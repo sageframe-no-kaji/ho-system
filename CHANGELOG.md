@@ -19,6 +19,19 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-11-22 — Dandori and Kamae-5
+
+### Move the Ho task conventions to Dandori — kind: changed
+
+Kamae-5 now uses the separately installed Dandori skill and its `HO.md` rider
+when a ho produces child tasks. Dandori maintains the format, the Ho conventions,
+and the worked examples. This replaces the copy previously bundled with Kamae-5.
+Hos without child tasks need only Kamae-5 for this step.
+
+The environment setup skills now resolve the practitioner’s module directory and
+the project instructions the executor reads. Kamae-5 accepts those instructions
+from Codex, Claude Code, or another host. Existing Claude Code baselines remain usable.
+
 ## 2026-09-12 — process publication boundary
 
 ### Add the dual-record private/public process contract (2.15) — kind: added

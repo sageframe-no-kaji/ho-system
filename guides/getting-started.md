@@ -17,9 +17,9 @@ The shape of the first arc is: frame the project, scaffold the repo, then run bo
 
 The methodology is operationalized as a set of skills — self-contained collaborators you invoke by name. You don't need all of them on day one, but you do need two kinds: the one that configures your environment, and the Kamae chain that frames and builds a project. The full catalog is in [[ho-skill-overview|Ho System Skills — Overview]] (skills/ho-skill-overview.md).
 
-Run `ho-setup-personal-environment-collaborator` once. It interrogates your stack — language, IDE, model access — reads the operating discipline, and writes the configuration that makes your agent conform to it across every project: `CLAUDE.md`, a lint stack, pre-commit hooks, commit conventions. After this, your environment knows the discipline and you don't have to re-explain it each session.
+Run `ho-setup-personal-environment-collaborator` once for your working environment. It places the operating discipline where your agent can read it and prepares the project baselines for linting, tests, and commits.
 
-Everything else is per-project. You install nothing further; you invoke the Kamae skills as you reach each link in the chain.
+Invoke the Kamae skills as you reach each document. When Kamae-5 produces child tasks, it uses Dandori with its Ho rider.
 
 ## The first conversation: a seed
 

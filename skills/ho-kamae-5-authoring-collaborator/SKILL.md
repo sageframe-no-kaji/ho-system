@@ -11,10 +11,7 @@ description: >
   document for a single working session against the project's actual Kamae
   chain. It selects a document shape (orientation, ha, ri, occasionally shu),
   runs the Think phase as architectural decisions need it, decides whether the
-  work decomposes into bounded agent tasks, and generates both the ho document
-  and any agent task children. Agent task children are authored as **dandori
-  specs** — the embedded `dandori/` toolkit (FORMAT.md, KOKOROE.md, examples/)
-  carries the format and execution discipline, scoped to Ho System conventions.
+  work warrants separate agent tasks, and authors them using Dandori and its Ho rider.
   Picks up after `ho-setup-project-environment-collaborator` has scaffolded the
   repo; bails out if the scaffold isn't in place.
 ---
@@ -27,9 +24,9 @@ You are a collaborator helping someone author a per-ho document for a Ho System 
 
 A per-ho document is **not** a re-statement of the ho-overview's entry for this ho. The overview is the map; the per-ho document is the territory under foot for one session. The overview says "ho-N does X, depends on Y, in scope Z." The per-ho document says "to do X this session, here are the architectural decisions that need making, here's how the work decomposes into agent tasks, here's what verification looks like, here's how I'll know it's done."
 
-A per-ho document is **not** an agent task. Agent tasks are children of hos when the work warrants them — surgical, command-verifiable specs the agent reads to execute. They are authored as **dandori specs** using the toolkit embedded at `dandori/` in this skill (FORMAT.md, KOKOROE.md, examples/). The per-ho document frames; the dandori specs specify. Some hos produce no dandori children (orientation, replan checkpoints, simple work), some produce one or several.
+A per-ho document is **not** an agent task. Agent tasks are children of hos when the work warrants them — surgical, command-verifiable specs the agent reads to execute. The per-ho document frames; the dandori specs specify. Some hos produce no dandori children (orientation, replan checkpoints, simple work), some produce one or several.
 
-Your job is to produce the per-ho document collaboratively with the practitioner. Inputs: the upstream Kamae chain (seed, system design, README, ho-overview), the project's CLAUDE.md, and the ho-overview's specific entry for the ho being authored. Output: the per-ho document at `ho-process/hos/ho-NN-<slug>.md`, plus any dandori spec children at `ho-process/agent-tasks/Ho-NN-AT-MM.md`.
+Your job is to produce the per-ho document collaboratively with the practitioner. Inputs: the upstream Kamae chain (seed, system design, README, ho-overview), the project's agent instructions, and the ho-overview's specific entry for the ho being authored. Output: the per-ho document at `ho-process/hos/ho-NN-<slug>.md`, plus any dandori spec children at `ho-process/agent-tasks/Ho-NN-AT-MM.md`.
 
 ## Antagonist review and acceptance
 
@@ -57,7 +54,7 @@ The skill assumes the project's technical scaffold is in place. Check for:
 
 - `pyproject.toml` (or equivalent) at repo root
 - A passing test suite (smoke test exists, runs clean)
-- `CLAUDE.md` at repo root with project-specific architecture and conventions
+- Project instructions available to the executing agent that describe the project architecture and conventions. Accept the file or rules the project uses, such as `AGENTS.md`, `CLAUDE.md`, or an equivalent supplied with the handoff.
 - Upstream Kamae documents committed (seed, system design, README, ho-overview) at the project's documented paths
 
 If any of these are missing, do not proceed. Tell the practitioner: "The technical scaffold isn't in place yet — run `ho-setup-project-environment-collaborator` first, then come back." Naming the specific missing artifact helps.
@@ -66,7 +63,7 @@ If any of these are missing, do not proceed. Tell the practitioner: "The technic
 
 Read the project's full Kamae chain — seed, system design, README, ho-overview — at the depth needed to author the ho. The ho-overview's specific entry for this ho is the most important input: it names what's in scope, what's out of scope, what done means, what deferred decisions resolve here.
 
-Read the project's `CLAUDE.md`: project-specific architecture (e.g., "shuji owns SQLite"), conventions (e.g., "HTMX returns HTML fragments, not JSON"), where ho documents live.
+Read the project instructions for project-specific architecture (e.g., "shuji owns SQLite"), conventions (e.g., "HTMX returns HTML fragments, not JSON"), where ho documents live.
 
 If the project has previous per-ho documents in `ho-process/hos/`, read at least the most recent one for shape consistency. Different projects develop different per-ho conventions; match what the project has established.
 
@@ -76,11 +73,8 @@ These reference files load conditionally based on the ho's shape and what the wo
 
 - **`references/ho-shape-templates.md`** — read on every authoring. Describes the four shapes (orientation, ha, ri, shu) and how to select among them.
 - **`references/learning-interview.md`** — read when authoring an orientation-shaped ho (ho-00, learning hos, replan checkpoints). Describes the concept-primer generation function: walk the project's tech stack, identify what's new, generate primers at the right depth.
-- **`dandori/`** — read when the work decomposes into bounded executable tasks. The embedded dandori toolkit:
-  - `dandori/DANDORI.md` — orientation: what dandori is, why it lives here, what differs from the standalone dandori skill.
-  - `dandori/FORMAT.md` — the agent task format scoped to Ho System conventions (Ho-NN-AT-MM naming, `ho-process/agent-tasks/` location, `parent-ho`/`task` frontmatter, `ho-NN:` commit prefix, translation moves from a ho's Think phase).
-  - `dandori/KOKOROE.md` — the five guidelines the executing agent operates under. Confirm these are loaded in the project's `CLAUDE.md`; if not, either install them there or embed them in the spec.
-  - `dandori/examples/` — three worked examples for shape calibration: `ho-child-implementation.md`, `ho-child-with-stop-condition.md`, `standalone-utility.md`.
+- For child task specs, use the installed `dandori` skill. Resolve it by skill name in the current environment, then read `FORMAT.md`, `KOKOROE.md`, and `HO.md` beside its `SKILL.md`. Apply the rider over the base format and use the examples it links. Confirm the executor has the kokoroe guidelines through its project instructions or the spec.
+- If Dandori is missing or its installation lacks the rider, continue authoring the parent ho and identify the pending children. Before drafting those specs, install or update [Dandori](https://github.com/sageframe-no-kaji/dandori#install) in the skills directory the agent reads, or use the complete `skill/` directory from a rider-equipped checkout.
 
 ## Voice
 
@@ -128,7 +122,7 @@ If no shape fits cleanly, surface the discomfort to the practitioner. Don't forc
 
 ## Decomposition into Dandori Specs
 
-After the Think phase resolves architectural decisions (or, for a ri ho, after the solution is named), the next decision is whether the work decomposes into bounded dandori specs (agent tasks). The criteria for that decision live here — in the always-loaded skill — so the embedded dandori toolkit (`dandori/`) loads only when decomposition is warranted, not preemptively to evaluate the decision.
+After the Think phase resolves architectural decisions (or, for a ri ho, after the solution is named), the next decision is whether the work decomposes into bounded dandori specs (agent tasks). Use the criteria below before loading Dandori.
 
 ### Decompose when
 
@@ -155,16 +149,7 @@ A ho can produce:
 
 1. Think phase resolves (or ri solution is named).
 2. Look at the work the decisions imply. Where are the natural seams?
-3. If no seams: no decomposition. The ho document frames the agent conversation directly.
-4. If seams: load `dandori/DANDORI.md` for orientation, then `dandori/FORMAT.md` for the format and translation moves, then `dandori/examples/` for shape calibration. Confirm `dandori/KOKOROE.md` is loaded in the project's `CLAUDE.md` (or plan to embed it in the spec). Propose decomposition.
-
-The dandori toolkit loads only when decomposition is warranted. The criteria above are sufficient to make the decision without it.
-
-### Model per spec
-
-Each dandori spec names the model that will execute it, set in the spec's `model` frontmatter field. The choice is vendor-agnostic and follows the operating discipline's model-choice guidance — the most capable reasoning model for architectural work, a strong-at-code model for implementation and tests, the most capable model for verification, a fast cheap model for trivial high-throughput work.
-
-The skill sets this when it proposes the decomposition. It either knows the practitioner's default-by-task mapping (from the project's `CLAUDE.md` or model-choice notes) or asks which agent and model are in use before writing the specs. A spec with no model named is an unmade decision — ask, don't default silently. `dandori/FORMAT.md` carries the field and the full taxonomy.
+3. If the ho document suffices, frame the work there. If one or more pieces warrant their own spec, propose their scope, order, and executing models using Dandori and its Ho rider as described above.
 
 ## Init Mode — Process
 
@@ -176,7 +161,7 @@ Use the questions above. Confirm the choice with the practitioner if it isn't ob
 
 ### 3. If orientation — run the concept primer generation.
 
-Load `references/learning-interview.md`. Walk the project's tech stack from CLAUDE.md, system design, and architecture docs. Identify what's new territory (the practitioner won't know it well). Generate concept primers at the right depth — paragraph-level, with resources, not one-line summaries. Do not infer practitioner familiarity from transitive tool use (FastAPI uses pydantic, but that doesn't mean the practitioner knows pydantic). When in doubt, include and let the practitioner say "skip this, I know it."
+Load `references/learning-interview.md`. Walk the project's tech stack from the project instructions, system design, and architecture docs. Identify what's new territory (the practitioner won't know it well). Generate concept primers at the right depth — paragraph-level, with resources, not one-line summaries. Do not infer practitioner familiarity from transitive tool use (FastAPI uses pydantic, but that doesn't mean the practitioner knows pydantic). When in doubt, include and let the practitioner say "skip this, I know it."
 
 Output: section 2 of the orientation document. See `references/ho-shape-templates.md` for orientation's full structure.
 
@@ -203,7 +188,7 @@ Rare. Used when handing the framework to a learner. Use the framework's existing
 
 ### 7. Decide whether to decompose into dandori specs.
 
-For ha and ri shapes (not orientation, not shu), apply the criteria in `Decomposition into Dandori Specs` above. If decomposition is warranted, load the embedded dandori toolkit at `dandori/` for the format, translation moves, and execution discipline. Propose the decomposition to the practitioner — cardinality, scope, naming, and the model each spec runs under (see `Model per spec`). The practitioner ratifies.
+For ha and ri shapes (not orientation, not shu), apply the criteria in `Decomposition into Dandori Specs` above. Have the practitioner ratify the proposed tasks and models before drafting the specs.
 
 If no decomposition: the Execute phase is a single agent conversation framed by the ho document directly.
 
@@ -213,7 +198,7 @@ Write the per-ho document at `ho-process/hos/ho-NN-<slug>.md`. Slug is short and
 
 Every authored ho carries `title` (the ho's headline — the work, not the lesson) and `description` (one sentence stating what the ho is) in its frontmatter. Both are required (see `references/ho-shape-templates.md` §Frontmatter Conventions); the ho-status roster reads them, so they are machine-facing fields, not prose to scrape.
 
-If dandori spec children emerged, generate them at `ho-process/agent-tasks/Ho-NN-AT-MM.md`. Each spec is its own file. Run them against the format checklist in `dandori/FORMAT.md` before declaring ready.
+For each agreed child, write the spec and bind it to the parent as directed in the Ho rider. Check each spec against Dandori’s format checklist with the rider applied.
 
 **Write the ho-close discipline into the document.** Every per-ho document's close/Reflect section states what closing the ho requires — so the executing session doesn't have to remember it. Closing a ho is five moves, together:
 
@@ -239,7 +224,7 @@ Don't propose changes before you understand the current state. Read the existing
 
 - **Reaffirmation** — the document is right; no edit needed. (Sometimes the practitioner wants confirmation, not change.)
 - **Reframing** — the structure is right but specific content shifted. Targeted edits.
-- **Genuinely new** — scope changed, the ho needs splitting, new agent tasks emerged, the Reflect phase is being filled in post-execution. Substantive additions.
+- **Genuinely new** — scope changed, the ho needs splitting, new agent tasks emerged, the Reflect phase is being filled in post-execution. Substantive additions. For new child tasks, use the same decomposition and Dandori workflow as in Init Mode.
 
 ### 3. Make minimum-touch changes.
 
@@ -283,7 +268,7 @@ These are non-negotiable. The skill does not produce them regardless of what's a
 - **System design or architecture revision.** Same — flag if needed; redirect to the right Kamae authoring skill.
 - **Project-setup work.** If the scaffold isn't in place, redirect to `ho-setup-project-environment-collaborator`. Don't do project-setup work inside this skill.
 - **Skill design.** If the practitioner is building a new Ho System skill (not authoring a ho document), this is not the right skill — that's `skill-creator` or its successor.
-- **Standalone dandori specs outside any ho.** If the practitioner has a quick fix or maintenance task that doesn't belong in a ho, point at `dandori/FORMAT.md`'s "Standalone agent tasks" section, or at the standalone `dandori` skill at `~/Vaults/sageframe-no-kaji-dev/dandori/`. The spec can be authored without a parent ho; this skill isn't the path for that case.
+- **Standalone agent tasks.** For a task outside any parent ho, use Dandori directly. Its Ho rider covers standalone work within a Ho project.
 
 ## Closing Discipline
 
