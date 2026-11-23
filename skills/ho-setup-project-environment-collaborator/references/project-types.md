@@ -32,9 +32,9 @@ configs/                      # configuration templates
 
 ## Desktop App
 
-A user-facing application installed on the practitioner's or end-user's machine. Examples: media converters, knowledge-management tools, writing environments.
+A user-facing application installed on the practitioner's or end-user's machine. Examples: media converters, knowledge-management tools, writing environments, secrets vaults.
 
-**Language:** Python with PyInstaller for cross-platform; Swift for macOS-native; Tauri/Rust for cross-platform with web frontend.
+**Language:** Python with PyInstaller for cross-platform; Swift for macOS-native (with optional cross-platform CLI sibling); Tauri/Rust for cross-platform with web frontend.
 
 **Source layout (Python case):**
 ```
@@ -52,11 +52,40 @@ installer/                    # platform-specific installer configs
 build.spec                    # PyInstaller spec
 ```
 
-**Verification stack:** ruff + mypy + pytest with ≥90% coverage.
+**Source layout (Swift case — multi-product package: core library + GUI app + CLI):**
+```
+Sources/
+├── [PackageName]Core/        # shared library (the engine)
+│   └── *.swift
+├── [PackageName]App/         # SwiftUI app target (@main + App protocol)
+│   └── App.swift
+└── [PackageName]CLI/         # CLI executable (swift-argument-parser)
+    └── main.swift
+Tests/
+├── [PackageName]CoreTests/
+└── [PackageName]CLITests/
+Package.swift                 # declares library + app + CLI products
+Package.resolved              # committed for executables
+.swift-format                 # swift-format config
+.swiftlint.yml                # SwiftLint config
+xcode/                        # Xcode project for the app target
+└── [PackageName].xcodeproj/  # asset catalogs, Info.plist, notarization
+scripts/                      # sign-and-notarize.sh, release.sh
+docs/
+```
 
-**Distribution:** signed/notarized macOS `.app`, Windows installer (Inno Setup), Linux AppImage if applicable. Released via GitHub Releases.
+For a single-product Swift package (library only or one executable), drop the app/CLI targets and use a single `Sources/[PackageName]/` directory.
 
-**Project language modules:** `languages-python.md` (or swift); often plus a Dockerfile reference if the app has a server component.
+**Verification stack (Python):** ruff + mypy + pytest with ≥90% coverage.
+**Verification stack (Swift):** swift-format + SwiftLint (strict) + `swift build` + `swift test` (XCTest + swift-testing) with ≥90% coverage via `swift test --enable-code-coverage` + `xcrun llvm-cov`.
+
+**Distribution:**
+- **Python:** signed/notarized macOS `.app`, Windows installer (Inno Setup), Linux AppImage if applicable. Released via GitHub Releases.
+- **Swift native Mac app:** signed and notarized `.dmg` served from a static site. Xcode handles signing (`Developer ID Application` cert) and notarization (`notarytool` + `stapler`). No App Store. A sibling CLI ships via a Homebrew tap (`<account>/tap`) for Mac + Linux, plus a direct `.tar.gz` for non-Homebrew users.
+
+**Project language modules:**
+- **Python case:** `languages-python.md`; often plus a Dockerfile reference if the app has a server component.
+- **Swift case:** `languages-swift.md`.
 
 ## Library or CLI
 

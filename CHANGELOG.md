@@ -19,6 +19,18 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-11-23 — Swift scaffolding restored to the project-environment skill
+
+### Carry the Swift desktop-app scaffold into the repository — kind: added
+
+`ho-setup-project-environment-collaborator` gains the Swift case that had existed only in an
+installed copy since June: the language-stack question names Rust and Swift, the file list and
+verification steps cover a Swift package with optional app and CLI targets, `project-types.md`
+carries the Swift layout, verification stack and distribution, and `scaffold-patterns.md`
+carries the seed files. Wording follows the repository's tool-neutral form. The skill names
+Swift baselines (`Package.swift.baseline` and four others) that the personal-environment skill
+does not yet ship; it now says to stop when they are absent.
+
 ## 2026-11-23 — the review decision
 
 ### Decide review per ho, at planning — kind: changed
