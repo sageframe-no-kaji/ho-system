@@ -1,0 +1,32 @@
+#!/bin/sh
+# Refuse commits made in the main checkout of this repository.
+#
+# Skills and the operating discipline are loaded live from the main checkout
+# by the practitioner's agents. A file saved there is in use at once, committed
+# or not. Changes are therefore made in a linked worktree on a branch and reach
+# the main checkout only by merge. See AGENTS.md, "Where changes are made".
+#
+# Enable once per clone:  git config core.hooksPath .githooks
+# Generated state files listed in ALLOWED may still be committed here.
+
+ALLOWED='.keisaku.json'
+
+git_dir=$(cd "$(git rev-parse --git-dir)" && pwd -P)
+common_dir=$(cd "$(git rev-parse --git-common-dir)" && pwd -P)
+
+# A linked worktree has its own git dir under <common>/worktrees/. Allow it.
+[ "$git_dir" != "$common_dir" ] && exit 0
+
+blocked=$(git diff --cached --name-only | grep -v -x -F "$ALLOWED")
+[ -z "$blocked" ] && exit 0
+
+cat >&2 <<MSG
+Commit refused: this is the main checkout, which agents load live.
+
+Make the change in a worktree instead:
+  git worktree add ../$(basename "$(git rev-parse --show-toplevel)")-<track> -b <branch> origin/main
+
+Staged here:
+$(printf '%s\n' "$blocked" | sed 's/^/  /')
+MSG
+exit 1

@@ -19,6 +19,16 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-11-23 — changes are made in worktrees
+
+### Keep the live main checkout clean — kind: added
+
+The practitioner's agents now load this repository's skills and operating discipline directly
+from its main checkout. `AGENTS.md` states the consequence as a rule: work happens in a linked
+worktree on a branch and reaches the main checkout only by merge. `.githooks/pre-commit`
+refuses commits made in the main checkout, apart from the generated `.keisaku.json`; it is
+enabled per clone with `git config core.hooksPath .githooks`.
+
 ## 2026-11-23 — Swift scaffolding restored to the project-environment skill
 
 ### Carry the Swift desktop-app scaffold into the repository — kind: added
