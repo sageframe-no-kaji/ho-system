@@ -35,7 +35,7 @@ Mark an area inapplicable when the system has no such responsibility, with a sho
 
 Choose representative end-to-end flows from actual product requirements, with ordinary, boundary, and failure variants suited to their risk. Inspect and, when authorized, execute the whole path through the relevant components rather than stopping at mocked interfaces. Attach the observed result and the boundaries not exercised to each claimed outcome.
 
-For critical asynchronous or persistent flows, include successive operations and supersession where applicable: a second save after a successful first save, cancellation followed by a new request, or an old completion arriving after navigation. An isolated first success or failure does not establish state reuse or stale-result handling.
+For critical asynchronous or persistent flows, apply the [successive-operation rule](standards.md#verification-and-test-quality): for example a second save after a successful first save, cancellation followed by a new request, or an old completion arriving after navigation.
 
 A missing operational witness remains an evidence gap even if all source-level tests pass. Where execution is prohibited or unavailable, use static evidence to establish what it can and identify the exact remaining acceptance question. Do not request an external action merely to make the report look complete when the current task authorizes only analysis.
 

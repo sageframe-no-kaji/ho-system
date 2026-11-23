@@ -17,7 +17,7 @@ State the active role: reviewer by default, coordinator when asked to manage the
 | Independent final codebase analysis | [standards.md](references/standards.md), [final-review.md](references/final-review.md), [cycle.md](references/cycle.md) |
 | Coordinate a cycle, or repair findings as builder | [handoffs.md](references/handoffs.md), with the documents for the cycle's mode |
 | Exchange handoffs directly between agents | [agent-transport.md](references/agent-transport.md) as well |
-| Prepare a review without running it | The applicable mode; complete [review-context.md](assets/review-context.md) from project evidence. Do not start the review implicitly. |
+| Prepare a review without running it | The applicable mode; complete [review-context.md](assets/review-context.md) from project evidence. For a Ho project packet, follow [ho-integration.md](references/ho-integration.md#kamae-5-prepare-the-review-packet). Do not start the review implicitly. |
 | Write the report | [report-template.md](references/report-template.md). Its conditional sections are not a requirement to manufacture content. |
 | Connect reviews to Kamae planning, authoring, or project records | [ho-integration.md](references/ho-integration.md) |
 

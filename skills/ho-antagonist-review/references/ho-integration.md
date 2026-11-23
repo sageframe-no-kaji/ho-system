@@ -6,7 +6,7 @@ Antagonist review follows each build ho and a separate final review examines the
 
 Place a bounded antagonist review after each build ho in the overview, and place an independent whole-codebase review at the completed-system acceptance point. Where a project already uses `ho-NNx` review labels, preserve that convention; otherwise identify the review alongside its parent ho without inventing a new numbering system. Orientation or research hos are reviewed against their claims and deliverables when their acceptance requires review, rather than being given fictitious code or test requirements.
 
-State the project default of two reviewer passes, or three if the practitioner selects it, and identify who can rule on a Return or incomplete evidence. The [cycle rules](cycle.md) define the budget, the separate final-review cycle, and what a report authorizes.
+State the pass ceiling the project uses and identify who can rule on a Return or incomplete evidence. The [cycle rules](cycle.md) define the default ceiling and its options, the separate final-review cycle, and what a report authorizes.
 
 ## Kamae 5: prepare the review packet
 

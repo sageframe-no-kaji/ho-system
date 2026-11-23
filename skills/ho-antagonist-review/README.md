@@ -30,7 +30,7 @@ Install or link the whole folder: copying only `SKILL.md` omits the review docum
 
 ## Start a review
 
-Prepare a project-specific copy of [the review context](assets/review-context.md). The reviewer pins the skill version before it starts, so later passes use the same rules. Identify the reviewed revision, requirements, owner rulings, permitted verification, report destination, and current pass number and ceiling. Supply previous reports for a follow-up, preserving the same cycle identity and counter.
+Prepare a project-specific copy of [the review context](assets/review-context.md). The skill version is pinned before the first dispatch, by the coordinator or, when there is none, by the reviewer, so later passes use the same rules; the [handoff guide](references/handoffs.md#pin-the-governing-instructions) says how. Identify the reviewed revision, requirements, owner rulings, permitted verification, report destination, and current pass number and ceiling. Supply previous reports for a follow-up, preserving the same cycle identity and counter.
 
 Use a fresh reviewer context when possible. Give that reviewer access to the repository and supporting evidence; if it also built the implementation, disclose that limitation. The skill does not create another agent or grant access on its own.
 

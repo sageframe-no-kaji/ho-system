@@ -22,7 +22,7 @@ Inspect the following where the unit touches them:
 
 Inspect related mechanisms together so the first report captures the failure class rather than a single example. For concurrency, follow the state transitions around suspension and delivery; for parsers, vary input partitioning and boundary interactions; for data changes, inspect failure and recovery paths. These are examples of analysis suited to the system, not a mandatory technology checklist.
 
-For affected asynchronous or persistent workflows, examine a second operation and an operation superseded while still in flight, as applicable. Successive saves, eviction of unsent changes, and an old response arriving after navigation are examples; choose witnesses from the actual lifecycle rather than imposing every example on every project.
+For affected asynchronous or persistent workflows, apply the [successive-operation rule](standards.md#verification-and-test-quality). Successive saves, eviction of unsent changes, and an old response arriving after navigation are examples.
 
 Run the declared verification and investigate material failures within the budget. Submit one consolidated report, merging manifestations of a shared cause and separating independent causes. Classify incomplete verification honestly even when the static review found no defect.
 
