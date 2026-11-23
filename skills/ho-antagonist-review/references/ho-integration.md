@@ -1,10 +1,10 @@
 # Antagonist review in the Ho process
 
-Antagonist review follows each build ho and a separate final review examines the completed system. Both consume the project's requirements and actual implementation, produce evidence and findings, and preserve the practitioner's authority over intent and accepted risk. The review is a verification responsibility within the existing Kamae chain, not a seventh Kamae document or a new implementation phase.
+Antagonist review follows a build ho when the practitioner chooses it, and a separate final review always examines the completed system. Both consume the project's requirements and actual implementation, produce evidence and findings, and preserve the practitioner's authority over intent and accepted risk. The review is a verification responsibility within the existing Kamae chain, not a seventh Kamae document or a new implementation phase.
 
 ## Kamae 4: plan the reviews
 
-Place a bounded antagonist review after each build ho in the overview, and place an independent whole-codebase review at the completed-system acceptance point. Where a project already uses `ho-NNx` review labels, preserve that convention; otherwise identify the review alongside its parent ho without inventing a new numbering system. Orientation or research hos are reviewed against their claims and deliverables when their acceptance requires review, rather than being given fictitious code or test requirements.
+Place a bounded antagonist review after each build ho the practitioner chose to review, and always place an independent whole-codebase review at the completed-system acceptance point. Where a project already uses `ho-NNx` review labels, preserve that convention; otherwise identify the review alongside its parent ho without inventing a new numbering system. Orientation or research hos are reviewed against their claims and deliverables when their acceptance requires review, rather than being given fictitious code or test requirements.
 
 State the pass ceiling the project uses and identify who can rule on a Return or incomplete evidence. The [cycle rules](cycle.md) define the default ceiling and its options, the separate final-review cycle, and what a report authorizes.
 
