@@ -19,6 +19,20 @@ where one exists (`merge-decisions D1`, a ho, etc.).
 
 ---
 
+## 2026-11-23 — the review decision
+
+### Decide review per ho, at planning — kind: changed
+
+Independent review of a build ho remains the standard, and the practitioner decides each one.
+When a ho is planned, added, or split, the agent advises review or no review with a one-line
+reason; the practitioner chooses, and the choice is written into the ho beside its acceptance
+conditions. The operating discipline carries the guidance on when to advise a review —
+complicated reasoning or code, work others build on, security, anything that cannot be undone —
+restoring the judgment the 2026-11-23 wording dropped. If the work grows, the closing agent
+says so and asks again. The completed system is always reviewed as a whole. Kamae 4 and
+Kamae 5 give and record the advice and no longer restate the review skill's pass budget.
+Practitioner ruling, 2026-11-23.
+
 ## 2026-11-23 — independent review is the standard
 
 ### Make the fourth verification layer standard — kind: changed

@@ -175,6 +175,8 @@ agent-tasks:
 - [criteria]
 - [criteria]
 
+**Antagonist review:** yes | no — [one-line reason; the practitioner's choice]
+
 ---
 
 ## Phase 3 — Reflect
@@ -273,6 +275,8 @@ If agent tasks: → `ho-process/agent-tasks/Ho-NN-AT-MM.md`
 ## Results
 
 [What's true now that wasn't before. Verification that the change held. Any side effects.]
+
+**Antagonist review:** yes | no — [one-line reason; the practitioner's choice]
 
 ### Closing this ho
 

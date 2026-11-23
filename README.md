@@ -105,7 +105,7 @@ CONTRIBUTING.md
 1. Read [`framework/the-ho-system.md`](framework/the-ho-system.md) — the complete orientation
 2. Explore [`examples/kanyo-pilot/`](examples/kanyo-pilot/) to see it in practice
 3. Start your own project with [`framework/structure/kamae-project-framing.md`](framework/structure/kamae-project-framing.md)
-4. Review each finished ho with the [`ho-antagonist-review`](skills/ho-antagonist-review/) skill
+4. Review finished hos with the [`ho-antagonist-review`](skills/ho-antagonist-review/) skill
 
 ---
 

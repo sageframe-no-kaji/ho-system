@@ -158,7 +158,7 @@ Skills that aren't part of the Kamae chain but support the practice.
 **Status:** Built
 **Surface:** IDE-primary; review-packet preparation also works in chat
 **Produces:** Bounded ho review reports and independent final codebase analyses, with evidence, finding dispositions, owner rulings, and a recorded two- or three-pass ceiling
-**When to run:** After each build ho, and separately when the completed system is ready for final acceptance. Also use to prepare a project's review packet or reconcile a review's findings and owner decisions.
+**When to run:** After a build ho the practitioner chose to review, and always when the completed system is ready for final acceptance. Also use to prepare a project's review packet or reconcile a review's findings and owner decisions.
 
 The [skill](ho-antagonist-review/SKILL.md) bundles separate ho-level and full-codebase briefs, shared evidence standards, cycle rules, and context/report templates. The first pass covers the whole declared scope; later passes examine repairs, unresolved causes, and affected behavior. It can recommend reopening a decision, but does not implement repairs, reset the review budget, or reopen work itself. Reviewer Pass and practitioner acceptance remain distinct.
 
