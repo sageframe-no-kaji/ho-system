@@ -90,7 +90,7 @@ framework/                          ← The methodology itself
     └── design-ho-template.md             In-chain wrapper for design work
 guides/                             ← Practitioner orientation (stubs, in progress)
 practitioner/                       ← Practitioner-scope operating discipline
-skills/                             ← Kamae collaborator skills + catalog (ho-skill-overview.md)
+skills/                             ← Kamae collaborator skills, antagonist review + catalog (ho-skill-overview.md)
 examples/                           ← Evidence from practice (the Kanyō pilot)
 ho-process/                         ← This repo's own ho process (hos, ideas, agent-tasks)
 INDEX.md                            ← The complete document map
@@ -105,6 +105,7 @@ CONTRIBUTING.md
 1. Read [`framework/the-ho-system.md`](framework/the-ho-system.md) — the complete orientation
 2. Explore [`examples/kanyo-pilot/`](examples/kanyo-pilot/) to see it in practice
 3. Start your own project with [`framework/structure/kamae-project-framing.md`](framework/structure/kamae-project-framing.md)
+4. Review each finished ho with the [`ho-antagonist-review`](skills/ho-antagonist-review/) skill
 
 ---
 
