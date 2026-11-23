@@ -1,3 +1,12 @@
+---
+id: "8.1"
+title: "The Operating Discipline"
+type: practitioner
+stage: n/a
+status: stable
+tags: [ho-system, practitioner, operating-discipline]
+---
+
 # The Operating Discipline
 
 _Of the Ho System, for practitioners — operational rules_
@@ -110,7 +119,21 @@ Context hygiene is partly about boundedness and partly about specificity. The ag
 
 ### Ending a session: the state-summary
 
-Every session ends by stating where it leaves the build, and every ho closes the same way — a fixed four-field **state-summary block**: what was COMPLETED this stretch, the single NEXT pointer, open ACTION ITEMS / BLOCKS (a blocked build says so loudly, never buries it), and the PROJECT LIFECYCLE (`kamae | dev | beta | production` — where the thing being built sits in its life, distinct from the practitioner's shu-ha-ri stage, the `stage:` Kamae field, and a document's own `status:` frontmatter). The block is written to the project's **State Memory** — the Kamae 6 document at a fixed path (`ho-process/kamae-6-<project>-state-memory.md`), always present so the next session, and any hook, knows exactly where to find it. It is cheap to produce and carries the minimum a fresh session needs to pick the build back up; because its shape is fixed and its labels verbatim, it is also a parseable surface that downstream automation can hook. This is the universal floor of cross-session continuity — it holds on every build, attended or not. When the human is not the one carrying the thread between sessions — long, unattended, or fully autonomous builds — the block is the top of a larger handoff (the State Memory's working-memory body), and the full pattern (that body with its freshness and hot/cold disciplines, the build record, the alert heartbeat) is specified in the framework's Cross-Session Continuity document — `framework/structure/cross-session-continuity.md` in the ho-system repo.
+Every session ends by stating where it leaves the build, and every ho closes the same way — a fixed four-field **state-summary block**: what was COMPLETED this stretch, the single NEXT pointer, open ACTION ITEMS / BLOCKS (a blocked build says so loudly, never buries it), and the PROJECT LIFECYCLE (`kamae | dev | beta | production` — where the thing being built sits in its life, distinct from the practitioner's shu-ha-ri stage, the `stage:` Kamae field, and a document's own `status:` frontmatter). The block is written to the project's **State Memory** — the Kamae 6 document at a fixed path inside the canonical process root (`<process-root>/kamae-6-<project>-state-memory.md`), always present so the next session, and any hook, knows exactly where to find it. The root is `ho-process/` ordinarily and `ho-process-private/` when a public project uses the nested-private posture; project instructions declare it, and agents never resume from a generated public derivative. It is cheap to produce and carries the minimum a fresh session needs to pick the build back up; because its shape is fixed and its labels verbatim, it is also a parseable surface that downstream automation can hook. This is the universal floor of cross-session continuity — it holds on every build, attended or not. When the human is not the one carrying the thread between sessions — long, unattended, or fully autonomous builds — the block is the top of a larger handoff (the State Memory's working-memory body), and the full pattern (that body with its freshness and hot/cold disciplines, the build record, the alert heartbeat) is specified in the framework's Cross-Session Continuity document — `framework/structure/cross-session-continuity.md` in the ho-system repo.
+
+The block, exactly — a parser reads it, so the form is the contract:
+
+    **STATE-SUMMARY**
+    - **COMPLETED** — <what this stretch finished; may lead with an ISO date>
+    - **NEXT** — <the single next pointer>
+    - **ACTION ITEMS / BLOCKS** — <open items, or `none`; a block leads with `BLOCKED:`>
+    - **PROJECT LIFECYCLE** — `kamae` | `dev` | `beta` | `production`
+
+- The token `**STATE-SUMMARY**` on its own line, then the four bullets, labels bold and verbatim, in this order, each followed by an em dash (—), not a hyphen.
+- One block per file. Update it in place at every pause; never append a second. Don't write the literal token anywhere else in the file — prose mentions count as blocks.
+- A value may wrap onto indented continuation lines. A flush-left line ends the block.
+- Clear is the word `none`, first. Blocked is `BLOCKED:` followed by what is blocking.
+- The contract in full: `framework/structure/cross-session-continuity.md` (ho-system).
 
 ### The black box discipline
 

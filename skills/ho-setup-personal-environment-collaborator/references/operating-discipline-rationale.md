@@ -1,3 +1,12 @@
+---
+id: "8.2"
+title: "The Operating Discipline — Rationale"
+type: practitioner
+stage: n/a
+status: stable
+tags: [ho-system, practitioner, operating-discipline, rationale]
+---
+
 # The Operating Discipline — Rationale
 
 _The philosophy and argument grounding the rules in `operating-discipline.md`._
