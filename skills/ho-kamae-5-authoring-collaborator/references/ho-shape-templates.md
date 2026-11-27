@@ -353,7 +353,7 @@ All shapes share the frontmatter shape. Required fields:
 - `ho` — number, zero-padded for ho-00 (`00`, not `0`)
 - `kamae` — always `5` (per-ho documents are Kamae 5)
 - `shape` — `orientation`, `ha`, `ri`, or `shu`
-- `title` — the ho's headline (the work, not the lesson)
+- `title` — the ho's headline (the work, not the lesson). It also ends the session name (`<project> · ho-NN · <title>`, per the operating discipline's Bounded sessions), so keep it short — a few words
 - `description` — one sentence stating what the ho is; the ho-status roster reads it (see kamae-project-framing)
 - `builds-on` — list of upstream documents this ho depends on
 
