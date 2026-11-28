@@ -17,4 +17,6 @@ So the main checkout stays on `main` and clean, and it is not where work happens
 
 `.githooks/pre-commit` refuses other commits in the main checkout. It is active after `git config core.hooksPath .githooks`, run once in a clone. If the hook is not active, the rule still holds.
 
+Some files are copied into a skill so that someone who installs the skill alone receives them: the operating discipline and its rationale into the personal-environment setup skill, and the license into the antagonist review skill. Edit the original, never the copy. `.githooks/check-copies` lists each pair and refuses a commit in which a copy differs from its original, printing the command that brings the copy into step. The pre-commit hook runs it, and so does a check on every pull request.
+
 This applies to a checkout that is linked live. A clone used only for reading or for a separate installation has no such constraint.

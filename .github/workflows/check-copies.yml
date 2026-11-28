@@ -1,0 +1,17 @@
+name: check-copies
+
+# Hand-kept copies must match their originals. The pairs and the check live
+# in .githooks/check-copies, which the local pre-commit hook also runs.
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check-copies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sh .githooks/check-copies

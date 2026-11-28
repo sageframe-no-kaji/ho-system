@@ -1,5 +1,11 @@
 #!/bin/sh
-# Refuse commits made in the main checkout of this repository.
+# Two checks, in this order:
+#
+# 1. Refuse a commit in which a hand-kept copy differs from its original.
+#    The pairs and the check live in .githooks/check-copies, which CI also
+#    runs on every pull request. This runs everywhere, worktrees included.
+#
+# 2. Refuse commits made in the main checkout of this repository.
 #
 # Skills and the operating discipline are loaded live from the main checkout
 # by the practitioner's agents. A file saved there is in use at once, committed
@@ -10,6 +16,8 @@
 # Generated state files listed in ALLOWED may still be committed here.
 
 ALLOWED='.keisaku.json'
+
+sh "$(git rev-parse --show-toplevel)/.githooks/check-copies" || exit 1
 
 git_dir=$(cd "$(git rev-parse --git-dir)" && pwd -P)
 common_dir=$(cd "$(git rev-parse --git-common-dir)" && pwd -P)
