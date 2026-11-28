@@ -1,0 +1,46 @@
+#!/bin/sh
+# Refuse drift between hand-kept copies and their originals.
+#
+# Some files are copied into a skill so that someone who installs the skill
+# alone receives them. Each copy must match its original byte for byte; the
+# original is the one that is edited. The check compares the staged versions
+# (the index), so the pre-commit hook and CI run the same thing: in a fresh
+# CI checkout the index equals the commit.
+#
+# Run:  sh .githooks/check-copies
+
+# Each line: <original> <copy>, paths from the repository root.
+PAIRS='
+practitioner/operating-discipline.md skills/ho-setup-personal-environment-collaborator/references/operating-discipline.md
+practitioner/operating-discipline-rationale.md skills/ho-setup-personal-environment-collaborator/references/operating-discipline-rationale.md
+LICENSE skills/ho-antagonist-review/LICENSE
+'
+
+cd "$(git rev-parse --show-toplevel)" || exit 1
+
+drift=''
+while read -r original copy; do
+    [ -z "$original" ] && continue
+    a=$(git rev-parse -q --verify ":$original")
+    b=$(git rev-parse -q --verify ":$copy")
+    if [ -z "$a" ] || [ -z "$b" ]; then
+        drift="$drift
+  missing from the index: $original or $copy"
+    elif [ "$a" != "$b" ]; then
+        drift="$drift
+  $copy differs from $original
+    git show ':$original' > '$copy' && git add '$copy'"
+    fi
+done <<EOF
+$PAIRS
+EOF
+
+[ -z "$drift" ] && exit 0
+
+cat >&2 <<MSG
+Copies out of step with their originals.
+
+Edit the original, then bring the copy into step with the command shown:
+$drift
+MSG
+exit 1
